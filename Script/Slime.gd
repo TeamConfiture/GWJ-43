@@ -23,6 +23,11 @@ var move_speed = Normal_Move_Speed
 
 var stop_speed = Normal_Stop_Speed
 
+var val = 0
+var val_max = -15
+var val_acc = val_max*0.075
+var val_mode := false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -41,11 +46,8 @@ func _physics_process(delta: float) -> void:
 					
 			else:
 				speed.y += Grav
-		
-		State.steam:
-			speed.y += rand_range(-0.1, 0.1)
 	
-	move_and_slide(speed * MulSpeed, Vector2.UP)
+	move_and_slide(speed * MulSpeed + Vector2(0, val), Vector2.UP)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -58,6 +60,11 @@ func _process(delta: float) -> void:
 			want_jump = Input.is_action_just_pressed("ui_up")
 		
 		State.steam:
+			val -= -val_acc
+			
+			if val < val_max:
+				val = -val_max
+			
 			dir.y = Input.get_axis("ui_up", "ui_down")
 			
 			dir = dir.normalized()
