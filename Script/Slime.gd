@@ -8,7 +8,7 @@ const Normal_Move_Speed = 0.5
 const Normal_Stop_Speed = 0.3
 const Steam_Stop_Speed = 0.02
 const Grav = 0.0981
-const Jump_Acc = 5
+const Jump_Acc = 2.5
 
 var linear_vel:Vector2
 
@@ -72,10 +72,6 @@ func _process(delta: float) -> void:
 	match(state):
 		State.normal:
 			want_jump = Input.is_action_just_pressed("ui_up")
-			
-			if is_on_floor():
-				anim_tree["parameters/conditions/is_moving"] = speed.x != 0
-				anim_tree["parameters/conditions/is_not_moving"] = speed.x == 0
 		
 		State.steam:
 			val -= -val_acc
@@ -93,3 +89,10 @@ func _process(delta: float) -> void:
 		state = State.steam
 		
 		stop_speed = Steam_Stop_Speed
+
+	var is_on_floor = is_on_floor()
+
+	anim_tree["parameters/conditions/is_jumping"] = want_jump
+	anim_tree["parameters/conditions/is_on_floor"] = is_on_floor
+	anim_tree["parameters/conditions/is_moving"] = is_on_floor and speed.x != 0
+	anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and speed.x == 0
