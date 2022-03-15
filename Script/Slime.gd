@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-onready var sprite : AnimatedSprite = $Sprite
+onready var sprite = $Sprite
+onready var anim_tree = $AnimationTree
 
 const MulSpeed = 100
 const Normal_Move_Speed = 0.5
@@ -34,6 +35,7 @@ var is_falling := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	pass # Replace with function body.
 
 func get_speed(_dir:float, _speed:float) -> float:
@@ -45,21 +47,16 @@ func _physics_process(delta: float) -> void:
 	match(state):
 		State.normal:
 			if is_on_floor():
+				speed.y = Grav
 				if is_falling:
 					is_falling = false
-					sprite.animation = "normal_landing"
 				if want_jump:
 					speed.y -= Jump_Acc
-					sprite.animation = "normal_jumping"
-				elif speed.x != 0:
-					sprite.animation = "normal_walking"
-				else:
-					sprite.animation = "normal_idle"
 			else:
 				if !is_falling:
 					is_falling = true
 				speed.y += Grav
-				sprite.animation = "normal_falling"
+#				sprite.animation = "normal_falling"
 	
 	move_and_slide(speed * MulSpeed + Vector2(0, val), Vector2.UP)
 
@@ -75,6 +72,10 @@ func _process(delta: float) -> void:
 	match(state):
 		State.normal:
 			want_jump = Input.is_action_just_pressed("ui_up")
+			
+			if is_on_floor():
+				anim_tree["parameters/conditions/is_moving"] = speed.x != 0
+				anim_tree["parameters/conditions/is_not_moving"] = speed.x == 0
 		
 		State.steam:
 			val -= -val_acc
