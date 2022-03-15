@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://Art/water.tres" type="TileSet" id=1]
 [ext_resource path="res://Scene/Slime.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/new_tileset.tres" type="TileSet" id=3]
 
@@ -13,3 +14,9 @@ tile_data = PoolIntArray( 13, 24, 0, 131084, 6, 0, 131085, 5, 0, 131086, 13, 0, 
 
 [node name="Slime" parent="." instance=ExtResource( 2 )]
 position = Vector2( 301, 212 )
+
+[node name="Water" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0 )
