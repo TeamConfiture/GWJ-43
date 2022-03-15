@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var sprite : AnimatedSprite = $Sprite
+
 const MulSpeed = 100
 const Normal_Move_Speed = 0.5
 const Normal_Stop_Speed = 0.3
@@ -28,6 +30,8 @@ var val_max = -15
 var val_acc = val_max*0.075
 var val_mode := false
 
+var is_falling := true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -41,18 +45,31 @@ func _physics_process(delta: float) -> void:
 	match(state):
 		State.normal:
 			if is_on_floor():
+				if is_falling:
+					is_falling = false
+					sprite.animation = "normal_landing"
 				if want_jump:
 					speed.y -= Jump_Acc
-					
+					sprite.animation = "normal_jumping"
+				elif speed.x != 0:
+					sprite.animation = "normal_walking"
+				else:
+					sprite.animation = "normal_idle"
 			else:
+				if !is_falling:
+					is_falling = true
 				speed.y += Grav
+				sprite.animation = "normal_falling"
 	
 	move_and_slide(speed * MulSpeed + Vector2(0, val), Vector2.UP)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	dir.x = Input.get_axis("ui_left", "ui_right")
-	
+	if dir.x < 0:
+		sprite.flip_h = true
+	elif dir.x > 0:
+		sprite.flip_h = false
 	speed.x = get_speed(dir.x, speed.x)
 	
 	match(state):

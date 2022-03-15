@@ -9,6 +9,11 @@ extents = Vector2( 32, 32 )
 [node name="Test" type="Node"]
 
 [node name="Slime" parent="." instance=ExtResource( 2 )]
+position = Vector2( 452, 360 )
+
+[node name="Camera2D" type="Camera2D" parent="Slime"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 modulate = Color( 0.407843, 0.407843, 0.407843, 1 )
