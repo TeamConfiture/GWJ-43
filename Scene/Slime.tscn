@@ -233,3 +233,7 @@ parameters/conditions/is_jumping = false
 parameters/conditions/is_moving = false
 parameters/conditions/is_not_moving = false
 parameters/conditions/is_on_floor = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.25, 0.25 )
