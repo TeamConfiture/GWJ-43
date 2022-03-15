@@ -33,6 +33,8 @@ var val_mode := false
 
 var is_falling := true
 
+var want_eat := false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -72,6 +74,8 @@ func _process(delta: float) -> void:
 	match(state):
 		State.normal:
 			want_jump = Input.is_action_just_pressed("ui_up")
+			
+			want_eat = Input.is_action_just_pressed("ui_accept")
 		
 		State.steam:
 			val -= -val_acc
@@ -85,14 +89,15 @@ func _process(delta: float) -> void:
 			
 			speed.y = get_speed(dir.y, speed.y)
 			
-	if Input.is_action_just_pressed("ui_accept"):
-		state = State.steam
-		
-		stop_speed = Steam_Stop_Speed
+#	if Input.is_action_just_pressed("ui_accept"):
+#		state = State.steam
+#
+#		stop_speed = Steam_Stop_Speed
 
 	var is_on_floor = is_on_floor()
 
 	anim_tree["parameters/conditions/is_jumping"] = want_jump
+	anim_tree["parameters/conditions/is_eating"] = want_eat
 	anim_tree["parameters/conditions/is_on_floor"] = is_on_floor
 	anim_tree["parameters/conditions/is_moving"] = is_on_floor and speed.x != 0
 	anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and speed.x == 0
