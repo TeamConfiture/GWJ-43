@@ -76,7 +76,7 @@ func _physics_process(delta: float) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	dir.x = Input.get_axis("ui_left", "ui_right")
+	dir.x = Input.get_axis("left", "right")
 	if dir.x < 0:
 		sprite.flip_h = true
 	elif dir.x > 0:
@@ -85,9 +85,9 @@ func _process(delta: float) -> void:
 	
 	match(state):
 		State.normal:
-			want_jump = Input.is_action_just_pressed("ui_up")
+			want_jump = Input.is_action_just_pressed("up")
 			
-			want_eat = Input.is_action_just_pressed("ui_accept")
+			want_eat = Input.is_action_just_pressed("eat")
 		
 		State.steam:
 			val -= -val_acc
@@ -95,7 +95,7 @@ func _process(delta: float) -> void:
 			if val < val_max:
 				val = -val_max
 			
-			dir.y = Input.get_axis("ui_up", "ui_down")
+			dir.y = Input.get_axis("up", "down")
 			
 			dir = dir.normalized()
 			
