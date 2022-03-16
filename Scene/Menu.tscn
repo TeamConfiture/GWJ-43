@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Art/Menu/Menu_BG.png" type="Texture" id=1]
+[ext_resource path="res://Art/Menu/Menu_BG_4.png" type="Texture" id=1]
 [ext_resource path="res://Art/Menu/Button_Slime_normal.png" type="Texture" id=2]
 [ext_resource path="res://Art/Menu/Button_Slime_normal copy.png" type="Texture" id=3]
 [ext_resource path="res://Art/Menu/Button_quit.png" type="Texture" id=4]
@@ -8,14 +8,35 @@
 [ext_resource path="res://Art/Menu/Button_credits.png" type="Texture" id=6]
 [ext_resource path="res://Art/Menu/Button_credits_pushed.png" type="Texture" id=7]
 [ext_resource path="res://Script/Menu.gd" type="Script" id=8]
+[ext_resource path="res://Art/Menu/Menu_BG_2.png" type="Texture" id=9]
+[ext_resource path="res://Art/Menu/Menu_BG_1.png" type="Texture" id=10]
+[ext_resource path="res://Art/Menu/Menu_BG_3.png" type="Texture" id=11]
+[ext_resource path="res://Art/Menu/Menu_BG_5.png" type="Texture" id=12]
+[ext_resource path="res://Art/Menu/Menu_BG_6.png" type="Texture" id=13]
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 6
+fps = 5.0
+frame_0/texture = ExtResource( 10 )
+frame_1/texture = ExtResource( 9 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 11 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 1 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 12 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 13 )
+frame_5/delay_sec = 0.0
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 8 )
 
 [node name="bg" type="TextureRect" parent="."]
+margin_left = -6.10352e-05
 margin_right = 1024.0
 margin_bottom = 600.0
-texture = ExtResource( 1 )
+texture = SubResource( 1 )
 expand = true
 stretch_mode = 1
 __meta__ = {
