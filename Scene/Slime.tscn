@@ -96,7 +96,13 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=332]
 resource_name = "leaf_to_cauldron"
+tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -365,6 +371,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ 374, 382 ]
+}
 
 [sub_resource type="Animation" id=326]
 resource_name = "mud_walking"
@@ -379,6 +386,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ 99, 103 ]
+}
 
 [sub_resource type="Animation" id=276]
 resource_name = "normal_eating"
