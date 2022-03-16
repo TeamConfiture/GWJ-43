@@ -24,9 +24,13 @@ config/name="GJW_43"
 run/main_scene="res://Scene/Test.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+BackgroundMusic="*res://Scene/Background_Music.tscn"
+
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/randomAudioStreamPlayer/plugin.cfg" )
 
 [importer_defaults]
 
