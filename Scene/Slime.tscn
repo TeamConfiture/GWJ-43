@@ -1,7 +1,14 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Art/Audio/Sound/Character/Jump_01.ogg" type="AudioStream" id=3]
+[ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player_2D.gd" type="Script" id=4]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing_Grass_3.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing_Grass_2.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing_Grass_1.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walking_01.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Art/Audio/Sound/Amb/Amb_Ext_01.ogg" type="AudioStream" id=9]
 
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 4.0
@@ -96,10 +103,25 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 110, 114 ]
 }
+tracks/1/type = "audio"
+tracks/1/path = NodePath("Character_Jump")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=280]
 resource_name = "normal_landing"
 length = 0.25
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -111,6 +133,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 117, 118 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Character_Landing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=281]
@@ -127,6 +163,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 55, 59 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("Character_Jump")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0.3 )
 }
 
 [sub_resource type="AnimationNodeAnimation" id=297]
@@ -237,3 +287,21 @@ parameters/conditions/is_on_floor = false
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.25, 0.25 )
+
+[node name="Character_Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+mix_target = 2
+bus = "SFX"
+
+[node name="Character_Landing" type="AudioStreamPlayer2D" parent="."]
+bus = "SFX"
+script = ExtResource( 4 )
+samples = [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ]
+random_strategy = 1
+random_volume_range = 10.0
+random_pitch_range = 0.5
+
+[node name="Amb" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -12.326
+autoplay = true
