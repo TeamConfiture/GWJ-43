@@ -99,5 +99,6 @@ func _process(delta: float) -> void:
 	anim_tree["parameters/conditions/is_jumping"] = want_jump
 	anim_tree["parameters/conditions/is_eating"] = want_eat
 	anim_tree["parameters/conditions/is_on_floor"] = is_on_floor
+	anim_tree["parameters/conditions/is_falling"] = is_falling
 	anim_tree["parameters/conditions/is_moving"] = is_on_floor and speed.x != 0
 	anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and speed.x == 0
