@@ -3,6 +3,12 @@ extends KinematicBody2D
 onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
 
+var normal_state_machine := preload("res://StateMachineNormal.tres")
+var leaf_state_machine := preload("res://StateMachineLeaf.tres")
+var magma_state_machine := preload("res://StateMachineMagma.tres")
+var water_state_machine := preload("res://StateMachineWater.tres")
+var mud_state_machine := preload("res://StateMachineMud.tres")
+
 const MulSpeed = 100
 const Normal_Move_Speed = 0.5
 const Normal_Stop_Speed = 0.3
@@ -95,6 +101,22 @@ func _process(delta: float) -> void:
 #		stop_speed = Steam_Stop_Speed
 
 	var is_on_floor = is_on_floor()
+	
+	if Input.is_action_just_pressed("test_normal"):
+		anim_tree.tree_root = normal_state_machine
+		
+	if Input.is_action_just_pressed("test_leaf"):
+		anim_tree.tree_root = leaf_state_machine
+		
+	if Input.is_action_just_pressed("test_magma"):
+		anim_tree.tree_root = magma_state_machine
+		
+	if Input.is_action_just_pressed("test_water"):
+		anim_tree.tree_root = water_state_machine
+		
+	if Input.is_action_just_pressed("test_mud"):
+		anim_tree.tree_root = mud_state_machine
+		
 
 	anim_tree["parameters/conditions/is_jumping"] = want_jump
 	anim_tree["parameters/conditions/is_eating"] = want_eat
