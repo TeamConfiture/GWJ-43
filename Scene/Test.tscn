@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scene/Tutorial.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Slime.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scene/Clover.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Art/water.tres" type="TileSet" id=4]
+[ext_resource path="res://Scene/Crow.tscn" type="PackedScene" id=5]
 
 [node name="Test" type="Node"]
 
 [node name="Clover" parent="." instance=ExtResource( 3 )]
+clover_type = "Blue"
 
 [node name="Clover2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 435, 186 )
@@ -30,3 +32,6 @@ tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0 )
+
+[node name="Crow" parent="." instance=ExtResource( 5 )]
+position = Vector2( 472, 194 )
