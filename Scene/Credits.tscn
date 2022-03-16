@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Art/Menu/Menu_BG.png" type="Texture" id=1]
+[ext_resource path="res://Script/Menu.gd" type="Script" id=2]
+[ext_resource path="res://Art/Menu/Button_back.png" type="Texture" id=3]
+[ext_resource path="res://Art/Menu/Button_back_pushed.png" type="Texture" id=4]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="bg" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="TextureButton" parent="."]
+margin_left = 362.0
+margin_top = 433.0
+margin_right = 662.0
+margin_bottom = 528.0
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

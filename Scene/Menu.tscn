@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Art/Menu/Menu_BG.png" type="Texture" id=1]
+[ext_resource path="res://Art/Menu/Button_Slime_normal.png" type="Texture" id=2]
+[ext_resource path="res://Art/Menu/Button_Slime_normal copy.png" type="Texture" id=3]
+[ext_resource path="res://Art/Menu/Button_quit.png" type="Texture" id=4]
+[ext_resource path="res://Art/Menu/Button_quit_pushed.png" type="Texture" id=5]
+[ext_resource path="res://Art/Menu/Button_credits.png" type="Texture" id=6]
+[ext_resource path="res://Art/Menu/Button_credits_pushed.png" type="Texture" id=7]
+[ext_resource path="res://Script/Menu.gd" type="Script" id=8]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="bg" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 362.0
+margin_top = 75.0
+margin_right = 662.0
+margin_bottom = 248.0
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="credits" type="TextureButton" parent="."]
+margin_left = 362.0
+margin_top = 300.0
+margin_right = 662.0
+margin_bottom = 395.0
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit" type="TextureButton" parent="."]
+margin_left = 362.0
+margin_top = 433.0
+margin_right = 662.0
+margin_bottom = 528.0
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
