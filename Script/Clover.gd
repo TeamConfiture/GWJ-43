@@ -13,3 +13,6 @@ func set_clover_type(s:String):
 	clover_type = s
 	if anim:
 		anim.animation = clover_type
+
+func _ready() -> void:
+	anim.animation = clover_type
