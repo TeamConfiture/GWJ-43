@@ -117,6 +117,7 @@ func _process(delta: float) -> void:
 	anim_tree["parameters/conditions/not_transform"] = not_transform
 	anim_tree["parameters/conditions/normal_to_steam"] = normal_to_steam
 
+#call from anim_player
 func _on_eat():
 	var areas = area.get_overlapping_areas()
 				

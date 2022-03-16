@@ -54,7 +54,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-clover_type = "Blue"
+clover_type = "Red"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 0.5 )
