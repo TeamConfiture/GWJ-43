@@ -1,7 +1,8 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://StateMachineNormal.tres" type="AnimationNodeStateMachine" id=3]
 
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 4.0
@@ -676,93 +677,6 @@ tracks/0/keys = {
 "values": [ 88, 92 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=297]
-animation = "normal_eating"
-
-[sub_resource type="AnimationNodeAnimation" id=291]
-animation = "normal_falling"
-
-[sub_resource type="AnimationNodeAnimation" id=285]
-animation = "normal_idle"
-
-[sub_resource type="AnimationNodeAnimation" id=289]
-animation = "normal_jumping"
-
-[sub_resource type="AnimationNodeAnimation" id=292]
-animation = "normal_landing"
-
-[sub_resource type="AnimationNodeAnimation" id=286]
-animation = "normal_walking"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=287]
-switch_mode = 2
-advance_condition = "is_not_moving"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=288]
-advance_condition = "is_moving"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=290]
-advance_condition = "is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=293]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=294]
-advance_condition = "is_on_floor"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=295]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=296]
-advance_condition = "is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=298]
-advance_condition = "is_eating"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=299]
-advance_condition = "is_eating"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=300]
-switch_mode = 2
-auto_advance = true
-advance_condition = "not_transform"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=301]
-advance_condition = "is_falling"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=302]
-advance_condition = "is_falling"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=303]
-advance_condition = "is_falling"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=309]
-switch_mode = 2
-advance_condition = "normal_to_steam"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=341]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachine" id=283]
-states/normal_eating/node = SubResource( 297 )
-states/normal_eating/position = Vector2( 750, 52 )
-states/normal_falling/node = SubResource( 291 )
-states/normal_falling/position = Vector2( 258, 341 )
-states/normal_idle/node = SubResource( 285 )
-states/normal_idle/position = Vector2( 456, 133 )
-states/normal_jumping/node = SubResource( 289 )
-states/normal_jumping/position = Vector2( 258, 226 )
-states/normal_landing/node = SubResource( 292 )
-states/normal_landing/position = Vector2( 523, 422 )
-states/normal_walking/node = SubResource( 286 )
-states/normal_walking/position = Vector2( 711, 308 )
-transitions = [ "normal_walking", "normal_idle", SubResource( 287 ), "normal_idle", "normal_walking", SubResource( 288 ), "normal_idle", "normal_jumping", SubResource( 290 ), "normal_landing", "normal_idle", SubResource( 293 ), "normal_falling", "normal_landing", SubResource( 294 ), "normal_jumping", "normal_falling", SubResource( 295 ), "normal_walking", "normal_jumping", SubResource( 296 ), "normal_idle", "normal_eating", SubResource( 298 ), "normal_walking", "normal_eating", SubResource( 299 ), "normal_eating", "normal_idle", SubResource( 300 ), "normal_idle", "normal_falling", SubResource( 301 ), "normal_walking", "normal_falling", SubResource( 302 ), "normal_eating", "normal_falling", SubResource( 303 ) ]
-start_node = "normal_idle"
-graph_offset = Vector2( -36, 116 )
-
 [sub_resource type="AnimationNodeStateMachinePlayback" id=284]
 
 [sub_resource type="CapsuleShape2D" id=340]
@@ -782,7 +696,6 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 35
-frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
@@ -829,7 +742,7 @@ anims/water_to_normal = SubResource( 339 )
 anims/water_walking = SubResource( 327 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 283 )
+tree_root = ExtResource( 3 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 284 )
@@ -839,8 +752,6 @@ parameters/conditions/is_jumping = false
 parameters/conditions/is_moving = false
 parameters/conditions/is_not_moving = false
 parameters/conditions/is_on_floor = false
-parameters/conditions/normal_to_steam = false
-parameters/conditions/not_transform = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
