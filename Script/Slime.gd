@@ -1,7 +1,9 @@
 extends KinematicBody2D
+class_name Slime
 
 onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
+onready var area = $Area2D
 
 const MulSpeed = 100
 const Normal_Move_Speed = 0.5
@@ -61,6 +63,11 @@ func _physics_process(delta: float) -> void:
 #				sprite.animation = "normal_falling"
 	
 	move_and_slide(speed * MulSpeed + Vector2(0, val), Vector2.UP)
+	
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.name == "Fleur":
+			print("Collided with: ", collision.collider.name)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -102,3 +109,10 @@ func _process(delta: float) -> void:
 	anim_tree["parameters/conditions/is_falling"] = is_falling
 	anim_tree["parameters/conditions/is_moving"] = is_on_floor and speed.x != 0
 	anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and speed.x == 0
+
+func _on_eat():
+	var areas = area.get_overlapping_areas()
+				
+	for _area in areas:
+		if _area.is_in_group("Clover"):
+			_area.queue_free()
