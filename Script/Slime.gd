@@ -37,6 +37,11 @@ var is_falling := true
 
 var want_eat := false
 
+var clovers = ["", ""]
+
+var not_transform := true
+var normal_to_steam := false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -109,11 +114,24 @@ func _process(delta: float) -> void:
 	anim_tree["parameters/conditions/is_falling"] = is_falling
 	anim_tree["parameters/conditions/is_moving"] = is_on_floor and speed.x != 0
 	anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and speed.x == 0
+	anim_tree["parameters/conditions/not_transform"] = not_transform
+	anim_tree["parameters/conditions/normal_to_steam"] = normal_to_steam
 
 func _on_eat():
 	var areas = area.get_overlapping_areas()
 				
 	for _area in areas:
 		if _area.is_in_group("Clover"):
-			print(_area.clover_type)
+			clovers[0] = clovers[1]
+			clovers[1] = _area.clover_type
+			
+			not_transform = true
+			normal_to_steam = false
+			
+			if clovers[0] == "Red" and clovers[1] == "Blue" \
+				or clovers[0] == "Blue" and clovers[1] == "Red":
+				state = State.steam
+				not_transform = false
+				normal_to_steam = true
+			
 			_area.queue_free()
