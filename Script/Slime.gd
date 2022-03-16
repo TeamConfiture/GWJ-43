@@ -115,4 +115,5 @@ func _on_eat():
 				
 	for _area in areas:
 		if _area.is_in_group("Clover"):
+			print(_area.clover_type)
 			_area.queue_free()

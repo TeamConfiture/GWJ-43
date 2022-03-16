@@ -213,7 +213,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 35
-frame = 4
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/normal_eating = SubResource( 276 )
