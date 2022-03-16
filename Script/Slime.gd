@@ -5,11 +5,11 @@ onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
 onready var area = $Area2D
 
-var normal_state_machine := preload("res://StateMachineNormal.tres")
-var leaf_state_machine := preload("res://StateMachineLeaf.tres")
-var magma_state_machine := preload("res://StateMachineMagma.tres")
-var water_state_machine := preload("res://StateMachineWater.tres")
-var mud_state_machine := preload("res://StateMachineMud.tres")
+var normal_state_machine := preload("res://Art/StateMachine/StateMachineNormal.tres")
+var leaf_state_machine := preload("res://Art/StateMachine/StateMachineLeaf.tres")
+var magma_state_machine := preload("res://Art/StateMachine/StateMachineMagma.tres")
+var water_state_machine := preload("res://Art/StateMachine/StateMachineWater.tres")
+var mud_state_machine := preload("res://Art/StateMachine/StateMachineMud.tres")
 
 const MulSpeed = 100
 const Normal_Move_Speed = 0.5
@@ -136,8 +136,6 @@ func _process(delta: float) -> void:
 	anim_tree["parameters/conditions/is_falling"] = is_falling
 	anim_tree["parameters/conditions/is_moving"] = is_on_floor and speed.x != 0
 	anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and speed.x == 0
-	anim_tree["parameters/conditions/not_transform"] = not_transform
-	anim_tree["parameters/conditions/normal_to_steam"] = normal_to_steam
 
 #call from anim_player
 func _on_eat():

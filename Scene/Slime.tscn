@@ -1,8 +1,8 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime-Sheet.png" type="Texture" id=2]
-[ext_resource path="res://StateMachineNormal.tres" type="AnimationNodeStateMachine" id=3]
+[ext_resource path="res://Art/StateMachine/StateMachineNormal.tres" type="AnimationNodeStateMachine" id=3]
 
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 4.0
@@ -696,6 +696,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 35
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
