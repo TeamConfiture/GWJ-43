@@ -60,7 +60,7 @@ BackgroundMusic="*res://Scene/Background_Music.tscn"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/randomAudioStreamPlayer/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/TwitchChat/plugin.cfg", "res://addons/randomAudioStreamPlayer/plugin.cfg" )
 
 [importer_defaults]
 

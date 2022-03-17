@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime-Sheet.png" type="Texture" id=2]
@@ -370,6 +370,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
+"update": 0,
 "values": [ 374, 382 ]
 }
 
@@ -385,6 +386,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
+"update": 0,
 "values": [ 99, 103 ]
 }
 
@@ -816,10 +818,8 @@ shape = SubResource( 340 )
 [node name="Character_Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 mix_target = 2
-bus = "SFX"
 
 [node name="Character_Landing" type="AudioStreamPlayer2D" parent="."]
-bus = "SFX"
 script = ExtResource( 4 )
 samples = [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ]
 random_strategy = 1
@@ -830,3 +830,5 @@ random_pitch_range = 0.5
 stream = ExtResource( 9 )
 volume_db = -12.326
 autoplay = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
