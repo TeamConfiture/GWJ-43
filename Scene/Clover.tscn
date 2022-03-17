@@ -14,13 +14,13 @@ region = Rect2( 96, 192, 32, 32 )
 atlas = ExtResource( 2 )
 region = Rect2( 64, 224, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 192, 32, 32 )
-
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
 region = Rect2( 96, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 192, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
@@ -34,19 +34,18 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ) ],
-"loop": true,
-"name": "Green",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "Yellow",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "Green",
+"speed": 5.0
 } ]
 
 [node name="Clover" type="Area2D" groups=["Clover"]]
-position = Vector2( 400, 218 )
 collision_layer = 2
 collision_mask = 2
 monitoring = false
@@ -63,4 +62,4 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -4 )
 frames = SubResource( 6 )
-animation = "Blue"
+animation = "Red"
