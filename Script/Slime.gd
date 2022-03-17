@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name Slime
 
+signal clover_eaten
+
 onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
 onready var area = $Area2D
@@ -138,13 +140,15 @@ func _process(delta: float) -> void:
 	anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and speed.x == 0
 
 #call from anim_player
-func _on_eat():
+func _on_eat() -> void:
 	var areas = area.get_overlapping_areas()
 				
 	for _area in areas:
 		if _area.is_in_group("Clover"):
 			clovers[0] = clovers[1]
 			clovers[1] = _area.clover_type
+			
+			emit_signal("clover_eaten", clovers)
 			
 			not_transform = true
 			normal_to_steam = false
