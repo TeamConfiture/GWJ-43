@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Art/Audio/Sound/Amb/Water_01.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Art/water.tres" type="TileSet" id=2]
+
+[node name="Water" type="TileMap"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="SD_Water" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 160, 213 )
+rotation = 3.14159
+stream = ExtResource( 1 )
+autoplay = true
+max_distance = 300.0
+attenuation = 1.8025
+bus = "SFX"
+
+[node name="SD_Water2" type="AudioStreamPlayer2D" parent="."]
+modulate = Color( 0.184314, 0.607843, 0.172549, 1 )
+self_modulate = Color( 0.207843, 0.682353, 0.180392, 1 )
+light_mask = 2
+position = Vector2( 319, 532 )
+rotation = 3.14159
+scale = Vector2( 1000, 50 )
+z_index = 10
+stream = ExtResource( 1 )
+autoplay = true
+max_distance = 5e+18
+attenuation = 1.31951
+bus = "SFX"
+area_mask = 2

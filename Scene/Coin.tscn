@@ -54,12 +54,14 @@ animations = [ {
 radius = 7.0
 
 [node name="Coin" type="Area2D" groups=["Coin"]]
+collision_layer = 2
+collision_mask = 2
 monitoring = false
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 11 )
 animation = "coin"
-frame = 4
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
