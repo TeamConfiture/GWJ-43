@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime-Sheet.png" type="Texture" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walking_01.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Art/Audio/Sound/Amb/Amb_Ext_01.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Art/StateMachine/StateMachineNormal.tres" type="AnimationNodeStateMachine" id=10]
+[ext_resource path="res://Art/StateMachine/StateMachineLeaf.tres" type="AnimationNodeStateMachine" id=11]
+[ext_resource path="res://Art/StateMachine/StateMachineMagma.tres" type="AnimationNodeStateMachine" id=12]
+[ext_resource path="res://Art/StateMachine/StateMachineMud.tres" type="AnimationNodeStateMachine" id=13]
+[ext_resource path="res://Art/StateMachine/StateMachineWater.tres" type="AnimationNodeStateMachine" id=14]
 
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 4.0
@@ -122,6 +126,32 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 341, 349 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_set_state"
+} ]
 }
 
 [sub_resource type="Animation" id=322]
@@ -248,6 +278,32 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 352, 360 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_set_state"
+} ]
+}
 
 [sub_resource type="Animation" id=323]
 resource_name = "magma_walking"
@@ -373,6 +429,32 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 374, 382 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_set_state"
+} ]
+}
 
 [sub_resource type="Animation" id=326]
 resource_name = "mud_walking"
@@ -388,6 +470,32 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 99, 103 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_set_state"
+} ]
 }
 
 [sub_resource type="Animation" id=276]
@@ -525,6 +633,32 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 231, 241 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 1 ],
+"method": "_set_state"
+} ]
+}
 
 [sub_resource type="Animation" id=329]
 resource_name = "normal_to_magma"
@@ -539,6 +673,32 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 242, 252 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 12 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 2 ],
+"method": "_set_state"
+} ]
 }
 
 [sub_resource type="Animation" id=330]
@@ -555,6 +715,32 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 264, 274 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 5 ],
+"method": "_set_state"
+} ]
+}
 
 [sub_resource type="Animation" id=331]
 resource_name = "normal_to_water"
@@ -569,6 +755,32 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 253, 263 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 14 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 4 ],
+"method": "_set_state"
+} ]
 }
 
 [sub_resource type="Animation" id=281]
@@ -709,6 +921,32 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 363, 371 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_set_state"
+} ]
+}
 
 [sub_resource type="Animation" id=327]
 resource_name = "water_walking"
@@ -745,6 +983,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 35
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )

@@ -6,6 +6,7 @@ signal coin_caught
 
 onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
+onready var anim_playback = anim_tree.get("parameters/playback")
 onready var area = $Area2D
 
 var normal_state_machine := preload("res://Art/StateMachine/StateMachineNormal.tres")
@@ -29,7 +30,7 @@ var speed:Vector2
 
 var want_jump := false
 
-enum State{normal = 0, steam}
+enum State{normal = 0, leaf, magma, water, mud}
 
 var state = State.normal
 
@@ -97,8 +98,20 @@ func _process(delta: float) -> void:
 			want_jump = Input.is_action_just_pressed("up")
 			
 			want_eat = Input.is_action_just_pressed("eat")
-		
-		State.steam:
+
+			if state != State.leaf and Input.is_action_just_pressed("test_leaf"):
+				anim_playback.travel("normal_to_leaf")
+
+			if state != State.magma and Input.is_action_just_pressed("test_magma"):
+				anim_playback.travel("normal_to_magma")
+
+			if state != State.water and Input.is_action_just_pressed("test_water"):
+				anim_playback.travel("normal_to_water")
+
+			if state != State.mud and Input.is_action_just_pressed("test_mud"):
+				anim_playback.travel("normal_to_mud")
+
+		State.water:
 			val -= -val_acc
 			
 			if val < val_max:
@@ -109,29 +122,11 @@ func _process(delta: float) -> void:
 			dir = dir.normalized()
 			
 			speed.y = get_speed(dir.y, speed.y)
-			
-#	if Input.is_action_just_pressed("ui_accept"):
-#		state = State.steam
-#
-#		stop_speed = Steam_Stop_Speed
 
 	var is_on_floor = is_on_floor()
 	
-	if Input.is_action_just_pressed("test_normal"):
-		anim_tree.tree_root = normal_state_machine
-		
-	if Input.is_action_just_pressed("test_leaf"):
-		anim_tree.tree_root = leaf_state_machine
-		
-	if Input.is_action_just_pressed("test_magma"):
-		anim_tree.tree_root = magma_state_machine
-		
-	if Input.is_action_just_pressed("test_water"):
-		anim_tree.tree_root = water_state_machine
-		
-	if Input.is_action_just_pressed("test_mud"):
-		anim_tree.tree_root = mud_state_machine
-		
+	if state != State.normal and Input.is_action_just_pressed("test_normal"):
+		anim_playback.travel("to_normal")
 
 	anim_tree["parameters/conditions/is_jumping"] = want_jump
 	anim_tree["parameters/conditions/is_eating"] = want_eat
@@ -156,11 +151,14 @@ func _on_eat() -> void:
 			
 			if clovers[0] == "Red" and clovers[1] == "Blue" \
 				or clovers[0] == "Blue" and clovers[1] == "Red":
-				state = State.steam
+				state = State.water
 				not_transform = false
 				normal_to_steam = true
 			
 			_area.queue_free()
+
+func _set_state(new_state:int):
+	state = new_state
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Coin"):
