@@ -13,6 +13,6 @@ func _ready():
 
 func _on_Balloon_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_doubleclick() :
-		$AudioStreamPlayer2D.play(0.0)
+		$Rnd_Plop.play(0.0)
 		$AnimatedSprite.speed_scale =2
 		$AnimatedSprite.play("Balloon")

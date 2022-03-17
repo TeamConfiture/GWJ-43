@@ -18,5 +18,5 @@ func set_crow_dir(crow_dir:String):
 
 func _on_Crow_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_doubleclick() :
-		$AudioStreamPlayer2D.play(0.0)
+		$Rnd_Crow.play(0.0)
 		

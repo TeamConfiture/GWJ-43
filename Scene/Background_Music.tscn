@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Art/Audio/Music/BGM Test/test_02.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Art/Audio/Sound/Amb/Amb_Ext_01.ogg" type="AudioStream" id=2]
 
 [node name="Background" type="AudioStreamPlayer"]
+autoplay = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 volume_db = -18.0
 autoplay = true
-bus = "Musics"
+bus = "Music"
+
+[node name="Ambiant" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -12.0
+autoplay = true
+bus = "Amb"
