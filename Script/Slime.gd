@@ -2,6 +2,7 @@ extends KinematicBody2D
 class_name Slime
 
 signal clover_eaten
+signal coin_caught
 
 onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
@@ -160,3 +161,8 @@ func _on_eat() -> void:
 				normal_to_steam = true
 			
 			_area.queue_free()
+
+func _on_Area2D_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Coin"):
+		emit_signal("coin_caught")
+		area.queue_free()
