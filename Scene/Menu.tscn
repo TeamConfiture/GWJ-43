@@ -85,6 +85,7 @@ stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
