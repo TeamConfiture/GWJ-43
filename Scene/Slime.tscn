@@ -997,7 +997,6 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 35
-frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
@@ -1058,6 +1057,8 @@ parameters/conditions/is_on_floor = false
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.25, 0.25 )
+limit_left = 0
+limit_top = 0
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

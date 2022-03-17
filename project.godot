@@ -33,6 +33,10 @@ output_latency=128
 
 BackgroundMusic="*res://Scene/Background_Music.tscn"
 
+[display]
+
+window/size/height=768
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/randomAudioStreamPlayer/plugin.cfg" )
