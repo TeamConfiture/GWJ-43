@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Water_01.ogg-2a14f411127d5166c09a305e5753291c.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Amb/Water_01.ogg"
+dest_files=[ "res://.import/Water_01.ogg-2a14f411127d5166c09a305e5753291c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
