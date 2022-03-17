@@ -8,7 +8,7 @@ export(String, "Droite", "Gauche" ) var crow_dir setget set_crow_dir
 
 onready var anim = $AnimatedSprite
 
-func set_crow_dir(crow_dir:String):
+func set_crow_dir(crow_dir):
 	
 	if crow_dir == "Gauche":
 		$AnimatedSprite.flip_h =false
