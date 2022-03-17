@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/clover_red.png-c377813d1ea7f17da16959be506f068a.stex"
+path="res://.import/HUD_ELEMENTS_hud_2_2.png-bdf6115c98114689e42abb52ce7a1133.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/HUD/clover_red.png"
-dest_files=[ "res://.import/clover_red.png-c377813d1ea7f17da16959be506f068a.stex" ]
+source_file="res://Art/HUD/HUD_ELEMENTS_hud_2_2.png"
+dest_files=[ "res://.import/HUD_ELEMENTS_hud_2_2.png-bdf6115c98114689e42abb52ce7a1133.stex" ]
 
 [params]
 

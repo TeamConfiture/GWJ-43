@@ -1,14 +1,13 @@
 extends CanvasLayer
 
-onready var coin_icon := $VBoxContainer/HBoxCoins/CoinIcon
-onready var coin_label := $VBoxContainer/HBoxCoins/CoinLabel
-onready var clover_1 := $VBoxContainer/HBoxClovers/Clover1
-onready var clover_2 := $VBoxContainer/HBoxClovers/Clover2
+onready var coin_label := $HBoxCoins/CoinLabel
+onready var clover_1 := $HBoxClovers/Clover1
+onready var clover_2 := $HBoxClovers/Clover2
 
-var clover_green : Texture = preload("res://Art/HUD/clover_green.png")
-var clover_red : Texture = preload("res://Art/HUD/clover_red.png")
-var clover_blue : Texture = preload("res://Art/HUD/clover_blue.png")
-var clover_yellow : Texture = preload("res://Art/HUD/clover_yellow.png")
+var clover_green : Texture = preload("res://Art/HUD/clovers/clover_green.png")
+var clover_red : Texture = preload("res://Art/HUD/clovers/clover_red.png")
+var clover_blue : Texture = preload("res://Art/HUD/clovers/clover_blue.png")
+var clover_yellow : Texture = preload("res://Art/HUD/clovers/clover_yellow.png")
 
 var coins : int = 0 setget set_coin
 
