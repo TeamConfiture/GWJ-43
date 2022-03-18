@@ -20,7 +20,7 @@ const Normal_Move_Speed = 0.5
 const Normal_Stop_Speed = 0.3
 const Steam_Stop_Speed = 0.02
 const Grav = 0.0981
-const Jump_Acc = 2.5
+const Jump_Acc = 3
 
 var linear_vel:Vector2
 

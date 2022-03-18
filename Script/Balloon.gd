@@ -16,3 +16,4 @@ func _on_Balloon_input_event(viewport, event, shape_idx):
 		$Rnd_Plop.play(0.0)
 		$AnimatedSprite.speed_scale =2
 		$AnimatedSprite.play("Balloon")
+		$CollisionShape2D.disabled = true
