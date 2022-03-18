@@ -61,8 +61,10 @@ monitoring = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 11 )
 animation = "coin"
-frame = 6
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 12 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

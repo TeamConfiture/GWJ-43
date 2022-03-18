@@ -9,18 +9,9 @@ onready var anim_tree = $AnimationTree
 onready var anim_playback = anim_tree.get("parameters/playback")
 onready var area = $Area2D
 
-var normal_state_machine := preload("res://Art/StateMachine/StateMachineNormal.tres")
-var leaf_state_machine := preload("res://Art/StateMachine/StateMachineLeaf.tres")
-var magma_state_machine := preload("res://Art/StateMachine/StateMachineMagma.tres")
-var water_state_machine := preload("res://Art/StateMachine/StateMachineWater.tres")
-var mud_state_machine := preload("res://Art/StateMachine/StateMachineMud.tres")
-
 const MulSpeed = 100
-const Normal_Move_Speed = 0.5
-const Normal_Stop_Speed = 0.3
 const Steam_Stop_Speed = 0.02
 const Grav = 0.0981
-const Jump_Acc = 3
 
 var linear_vel:Vector2
 
@@ -28,15 +19,15 @@ var dir:Vector2
 
 var speed:Vector2
 
-var want_jump := false
-
 enum State{normal = 0, leaf, magma, water, mud}
+
+onready var state_dic = {State.normal:$Normal, State.leaf:$Leaf}
 
 var state = State.normal
 
-var move_speed = Normal_Move_Speed
+var move_speed:float
 
-var stop_speed = Normal_Stop_Speed
+var stop_speed:float
 
 var val = 0
 var val_max = -15
@@ -52,37 +43,32 @@ var clovers = ["", ""]
 var not_transform := true
 var normal_to_steam := false
 
+func _set_state(new_state:int):
+	state_dic[state].state_enabled(false)
+	
+	state = new_state
+	
+	var node_state = state_dic[state]
+	
+	move_speed = node_state.Move_Speed
+	stop_speed = node_state.Stop_Speed
+	
+	node_state.state_enabled(true)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var node_state = state_dic[State.normal]
 	
+	move_speed = node_state.Move_Speed
+	stop_speed = node_state.Stop_Speed
+	
+	node_state.state_enabled(true)
 	pass # Replace with function body.
 
 func get_speed(_dir:float, _speed:float) -> float:
 	if _dir != 0:
 		return clamp(_speed+_dir*move_speed, -1, 1)
 	return sign(_speed)*clamp(abs(_speed)-stop_speed, 0, 1)
-
-func _physics_process(delta: float) -> void:
-	match(state):
-		State.normal:
-			if is_on_floor():
-				speed.y = Grav
-				if is_falling:
-					is_falling = false
-				if want_jump:
-					speed.y -= Jump_Acc
-			else:
-				if !is_falling:
-					is_falling = true
-				speed.y += Grav
-#				sprite.animation = "normal_falling"
-	
-	move_and_slide(speed * MulSpeed + Vector2(0, val), Vector2.UP)
-	
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		if collision.collider.name == "Fleur":
-			print("Collided with: ", collision.collider.name)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -93,24 +79,9 @@ func _process(delta: float) -> void:
 		sprite.flip_h = false
 	speed.x = get_speed(dir.x, speed.x)
 	
+	
+	
 	match(state):
-		State.normal:
-			want_jump = Input.is_action_just_pressed("up")
-			
-			want_eat = Input.is_action_just_pressed("eat")
-
-			if state != State.leaf and Input.is_action_just_pressed("test_leaf"):
-				anim_playback.travel("normal_to_leaf")
-
-			if state != State.magma and Input.is_action_just_pressed("test_magma"):
-				anim_playback.travel("normal_to_magma")
-
-			if state != State.water and Input.is_action_just_pressed("test_water"):
-				anim_playback.travel("normal_to_water")
-
-			if state != State.mud and Input.is_action_just_pressed("test_mud"):
-				anim_playback.travel("normal_to_mud")
-
 		State.water:
 			val -= -val_acc
 			
@@ -125,13 +96,7 @@ func _process(delta: float) -> void:
 
 	var is_on_floor = is_on_floor()
 	
-	if state != State.normal and Input.is_action_just_pressed("test_normal"):
-		anim_playback.travel("to_normal")
-
-	anim_tree["parameters/conditions/is_jumping"] = want_jump
 	anim_tree["parameters/conditions/is_eating"] = want_eat
-	anim_tree["parameters/conditions/is_on_floor"] = is_on_floor
-	anim_tree["parameters/conditions/is_falling"] = is_falling
 	anim_tree["parameters/conditions/is_moving"] = is_on_floor and speed.x != 0
 	anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and speed.x == 0
 
@@ -156,9 +121,6 @@ func _on_eat() -> void:
 				normal_to_steam = true
 			
 			_area.queue_free()
-
-func _set_state(new_state:int):
-	state = new_state
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Coin"):
