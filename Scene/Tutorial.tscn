@@ -7,10 +7,11 @@
 [ext_resource path="res://Scene/Clover.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scene/Balloon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scene/Coin.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Art/Audio/Sound/Amb/Water_01.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Art/Audio/Sound/Amb/Water/Water_01.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Art/Parallax/background.png" type="Texture" id=9]
 [ext_resource path="res://Script/Cloud.gd" type="Script" id=10]
 [ext_resource path="res://Scene/HeavyButton.tscn" type="PackedScene" id=11]
+
 
 [sub_resource type="RectangleShape2D" id=91]
 extents = Vector2( 84.5, 22 )
