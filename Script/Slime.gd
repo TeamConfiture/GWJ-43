@@ -21,7 +21,7 @@ var speed:Vector2
 
 enum State{normal = 0, leaf, magma, water, mud}
 
-onready var state_dic = {State.normal:$Normal, State.leaf:$Leaf}
+onready var state_dic = {State.normal:$Normal, State.leaf:$Leaf, State.magma:$Rock}
 
 var state = State.normal
 
@@ -46,14 +46,15 @@ var normal_to_steam := false
 func _set_state(new_state:int):
 	state_dic[state].state_enabled(false)
 	
-	state = new_state
-	
-	var node_state = state_dic[state]
-	
-	move_speed = node_state.Move_Speed
-	stop_speed = node_state.Stop_Speed
-	
-	node_state.state_enabled(true)
+	if state_dic.has(new_state):
+		state = new_state
+		
+		var node_state = state_dic[state]
+		
+		move_speed = node_state.Move_Speed
+		stop_speed = node_state.Stop_Speed
+		
+		node_state.state_enabled(true)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
