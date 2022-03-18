@@ -11,7 +11,9 @@ script = ExtResource( 6 )
 [node name="lvl" parent="." instance=ExtResource( 1 )]
 
 [node name="Slime" parent="." instance=ExtResource( 2 )]
-position = Vector2( 264, 195 )
+position = Vector2( 761, 893 )
+z_index = -1
+z_as_relative = false
 
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 
