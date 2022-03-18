@@ -1,7 +1,7 @@
 [gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
-[ext_resource path="res://Art/Slime-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Art/Audio/Sound/Character/Jump_01.ogg" type="AudioStream" id=3]
 [ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player_2D.gd" type="Script" id=4]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_3.ogg" type="AudioStream" id=5]
@@ -43,12 +43,13 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 176, 183 ]
+"values": [ 275, 282 ]
 }
 
 [sub_resource type="Animation" id=308]
 resource_name = "leaf_falling"
-length = 0.25
+length = 0.5
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -58,8 +59,24 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 187, 188 ]
+}
+
+[sub_resource type="Animation" id=316]
+resource_name = "leaf_hook"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 126, 127 ]
+"values": [ 121, 125 ]
 }
 
 [sub_resource type="Animation" id=312]
@@ -75,23 +92,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 11, 16 ]
-}
-
-[sub_resource type="Animation" id=316]
-resource_name = "leaf_jumping"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 121, 125 ]
+"values": [ 22, 30 ]
 }
 
 [sub_resource type="Animation" id=320]
@@ -107,7 +108,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 128, 129 ]
+"values": [ 231, 232 ]
 }
 
 [sub_resource type="Animation" id=332]
@@ -137,7 +138,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 341, 349 ]
+"values": [ 374, 382 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimationTree:tree_root")
@@ -179,7 +180,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 66, 70 ]
+"values": [ 77, 81 ]
 }
 
 [sub_resource type="Animation" id=305]
@@ -522,7 +523,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 165, 172 ]
+"values": [ 253, 260 ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -566,7 +567,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 115, 116 ]
+"values": [ 165, 166 ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath("Character_Fall")
@@ -612,7 +613,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 110, 114 ]
+"values": [ 132, 136 ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath("Character_Jump")
@@ -642,7 +643,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 117, 118 ]
+"values": [ 209, 210 ]
 }
 tracks/1/type = "audio"
 tracks/1/path = NodePath("Character_Landing")
@@ -685,7 +686,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 231, 241 ]
+"values": [ 319, 329 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimationTree:tree_root")
@@ -1215,14 +1216,14 @@ shape = SubResource( 10 )
 position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
-vframes = 35
-frame = 3
+vframes = 41
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
 anims/leaf_falling = SubResource( 308 )
+anims/leaf_hook = SubResource( 316 )
 anims/leaf_idle = SubResource( 312 )
-anims/leaf_jumping = SubResource( 316 )
 anims/leaf_landing = SubResource( 320 )
 anims/leaf_to_cauldron = SubResource( 332 )
 anims/leaf_to_normal = SubResource( 336 )
@@ -1290,6 +1291,9 @@ rotation = 1.5708
 shape = SubResource( 340 )
 
 [node name="Character_Landing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+volume_db = 1.15166
+pitch_scale = 0.810262
 bus = "SFX"
 script = ExtResource( 4 )
 samples = [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ]
@@ -1308,6 +1312,8 @@ random_strategy = 1
 random_pitch_range = 1.0
 
 [node name="Character_Eat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+pitch_scale = 0.877759
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )

@@ -87,3 +87,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("test_normal"):
 		hook.hook_enabled(false)
 		parent.anim_playback.travel("to_normal")
+	
+	var is_on_floor = parent.is_on_floor()
+	var is_hooking = state == State.hook
+	
+	parent.anim_tree["parameters/conditions/is_hooking"] = is_hooking
+	parent.anim_tree["parameters/conditions/is_on_floor"] = is_on_floor and !is_hooking
+	parent.anim_tree["parameters/conditions/is_falling"] = !is_on_floor and !is_hooking
