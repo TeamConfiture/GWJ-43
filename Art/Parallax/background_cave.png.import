@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background.png-c318eec6061cc6639c34dd87384e5448.stex"
+path="res://.import/background_cave.png-2dba2fe50ba8bac77fa68796953deefa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Parallax/background.png"
-dest_files=[ "res://.import/background.png-c318eec6061cc6639c34dd87384e5448.stex" ]
+source_file="res://Art/Parallax/background_cave.png"
+dest_files=[ "res://.import/background_cave.png-2dba2fe50ba8bac77fa68796953deefa.stex" ]
 
 [params]
 
