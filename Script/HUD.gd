@@ -1,9 +1,8 @@
 extends CanvasLayer
 
-onready var coin_icon := $VBoxContainer/HBoxCoins/CoinIcon
-onready var coin_label := $VBoxContainer/HBoxCoins/CoinLabel
-onready var clover_1 := $VBoxContainer/HBoxClovers/Clover1
-onready var clover_2 := $VBoxContainer/HBoxClovers/Clover2
+onready var coin_label := $HBoxCoins/CoinLabel
+onready var clover_1 := $HBoxClovers/Clover1
+onready var clover_2 := $HBoxClovers/Clover2
 
 var textures = {
 	"Green": preload("res://Art/HUD/clover_green.png"),

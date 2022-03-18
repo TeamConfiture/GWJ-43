@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/clover_green.png-f6fcea1d175fed8b53f495046136a1f6.stex"
+path="res://.import/coin_icon_5.png-7e940fa20322c72c51e4e9137f3c524a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/HUD/clover_green.png"
-dest_files=[ "res://.import/clover_green.png-f6fcea1d175fed8b53f495046136a1f6.stex" ]
+source_file="res://Art/HUD/coin_icon/coin_icon_5.png"
+dest_files=[ "res://.import/coin_icon_5.png-7e940fa20322c72c51e4e9137f3c524a.stex" ]
 
 [params]
 
