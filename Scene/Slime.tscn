@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime-Sheet.png" type="Texture" id=2]
@@ -989,6 +989,162 @@ tracks/0/keys = {
 radius = 4.0
 height = 6.0
 
+[sub_resource type="Animation" id=341]
+resource_name = "Hook_Left"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Raycast2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -225.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -16, -16 ) ]
+}
+
+[sub_resource type="Animation" id=344]
+resource_name = "Hook_Right"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Raycast2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -135.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 16, -16 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=342]
+resource_name = "Hook_Up"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Raycast2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -180.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -22 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -45.0 ]
+}
+
+[sub_resource type="Animation" id=343]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Raycast2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -225.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -16, -16 ) ]
+}
+
 [node name="Slime" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -1008,7 +1164,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 35
-frame = 1
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
@@ -1103,7 +1259,7 @@ z_index = -1
 script = ExtResource( 16 )
 
 [node name="Raycast2D" type="RayCast2D" parent="Hook"]
-rotation = -2.35619
+rotation = -3.92699
 enabled = true
 cast_to = Vector2( 0, 125 )
 
@@ -1117,10 +1273,16 @@ texture_mode = 1
 
 [node name="Sprite" type="Sprite" parent="Hook"]
 visible = false
-position = Vector2( 0, -23 )
-rotation = -0.785398
+position = Vector2( -16, -16 )
+rotation = -1.5708
 texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 16, 16, 16 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hook"]
+anims/Hook_Left = SubResource( 341 )
+anims/Hook_Right = SubResource( 344 )
+anims/Hook_Up = SubResource( 342 )
+anims/RESET = SubResource( 343 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

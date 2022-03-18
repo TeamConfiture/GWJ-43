@@ -79,7 +79,7 @@ func _process(delta: float) -> void:
 		sprite.flip_h = false
 	speed.x = get_speed(dir.x, speed.x)
 	
-	want_eat = Input.is_action_just_pressed("eat")
+	
 	
 	match(state):
 		State.water:

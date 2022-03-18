@@ -1,9 +1,12 @@
 extends Node2D
 
+const rot_ray = [-225, -180, -145]
+
 onready var raycast := $Raycast2D
 onready var sprite := $Sprite
 onready var line := $Line2D
 onready var parent := get_parent()
+onready var anim_player = $AnimationPlayer
 
 var hook_origin:Vector2
 
@@ -17,6 +20,24 @@ func _ready() -> void:
 
 func hook_enabled(b:bool):
 	sprite.visible = b
+	
+	if !b:
+		line.visible = false
+		set_process(false)
+
+func set_left():
+	anim_player.play("Hook_Left")
+	
+func set_up():
+	anim_player.play("Hook_Up")
+	
+func set_right():
+	anim_player.play("Hook_Right")
+
+func hook_reset():
+	set_up()
+	line.visible = false
+	set_process(false)
 
 func launch() -> bool:
 	raycast.enabled = true

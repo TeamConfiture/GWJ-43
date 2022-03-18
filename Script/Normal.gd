@@ -19,6 +19,8 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	want_jump = Input.is_action_just_pressed("up")
 	
+	parent.want_eat = Input.is_action_just_pressed("eat")
+	
 	if parent.state != parent.State.leaf and Input.is_action_just_pressed("test_leaf"):
 		parent.anim_playback.travel("normal_to_leaf")
 
