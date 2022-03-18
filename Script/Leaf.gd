@@ -30,11 +30,11 @@ func _physics_process(delta: float) -> void:
 			
 			var vert = parent.global_position - hook.hook_origin
 			
-			var vert_rot = vert.rotated(parent.speed.x * 2)
+			var vert_rot = vert.rotated(parent.speed.x * 2 * delta)
 			
 			var bleu = vert_rot - vert
 			
-			parent.position += bleu * delta
+#			parent.position += (bleu / delta) * delta
 			
 #			var bleu = hook.hook_origin + (parent.global_position - hook.hook_origin).rotated(0) - parent.global_position
 #
@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 #
 #			prints("Leaf", vert)
 #
-#			parent.move_and_slide(bleu, Vector2.UP)
+			parent.move_and_slide(bleu / delta, Vector2.UP)
 			pass
 
 func _process(delta: float) -> void:
