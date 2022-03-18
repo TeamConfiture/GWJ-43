@@ -57,11 +57,12 @@ radius = 7.0
 collision_layer = 2
 collision_mask = 2
 monitoring = false
+audio_bus_name = "SFX"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 11 )
 animation = "coin"
-frame = 6
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

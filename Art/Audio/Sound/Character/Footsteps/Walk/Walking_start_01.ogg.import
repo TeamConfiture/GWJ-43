@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Walking_start_01.ogg-94c577b7fe247193c59e7312e452145c.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Character/Footsteps/Walk/Walking_start_01.ogg"
+dest_files=[ "res://.import/Walking_start_01.ogg-94c577b7fe247193c59e7312e452145c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

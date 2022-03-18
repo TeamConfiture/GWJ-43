@@ -162,5 +162,6 @@ func _set_state(new_state:int):
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Coin"):
+		$Collect.play(0.0)
 		emit_signal("coin_caught")
 		area.queue_free()
