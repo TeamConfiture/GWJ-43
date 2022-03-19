@@ -4,7 +4,6 @@ onready var hud := $HUD
 
 var coins := 0
 
-
 func _on_Slime_clover_eaten(clovers: PoolStringArray) -> void:
 	hud.update_clovers(clovers)
 
