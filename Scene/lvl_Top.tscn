@@ -1,5 +1,6 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=85 format=2]
 
+[ext_resource path="res://Script/lvl_Top.gd" type="Script" id=1]
 [ext_resource path="res://Art/33.png" type="Texture" id=3]
 [ext_resource path="res://Art/element.png" type="Texture" id=4]
 [ext_resource path="res://Art/water.tres" type="TileSet" id=5]
@@ -1043,7 +1044,11 @@ points = PoolVector2Array( 32, 0, 32, 8, 30, 16, 30, 32, 0, 32, 0, 0 )
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=91]
+extents = Vector2( 18.85, 7.69 )
+
 [node name="lvl_Top" type="Node2D"]
+script = ExtResource( 1 )
 
 [node name="TileMap_element" type="TileMap" parent="."]
 z_index = -10
@@ -1113,3 +1118,22 @@ position = Vector2( 111, 247 )
 
 [node name="Coin5" parent="." instance=ExtResource( 7 )]
 position = Vector2( 685, 19 )
+
+[node name="PlayerDetectorAMBForest" type="Area2D" parent="."]
+
+[node name="ZoneForestAMB" type="CollisionShape2D" parent="PlayerDetectorAMBForest"]
+position = Vector2( 946.5, 388.5 )
+scale = Vector2( 50, 50 )
+shape = SubResource( 91 )
+
+[node name="PlayerDetectorAMBCavern" type="Area2D" parent="."]
+
+[node name="ZoneCavernAMB" type="CollisionShape2D" parent="PlayerDetectorAMBCavern"]
+position = Vector2( 946, 1168 )
+scale = Vector2( 50, 50 )
+shape = SubResource( 91 )
+
+[connection signal="body_entered" from="PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_entered"]
+[connection signal="body_exited" from="PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_exited"]
+[connection signal="body_entered" from="PlayerDetectorAMBCavern" to="." method="_on_PlayerDetectorAMBCavern_body_entered"]
+[connection signal="body_exited" from="PlayerDetectorAMBCavern" to="." method="_on_PlayerDetectorAMBCavern_body_exited"]
