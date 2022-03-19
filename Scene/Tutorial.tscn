@@ -387,10 +387,7 @@ texture = ExtResource( 11 )
 position = Vector2( 0, 768 )
 
 [node name="HeavyButton" parent="." groups=["HeavyButton"] instance=ExtResource( 14 )]
-position = Vector2( 221.225, 207.913 )
-
-[node name="StaticBody2D" parent="HeavyButton" instance=ExtResource( 14 )]
-position = Vector2( -77.7487, 159.786 )
+position = Vector2( 144, 384 )
 
 [node name="Position sound" type="Position2D" parent="."]
 
