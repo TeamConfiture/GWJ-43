@@ -24,8 +24,8 @@ func _process(delta: float) -> void:
 	if parent.state != parent.State.leaf and Input.is_action_just_pressed("test_leaf"):
 		parent.anim_playback.travel("normal_to_leaf")
 
-	if parent.state != parent.State.magma and Input.is_action_just_pressed("test_magma"):
-		parent.anim_playback.travel("normal_to_magma")
+	if parent.state != parent.State.rock and Input.is_action_just_pressed("test_magma"):
+		parent.anim_playback.travel("normal_to_rock")
 
 	if parent.state != parent.State.water and Input.is_action_just_pressed("test_water"):
 		parent.anim_playback.travel("normal_to_water")

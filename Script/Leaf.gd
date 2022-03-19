@@ -86,7 +86,7 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("test_normal"):
 		hook.hook_enabled(false)
-		parent.anim_playback.travel("to_normal")
+		parent.anim_playback.travel("spitting")
 	
 	var is_on_floor = parent.is_on_floor()
 	var is_hooking = state == State.hook

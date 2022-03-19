@@ -18,11 +18,11 @@ animation = "normal_landing"
 [sub_resource type="AnimationNodeAnimation" id=304]
 animation = "normal_to_leaf"
 
-[sub_resource type="AnimationNodeAnimation" id=308]
-animation = "normal_to_magma"
-
 [sub_resource type="AnimationNodeAnimation" id=310]
 animation = "normal_to_mud"
+
+[sub_resource type="AnimationNodeAnimation" id=308]
+animation = "normal_to_rock"
 
 [sub_resource type="AnimationNodeAnimation" id=311]
 animation = "normal_to_water"
@@ -98,14 +98,14 @@ states/landing/node = SubResource( 292 )
 states/landing/position = Vector2( 470, 378 )
 states/normal_to_leaf/node = SubResource( 304 )
 states/normal_to_leaf/position = Vector2( 777, 16 )
-states/normal_to_magma/node = SubResource( 308 )
-states/normal_to_magma/position = Vector2( 887, 79 )
 states/normal_to_mud/node = SubResource( 310 )
 states/normal_to_mud/position = Vector2( 977, 247 )
+states/normal_to_rock/node = SubResource( 308 )
+states/normal_to_rock/position = Vector2( 887, 79 )
 states/normal_to_water/node = SubResource( 311 )
 states/normal_to_water/position = Vector2( 988, 147 )
 states/walking/node = SubResource( 286 )
 states/walking/position = Vector2( 705, 293 )
-transitions = [ "walking", "idle", SubResource( 287 ), "idle", "walking", SubResource( 288 ), "idle", "jumping", SubResource( 290 ), "landing", "idle", SubResource( 293 ), "falling", "landing", SubResource( 294 ), "jumping", "falling", SubResource( 295 ), "walking", "jumping", SubResource( 296 ), "idle", "eating", SubResource( 298 ), "walking", "eating", SubResource( 299 ), "eating", "idle", SubResource( 300 ), "idle", "falling", SubResource( 301 ), "walking", "falling", SubResource( 302 ), "eating", "falling", SubResource( 303 ), "eating", "normal_to_leaf", SubResource( 305 ), "eating", "normal_to_magma", SubResource( 309 ), "eating", "normal_to_water", SubResource( 312 ), "eating", "normal_to_mud", SubResource( 313 ) ]
+transitions = [ "walking", "idle", SubResource( 287 ), "idle", "walking", SubResource( 288 ), "idle", "jumping", SubResource( 290 ), "landing", "idle", SubResource( 293 ), "falling", "landing", SubResource( 294 ), "jumping", "falling", SubResource( 295 ), "walking", "jumping", SubResource( 296 ), "idle", "eating", SubResource( 298 ), "walking", "eating", SubResource( 299 ), "eating", "idle", SubResource( 300 ), "idle", "falling", SubResource( 301 ), "walking", "falling", SubResource( 302 ), "eating", "falling", SubResource( 303 ), "eating", "normal_to_leaf", SubResource( 305 ), "eating", "normal_to_rock", SubResource( 309 ), "eating", "normal_to_water", SubResource( 312 ), "eating", "normal_to_mud", SubResource( 313 ) ]
 start_node = "idle"
-graph_offset = Vector2( 193, -50 )
+graph_offset = Vector2( 31, -45 )

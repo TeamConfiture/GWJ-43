@@ -19,9 +19,9 @@ var dir:Vector2
 
 var speed:Vector2
 
-enum State{normal = 0, leaf, magma, water, mud}
+enum State{normal = 0, leaf, rock, water, mud}
 
-onready var state_dic = {State.normal:$Normal, State.leaf:$Leaf, State.magma:$Rock}
+onready var state_dic = {State.normal:$Normal, State.leaf:$Leaf, State.rock:$Rock}
 
 var state = State.normal
 

@@ -13,4 +13,9 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("test_normal"):
-		parent.anim_playback.travel("to_normal")
+		parent.anim_playback.travel("spitting")
+
+	var is_on_floor = parent.is_on_floor()
+	
+	parent.anim_tree["parameters/conditions/is_on_floor"] = is_on_floor
+	parent.anim_tree["parameters/conditions/is_falling"] = !is_on_floor
