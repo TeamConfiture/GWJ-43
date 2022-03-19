@@ -36,6 +36,7 @@ var want_eat := false
 var clovers = ["", ""]
 
 var not_transform := true
+var normal_to_leaf := false
 var normal_to_mud := false
 var normal_to_rock := false
 var normal_to_steam := false
@@ -55,13 +56,7 @@ func _set_state(new_state:int):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var node_state = state_dic[State.normal]
-	
-	move_speed = node_state.Move_Speed
-	stop_speed = node_state.Stop_Speed
-	
-	node_state.state_enabled(true)
-	pass # Replace with function body.
+	_set_state(State.normal)
 
 func get_speed(_dir:float, _speed:float) -> float:
 	if _dir != 0:
@@ -82,7 +77,7 @@ func _process(delta: float) -> void:
 #call from anim_player
 func _on_eat() -> void:
 	var areas = area.get_overlapping_areas()
-				
+	
 	for _area in areas:
 		if _area.is_in_group("Clover"):
 			clovers[0] = clovers[1]
@@ -95,38 +90,39 @@ func _on_eat() -> void:
 			normal_to_rock = false
 			normal_to_steam = false
 			
+			# Green + Blue = Leaf
+			if clovers[0] == "Green" and clovers[1] == "Blue" \
+				or clovers[0] == "Blue" and clovers[1] == "Green":
+				not_transform = false
+				normal_to_leaf = true
+			
 			# Red + Blue = Steam
 			if clovers[0] == "Red" and clovers[1] == "Blue" \
 				or clovers[0] == "Blue" and clovers[1] == "Red":
-				state = State.steam
 				not_transform = false
 				normal_to_steam = true
 			
 			# Red + Green = Steam
 			if clovers[0] == "Red" and clovers[1] == "Green" \
 				or clovers[0] == "Green" and clovers[1] == "Red":
-				state = State.steam
 				not_transform = false
 				normal_to_steam = true
 			
 			# Red + Yellow = Rock
 			if clovers[0] == "Red" and clovers[1] == "Yellow" \
 				or clovers[0] == "Yellow" and clovers[1] == "Red":
-				state = State.rock
 				not_transform = false
-				#normal_to_rock = true
+				normal_to_rock = true
 			
 			# Green + Yellow = Rock
 			if clovers[0] == "Green" and clovers[1] == "Yellow" \
 				or clovers[0] == "Yellow" and clovers[1] == "Green":
-				state = State.rock
 				not_transform = false
-				#normal_to_rock = true
+				normal_to_rock = true
 			
 			# Yellow + Blue = Mud
 			if clovers[0] == "Yellow" and clovers[1] == "Blue" \
 				or clovers[0] == "Blue" and clovers[1] == "Yellow":
-				state = State.mud
 				not_transform = false
 				normal_to_mud = true
 			
