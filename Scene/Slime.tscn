@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player.gd" type="Script" id=24]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Walking_Land_01.ogg" type="AudioStream" id=25]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Falling_01.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Script/Mud.gd" type="Script" id=27]
 
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 4.0
@@ -226,12 +227,13 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 209, 216 ]
+"values": [ 264, 271 ]
 }
 
 [sub_resource type="Animation" id=310]
 resource_name = "mud_falling"
-length = 0.25
+length = 0.5
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -241,8 +243,8 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 159, 160 ]
+"update": 1,
+"values": [ 176, 177 ]
 }
 
 [sub_resource type="Animation" id=315]
@@ -258,7 +260,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 44, 49 ]
+"values": [ 11, 19 ]
 }
 
 [sub_resource type="Animation" id=319]
@@ -290,7 +292,48 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 161, 162 ]
+"values": [ 220, 221 ]
+}
+
+[sub_resource type="Animation" id=338]
+resource_name = "mud_spitting"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 363, 371 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_set_state"
+} ]
 }
 
 [sub_resource type="Animation" id=334]
@@ -308,47 +351,6 @@ tracks/0/keys = {
 "values": [ 319, 325 ]
 }
 
-[sub_resource type="Animation" id=338]
-resource_name = "mud_to_normal"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 374, 382 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimationTree:tree_root")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 10 ) ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ 0 ],
-"method": "_set_state"
-} ]
-}
-
 [sub_resource type="Animation" id=326]
 resource_name = "mud_walking"
 loop = true
@@ -362,33 +364,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 99, 103 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimationTree:tree_root")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 10 ) ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ 0 ],
-"method": "_set_state"
-} ]
+"values": [ 66, 71 ]
 }
 
 [sub_resource type="Animation" id=276]
@@ -608,7 +584,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 264, 274 ]
+"values": [ 308, 318 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimationTree:tree_root")
@@ -632,7 +608,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ 5 ],
+"args": [ 4 ],
 "method": "_set_state"
 } ]
 }
@@ -1209,6 +1185,9 @@ script = ExtResource( 19 )
 [node name="Rock" type="Node" parent="."]
 script = ExtResource( 20 )
 
+[node name="Mud" type="Node" parent="."]
+script = ExtResource( 27 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2 )
 rotation = 1.5708
@@ -1219,7 +1198,6 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
@@ -1237,8 +1215,8 @@ anims/mud_falling = SubResource( 310 )
 anims/mud_idle = SubResource( 315 )
 anims/mud_jumping = SubResource( 319 )
 anims/mud_landing = SubResource( 324 )
+anims/mud_spitting = SubResource( 338 )
 anims/mud_to_cauldron = SubResource( 334 )
-anims/mud_to_normal = SubResource( 338 )
 anims/mud_walking = SubResource( 326 )
 anims/normal_eating = SubResource( 276 )
 anims/normal_falling = SubResource( 277 )
@@ -1315,7 +1293,7 @@ random_pitch_range = 1.0
 
 [node name="Character_Eat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-pitch_scale = 0.876516
+pitch_scale = 0.835922
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
@@ -1331,7 +1309,9 @@ samples = [ ExtResource( 3 ) ]
 random_pitch_range = 0.5
 
 [node name="Character_Walking_S" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 volume_db = 6.0
+pitch_scale = 1.04692
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
@@ -1339,7 +1319,9 @@ samples = [ ExtResource( 8 ) ]
 random_pitch_range = 0.2
 
 [node name="Character_Walking_L" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
 volume_db = 8.0
+pitch_scale = 0.878005
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
