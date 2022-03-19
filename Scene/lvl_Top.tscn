@@ -1087,17 +1087,32 @@ position = Vector2( 470, 352 )
 position = Vector2( 989, 206 )
 
 [node name="Clover" parent="." instance=ExtResource( 6 )]
-position = Vector2( 288, 216 )
+position = Vector2( 288, 224 )
 
 [node name="Clover2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 304, 408 )
+position = Vector2( 304, 416 )
 clover_type = "Green"
 
 [node name="Clover3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 879, 152 )
+position = Vector2( 880, 160 )
+
+[node name="Clover6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1248, 576 )
+clover_type = "Green"
+
+[node name="Clover7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1280, 576 )
+clover_type = "Blue"
+
+[node name="Clover8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1320, 576 )
+
+[node name="Clover5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1216, 576 )
+clover_type = "Red"
 
 [node name="Clover4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 391, 313 )
+position = Vector2( 400, 320 )
 
 [node name="Coin" parent="." instance=ExtResource( 7 )]
 position = Vector2( 623, 407 )
