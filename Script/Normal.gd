@@ -7,10 +7,16 @@ const Jump_Acc = 3
 var want_jump := false
 
 func _physics_process(delta: float) -> void:
+	if parent.is_in_water():
+		want_jump = true
+	else:
+		parent.set_collision_mask_bit(2, 1)
+	
 	if parent.is_on_floor():
 		parent.speed.y = parent.Grav
 		if want_jump:
 			parent.speed.y -= Jump_Acc
+			want_jump = false
 	else:
 		parent.speed.y += parent.Grav
 
@@ -24,10 +30,11 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("test_leaf"):
 		parent.anim_playback.travel("normal_to_leaf")
 
-	if Input.is_action_just_pressed("test_magma"):
+	if Input.is_action_just_pressed("test_rock"):
+		parent.normal_to_rock = false
 		parent.anim_playback.travel("normal_to_rock")
 
-	if Input.is_action_just_pressed("test_water"):
+	if Input.is_action_just_pressed("test_steam"):
 		parent.anim_playback.travel("normal_to_steam")
 
 	if Input.is_action_just_pressed("test_mud"):

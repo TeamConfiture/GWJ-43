@@ -4,6 +4,7 @@ const Move_Speed = 0.5
 const Stop_Speed = 0.3
 
 func _physics_process(delta: float) -> void:
+	parent.set_collision_mask_bit(2, 0)
 	if parent.is_on_floor():
 		parent.speed.y = parent.Grav
 	else:

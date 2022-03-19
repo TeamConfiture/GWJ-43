@@ -8,6 +8,7 @@ onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
 onready var anim_playback = anim_tree.get("parameters/playback")
 onready var area = $Area2D
+onready var swim_level = $SwimLevel
 
 const MulSpeed = 100
 const Grav = 0.0981
@@ -35,6 +36,8 @@ var want_eat := false
 var clovers = ["", ""]
 
 var not_transform := true
+var normal_to_mud := false
+var normal_to_rock := false
 var normal_to_steam := false
 
 func _set_state(new_state:int):
@@ -88,13 +91,44 @@ func _on_eat() -> void:
 			emit_signal("clover_eaten", clovers)
 			
 			not_transform = true
+			normal_to_mud = false
+			normal_to_rock = false
 			normal_to_steam = false
 			
+			# Red + Blue = Steam
 			if clovers[0] == "Red" and clovers[1] == "Blue" \
 				or clovers[0] == "Blue" and clovers[1] == "Red":
-				state = State.water
+				state = State.steam
 				not_transform = false
 				normal_to_steam = true
+			
+			# Red + Green = Steam
+			if clovers[0] == "Red" and clovers[1] == "Green" \
+				or clovers[0] == "Green" and clovers[1] == "Red":
+				state = State.steam
+				not_transform = false
+				normal_to_steam = true
+			
+			# Red + Yellow = Rock
+			if clovers[0] == "Red" and clovers[1] == "Yellow" \
+				or clovers[0] == "Yellow" and clovers[1] == "Red":
+				state = State.rock
+				not_transform = false
+				#normal_to_rock = true
+			
+			# Green + Yellow = Rock
+			if clovers[0] == "Green" and clovers[1] == "Yellow" \
+				or clovers[0] == "Yellow" and clovers[1] == "Green":
+				state = State.rock
+				not_transform = false
+				#normal_to_rock = true
+			
+			# Yellow + Blue = Mud
+			if clovers[0] == "Yellow" and clovers[1] == "Blue" \
+				or clovers[0] == "Blue" and clovers[1] == "Yellow":
+				state = State.mud
+				not_transform = false
+				normal_to_mud = true
 			
 			_area.queue_free()
 
@@ -103,3 +137,10 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 		$Collect.play(0.0)
 		emit_signal("coin_caught")
 		area.queue_free()
+
+const WATER_MASK = 1 << 2
+
+func is_in_water():
+	var space_state = get_world_2d().direct_space_state
+	var results = space_state.intersect_point(swim_level.global_position, 1, [], WATER_MASK)
+	return results.size() != 0

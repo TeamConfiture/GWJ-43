@@ -1095,6 +1095,7 @@ tracks/2/keys = {
 }
 
 [node name="Slime" type="KinematicBody2D"]
+collision_mask = 13
 script = ExtResource( 1 )
 
 [node name="Normal" type="Node" parent="."]
@@ -1285,5 +1286,7 @@ anims/Hook_Left = SubResource( 341 )
 anims/Hook_Right = SubResource( 344 )
 anims/Hook_Up = SubResource( 342 )
 anims/RESET = SubResource( 343 )
+
+[node name="SwimLevel" type="Position2D" parent="."]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
