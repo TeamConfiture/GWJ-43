@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 			else:
 				parent.speed.y += parent.Grav
 
-			parent.move_and_slide(parent.speed * parent.MulSpeed + Vector2(0, parent.val), Vector2.UP)
+			parent.move_and_slide(parent.speed * parent.MulSpeed, Vector2.UP)
 			
 		State.hook:
 			var vert = (parent.global_position - hook.hook_origin)
@@ -76,13 +76,13 @@ func _process(delta: float) -> void:
 					parent.speed.y = 0
 					state = State.hook
 			
-	if state == State.hook:
-		parent.dir.y = Input.get_axis("up", "down")
-		parent.speed.y = parent.get_speed(parent.dir.y, parent.speed.y)
-		
-		if Input.is_action_just_pressed("eat"):
-			hook.hook_reset()
-			state = State.normal
+		State.hook:
+			parent.dir.y = Input.get_axis("up", "down")
+			parent.speed.y = parent.get_speed(parent.dir.y, parent.speed.y)
+			
+			if Input.is_action_just_pressed("eat"):
+				hook.hook_reset()
+				state = State.normal
 
 	if Input.is_action_just_pressed("test_normal"):
 		hook.hook_enabled(false)
@@ -94,3 +94,5 @@ func _process(delta: float) -> void:
 	parent.anim_tree["parameters/conditions/is_hooking"] = is_hooking
 	parent.anim_tree["parameters/conditions/is_on_floor"] = is_on_floor and !is_hooking
 	parent.anim_tree["parameters/conditions/is_falling"] = !is_on_floor and !is_hooking
+	parent.anim_tree["parameters/conditions/is_moving"] = is_on_floor and parent.speed.x != 0 and !is_hooking
+	parent.anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and parent.speed.x == 0 and !is_hooking

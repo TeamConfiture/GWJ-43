@@ -9,13 +9,17 @@ func _physics_process(delta: float) -> void:
 	else:
 		parent.speed.y += parent.Grav
 
-	parent.move_and_slide(parent.speed * parent.MulSpeed + Vector2(0, parent.val), Vector2.UP)
+	parent.move_and_slide(parent.speed * parent.MulSpeed, Vector2.UP)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("test_normal"):
 		parent.anim_playback.travel("spitting")
 
+	parent.want_eat = Input.is_action_just_pressed("eat")
+
 	var is_on_floor = parent.is_on_floor()
 	
 	parent.anim_tree["parameters/conditions/is_on_floor"] = is_on_floor
 	parent.anim_tree["parameters/conditions/is_falling"] = !is_on_floor
+	parent.anim_tree["parameters/conditions/is_moving"] = is_on_floor and parent.speed.x != 0
+	parent.anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and parent.speed.x == 0

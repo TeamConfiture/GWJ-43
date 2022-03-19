@@ -10,7 +10,6 @@ onready var anim_playback = anim_tree.get("parameters/playback")
 onready var area = $Area2D
 
 const MulSpeed = 100
-const Steam_Stop_Speed = 0.02
 const Grav = 0.0981
 
 var linear_vel:Vector2
@@ -19,20 +18,15 @@ var dir:Vector2
 
 var speed:Vector2
 
-enum State{normal = 0, leaf, rock, water, mud}
+enum State{normal = 0, leaf, rock, steam, mud}
 
-onready var state_dic = {State.normal:$Normal, State.leaf:$Leaf, State.rock:$Rock, State.mud:$Mud}
+onready var state_dic = {State.normal:$Normal, State.leaf:$Leaf, State.rock:$Rock, State.steam:$Steam, State.mud:$Mud}
 
 var state = State.normal
 
 var move_speed:float
 
 var stop_speed:float
-
-var val = 0
-var val_max = -15
-var val_acc = val_max*0.075
-var val_mode := false
 
 var is_falling := true
 
@@ -80,26 +74,7 @@ func _process(delta: float) -> void:
 		sprite.flip_h = false
 	speed.x = get_speed(dir.x, speed.x)
 	
-	
-	
-	match(state):
-		State.water:
-			val -= -val_acc
-			
-			if val < val_max:
-				val = -val_max
-			
-			dir.y = Input.get_axis("up", "down")
-			
-			dir = dir.normalized()
-			
-			speed.y = get_speed(dir.y, speed.y)
-
-	var is_on_floor = is_on_floor()
-	
 	anim_tree["parameters/conditions/is_eating"] = want_eat
-	anim_tree["parameters/conditions/is_moving"] = is_on_floor and speed.x != 0
-	anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and speed.x == 0
 
 #call from anim_player
 func _on_eat() -> void:

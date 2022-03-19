@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Walking_Land_01.ogg" type="AudioStream" id=25]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Falling_01.ogg" type="AudioStream" id=26]
 [ext_resource path="res://Script/Mud.gd" type="Script" id=27]
+[ext_resource path="res://Script/Steam.gd" type="Script" id=28]
 
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 4.0
@@ -184,22 +185,6 @@ tracks/0/keys = {
 "values": [ 77, 81 ]
 }
 
-[sub_resource type="Animation" id=317]
-resource_name = "magma_jumping"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 132, 136 ]
-}
-
 [sub_resource type="Animation" id=333]
 resource_name = "magma_to_cauldron"
 tracks/0/type = "value"
@@ -261,22 +246,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 11, 19 ]
-}
-
-[sub_resource type="Animation" id=319]
-resource_name = "mud_jumping"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 154, 158 ]
 }
 
 [sub_resource type="Animation" id=324]
@@ -655,7 +624,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=331]
-resource_name = "normal_to_water"
+resource_name = "normal_to_steam"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -666,7 +635,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 253, 263 ]
+"values": [ 330, 340 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimationTree:tree_root")
@@ -861,7 +830,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=306]
-resource_name = "water_eating"
+resource_name = "steam_eating"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -872,27 +841,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 198, 205 ]
-}
-
-[sub_resource type="Animation" id=311]
-resource_name = "water_falling"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 148, 149 ]
+"values": [ 286, 293 ]
 }
 
 [sub_resource type="Animation" id=314]
-resource_name = "water_idle"
+resource_name = "steam_idle"
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -904,58 +857,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 33, 38 ]
-}
-
-[sub_resource type="Animation" id=318]
-resource_name = "water_jumping"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 143, 147 ]
-}
-
-[sub_resource type="Animation" id=325]
-resource_name = "water_landing"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 150, 151 ]
-}
-
-[sub_resource type="Animation" id=335]
-resource_name = "water_to_cauldron"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 308, 314 ]
+"values": [ 33, 41 ]
 }
 
 [sub_resource type="Animation" id=339]
-resource_name = "water_to_normal"
+resource_name = "steam_spitting"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -966,7 +872,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 363, 371 ]
+"values": [ 385, 393 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimationTree:tree_root")
@@ -996,7 +902,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=327]
-resource_name = "water_walking"
+resource_name = "steam_walking"
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1008,7 +914,22 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 88, 92 ]
+"values": [ 88, 93 ]
+}
+
+[sub_resource type="Animation" id=335]
+resource_name = "water_to_cauldron"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 308, 314 ]
 }
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=284]
@@ -1185,6 +1106,9 @@ script = ExtResource( 19 )
 [node name="Rock" type="Node" parent="."]
 script = ExtResource( 20 )
 
+[node name="Steam" type="Node" parent="."]
+script = ExtResource( 28 )
+
 [node name="Mud" type="Node" parent="."]
 script = ExtResource( 27 )
 
@@ -1198,6 +1122,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
@@ -1208,12 +1133,10 @@ anims/leaf_landing = SubResource( 320 )
 anims/leaf_to_cauldron = SubResource( 332 )
 anims/leaf_to_normal = SubResource( 336 )
 anims/leaf_walking = SubResource( 322 )
-anims/magma_jumping = SubResource( 317 )
 anims/magma_to_cauldron = SubResource( 333 )
 anims/mud_eating = SubResource( 307 )
 anims/mud_falling = SubResource( 310 )
 anims/mud_idle = SubResource( 315 )
-anims/mud_jumping = SubResource( 319 )
 anims/mud_landing = SubResource( 324 )
 anims/mud_spitting = SubResource( 338 )
 anims/mud_to_cauldron = SubResource( 334 )
@@ -1226,7 +1149,7 @@ anims/normal_landing = SubResource( 280 )
 anims/normal_to_leaf = SubResource( 328 )
 anims/normal_to_mud = SubResource( 330 )
 anims/normal_to_rock = SubResource( 329 )
-anims/normal_to_water = SubResource( 331 )
+anims/normal_to_steam = SubResource( 331 )
 anims/normal_walking = SubResource( 281 )
 anims/rock_eating = SubResource( 305 )
 anims/rock_falling = SubResource( 309 )
@@ -1234,14 +1157,11 @@ anims/rock_idle = SubResource( 313 )
 anims/rock_landing = SubResource( 321 )
 anims/rock_spitting = SubResource( 337 )
 anims/rock_walking = SubResource( 323 )
-anims/water_eating = SubResource( 306 )
-anims/water_falling = SubResource( 311 )
-anims/water_idle = SubResource( 314 )
-anims/water_jumping = SubResource( 318 )
-anims/water_landing = SubResource( 325 )
+anims/steam_eating = SubResource( 306 )
+anims/steam_idle = SubResource( 314 )
+anims/steam_spitting = SubResource( 339 )
+anims/steam_walking = SubResource( 327 )
 anims/water_to_cauldron = SubResource( 335 )
-anims/water_to_normal = SubResource( 339 )
-anims/water_walking = SubResource( 327 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = ExtResource( 10 )
@@ -1293,7 +1213,7 @@ random_pitch_range = 1.0
 
 [node name="Character_Eat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-pitch_scale = 0.835922
+pitch_scale = 0.690094
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
