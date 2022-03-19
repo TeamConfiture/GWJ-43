@@ -1180,6 +1180,12 @@ current = true
 zoom = Vector2( 0.25, 0.25 )
 limit_left = 0
 limit_top = 0
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
