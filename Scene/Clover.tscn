@@ -4,7 +4,7 @@
 [ext_resource path="res://Art/Clover2-Sheet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9, 11.375 )
+extents = Vector2( 12, 11.375 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
@@ -111,5 +111,5 @@ shape = SubResource( 1 )
 position = Vector2( 0, -16 )
 frames = SubResource( 6 )
 animation = "Blue"
-frame = 2
+frame = 1
 playing = true
