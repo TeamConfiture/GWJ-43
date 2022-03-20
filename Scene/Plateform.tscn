@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://Scene/HeavyButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Stalactite.tscn" type="PackedScene" id=2]
@@ -10,9 +10,6 @@
 [ext_resource path="res://Scene/Crow.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scene/Balloon.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scene/Grille_bas.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scene/Grille_haut.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scene/Grille_gauche.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scene/Grille_droite.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=166]
 points = PoolVector2Array( 32, 32, 8, 24, 0, 0, 32, 0 )
@@ -1632,14 +1629,5 @@ position = Vector2( 3792, 832 )
 
 [node name="Grille_bas" parent="Grilles" instance=ExtResource( 10 )]
 position = Vector2( 272, 736 )
-
-[node name="Grille" parent="Grilles" instance=ExtResource( 13 )]
-position = Vector2( 440, 704 )
-
-[node name="Grille2" parent="Grilles" instance=ExtResource( 12 )]
-position = Vector2( 648, 704 )
-
-[node name="Grille3" parent="Grilles" instance=ExtResource( 11 )]
-position = Vector2( 264, 752 )
 
 [node name="Stalactite" parent="." instance=ExtResource( 2 )]
