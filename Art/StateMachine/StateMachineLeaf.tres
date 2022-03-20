@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeStateMachine" load_steps=23 format=2]
+[gd_resource type="AnimationNodeStateMachine" load_steps=25 format=2]
 
 [sub_resource type="AnimationNodeAnimation" id=297]
 animation = "leaf_eating"
@@ -17,6 +17,9 @@ animation = "leaf_landing"
 
 [sub_resource type="AnimationNodeAnimation" id=304]
 animation = "leaf_spitting"
+
+[sub_resource type="AnimationNodeAnimation" id=308]
+animation = "leaf_to_normal"
 
 [sub_resource type="AnimationNodeAnimation" id=286]
 animation = "leaf_walking"
@@ -68,6 +71,9 @@ advance_condition = "is_hooking"
 [sub_resource type="AnimationNodeStateMachineTransition" id=307]
 advance_condition = "is_on_floor"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=309]
+advance_condition = "to_normal"
+
 [resource]
 states/eating/node = SubResource( 297 )
 states/eating/position = Vector2( 705, 164 )
@@ -80,10 +86,12 @@ states/idle/position = Vector2( 470, 164 )
 states/landing/node = SubResource( 292 )
 states/landing/position = Vector2( 470, 378 )
 states/spitting/node = SubResource( 304 )
-states/spitting/position = Vector2( 647, 72 )
+states/spitting/position = Vector2( 723, 70 )
+states/to_normal/node = SubResource( 308 )
+states/to_normal/position = Vector2( 903, 70 )
 states/walking/node = SubResource( 286 )
 states/walking/position = Vector2( 705, 293 )
-transitions = [ "walking", "idle", SubResource( 287 ), "idle", "walking", SubResource( 288 ), "idle", "hook", SubResource( 290 ), "landing", "idle", SubResource( 293 ), "falling", "landing", SubResource( 294 ), "hook", "falling", SubResource( 295 ), "idle", "eating", SubResource( 298 ), "walking", "eating", SubResource( 299 ), "eating", "idle", SubResource( 300 ), "idle", "falling", SubResource( 301 ), "walking", "falling", SubResource( 302 ), "eating", "falling", SubResource( 303 ), "idle", "spitting", SubResource( 305 ), "walking", "hook", SubResource( 306 ), "hook", "idle", SubResource( 307 ) ]
+transitions = [ "walking", "idle", SubResource( 287 ), "idle", "walking", SubResource( 288 ), "idle", "hook", SubResource( 290 ), "landing", "idle", SubResource( 293 ), "falling", "landing", SubResource( 294 ), "hook", "falling", SubResource( 295 ), "idle", "eating", SubResource( 298 ), "walking", "eating", SubResource( 299 ), "eating", "idle", SubResource( 300 ), "idle", "falling", SubResource( 301 ), "walking", "falling", SubResource( 302 ), "eating", "falling", SubResource( 303 ), "idle", "spitting", SubResource( 305 ), "walking", "hook", SubResource( 306 ), "hook", "idle", SubResource( 307 ), "eating", "to_normal", SubResource( 309 ) ]
 start_node = "idle"
 end_node = "spitting"
-graph_offset = Vector2( -42, -26 )
+graph_offset = Vector2( -71, -12 )

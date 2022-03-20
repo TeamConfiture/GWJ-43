@@ -14,9 +14,7 @@ func _physics_process(delta: float) -> void:
 	parent.move_and_slide(parent.speed * MulSpeed, Vector2.UP)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("test_normal") \
-	or Input.is_action_just_pressed("spit") \
-	or parent.normal_to_leaf or parent.normal_to_mud or parent.normal_to_steam:
+	if Input.is_action_just_pressed("spit"):
 		parent.anim_playback.travel("spitting")
 
 	parent.want_eat = Input.is_action_just_pressed("eat")

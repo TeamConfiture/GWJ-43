@@ -90,7 +90,7 @@ func _process(delta: float) -> void:
 	anim_tree["parameters/conditions/is_eating"] = want_eat
 
 func do_transform():
-	not_transform = true
+	var do_transform = false
 	normal_to_leaf = false
 	normal_to_mud = false
 	normal_to_rock = false
@@ -99,38 +99,41 @@ func do_transform():
 	# Green + Blue = Leaf
 	if clovers[0] == "Green" and clovers[1] == "Blue" \
 		or clovers[0] == "Blue" and clovers[1] == "Green":
-		not_transform = false
 		normal_to_leaf = true
+		do_transform = true
 	
 	# Red + Blue = Steam
 	if clovers[0] == "Red" and clovers[1] == "Blue" \
 		or clovers[0] == "Blue" and clovers[1] == "Red":
-		not_transform = false
 		normal_to_steam = true
+		do_transform = true
 	
 	# Red + Green = Steam
 	if clovers[0] == "Red" and clovers[1] == "Green" \
 		or clovers[0] == "Green" and clovers[1] == "Red":
-		not_transform = false
 		normal_to_steam = true
+		do_transform = true
 	
 	# Red + Yellow = Rock
 	if clovers[0] == "Red" and clovers[1] == "Yellow" \
 		or clovers[0] == "Yellow" and clovers[1] == "Red":
-		not_transform = false
 		normal_to_rock = true
+		do_transform = true
 	
 	# Green + Yellow = Rock
 	if clovers[0] == "Green" and clovers[1] == "Yellow" \
 		or clovers[0] == "Yellow" and clovers[1] == "Green":
-		not_transform = false
 		normal_to_rock = true
+		do_transform = true
 	
 	# Yellow + Blue = Mud
 	if clovers[0] == "Yellow" and clovers[1] == "Blue" \
 		or clovers[0] == "Blue" and clovers[1] == "Yellow":
-		not_transform = false
 		normal_to_mud = true
+		do_transform = true
+		
+	if state != State.normal:
+		anim_playback.travel("to_normal")
 
 #call from anim_player
 func _on_eat() -> void:

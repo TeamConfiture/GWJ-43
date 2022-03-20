@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
@@ -40,6 +40,21 @@ height = 2.0
 
 [sub_resource type="SegmentShape2D" id=345]
 a = Vector2( -1, -2 )
+
+[sub_resource type="Animation" id=347]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 418 ]
+}
 
 [sub_resource type="Animation" id=304]
 resource_name = "leaf_eating"
@@ -192,7 +207,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=336]
-resource_name = "leaf_spitting"
+resource_name = "leaf_to_normal"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -262,6 +277,50 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 286, 292 ]
+}
+
+[sub_resource type="Animation" id=348]
+resource_name = "leaf_to_normal"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 418, 423 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "_spit"
+}, {
+"args": [ 0 ],
+"method": "_set_state"
+} ]
 }
 
 [sub_resource type="Animation" id=322]
@@ -1566,9 +1625,10 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
-frame = 2
+frame = 418
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 347 )
 anims/leaf_eating = SubResource( 304 )
 anims/leaf_falling = SubResource( 308 )
 anims/leaf_hook = SubResource( 316 )
@@ -1576,6 +1636,7 @@ anims/leaf_idle = SubResource( 312 )
 anims/leaf_landing = SubResource( 320 )
 anims/leaf_spitting = SubResource( 336 )
 anims/leaf_to_cauldron = SubResource( 332 )
+anims/leaf_to_normal = SubResource( 348 )
 anims/leaf_walking = SubResource( 322 )
 anims/mud_eating = SubResource( 307 )
 anims/mud_falling = SubResource( 310 )
