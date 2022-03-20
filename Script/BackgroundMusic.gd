@@ -1,6 +1,6 @@
 extends Node
 
-onready var MainTheme = load ("res://Art/Audio/Music/MenuTheme.ogg")
+onready var MenuTheme = load ("res://Art/Audio/Music/MenuTheme.ogg")
 onready var ThemePrincipal = load("res://Art/Audio/Music/IGTheme.ogg")	
 onready var AmbForest = load("res://Art/Audio/Sound/Amb/Forest/ForestAmb_01.ogg")
 onready var AmbCavern = load("res://Art/Audio/Sound/Amb/Cavern/Cavern_drip_01.ogg")
@@ -10,22 +10,40 @@ onready var anim_player := $TransitionVolume
 func _ready():
 	pass
 	
+func play_button_start():
+	$PressButtonStart.play()
+func play_button_normal():
+	$PressButtonNormal.play()
 #--========================================--
 #--          Gestion : Music               --
 #--========================================--
 
 func play_menu_music():
 	
-	$Music.stream = MainTheme
-	$Music.volume_db = -24
-	$Music.play()
+#	$Music.stream = MainTheme
+#	$Music.volume_db = -12
+#	$Music.play()
+	var MainMenuTheme = $MusicMenu.is_playing()
+	if !MainMenuTheme:
+		anim_player.play("Fade_To_MusicMenu")
+		$MusicMenu.stream = MenuTheme
+		$MusicMenu.volume_db = -6
+		$MusicMenu.play()
+		print("MainMenuTheme")
 	
 	
 func play_main_music():
 	
-	$Music.stream = ThemePrincipal
-	$Music.volume_db = -24
-	$Music.play()
+#	$MusicIG.stream = ThemePrincipal
+#	$MusicIG.volume_db = -16
+#	$MusicIG.play()
+	var PrincipalPlay = $MusicIG.is_playing()
+	if !PrincipalPlay:
+		anim_player.play("Fade_To_IGMusic")
+		$MusicIG.stream = ThemePrincipal
+		$MusicIG.volume_db = -12
+		$MusicIG.play()
+		print("ThemePrincipal")
 	
 	
 #--========================================--
