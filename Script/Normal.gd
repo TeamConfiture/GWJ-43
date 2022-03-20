@@ -21,6 +21,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		if !parent.is_in_water():
 			parent.speed.y += parent.Grav
+		else:
+			parent.speed.y = -Jump_Acc
 
 	parent.move_and_slide(parent.speed * MulSpeed, Vector2.UP)
 
