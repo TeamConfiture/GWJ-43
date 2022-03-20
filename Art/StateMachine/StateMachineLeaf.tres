@@ -16,7 +16,7 @@ animation = "leaf_idle"
 animation = "leaf_landing"
 
 [sub_resource type="AnimationNodeAnimation" id=304]
-animation = "leaf_to_normal"
+animation = "leaf_spitting"
 
 [sub_resource type="AnimationNodeAnimation" id=286]
 animation = "leaf_walking"
