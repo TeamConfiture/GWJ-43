@@ -30,8 +30,8 @@
 [ext_resource path="res://Script/Steam.gd" type="Script" id=28]
 
 [sub_resource type="CapsuleShape2D" id=10]
-radius = 4.0
-height = 6.0
+radius = 6.0
+height = 2.0
 
 [sub_resource type="Animation" id=304]
 resource_name = "leaf_eating"
@@ -1201,8 +1201,8 @@ tracks/2/keys = {
 [sub_resource type="AnimationNodeStateMachinePlayback" id=284]
 
 [sub_resource type="CapsuleShape2D" id=340]
-radius = 4.0
-height = 6.0
+radius = 6.0
+height = 2.0
 
 [sub_resource type="Animation" id=341]
 resource_name = "Hook_Left"
@@ -1380,8 +1380,7 @@ script = ExtResource( 28 )
 script = ExtResource( 27 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2 )
-rotation = 1.5708
+position = Vector2( -1, -2 )
 shape = SubResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -1389,7 +1388,6 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
-frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
@@ -1447,14 +1445,24 @@ current = true
 zoom = Vector2( 0.25, 0.25 )
 limit_left = 0
 limit_top = 0
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+drag_margin_left = 0.01
+drag_margin_top = 0.1
+drag_margin_right = 0.01
+drag_margin_bottom = 0.1
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, 2 )
-rotation = 1.5708
+position = Vector2( -1, -2 )
 shape = SubResource( 340 )
 
 [node name="Character_Landing" type="AudioStreamPlayer2D" parent="."]

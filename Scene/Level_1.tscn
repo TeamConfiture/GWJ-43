@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Art/element.png" type="Texture" id=1]
-[ext_resource path="res://Scene/Plateform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/Plateform_lvl_1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://Script/TileMap_limit.gd" type="Script" id=5]
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/Water_01.ogg" type="AudioStream" id=8]
@@ -244,7 +244,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[node name="Tutorial" type="Node2D"]
+[node name="Level_1" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -420,7 +420,7 @@ lifetime = 3.3
 process_material = SubResource( 101 )
 texture = ExtResource( 11 )
 
-[node name="Plateform" parent="." instance=ExtResource( 3 )]
+[node name="Plateform_lvl_1" parent="." instance=ExtResource( 2 )]
 
 [node name="Position sound" type="Position2D" parent="."]
 

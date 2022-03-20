@@ -12,10 +12,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 11.501 ), Vector2( 0, 14.501 ) ]
+"values": [ Vector2( 0, -4.5 ), Vector2( 0, -4 ), Vector2( 0, -2.5 ), Vector2( 0, -1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:frame")
@@ -42,7 +42,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 11.5013 ) ]
+"values": [ Vector2( 0, -4.5 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:frame")
@@ -58,15 +58,16 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 15.9886, 4.48421 )
+extents = Vector2( 15.9943, 4.5 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 12.0047, 3.39102 )
+extents = Vector2( 15, 9.69551 )
 
 [node name="HeavyButton" type="StaticBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -16 )
 texture = ExtResource( 1 )
 hframes = 4
 
@@ -75,14 +76,14 @@ anims/HeavyBtn = SubResource( 8 )
 anims/RESET = SubResource( 9 )
 
 [node name="Bas" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 11.5013 )
+position = Vector2( 0, -4.5 )
 shape = SubResource( 6 )
 
 [node name="HeavyButton" type="Area2D" parent="."]
 monitorable = false
 
 [node name="Btn" type="CollisionShape2D" parent="HeavyButton"]
-position = Vector2( -0.0159426, 7.5515 )
+position = Vector2( 0, -14.3045 )
 shape = SubResource( 7 )
 
 [connection signal="body_entered" from="HeavyButton" to="." method="_on_HeavyButton_body_entered"]
