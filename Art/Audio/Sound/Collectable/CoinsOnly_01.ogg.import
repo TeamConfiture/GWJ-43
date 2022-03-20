@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CoinsOnly_01.ogg-f6056d230ace6d382b74ed67b320db49.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Collectable/CoinsOnly_01.ogg"
+dest_files=[ "res://.import/CoinsOnly_01.ogg-f6056d230ace6d382b74ed67b320db49.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
