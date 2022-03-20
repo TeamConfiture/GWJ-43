@@ -4,7 +4,7 @@ func _ready():
 	BackgroundMusic.play_menu_music()
 
 func _on_play_pressed():
-	get_tree().change_scene("res://Scene/Tutorial.tscn")
+	SceneLoader.next_scene()
 	BackgroundMusic.play_main_music()
 
 func _on_credits_pressed():

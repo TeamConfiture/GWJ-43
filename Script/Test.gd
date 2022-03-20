@@ -15,6 +15,10 @@ func _on_Slime_coin_caught() -> void:
 	coins += 1
 	hud.update_coin(coins)
 
+func _process(_delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene("res://Scene/Menu.tscn")
+
 
 func set_camera_limits():
 	var map_limits = $lvl/TileMap_limit.get_used_rect()

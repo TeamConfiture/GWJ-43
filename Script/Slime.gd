@@ -129,7 +129,7 @@ func _on_eat() -> void:
 			_area.be_eaten()
 		
 		if _area.is_in_group("Chaudron"):
-			
+			SceneLoader.next_scene()
 			pass
 			
 

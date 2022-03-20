@@ -57,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GJW_43"
-run/main_scene="res://Scene/Test.tscn"
+run/main_scene="res://Scene/Menu.tscn"
 config/icon="res://icon.png"
 
 [audio]
@@ -68,6 +68,7 @@ output_latency=128
 [autoload]
 
 BackgroundMusic="*res://Scene/BackgroundMusic.tscn"
+SceneLoader="*res://Script/SceneLoader.gd"
 
 [debug]
 
