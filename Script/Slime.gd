@@ -128,6 +128,13 @@ func _on_eat() -> void:
 				normal_to_mud = true
 			
 			_area.be_eaten()
+		
+		if _area.is_in_group("Chaudron"):
+			
+			var scene_lvl = load("res://Scene/Level_1.tscn")
+			var scene = scene_lvl.instance()
+			add_child(scene)
+
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Coin"):

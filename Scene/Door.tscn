@@ -60,7 +60,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1.02182, -12.6792 ), Vector2( 0, -32 ) ]
+"values": [ Vector2( -1.02182, -12.6792 ), Vector2( 0, -34 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Bottom:position")
@@ -72,7 +72,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -0.91871, 12.4742 ), Vector2( 0, 32 ) ]
+"values": [ Vector2( -0.91871, 12.4742 ), Vector2( 0, 36 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite:frame")
@@ -91,6 +91,7 @@ tracks/2/keys = {
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1, 1.3 )
 texture = ExtResource( 1 )
 hframes = 10
 vframes = 4
