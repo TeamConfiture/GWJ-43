@@ -69,6 +69,10 @@ output_latency=128
 
 BackgroundMusic="*res://Scene/BackgroundMusic.tscn"
 
+[debug]
+
+shapes/collision/shape_color=Color( 0.701961, 0.607843, 0, 0.419608 )
+
 [display]
 
 window/size/width=1366
@@ -79,6 +83,10 @@ window/stretch/aspect="keep"
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/randomAudioStreamPlayer/plugin.cfg" )
+
+[global]
+
+col=false
 
 [importer_defaults]
 

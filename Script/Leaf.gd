@@ -16,6 +16,8 @@ var state:int
 var rot_speed:float
 
 onready var hook = parent.get_node("Hook")
+onready var shape = parent.get_node("CollisionShape2D")
+onready var shape_hook = parent.get_node("CollisionShapeHook")
 
 func state_enabled(b:bool):
 	.state_enabled(b)
@@ -36,28 +38,21 @@ func _physics_process(delta: float) -> void:
 			parent.move_and_slide(parent.speed * MulSpeed, Vector2.UP)
 			
 		State.hook:
-			var vert = (parent.global_position - hook.hook_origin)
+			shape_hook.shape.b = hook.sprite.position * 0.8
 			
-			var vert_angle_to_down = vert.angle_to(Vector2.DOWN)
+			var vert = hook.hook_origin - parent.global_position
 			
-			rot_speed = clamp(rot_speed + ((parent.speed.x * Hook_Speed_X - vert_angle_to_down * Rot_Speed) * delta), -Rot_Speed_Max, Rot_Speed_Max)
+			var vert_angle_to_down = (-vert).angle_to(Vector2.DOWN)
+			
+			rot_speed = clamp(rot_speed + ((-parent.speed.x * Hook_Speed_X + vert_angle_to_down * Rot_Speed) * delta), -Rot_Speed_Max, Rot_Speed_Max)
 			
 			var vert_rot = vert.rotated(rot_speed)
 			
-			vert_rot -= vert_rot.normalized() * parent.speed.y
+			vert_rot += vert_rot.normalized() * parent.speed.y
 			
-			var bleu = vert_rot - vert
-#
-			var jaune = Vector2(0, -parent.speed.y)
-			
-			var vert_plan = vert_rot.rotated(PI/2)
-			
-			if jaune.normalized().dot(vert_plan) > 0:
-				vert_plan = -vert_plan
-			
-			var jaune_project = jaune.project(vert_plan)
+			var bleu = vert - vert_rot
 
-			parent.move_and_slide(-bleu / delta, Vector2.UP)
+			parent.move_and_slide(bleu / delta, Vector2.UP)
 			pass
 
 func _process(delta: float) -> void:
@@ -75,6 +70,8 @@ func _process(delta: float) -> void:
 			if Input.is_action_just_pressed("up"):
 				if hook.launch():
 					parent.speed.y = 0
+					shape.disabled = true
+					shape_hook.disabled = false
 					state = State.hook
 			
 		State.hook:
@@ -83,6 +80,10 @@ func _process(delta: float) -> void:
 			
 			if Input.is_action_just_pressed("eat"):
 				hook.hook_reset()
+				parent.speed.x = -rot_speed * 1/Rot_Speed_Max
+				rot_speed = 0
+				shape.disabled = false
+				shape_hook.disabled = true
 				state = State.normal
 
 	if Input.is_action_just_pressed("test_normal") \

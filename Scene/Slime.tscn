@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
@@ -32,6 +32,9 @@
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 6.0
 height = 2.0
+
+[sub_resource type="SegmentShape2D" id=345]
+a = Vector2( -1, -2 )
 
 [sub_resource type="Animation" id=304]
 resource_name = "leaf_eating"
@@ -1383,11 +1386,16 @@ script = ExtResource( 27 )
 position = Vector2( -1, -2 )
 shape = SubResource( 10 )
 
+[node name="CollisionShapeHook" type="CollisionShape2D" parent="."]
+shape = SubResource( 345 )
+disabled = true
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
@@ -1536,7 +1544,6 @@ script = ExtResource( 16 )
 
 [node name="Raycast2D" type="RayCast2D" parent="Hook"]
 rotation = -3.92699
-enabled = true
 cast_to = Vector2( 0, 125 )
 
 [node name="Line2D" type="Line2D" parent="Hook"]
