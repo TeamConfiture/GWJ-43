@@ -2,7 +2,7 @@ extends Node
 
 var index:= 0
 
-var scenes = [preload("res://Scene/Menu.tscn"), preload("res://Scene/Story.tscn"), preload("res://Scene/Test.tscn"), preload("res://Scene/Test2.tscn")]
+var scenes = [preload("res://Scene/Menu.tscn"), preload("res://Scene/Story.tscn"), preload("res://Scene/Test.tscn"), preload("res://Scene/Test2.tscn"), preload("res://Scene/Credits.tscn")]
 
 func load_menu():
 	index = 0
