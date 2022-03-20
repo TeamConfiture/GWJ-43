@@ -55,6 +55,13 @@ func _physics_process(delta: float) -> void:
 			parent.move_and_slide(bleu / delta, Vector2.UP)
 			pass
 
+func reset():
+	parent.speed.x = -rot_speed * 1/Rot_Speed_Max
+	rot_speed = 0
+	shape.disabled = false
+	shape_hook.disabled = true
+	state = State.normal
+
 func _process(delta: float) -> void:
 	match(state):
 		State.normal:
@@ -80,16 +87,13 @@ func _process(delta: float) -> void:
 			
 			if Input.is_action_just_pressed("eat"):
 				hook.hook_reset()
-				parent.speed.x = -rot_speed * 1/Rot_Speed_Max
-				rot_speed = 0
-				shape.disabled = false
-				shape_hook.disabled = true
-				state = State.normal
+				reset()
 
 	if Input.is_action_just_pressed("test_normal") \
 	or Input.is_action_just_pressed("spit") \
 	or parent.normal_to_mud or parent.normal_to_rock or parent.normal_to_steam:
 		hook.hook_enabled(false)
+		reset()
 		parent.anim_playback.travel("spitting")
 	
 	var is_on_floor = parent.is_on_floor()
