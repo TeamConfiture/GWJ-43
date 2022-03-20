@@ -1,7 +1,7 @@
 extends Node
 
 func _on_play_pressed():
-	get_tree().change_scene("res://Scene/Tutorial.tscn")
+	get_tree().change_scene("res://Scene/Test.tscn")
 
 func _on_credits_pressed():
 	get_tree().change_scene("res://Scene/Credits.tscn")

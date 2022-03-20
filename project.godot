@@ -71,7 +71,10 @@ BackgroundMusic="*res://Scene/Background_Music.tscn"
 
 [display]
 
+window/size/width=1366
 window/size/height=768
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
