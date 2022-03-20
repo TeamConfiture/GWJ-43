@@ -199,7 +199,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=336]
-resource_name = "leaf_to_normal"
+resource_name = "leaf_spitting"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1397,8 +1397,8 @@ anims/leaf_falling = SubResource( 308 )
 anims/leaf_hook = SubResource( 316 )
 anims/leaf_idle = SubResource( 312 )
 anims/leaf_landing = SubResource( 320 )
+anims/leaf_spitting = SubResource( 336 )
 anims/leaf_to_cauldron = SubResource( 332 )
-anims/leaf_to_normal = SubResource( 336 )
 anims/leaf_walking = SubResource( 322 )
 anims/mud_eating = SubResource( 307 )
 anims/mud_falling = SubResource( 310 )
