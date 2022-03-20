@@ -1202,10 +1202,6 @@ crow_dir = "Gauche"
 position = Vector2( 3480, 352 )
 crow_dir = "Droite"
 
-[node name="Crow7" parent="Crows" instance=ExtResource( 8 )]
-position = Vector2( 3480, 352 )
-crow_dir = "Gauche"
-
 [node name="Crow8" parent="Crows" instance=ExtResource( 8 )]
 position = Vector2( 3512, 352 )
 crow_dir = "Droite"
