@@ -26,5 +26,5 @@ func _process(delta: float) -> void:
 	parent.want_eat = Input.is_action_just_pressed("eat")
 	
 	if Input.is_action_just_pressed("test_normal") \
-	or parent.normal_to_leaf or parent.normal_to_mud or parent.normal_to_rock or parent.normal_to_steam:
+	or parent.normal_to_leaf or parent.normal_to_mud or parent.normal_to_rock:
 		parent.anim_playback.travel("spitting")

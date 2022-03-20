@@ -86,6 +86,7 @@ func _on_eat() -> void:
 			emit_signal("clover_eaten", clovers)
 			
 			not_transform = true
+			normal_to_leaf = false
 			normal_to_mud = false
 			normal_to_rock = false
 			normal_to_steam = false
@@ -126,7 +127,7 @@ func _on_eat() -> void:
 				not_transform = false
 				normal_to_mud = true
 			
-			_area.queue_free()
+			_area.be_eaten()
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Coin"):
