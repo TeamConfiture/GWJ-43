@@ -37,7 +37,7 @@ output_latency=128
 
 [autoload]
 
-BackgroundMusic="*res://Scene/Background_Music.tscn"
+BackgroundMusic="*res://Scene/BackgroundMusic.tscn"
 
 [display]
 
