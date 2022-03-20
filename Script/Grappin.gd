@@ -52,6 +52,7 @@ func launch() -> bool:
 		line.visible = true
 		
 		set_process(true)
+		$Hook_Launch.play(0.0)
 	else:
 		line.visible = false
 		
