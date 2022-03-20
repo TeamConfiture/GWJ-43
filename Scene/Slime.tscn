@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
@@ -191,21 +191,6 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=332]
-resource_name = "leaf_to_cauldron"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 286, 292 ]
-}
-
 [sub_resource type="Animation" id=336]
 resource_name = "leaf_spitting"
 tracks/0/type = "value"
@@ -262,6 +247,21 @@ tracks/3/keys = {
 "args": [ 0.0 ],
 "method": "play"
 } ]
+}
+
+[sub_resource type="Animation" id=332]
+resource_name = "leaf_to_cauldron"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 286, 292 ]
 }
 
 [sub_resource type="Animation" id=322]
@@ -1372,21 +1372,6 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=335]
-resource_name = "steam_to_cauldron"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 308, 314 ]
-}
-
 [sub_resource type="AnimationNodeStateMachinePlayback" id=284]
 
 [sub_resource type="CapsuleShape2D" id=340]
@@ -1581,7 +1566,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
-frame = 2
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
