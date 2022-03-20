@@ -130,8 +130,7 @@ func _on_eat() -> void:
 			_area.be_eaten()
 
 func _spit() -> void:
-	clovers[0] = ""
-	clovers[1] = ""
+	clovers = ["", ""]
 	emit_signal("clover_eaten", clovers)
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
