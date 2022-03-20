@@ -1139,6 +1139,21 @@ tracks/2/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=335]
+resource_name = "steam_to_cauldron"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 308, 314 ]
+}
+
 [sub_resource type="Animation" id=327]
 resource_name = "steam_walking"
 loop = true
@@ -1181,21 +1196,6 @@ tracks/2/keys = {
 "stream": ExtResource( 25 )
 } ],
 "times": PoolRealArray( 0.9 )
-}
-
-[sub_resource type="Animation" id=335]
-resource_name = "steam_to_cauldron"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 308, 314 ]
 }
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=284]
@@ -1388,7 +1388,6 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
-frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
