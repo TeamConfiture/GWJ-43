@@ -93,7 +93,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=23]
 resource_name = "clover_repop"
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:modulate")
@@ -158,6 +158,6 @@ wait_time = 5.0
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/clover_repop = SubResource( 7 )
+anims/clover_repop = SubResource( 23 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
