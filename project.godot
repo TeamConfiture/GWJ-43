@@ -175,7 +175,7 @@ test_water={
 
 [layer_names]
 
-2d_physics/layer_2="coins"
+2d_physics/layer_2="collectible"
 2d_physics/layer_3="water"
 
 [physics]

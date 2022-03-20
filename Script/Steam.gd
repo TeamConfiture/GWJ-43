@@ -9,6 +9,11 @@ var val_acc = val_max*0.075
 var val_mode := false
 
 func _physics_process(delta: float) -> void:
+	parent.set_collision_mask_bit(2, 0)
+	
+	if parent.is_in_water():
+		parent.anim_playback.travel("spitting")
+	
 	parent.move_and_slide(parent.speed * parent.MulSpeed, Vector2.UP)
 	
 func _process(delta: float) -> void:
