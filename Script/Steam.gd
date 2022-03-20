@@ -1,5 +1,6 @@
 extends State
 
+const MulSpeed = 100
 const Move_Speed = 0.5
 const Stop_Speed = 0.02
 
@@ -9,7 +10,7 @@ var val_acc = val_max*0.075
 var val_mode := false
 
 func _physics_process(delta: float) -> void:
-	parent.move_and_slide(parent.speed * parent.MulSpeed, Vector2.UP)
+	parent.move_and_slide(parent.speed * MulSpeed, Vector2.UP)
 	
 func _process(delta: float) -> void:
 	val -= -val_acc

@@ -1,5 +1,6 @@
 extends State
 
+const MulSpeed = 100
 const Move_Speed = 0.5
 const Stop_Speed = 0.3
 const Jump_Acc = 3
@@ -20,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		parent.speed.y += parent.Grav
 
-	parent.move_and_slide(parent.speed * parent.MulSpeed, Vector2.UP)
+	parent.move_and_slide(parent.speed * MulSpeed, Vector2.UP)
 
 func _process(delta: float) -> void:
 	want_jump = Input.is_action_just_pressed("up")

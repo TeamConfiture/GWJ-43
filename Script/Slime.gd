@@ -10,7 +10,6 @@ onready var anim_playback = anim_tree.get("parameters/playback")
 onready var area = $Area2D
 onready var swim_level = $SwimLevel
 
-const MulSpeed = 100
 const Grav = 0.0981
 
 var linear_vel:Vector2
