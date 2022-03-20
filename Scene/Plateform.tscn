@@ -1626,6 +1626,9 @@ __meta__ = {
 position = Vector2( 2192, 160 )
 
 [node name="Door_and_Button" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="HeavyButton" parent="Door_and_Button" instance=ExtResource( 1 )]
 position = Vector2( 3736, 352 )
@@ -1641,9 +1644,12 @@ position = Vector2( 3672, 808 )
 
 [node name="Grilles" type="Node2D" parent="."]
 position = Vector2( 56, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Grille_bas" parent="Grilles" instance=ExtResource( 10 )]
-position = Vector2( 272, 736 )
+position = Vector2( 216, 736 )
 
 [node name="Stalactite" parent="." instance=ExtResource( 2 )]
 
