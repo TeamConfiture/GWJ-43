@@ -1,8 +1,10 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Art/element.png" type="Texture" id=1]
 [ext_resource path="res://Scene/lvl_Down.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scene/lvl_Top.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/Tutorial.gd" type="Script" id=5]
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/Water_01.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Art/Parallax/background_sky.png" type="Texture" id=9]
 [ext_resource path="res://Script/Cloud.gd" type="Script" id=10]
@@ -77,6 +79,7 @@ extents = Vector2( 1024, 8 )
 extents = Vector2( 8, 776 )
 
 [node name="Main_lvl" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -355,11 +358,14 @@ texture = ExtResource( 11 )
 [node name="lvl_Down" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 768 )
 
-[node name="HeavyButton" parent="." groups=["HeavyButton"] instance=ExtResource( 14 )]
-position = Vector2( 221.225, 207.913 )
+[node name="Btn1" parent="." instance=ExtResource( 14 )]
+position = Vector2( 143.476, 367.699 )
 
-[node name="StaticBody2D" parent="HeavyButton" instance=ExtResource( 14 )]
-position = Vector2( -77.7487, 159.786 )
+[node name="Btn2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 240.292, 461.414 )
+
+[node name="Btn3" parent="." groups=["HeavyButton"] instance=ExtResource( 14 )]
+position = Vector2( 221.225, 207.913 )
 
 [node name="Position sound" type="Position2D" parent="."]
 
@@ -405,4 +411,10 @@ shape = SubResource( 103 )
 position = Vector2( 2048, 768 )
 shape = SubResource( 103 )
 
+[node name="Door1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 284.866, 486.482 )
+
 [connection signal="input_event" from="ParallaxCloud/Cloud/Area2D" to="ParallaxCloud/Cloud/Area2D" method="_on_Area2D_input_event"]
+[connection signal="activate_btn" from="Btn1" to="." method="_on_Btn1_activate_btn"]
+[connection signal="activate_btn" from="Btn2" to="." method="_on_Btn2_activate_btn"]
+[connection signal="activate_btn" from="Btn3" to="." method="_on_Btn3_activate_btn"]
