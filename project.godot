@@ -42,7 +42,6 @@ BackgroundMusic="*res://Scene/Background_Music.tscn"
 [display]
 
 window/size/height=768
-window/size/resizable=false
 
 [editor_plugins]
 
