@@ -29,19 +29,19 @@ func _process(delta: float) -> void:
 	
 	parent.want_eat = Input.is_action_just_pressed("eat")
 	
-	if Input.is_action_just_pressed("test_leaf") or parent.normal_to_leaf:
+	if parent.normal_to_leaf:
 		parent.normal_to_leaf = false
 		parent.anim_playback.travel("normal_to_leaf")
 
-	if Input.is_action_just_pressed("test_rock") or parent.normal_to_rock:
+	if parent.normal_to_rock:
 		parent.normal_to_rock = false
 		parent.anim_playback.travel("normal_to_rock")
 
-	if Input.is_action_just_pressed("test_steam") or parent.normal_to_steam:
+	if parent.normal_to_steam:
 		parent.normal_to_steam = false
 		parent.anim_playback.travel("normal_to_steam")
 
-	if Input.is_action_just_pressed("test_mud") or parent.normal_to_mud:
+	if parent.normal_to_mud:
 		parent.normal_to_mud = false
 		parent.anim_playback.travel("normal_to_mud")
 	

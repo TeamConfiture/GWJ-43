@@ -89,9 +89,7 @@ func _process(delta: float) -> void:
 				hook.hook_reset()
 				reset()
 
-	if Input.is_action_just_pressed("test_normal") \
-	or Input.is_action_just_pressed("spit") \
-	or parent.normal_to_mud or parent.normal_to_rock or parent.normal_to_steam:
+	if Input.is_action_just_pressed("spit"):
 		hook.hook_enabled(false)
 		reset()
 		parent.anim_playback.travel("spitting")

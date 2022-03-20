@@ -71,7 +71,66 @@ func _process(delta: float) -> void:
 		sprite.flip_h = false
 	speed.x = get_speed(dir.x, speed.x)
 	
+	if Input.is_action_just_pressed("test_leaf"):
+		clovers = ["Blue", "Green"]
+		do_transform()
+		
+	if Input.is_action_just_pressed("test_rock"):
+		clovers = ["Yellow", "Green"]
+		do_transform()
+		
+	if Input.is_action_just_pressed("test_steam"):
+		clovers = ["Blue", "Red"]
+		do_transform()
+		
+	if Input.is_action_just_pressed("test_mud"):
+		clovers = ["Yellow", "Blue"]
+		do_transform()
+	
 	anim_tree["parameters/conditions/is_eating"] = want_eat
+
+func do_transform():
+	not_transform = true
+	normal_to_leaf = false
+	normal_to_mud = false
+	normal_to_rock = false
+	normal_to_steam = false
+	
+	# Green + Blue = Leaf
+	if clovers[0] == "Green" and clovers[1] == "Blue" \
+		or clovers[0] == "Blue" and clovers[1] == "Green":
+		not_transform = false
+		normal_to_leaf = true
+	
+	# Red + Blue = Steam
+	if clovers[0] == "Red" and clovers[1] == "Blue" \
+		or clovers[0] == "Blue" and clovers[1] == "Red":
+		not_transform = false
+		normal_to_steam = true
+	
+	# Red + Green = Steam
+	if clovers[0] == "Red" and clovers[1] == "Green" \
+		or clovers[0] == "Green" and clovers[1] == "Red":
+		not_transform = false
+		normal_to_steam = true
+	
+	# Red + Yellow = Rock
+	if clovers[0] == "Red" and clovers[1] == "Yellow" \
+		or clovers[0] == "Yellow" and clovers[1] == "Red":
+		not_transform = false
+		normal_to_rock = true
+	
+	# Green + Yellow = Rock
+	if clovers[0] == "Green" and clovers[1] == "Yellow" \
+		or clovers[0] == "Yellow" and clovers[1] == "Green":
+		not_transform = false
+		normal_to_rock = true
+	
+	# Yellow + Blue = Mud
+	if clovers[0] == "Yellow" and clovers[1] == "Blue" \
+		or clovers[0] == "Blue" and clovers[1] == "Yellow":
+		not_transform = false
+		normal_to_mud = true
 
 #call from anim_player
 func _on_eat() -> void:
@@ -84,47 +143,7 @@ func _on_eat() -> void:
 			
 			emit_signal("clover_eaten", clovers)
 			
-			not_transform = true
-			normal_to_leaf = false
-			normal_to_mud = false
-			normal_to_rock = false
-			normal_to_steam = false
-			
-			# Green + Blue = Leaf
-			if clovers[0] == "Green" and clovers[1] == "Blue" \
-				or clovers[0] == "Blue" and clovers[1] == "Green":
-				not_transform = false
-				normal_to_leaf = true
-			
-			# Red + Blue = Steam
-			if clovers[0] == "Red" and clovers[1] == "Blue" \
-				or clovers[0] == "Blue" and clovers[1] == "Red":
-				not_transform = false
-				normal_to_steam = true
-			
-			# Red + Green = Steam
-			if clovers[0] == "Red" and clovers[1] == "Green" \
-				or clovers[0] == "Green" and clovers[1] == "Red":
-				not_transform = false
-				normal_to_steam = true
-			
-			# Red + Yellow = Rock
-			if clovers[0] == "Red" and clovers[1] == "Yellow" \
-				or clovers[0] == "Yellow" and clovers[1] == "Red":
-				not_transform = false
-				normal_to_rock = true
-			
-			# Green + Yellow = Rock
-			if clovers[0] == "Green" and clovers[1] == "Yellow" \
-				or clovers[0] == "Yellow" and clovers[1] == "Green":
-				not_transform = false
-				normal_to_rock = true
-			
-			# Yellow + Blue = Mud
-			if clovers[0] == "Yellow" and clovers[1] == "Blue" \
-				or clovers[0] == "Blue" and clovers[1] == "Yellow":
-				not_transform = false
-				normal_to_mud = true
+			do_transform()
 			
 			_area.be_eaten()
 		
