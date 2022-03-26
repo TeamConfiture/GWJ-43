@@ -29,7 +29,7 @@ func play_menu_music():
 		$MusicMenu.stream = MenuTheme
 		$MusicMenu.volume_db = -6
 		$MusicMenu.play()
-		print("MainMenuTheme")
+#		print("MainMenuTheme")
 	
 	
 func play_main_music():
@@ -43,7 +43,7 @@ func play_main_music():
 		$MusicIG.stream = ThemePrincipal
 		$MusicIG.volume_db = -12
 		$MusicIG.play()
-		print("ThemePrincipal")
+#		print("ThemePrincipal")
 	
 	
 #--========================================--
@@ -56,7 +56,7 @@ func play_amb_forest():
 		anim_player.play("Fade_To_Forest")
 		$Amb_Forest.stream = AmbForest
 		$Amb_Forest.play()
-		print("Foret")
+#		print("Foret")
 	
 	
 func play_amb_cavern():
@@ -65,6 +65,6 @@ func play_amb_cavern():
 		anim_player.play("Fade_To_Cavern")
 		$Amb_Cavern.stream = AmbCavern
 		$Amb_Cavern.play()
-		print("Cavern")
+#		print("Cavern")
 	
 	

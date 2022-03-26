@@ -389,7 +389,7 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 224, 160, 96, 32 )
 
-[node name="Area2D" type="Area2D" parent="ParallaxCloud/Cloud"]
+[node name="Nuage_magique" type="Area2D" parent="ParallaxCloud/Cloud"]
 position = Vector2( 932, 206 )
 rotation = 0.0523599
 script = ExtResource( 13 )
@@ -397,16 +397,16 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxCloud/Cloud/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxCloud/Cloud/Nuage_magique"]
 position = Vector2( 0.5, 4 )
 shape = SubResource( 91 )
 
-[node name="Sprite_1" type="Sprite" parent="ParallaxCloud/Cloud/Area2D"]
+[node name="Sprite_1" type="Sprite" parent="ParallaxCloud/Cloud/Nuage_magique"]
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 96, 160, 64 )
 
-[node name="Rain" type="CPUParticles2D" parent="ParallaxCloud/Cloud/Area2D/Sprite_1"]
+[node name="Rain" type="CPUParticles2D" parent="ParallaxCloud/Cloud/Nuage_magique/Sprite_1"]
 position = Vector2( -1.10754, 17.0814 )
 z_index = -1
 z_as_relative = false
@@ -418,7 +418,7 @@ emission_rect_extents = Vector2( 70, 1 )
 scale_amount = 0.2
 color = Color( 0.145098, 0.415686, 0.835294, 1 )
 
-[node name="Rain" type="AudioStreamPlayer2D" parent="ParallaxCloud/Cloud/Area2D"]
+[node name="Rain" type="AudioStreamPlayer2D" parent="ParallaxCloud/Cloud/Nuage_magique"]
 volume_db = 12.0
 max_distance = 1500.0
 attenuation = 1.27456
@@ -584,7 +584,7 @@ max_distance = 1500.0
 attenuation = 2.0
 bus = "Amb"
 
-[connection signal="input_event" from="ParallaxCloud/Cloud/Area2D" to="ParallaxCloud/Cloud/Area2D" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="ParallaxCloud/Cloud/Nuage_magique" to="ParallaxCloud/Cloud/Nuage_magique" method="_on_Area2D_input_event"]
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_entered"]
 [connection signal="body_exited" from="Zone_Sound/PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_exited"]
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBCavern" to="." method="_on_PlayerDetectorAMBCavern_body_entered"]

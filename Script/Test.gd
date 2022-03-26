@@ -15,4 +15,9 @@ func _on_Slime_coin_caught() -> void:
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
+		$HUD/TransitionColor/AnimationPlayer.play("transition_out")
 		SceneLoader.load_menu()
+
+
+func _ready():
+	$HUD/TransitionColor/AnimationPlayer.play("transition_in")
