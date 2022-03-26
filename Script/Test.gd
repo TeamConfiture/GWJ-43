@@ -15,4 +15,4 @@ func _on_Slime_coin_caught() -> void:
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene("res://Scene/Menu.tscn")
+		SceneLoader.load_menu()
