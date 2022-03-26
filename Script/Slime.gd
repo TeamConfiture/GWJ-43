@@ -56,6 +56,7 @@ func _set_state(new_state:int):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_set_state(State.normal)
+	set_camera_limits()
 
 func get_speed(_dir:float, _speed:float) -> float:
 	if _dir != 0:
@@ -150,3 +151,8 @@ func is_in_water():
 	var space_state = get_world_2d().direct_space_state
 	var results = space_state.intersect_point(swim_level.global_position, 1, [], WATER_MASK)
 	return results.size() != 0
+
+
+func set_camera_limits():
+	$Camera2D.limit_right = get_viewport().size.x
+	$Camera2D.limit_bottom = get_viewport().size.y
