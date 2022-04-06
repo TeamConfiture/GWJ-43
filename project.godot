@@ -48,8 +48,7 @@ shapes/collision/shape_color=Color( 0.701961, 0.607843, 0, 0.419608 )
 
 window/size/width=1366
 window/size/height=768
-window/size/test_width=1366
-window/size/test_height=768
+window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
