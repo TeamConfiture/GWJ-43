@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Script/Test.gd" type="Script" id=1]
+[ext_resource path="res://Script/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scene/Slime.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scene/Level_1.tscn" type="PackedScene" id=4]

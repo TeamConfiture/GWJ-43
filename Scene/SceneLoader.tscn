@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Shader/transition.material" type="Material" id=1]
+[ext_resource path="res://Script/SceneLoader.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -45,14 +46,20 @@ tracks/0/keys = {
 "values": [ 1.0, 0.0 ]
 }
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="SceneLoader" type="Node"]
+script = ExtResource( 2 )
 
-[node name="TransitionColor" type="ColorRect" parent="."]
+[node name="Layer" type="CanvasLayer" parent="."]
+
+[node name="TransitionColor" type="ColorRect" parent="Layer"]
+visible = false
 material = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionColor"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Layer/TransitionColor")
 playback_speed = 2.0
 method_call_mode = 1
 anims/RESET = SubResource( 4 )

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Script/Player_start.gd" type="Script" id=1]
+
+[node name="Player_start" type="Position2D"]
+position = Vector2( 208, 56 )
+script = ExtResource( 1 )

@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Art/Menu/TreflePushed.png" type="Texture" id=1]
 [ext_resource path="res://Script/Menu.gd" type="Script" id=2]
 [ext_resource path="res://Art/Menu/Credits-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Art/Menu/TrefleBack.png" type="Texture" id=4]
-[ext_resource path="res://Scene/TransitionColor.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -38,17 +37,16 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Credits" type="Node2D"]
+[node name="Credits" type="Control"]
 script = ExtResource( 2 )
 
 [node name="bg" type="AnimatedSprite" parent="."]
 scale = Vector2( 7.11111, 7.11111 )
 frames = SubResource( 7 )
 animation = "credits"
+frame = 5
 playing = true
 offset = Vector2( 96, 54 )
-
-[node name="TransitionColor" parent="bg" instance=ExtResource( 5 )]
 
 [node name="back" type="TextureButton" parent="."]
 margin_left = 984.0
