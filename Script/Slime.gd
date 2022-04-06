@@ -3,6 +3,7 @@ class_name Slime
 
 signal clover_eaten
 signal coin_caught
+signal chaudron_eaten
 
 onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
@@ -57,7 +58,14 @@ func _set_state(new_state:int):
 func _ready() -> void:
 	_set_state(State.normal)
 	set_camera_limits()
+	set_process(false)
+	set_physics_process(false)
 
+func do_activate(etat:bool):
+	visible=etat
+	set_process(etat)
+	set_physics_process(etat)
+	
 func get_speed(_dir:float, _speed:float) -> float:
 	if _dir != 0:
 		return clamp(_speed+_dir*move_speed, -1, 1)
@@ -130,7 +138,7 @@ func _on_eat() -> void:
 			_area.be_eaten()
 		
 		if _area.is_in_group("Chaudron"):
-			SceneLoader.next_scene()
+			emit_signal("chaudron_eaten")
 			pass
 			
 

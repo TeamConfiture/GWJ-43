@@ -16,4 +16,4 @@ func _ready():
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_doubleclick() :
 		Rain.visible = true
-		$Rain.play(0.0)
+		$Sprite_1/Rain2.play(0.0)

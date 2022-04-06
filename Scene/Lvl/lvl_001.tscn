@@ -1269,9 +1269,6 @@ position = Vector2( 1296, 577 )
 [node name="Chaudron" parent="." instance=ExtResource( 12 )]
 position = Vector2( 237, 728 )
 
-[node name="Chaudron" parent="Chaudron" instance=ExtResource( 12 )]
-position = Vector2( 67, -512 )
-
 [node name="Zone_Sound" type="Node" parent="."]
 
 [node name="PlayerDetectorAMBForest" type="Area2D" parent="Zone_Sound"]
@@ -1325,4 +1322,7 @@ attenuation = 2.0
 bus = "Amb"
 
 [node name="PlayerStart" type="Position2D" parent="."]
-position = Vector2( 205, 24 )
+position = Vector2( 312, 176 )
+
+[node name="Chaudron" parent="PlayerStart" instance=ExtResource( 12 )]
+position = Vector2( 40, 40 )
