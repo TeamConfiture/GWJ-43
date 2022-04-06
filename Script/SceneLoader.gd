@@ -6,6 +6,7 @@ var scenes = {
 	"Menu": preload("res://Scene/Menu.tscn"), 
 	"Story": preload("res://Scene/Story.tscn"),
 	"Game": preload("res://Scene/Game.tscn"),
+	"Fin": preload("res://Scene/Fin.tscn"),
 	"Credits": preload("res://Scene/Credits.tscn")
 
 	}

@@ -33,10 +33,16 @@ func _process(_delta):
 
 func _on_Slime_chaudron_eaten():
 	slime.do_activate(false)
-	#transition de current_lvl -> chaudron arc en ciel etc...
+	#transition out de current_lvl 
 	remove_child(current_lvl)
 	lvl_index+=1
-	current_lvl = load("res://Scene/Lvl/lvl_%03d"%lvl_index+".tscn").instance()
-	add_child(current_lvl)
-	slime.position = current_lvl.get_node("PlayerStart").position
-	slime.do_activate(true)
+	var s = "res://Scene/Lvl/lvl_%03d"%lvl_index+".tscn"
+	if ResourceLoader.exists(s):
+		current_lvl = load(s).instance()
+		add_child(current_lvl)
+		slime.position = current_lvl.get_node("PlayerStart").position
+		#transition in de current_lvl -> chaudron arc en ciel etc...
+		#penser à yiel
+		slime.do_activate(true)
+	else :
+		SceneLoader.change_scene("Fin")
