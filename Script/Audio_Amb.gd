@@ -11,3 +11,4 @@ func _on_PlayerDetectorAMBCavern_body_entered(body):
 
 func _on_PlayerDetectorAMBCavern_body_exited(body):
 	pass
+

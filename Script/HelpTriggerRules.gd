@@ -9,20 +9,36 @@ onready var parchemin =  $CanvasLayer/Parchemin
 
 var dejavu:bool = false
 
+var key_layout = OS.get_latin_keyboard_variant()
 
-var dic_rules = {
+var dic_rules_QWERTY = {
 	"Moves": preload("res://Art/Rules/rules_final_1.png"),
-	"Clover": preload("res://Art/Rules/rules_final_5.png"), 
+	"Clover": preload("res://Art/Rules/rules_final_5_Q.png"), 
 	"Spit": preload("res://Art/Rules/rules_final_6.png"), 
 	"Steam": preload("res://Art/Rules/rules_final_7.png"), 
 	"Mud": preload("res://Art/Rules/rules_final_8.png"),
-	"Vine": preload("res://Art/Rules/rules_final_9.png"), 
+	"Vine": preload("res://Art/Rules/rules_final_9_Q.png"), 
 	"Block": preload("res://Art/Rules/rules_final_10.png") 
 
 	}
+	
+var dic_rules_AZERTY = {
+	"Moves": preload("res://Art/Rules/rules_final_1.png"),
+	"Clover": preload("res://Art/Rules/rules_final_5_A.png"), 
+	"Spit": preload("res://Art/Rules/rules_final_6.png"), 
+	"Steam": preload("res://Art/Rules/rules_final_7.png"), 
+	"Mud": preload("res://Art/Rules/rules_final_8.png"),
+	"Vine": preload("res://Art/Rules/rules_final_9_A.png"), 
+	"Block": preload("res://Art/Rules/rules_final_10.png") 
+
+	}	
 
 func _ready():
-	parchemin.texture=dic_rules[rules_index]
+	
+	if key_layout == "QWERTY" :
+		parchemin.texture=dic_rules_QWERTY[rules_index]
+	else :
+		parchemin.texture=dic_rules_AZERTY[rules_index]
 	parchemin.visible=false
 
 func _process(delta):

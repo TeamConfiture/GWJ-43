@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Script/HelpTriggerRules.gd" type="Script" id=1]
-[ext_resource path="res://Art/Rules/rules_final_5.png" type="Texture" id=2]
+[ext_resource path="res://Art/Rules/rules_final_5_A.png" type="Texture" id=2]
 [ext_resource path="res://Art/Rules/Button_Quit_Pushed.png" type="Texture" id=3]
 [ext_resource path="res://Art/Rules/Button_Quit.png" type="Texture" id=4]
 
