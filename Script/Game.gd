@@ -4,6 +4,7 @@ onready var hud := $HUD
 
 var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_000.tscn")
 
+
 onready var slime = $Slime
 var coins := 0
 var current_lvl
@@ -25,10 +26,6 @@ func _on_Slime_clover_eaten(clovers: PoolStringArray) -> void:
 func _on_Slime_coin_caught() -> void:
 	coins += 1
 	hud.update_coin(coins)
-
-func _process(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
-		SceneLoader.change_scene("Menu")
 
 
 func _on_Slime_chaudron_eaten():
