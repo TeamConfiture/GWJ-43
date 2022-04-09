@@ -17,10 +17,11 @@ func _process(delta):
 		pause = !pause
 		get_tree().paused=pause
 		self.visible = pause
-		
+
 
 
 func _on_Menu_pressed():
+	get_tree().paused=false
 	SceneLoader.change_scene("Menu")
 
 

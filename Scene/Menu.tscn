@@ -42,7 +42,7 @@ texture = SubResource( 1 )
 expand = true
 
 [node name="Logo" type="Sprite" parent="."]
-position = Vector2( 1232, 152 )
+position = Vector2( 760, 152 )
 texture = ExtResource( 14 )
 
 [node name="play" type="TextureButton" parent="."]

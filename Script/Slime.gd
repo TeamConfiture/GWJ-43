@@ -163,4 +163,4 @@ func is_in_water():
 
 func set_camera_limits():
 	$Camera2D.limit_right = get_viewport().size.x
-	$Camera2D.limit_bottom = get_viewport().size.y
+#	$Camera2D.limit_bottom = get_viewport().size.y
