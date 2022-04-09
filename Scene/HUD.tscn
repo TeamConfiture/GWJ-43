@@ -64,8 +64,9 @@ __meta__ = {
 }
 
 [node name="CoinIcon" type="TextureRect" parent="HBoxCoins"]
+margin_top = 4.0
 margin_right = 28.0
-margin_bottom = 28.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 28, 14 )
 texture = SubResource( 2 )
 expand = true
@@ -73,8 +74,9 @@ stretch_mode = 6
 
 [node name="CoinLabel" type="Label" parent="HBoxCoins"]
 margin_left = 32.0
+margin_top = 4.0
 margin_right = 108.0
-margin_bottom = 28.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 0, 28 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
