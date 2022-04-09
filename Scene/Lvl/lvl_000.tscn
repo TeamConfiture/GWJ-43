@@ -1269,9 +1269,6 @@ position = Vector2( 1296, 577 )
 [node name="Chaudron" parent="." instance=ExtResource( 12 )]
 position = Vector2( 237, 728 )
 
-[node name="Chaudron" parent="Chaudron" instance=ExtResource( 12 )]
-position = Vector2( 67, -512 )
-
 [node name="Zone_Sound" type="Node" parent="."]
 
 [node name="PlayerDetectorAMBForest" type="Area2D" parent="Zone_Sound"]
