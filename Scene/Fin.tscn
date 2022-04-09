@@ -32,7 +32,6 @@ texture = ExtResource( 9 )
 position = Vector2( 682, 383 )
 scale = Vector2( 7, 7 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="RulesFinal14" type="Sprite" parent="."]
