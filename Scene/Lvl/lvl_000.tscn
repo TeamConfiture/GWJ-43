@@ -1326,3 +1326,6 @@ position = Vector2( 205, 24 )
 
 [node name="Chaudron2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 280, 216 )
+
+[connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_entered"]
+[connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBCavern" to="." method="_on_PlayerDetectorAMBCavern_body_entered"]
