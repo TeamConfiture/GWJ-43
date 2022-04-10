@@ -22,6 +22,7 @@ func _process(delta):
 
 func _on_Menu_pressed():
 	get_tree().paused=false
+	self.visible = false
 	SceneLoader.change_scene("Menu")
 
 
