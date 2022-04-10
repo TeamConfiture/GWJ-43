@@ -342,8 +342,8 @@ visible = false
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 688, 1152 )
 current = true
+zoom = Vector2( 0.25, 0.25 )
 
 [node name="LvlLoader" parent="." instance=ExtResource( 13 )]
 

@@ -9,6 +9,7 @@ var path : PoolVector2Array
 var goal : Vector2
 var start : Vector2
 export var speed := 250
+
 signal cinematic_end
 
 var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_000.tscn")
@@ -24,6 +25,8 @@ func _ready():
 	current_lvl = scene_lvl_000.instance()
 	
 	add_child(current_lvl)
+	
+	set_camera_limits(current_lvl.get_node("Tile/Navigation2D/TileMap_platform"))
 	
 	slime.position = current_lvl.get_node("PlayerStart").position
 	start = slime.position -Vector2(0,80)
@@ -85,3 +88,12 @@ func _process(delta: float) -> void:
 func _on_Game_cinematic_end():
 	$LvlLoader.change_lvl_in()
 	slime.do_activate(true)
+
+func set_camera_limits(lvl :TileMap ):
+	var map_limits = lvl.get_used_rect()
+	var map_cellsize = lvl.cell_size
+	$Camera2D.limit_left = map_limits.position.x * map_cellsize.x
+	$Camera2D.limit_right = map_limits.end.x * map_cellsize.x
+	$Camera2D.limit_top = map_limits.position.y * map_cellsize.y
+	$Camera2D.limit_bottom = map_limits.end.y * map_cellsize.y
+	
