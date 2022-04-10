@@ -26,22 +26,8 @@ func _ready():
 	
 	add_child(current_lvl)
 	
-	set_camera_limits(current_lvl.get_node("Tile/Navigation2D/TileMap_platform"))
-	
-	slime.position = current_lvl.get_node("PlayerStart").position
-	start = slime.position -Vector2(0,80)
-	goal = current_lvl.get_node("Chaudron").position
-	nav = current_lvl.get_node("Tile/Navigation2D")
-	
-	path = nav.get_simple_path(start, goal, false)
-#	$Line2D.points = PoolVector2Array(path)
-#	$Line2D.show()
-	cam.position=start
-	cam.current=true
-	
-	
-	
-#	slime.do_activate(true)
+	cinematic()
+
 
 
 
@@ -62,10 +48,11 @@ func _on_Slime_chaudron_eaten():
 	if ResourceLoader.exists(s):
 		current_lvl = load(s).instance()
 		add_child(current_lvl)
-		slime.position = current_lvl.get_node("PlayerStart").position
+		cinematic()
+#		slime.position = current_lvl.get_node("PlayerStart").position
 		#transition in de current_lvl -> chaudron arc en ciel etc...
 		#penser à yiel
-		slime.do_activate(true)
+#		slime.do_activate(true)
 	else :
 		SceneLoader.change_scene("Fin")
 
@@ -85,6 +72,19 @@ func _process(delta: float) -> void:
 		
 
 
+func cinematic():
+	set_camera_limits(current_lvl.get_node("Tile/Navigation2D/TileMap_platform"))
+	slime.position = current_lvl.get_node("PlayerStart").position
+	start = slime.position -Vector2(0,80)
+	goal = current_lvl.get_node("Chaudron").position
+	nav = current_lvl.get_node("Tile/Navigation2D")
+	path = nav.get_simple_path(start, goal, false)
+	cam.position=start
+	cam.current=true
+	
+	
+	
+	
 func _on_Game_cinematic_end():
 	$LvlLoader.change_lvl_in()
 	slime.do_activate(true)
