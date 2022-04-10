@@ -6,6 +6,7 @@ func _ready():
 func _on_play_pressed():
 	SceneLoader.change_scene("Story")
 	BackgroundMusic.play_main_music()
+	BackgroundMusic.play_button_start()
 
 func _on_credits_pressed():
 	BackgroundMusic.play_button_normal()

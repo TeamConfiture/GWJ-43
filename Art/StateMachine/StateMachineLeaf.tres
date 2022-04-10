@@ -86,4 +86,4 @@ states/walking/position = Vector2( 705, 293 )
 transitions = [ "walking", "idle", SubResource( 287 ), "idle", "walking", SubResource( 288 ), "idle", "hook", SubResource( 290 ), "landing", "idle", SubResource( 293 ), "falling", "landing", SubResource( 294 ), "hook", "falling", SubResource( 295 ), "idle", "eating", SubResource( 298 ), "walking", "eating", SubResource( 299 ), "eating", "idle", SubResource( 300 ), "idle", "falling", SubResource( 301 ), "walking", "falling", SubResource( 302 ), "eating", "falling", SubResource( 303 ), "idle", "spitting", SubResource( 305 ), "walking", "hook", SubResource( 306 ), "hook", "idle", SubResource( 307 ) ]
 start_node = "idle"
 end_node = "spitting"
-graph_offset = Vector2( -20, 34 )
+graph_offset = Vector2( -20, 103.632 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Art/Audio/Sound/UI/ButtonStart_01.ogg" type="AudioStream" id=1]
 [ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player.gd" type="Script" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_1.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_2.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_3.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Art/Audio/Sound/UI/Pages_02.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Art/Audio/Sound/UI/Pages_03.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Art/Audio/Sound/UI/Pages_01.ogg" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade_To_Cavern"
@@ -20,7 +23,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -42.0 ]
+"values": [ 6.0, -42.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Amb_Cavern:volume_db")
@@ -30,9 +33,9 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 3.73213, 1 ),
+"transitions": PoolRealArray( 3.73213, 1.56917 ),
 "update": 0,
-"values": [ -80.0, 0.0 ]
+"values": [ -42.0, -4.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Amb_Forest:playing")
@@ -60,7 +63,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 3.605, 1 ),
 "update": 0,
-"values": [ -80.0, 0.0 ]
+"values": [ -42.0, 6.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Amb_Cavern:volume_db")
@@ -72,7 +75,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -42.0 ]
+"values": [ -4.0, -42.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Amb_Cavern:playing")
@@ -100,7 +103,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1.07177, 1 ),
 "update": 0,
-"values": [ -50.0, -12.0 ]
+"values": [ -50.0, -6.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("MusicMenu:volume_db")
@@ -140,7 +143,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1.10957, 1 ),
 "update": 0,
-"values": [ 0.0, -50.0 ]
+"values": [ -6.0, -50.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("MusicMenu:volume_db")
@@ -266,6 +269,9 @@ tracks/7/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="Animation" id=6]
+resource_name = "Underwater"
+
 [node name="BackgroundMusic" type="Node"]
 script = ExtResource( 3 )
 
@@ -293,6 +299,7 @@ anims/Fade_To_Forest = SubResource( 2 )
 anims/Fade_To_IGMusic = SubResource( 4 )
 anims/Fade_To_MusicMenu = SubResource( 5 )
 anims/RESET = SubResource( 3 )
+anims/Underwater = SubResource( 6 )
 
 [node name="PressButtonNormal" type="AudioStreamPlayer" parent="."]
 volume_db = -8.0
@@ -302,3 +309,7 @@ script = ExtResource( 2 )
 samples = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
 random_strategy = 1
 random_pitch_range = 0.2
+
+[node name="Button_Next" type="AudioStreamPlayer" parent="."]
+script = ExtResource( 2 )
+samples = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]
