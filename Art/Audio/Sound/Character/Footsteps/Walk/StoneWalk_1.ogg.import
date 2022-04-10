@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/StoneWalk_1.ogg-0bf053eaa1b0b6bf24bd518bb4d0e282.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Character/Footsteps/Walk/StoneWalk_1.ogg"
+dest_files=[ "res://.import/StoneWalk_1.ogg-0bf053eaa1b0b6bf24bd518bb4d0e282.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

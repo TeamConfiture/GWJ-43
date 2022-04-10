@@ -1,7 +1,7 @@
 extends Node
 
 onready var MenuTheme = load ("res://Art/Audio/Music/MenuTheme.ogg")
-onready var ThemePrincipal = load("res://Art/Audio/Music/IGTheme.ogg")	
+onready var ThemePrincipal = load("res://Art/Audio/Music/Level_1.ogg")	
 onready var AmbForest = load("res://Art/Audio/Sound/Amb/Forest/ForestAmb_01.ogg")
 onready var AmbCavern = load("res://Art/Audio/Sound/Amb/Cavern/Cavern_drip_01.ogg")
 
@@ -14,6 +14,9 @@ func play_button_start():
 	$PressButtonStart.play()
 func play_button_normal():
 	$PressButtonNormal.play()
+func play_button_next():
+	$Button_Next.play()
+	
 #--========================================--
 #--          Gestion : Music               --
 #--========================================--
@@ -41,7 +44,7 @@ func play_main_music():
 	if !PrincipalPlay:
 		anim_player.play("Fade_To_IGMusic")
 		$MusicIG.stream = ThemePrincipal
-		$MusicIG.volume_db = -12
+		$MusicIG.volume_db = 0
 		$MusicIG.play()
 #		print("ThemePrincipal")
 	
@@ -66,5 +69,4 @@ func play_amb_cavern():
 		$Amb_Cavern.stream = AmbCavern
 		$Amb_Cavern.play()
 #		print("Cavern")
-	
-	
+

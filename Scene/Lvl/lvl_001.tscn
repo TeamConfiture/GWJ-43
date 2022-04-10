@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/Amb_WaterCoast_01.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/WaterStagn_01.ogg" type="AudioStream" id=2]
@@ -1147,11 +1147,17 @@ points = PoolVector2Array( 2, 8, 2, 0, 2, 0, 30, 0, 30, 24, 8, 24 )
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=248]
+extents = Vector2( 292.5, 38.5 )
+
 [sub_resource type="RectangleShape2D" id=246]
 extents = Vector2( 0.310001, 1.03637 )
 
 [sub_resource type="RectangleShape2D" id=247]
 extents = Vector2( 0.347812, 0.436364 )
+
+[sub_resource type="RectangleShape2D" id=249]
+extents = Vector2( 0.655, 0.436364 )
 
 [node name="Lvl_001" type="Node2D"]
 script = ExtResource( 11 )
@@ -1357,6 +1363,13 @@ position = Vector2( 1352, 792 )
 
 [node name="Zone_Sound" type="Node" parent="."]
 
+[node name="UnderWater" type="Area2D" parent="Zone_Sound"]
+audio_bus_name = "Underwater"
+
+[node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
+position = Vector2( 331.5, 1465.5 )
+shape = SubResource( 248 )
+
 [node name="PlayerDetectorAMBForest" type="Area2D" parent="Zone_Sound"]
 collision_layer = 4
 monitorable = false
@@ -1374,6 +1387,11 @@ monitorable = false
 position = Vector2( 144, 840 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
+
+[node name="ZoneCavernAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBCavern"]
+position = Vector2( 1102.5, 899 )
+scale = Vector2( 100, 55 )
+shape = SubResource( 249 )
 
 [node name="Water_Coast" type="AudioStreamPlayer2D" parent="Zone_Sound"]
 position = Vector2( 48, 1424 )
@@ -1406,5 +1424,7 @@ position = Vector2( 144, 800 )
 position = Vector2( 344, 1392 )
 texture = ExtResource( 6 )
 
+[connection signal="body_entered" from="Zone_Sound/UnderWater" to="." method="_on_UnderWater_body_entered"]
+[connection signal="body_exited" from="Zone_Sound/UnderWater" to="." method="_on_UnderWater_body_exited"]
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_entered"]
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBCavern" to="." method="_on_PlayerDetectorAMBCavern_body_entered"]

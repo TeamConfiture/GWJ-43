@@ -15,6 +15,7 @@ func _ready():
 func _on_NextBtn_pressed():
 	get_node('P'+ str(page)).visible = false
 	page += 1
+	BackgroundMusic.play_button_next()
 	if page >= 5:
 		$NextBtn.visible=false
 		SceneLoader.change_scene("Game")
