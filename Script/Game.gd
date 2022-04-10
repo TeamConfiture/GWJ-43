@@ -2,7 +2,7 @@ extends Node
 
 onready var hud := $HUD
 
-var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_002.tscn")
+var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_000.tscn")
 
 
 onready var slime = $Slime
