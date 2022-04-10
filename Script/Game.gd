@@ -2,7 +2,17 @@ extends Node
 
 onready var hud := $HUD
 
-var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_002.tscn")
+onready var cam = $Camera2D
+
+var nav : Navigation2D
+var path : PoolVector2Array
+var goal : Vector2
+var start : Vector2
+export var speed := 250
+signal cinematic_end
+
+var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_000.tscn")
+
 
 
 onready var slime = $Slime
@@ -16,8 +26,20 @@ func _ready():
 	add_child(current_lvl)
 	
 	slime.position = current_lvl.get_node("PlayerStart").position
-	slime.do_activate(true)
+	start = slime.position -Vector2(0,80)
+	goal = current_lvl.get_node("Chaudron").position
+	nav = current_lvl.get_node("Tile/Navigation2D")
 	
+	path = nav.get_simple_path(start, goal, false)
+#	$Line2D.points = PoolVector2Array(path)
+#	$Line2D.show()
+	cam.position=start
+	cam.current=true
+	
+	
+	
+#	slime.do_activate(true)
+
 
 
 func _on_Slime_clover_eaten(clovers: PoolStringArray) -> void:
@@ -43,3 +65,23 @@ func _on_Slime_chaudron_eaten():
 		slime.do_activate(true)
 	else :
 		SceneLoader.change_scene("Fin")
+
+func _process(delta: float) -> void:
+	if !path:
+		
+		return
+	if path.size() > 0:
+		var d: float = $Camera2D.position.distance_to(path[0])
+		if d > 10:
+			$Camera2D.position = $Camera2D.position.linear_interpolate(path[0], (speed * delta)/d)
+		else:
+			path.remove(0)
+	if path.size() < 1:
+		$LvlLoader.change_lvl_out()
+		emit_signal("cinematic_end")
+		
+
+
+func _on_Game_cinematic_end():
+	$LvlLoader.change_lvl_in()
+	slime.do_activate(true)

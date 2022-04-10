@@ -28,4 +28,3 @@ func change_scene(scene_id:String):
 	get_tree().change_scene_to(scenes[scene_id])
 
 	fader.play("transition_in")
-
