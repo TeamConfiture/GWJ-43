@@ -12,7 +12,7 @@ export var speed := 250
 
 signal cinematic_end
 
-var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_000.tscn")
+var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_004.tscn")
 
 
 
