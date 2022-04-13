@@ -1,9 +1,15 @@
 extends StaticBody2D
 
-signal door_to_open
+
 onready var anim_player = $AnimationPlayer
 
 func open():
-	get_tree().get_root().get_node("Game").find_the_wayout(position)
+	var game = get_tree().get_root().get_node("Game")
+	
+	game.find_the_wayout(position)
 
+	yield(game,"open_door")
 	anim_player.play("porte")
+	yield(anim_player,"animation_finished")
+	
+	game._on_door_open()

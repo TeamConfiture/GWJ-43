@@ -589,7 +589,7 @@ position = Vector2( 560, 306 )
 [node name="Door_and_Button" type="Node" parent="."]
 
 [node name="Door" parent="Door_and_Button" instance=ExtResource( 10 )]
-position = Vector2( 976, 70 )
+position = Vector2( 976, 69 )
 
 [node name="HeavyButton" parent="Door_and_Button" instance=ExtResource( 8 )]
 position = Vector2( 688, 416 )

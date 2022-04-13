@@ -1,5 +1,6 @@
 extends Node
 
+signal open_door
 onready var hud := $HUD
 
 onready var cam = $Camera2D
@@ -10,16 +11,16 @@ var goal : Vector2
 var start : Vector2
 export var speed := 250
 
-signal cinematic_end
 
 var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_004.tscn")
-
 
 
 onready var slime = $Slime
 var coins := 0
 var current_lvl
 var lvl_index: int = 0 
+
+var cinematic_done = false
 
 func _ready():
 	current_lvl = scene_lvl_000.instance()
@@ -28,6 +29,7 @@ func _ready():
 	set_camera_limits(current_lvl.get_node("Tile/Navigation2D/TileMap_platform"))
 
 	cinematic()
+	
 
 
 
@@ -68,8 +70,7 @@ func _process(delta: float) -> void:
 		else:
 			path.remove(0)
 	if path.size() < 1:
-		$LvlLoader.change_lvl_out()
-		emit_signal("cinematic_end")
+		_on_cinematic_end()
 
 
 
@@ -82,6 +83,7 @@ func cinematic():
 	path = nav.get_simple_path(start, goal, false)
 	cam.position=start
 	cam.current=true
+	
 
 
 func find_the_wayout(position_door:Vector2):
@@ -95,13 +97,25 @@ func find_the_wayout(position_door:Vector2):
 	path = nav.get_simple_path(start, goal, false)
 	cam.current=true
 	cam.smoothing_enabled = true
+	
 
 
-
-
-func _on_Game_cinematic_end():
-	$LvlLoader.change_lvl_in()
+func _on_door_open():
+#	$LvlLoader.change_lvl()
 	slime.do_activate(true)
+
+func _on_cinematic_end():
+	
+	if cinematic_done == true : # Du coup si cinematique faite on est en mode Door
+		emit_signal("open_door")
+		
+		
+	else :
+		$LvlLoader.change_lvl()
+		slime.do_activate(true)
+		cinematic_done = true
+
+	
 
 func set_camera_limits(lvl :TileMap ):
 	var map_limits = lvl.get_used_rect()
