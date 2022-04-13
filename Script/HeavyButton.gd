@@ -12,7 +12,7 @@ func _on_HeavyButton_body_entered(body):
 	if !push && body.state == 2:
 		$AnimationPlayer.play("HeavyBtn")
 		push = !push
-		emit_signal("activate_btn")
+		emit_signal("activate_btn",name)
 		
 
 

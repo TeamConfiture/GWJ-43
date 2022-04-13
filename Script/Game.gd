@@ -83,7 +83,16 @@ func cinematic():
 	cam.current=true
 	
 	
-	
+func find_the_wayout(position_door:Vector2):
+	slime.do_activate(false)
+#	1 -> freeze slime
+#	2 -> Change camera
+#	3 -> Path A*
+#	4 -> travelling
+#	5 -> Change camera  + Rotoscopie
+#	6 -> Slime alive
+	pass
+
 	
 func _on_Game_cinematic_end():
 	$LvlLoader.change_lvl_in()
