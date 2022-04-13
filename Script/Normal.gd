@@ -7,7 +7,7 @@ const Jump_Acc = 3
 
 var want_jump := false
 
-func _physics_process(delta: float) -> void:
+func do_physics_process(delta: float) -> void:
 	if parent.is_in_water():
 		want_jump = true
 	else:
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 
 	parent.move_and_slide(parent.speed * MulSpeed, Vector2.UP)
 
-func _process(delta: float) -> void:
+func do_process(delta: float) -> void:
 	want_jump = Input.is_action_just_pressed("up")
 	
 	parent.want_eat = Input.is_action_just_pressed("eat")

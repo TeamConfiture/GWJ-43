@@ -27,7 +27,7 @@ func state_enabled(b:bool):
 	if b:
 		hook.hook_enabled(true)
 
-func _physics_process(delta: float) -> void:
+func do_physics_process(delta: float) -> void:
 	match(state):
 		State.normal:
 			if parent.is_on_floor():
@@ -62,7 +62,7 @@ func reset():
 	shape_hook.disabled = true
 	state = State.normal
 
-func _process(delta: float) -> void:
+func do_process(delta: float) -> void:
 	match(state):
 		State.normal:
 			parent.want_eat = Input.is_action_just_pressed("eat")

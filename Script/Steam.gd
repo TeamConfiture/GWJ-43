@@ -9,7 +9,7 @@ var val_max = -15
 var val_acc = val_max*0.075
 var val_mode := false
 
-func _physics_process(delta: float) -> void:
+func do_physics_process(delta: float) -> void:
 	parent.set_collision_mask_bit(2, 0)
 
 	if parent.is_in_water():
@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 
 	parent.move_and_slide(parent.speed * MulSpeed, Vector2.UP)
 	
-func _process(delta: float) -> void:
+func do_process(delta: float) -> void:
 	val -= -val_acc
 			
 	if val < val_max:
