@@ -72,6 +72,9 @@ func get_speed(_dir:float, _speed:float) -> float:
 		return clamp(_speed+_dir*move_speed, -1, 1)
 	return sign(_speed)*clamp(abs(_speed)-stop_speed, 0, 1)
 
+func _physics_process(delta: float) -> void:
+	state_dic[state].do_physics_process(delta)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	dir.x = Input.get_axis("left", "right")
@@ -80,6 +83,8 @@ func _process(delta: float) -> void:
 	elif dir.x > 0:
 		sprite.flip_h = false
 	speed.x = get_speed(dir.x, speed.x)
+	
+	state_dic[state].do_process(delta)
 	
 	anim_tree["parameters/conditions/is_eating"] = want_eat
 
