@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Art/element.png" type="Texture" id=1]
 [ext_resource path="res://Script/Rain.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Art/leaf.png" type="Texture" id=10]
 [ext_resource path="res://Scene/Slime.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scene/LvlLoader.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "element.png 0"
@@ -163,16 +164,17 @@ script = ExtResource( 4 )
 [node name="SkyBckGrndColor" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 1 )
 motion_mirroring = Vector2( 1024, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/SkyBckGrndColor"]
 texture = ExtResource( 9 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/SkyBckGrndColor"]
+position = Vector2( 0, -640 )
+scale = Vector2( 1, 0.833333 )
+texture = ExtResource( 9 )
+centered = false
+flip_v = true
 
 [node name="Cloud" type="ParallaxLayer" parent="ParallaxBackground"]
 modulate = Color( 0.694118, 0.85098, 0.894118, 1 )
@@ -340,6 +342,15 @@ visible = false
 [node name="Slime" parent="." instance=ExtResource( 11 )]
 visible = false
 
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.25, 0.25 )
+smoothing_enabled = true
+smoothing_speed = 3.0
+
+[node name="LvlLoader" parent="." instance=ExtResource( 13 )]
+
+[connection signal="cinematic_end" from="." to="." method="_on_Game_cinematic_end"]
 [connection signal="input_event" from="ParallaxCloud/Cloud/Nuage_magique" to="ParallaxCloud/Cloud/Nuage_magique" method="_on_Area2D_input_event"]
 [connection signal="chaudron_eaten" from="Slime" to="." method="_on_Slime_chaudron_eaten"]
 [connection signal="clover_eaten" from="Slime" to="." method="_on_Slime_clover_eaten"]

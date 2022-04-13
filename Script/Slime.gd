@@ -65,6 +65,7 @@ func do_activate(etat:bool):
 	visible=etat
 	set_process(etat)
 	set_physics_process(etat)
+	$Camera2D.current=true
 	
 func get_speed(_dir:float, _speed:float) -> float:
 	if _dir != 0:

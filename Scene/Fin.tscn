@@ -1,24 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Script/Fin.gd" type="Script" id=1]
-[ext_resource path="res://Art/End/rules_final_11.png" type="Texture" id=2]
+[ext_resource path="res://Art/End/Fin.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Art/End/rules_final_17.png" type="Texture" id=3]
 [ext_resource path="res://Art/End/rules_final_16.png" type="Texture" id=4]
-[ext_resource path="res://Art/End/rules_final_12.png" type="Texture" id=5]
-[ext_resource path="res://Art/End/rules_final_13.png" type="Texture" id=6]
 [ext_resource path="res://Art/End/rules_final_14.png" type="Texture" id=7]
 [ext_resource path="res://Art/End/rules_final_15.png" type="Texture" id=8]
 [ext_resource path="res://Art/Menu/Menu_BG_1.png" type="Texture" id=9]
 [ext_resource path="res://Art/Rules/Button_Next.png" type="Texture" id=10]
 [ext_resource path="res://Art/Rules/Button_Next_Pushed.png" type="Texture" id=11]
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "default",
-"speed": 2.0
-} ]
 
 [node name="TheEnd" type="Node2D"]
 script = ExtResource( 1 )
@@ -31,7 +21,9 @@ texture = ExtResource( 9 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 682, 383 )
 scale = Vector2( 7, 7 )
-frames = SubResource( 1 )
+frames = ExtResource( 2 )
+animation = "Fin"
+frame = 2
 playing = true
 
 [node name="RulesFinal14" type="Sprite" parent="."]
