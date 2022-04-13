@@ -9,31 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
-"class": "CommandData",
-"language": "GDScript",
-"path": "res://addons/TwitchChat/util/cmd_data.gd"
-}, {
-"base": "Reference",
-"class": "CommandInfo",
-"language": "GDScript",
-"path": "res://addons/TwitchChat/util/cmd_info.gd"
-}, {
-"base": "Node",
-"class": "Gift",
-"language": "GDScript",
-"path": "res://addons/TwitchChat/gift_node.gd"
-}, {
-"base": "Resource",
-"class": "ImageCache",
-"language": "GDScript",
-"path": "res://addons/TwitchChat/util/image_cache.gd"
-}, {
-"base": "Reference",
-"class": "SenderData",
-"language": "GDScript",
-"path": "res://addons/TwitchChat/util/sender_data.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Slime",
 "language": "GDScript",
@@ -45,11 +20,6 @@ _global_script_classes=[ {
 "path": "res://Script/State.gd"
 } ]
 _global_script_class_icons={
-"CommandData": "",
-"CommandInfo": "",
-"Gift": "",
-"ImageCache": "",
-"SenderData": "",
 "Slime": "",
 "State": ""
 }
@@ -84,7 +54,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/randomAudioStreamPlayer/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [global]
 
