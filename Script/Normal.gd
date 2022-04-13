@@ -15,7 +15,7 @@ func do_physics_process(delta: float) -> void:
 	
 	if parent.is_on_floor():
 		parent.speed.y = parent.Grav
-		if want_jump:
+		if want_jump and parent.anim_playback.get_current_node() in ["idle", "walking"]:
 			parent.speed.y -= Jump_Acc
 			want_jump = false
 	else:
