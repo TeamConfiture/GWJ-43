@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://Scene/Integrable/Balloon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Integrable/Clover.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Art/element.png" type="Texture" id=6]
 [ext_resource path="res://Art/33.png" type="Texture" id=7]
 [ext_resource path="res://Scene/Integrable/HeavyButton.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scene/Stalactite.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scene/Integrable/Door.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scene/Integrable/Grille_bas.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scene/Integrable/Crow.tscn" type="PackedScene" id=12]
@@ -1646,8 +1645,6 @@ __meta__ = {
 
 [node name="Grille_bas" parent="Grilles" instance=ExtResource( 11 )]
 position = Vector2( 216, 736 )
-
-[node name="Stalactite" parent="." instance=ExtResource( 9 )]
 
 [node name="Chaudron" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3424, 888 )
