@@ -12,7 +12,7 @@ var start : Vector2
 export var speed := 250
 
 
-var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_005.tscn")
+var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_000.tscn")
 
 
 onready var slime = $Slime
@@ -43,6 +43,7 @@ func _on_Slime_coin_caught() -> void:
 
 
 func _on_Slime_chaudron_eaten():
+	cinematic_done = false
 	slime.do_activate(false)
 	#transition out de current_lvl 
 	remove_child(current_lvl)
@@ -60,6 +61,8 @@ func _on_Slime_chaudron_eaten():
 		SceneLoader.change_scene("Fin")
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_page_up"):
+		_on_Slime_chaudron_eaten()
 	if !path:
 
 		return
@@ -111,7 +114,7 @@ func _on_cinematic_end():
 		
 		
 	else :
-		yield(get_tree().create_timer(3.0), "timeout")
+		yield(get_tree().create_timer(1.0), "timeout")
 		$LvlLoader.change_lvl()
 		slime.do_activate(true)
 		cinematic_done = true
