@@ -12,7 +12,7 @@ var start : Vector2
 export var speed := 250
 
 
-var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_004.tscn")
+var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_005.tscn")
 
 
 onready var slime = $Slime
@@ -111,6 +111,7 @@ func _on_cinematic_end():
 		
 		
 	else :
+		yield(get_tree().create_timer(3.0), "timeout")
 		$LvlLoader.change_lvl()
 		slime.do_activate(true)
 		cinematic_done = true
@@ -124,4 +125,5 @@ func set_camera_limits(lvl :TileMap ):
 	cam.limit_right = map_limits.end.x * map_cellsize.x
 	cam.limit_top = map_limits.position.y * map_cellsize.y
 	cam.limit_bottom = map_limits.end.y * map_cellsize.y
+
 
