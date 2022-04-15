@@ -25,5 +25,5 @@ func do_process(delta: float) -> void:
 	
 	parent.anim_tree["parameters/conditions/is_on_floor"] = is_on_floor
 	parent.anim_tree["parameters/conditions/is_falling"] = !is_on_floor
-	parent.anim_tree["parameters/conditions/is_moving"] = is_on_floor and parent.speed.x != 0
-	parent.anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and parent.speed.x == 0
+	parent.anim_tree["parameters/conditions/is_moving"] = is_on_floor and parent.dir.x != 0
+	parent.anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and parent.dir.x == 0

@@ -93,12 +93,13 @@ func _physics_process(delta: float) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if anim_playback.get_current_node() != "eating":
-		dir.x = Input.get_axis("left", "right")
-		if dir.x < 0:
-			sprite.flip_h = true
-		elif dir.x > 0:
-			sprite.flip_h = false
+	dir.x = Input.get_axis("left", "right")
+	if dir.x < 0:
+		sprite.flip_h = true
+	elif dir.x > 0:
+		sprite.flip_h = false
+	
+	if anim_playback.get_current_node() in ["walking", "jumping", "falling"]:
 		speed.x = get_speed(dir.x, speed.x)
 	
 	state_dic[state].do_process(delta)
