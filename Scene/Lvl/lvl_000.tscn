@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/Amb_WaterCoast_01.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/WaterStagn_01.ogg" type="AudioStream" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Script/Audio_Amb.gd" type="Script" id=11]
 [ext_resource path="res://Scene/Integrable/Chaudron.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scene/Integrable/Help_trigger.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scene/Integrable/PlayerStart.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=166]
 points = PoolVector2Array( 32, 32, 8, 24, 0, 0, 32, 0 )
@@ -621,8 +622,7 @@ max_distance = 1500.0
 attenuation = 2.0
 bus = "Amb"
 
-[node name="PlayerStart" type="Position2D" parent="."]
-position = Vector2( 205, 64 )
+[node name="PlayerStart" parent="." instance=ExtResource( 14 )]
 
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_entered"]
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBCavern" to="." method="_on_PlayerDetectorAMBCavern_body_entered"]

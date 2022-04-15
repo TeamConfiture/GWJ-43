@@ -1,8 +1,5 @@
 extends Node
 
-
-
-
 export(String, "Moves","Clover", "Spit", "Steam","Mud","Vine","Block") var rules_index
 
 onready var parchemin =  $CanvasLayer/Parchemin
@@ -19,9 +16,8 @@ var dic_rules_QWERTY = {
 	"Mud": preload("res://Art/Rules/rules_final_8.png"),
 	"Vine": preload("res://Art/Rules/rules_final_9_Q.png"), 
 	"Block": preload("res://Art/Rules/rules_final_10.png") 
-
 	}
-	
+
 var dic_rules_AZERTY = {
 	"Moves": preload("res://Art/Rules/rules_final_1.png"),
 	"Clover": preload("res://Art/Rules/rules_final_5_A.png"), 
@@ -30,8 +26,7 @@ var dic_rules_AZERTY = {
 	"Mud": preload("res://Art/Rules/rules_final_8.png"),
 	"Vine": preload("res://Art/Rules/rules_final_9_A.png"), 
 	"Block": preload("res://Art/Rules/rules_final_10.png") 
-
-	}	
+	}
 
 func _ready():
 	

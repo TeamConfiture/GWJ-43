@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
+[ext_resource path="res://Scene/Integrable/PlayerStart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/33.png" type="Texture" id=3]
 [ext_resource path="res://Art/element.png" type="Texture" id=4]
 [ext_resource path="res://Art/water.tres" type="TileSet" id=5]
@@ -583,7 +584,7 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneForestAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 762, 749.137 )
+position = Vector2( 762, 735 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
 
@@ -596,8 +597,8 @@ position = Vector2( 39.9999, -95.9999 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 
-[node name="PlayerStart" type="Position2D" parent="."]
-position = Vector2( 762, 696 )
+[node name="PlayerStart" parent="." instance=ExtResource( 1 )]
+position = Vector2( 762, 695 )
 
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_entered"]
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBCavern" to="." method="_on_PlayerDetectorAMBCavern_body_entered"]
