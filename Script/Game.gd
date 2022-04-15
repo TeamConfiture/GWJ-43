@@ -64,8 +64,12 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_page_up"):
 		_on_Slime_chaudron_eaten()
 	if !path:
-
 		return
+	
+	if Input.is_action_just_pressed("ui_select"):
+		cam.position = path[0]
+		path.resize(0)
+
 	if path.size() > 0:
 		var d: float = cam.position.distance_to(path[0])
 		if d > 10:
