@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/Amb_WaterCoast_01.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/WaterStagn_01.ogg" type="AudioStream" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Scene/Integrable/Door.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Script/Audio_Amb.gd" type="Script" id=11]
 [ext_resource path="res://Scene/Integrable/Chaudron.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scene/Integrable/Help_trigger.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scene/Integrable/PlayerStart.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=166]
@@ -458,10 +457,6 @@ extents = Vector2( 2.77, 0.136364 )
 script = ExtResource( 11 )
 
 [node name="help" type="Node" parent="."]
-
-[node name="Help_trigger" parent="help" instance=ExtResource( 13 )]
-position = Vector2( 432, 104 )
-rules_index = "Spit"
 
 [node name="Tile" type="Node" parent="."]
 
