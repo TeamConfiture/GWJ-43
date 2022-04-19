@@ -16,6 +16,7 @@ var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_000.tscn")
 
 
 onready var slime = $Slime
+var state
 var coins := 0
 var current_lvl
 var lvl_index: int = 0 
@@ -24,12 +25,10 @@ var cinematic_done = false
 
 func _ready():
 	current_lvl = scene_lvl_000.instance()
-	
 	add_child(current_lvl)
 	set_camera_limits(current_lvl.get_node("Tile/Navigation2D/TileMap_platform"))
-
 	cinematic()
-	
+
 
 
 
@@ -52,6 +51,7 @@ func _on_Slime_chaudron_eaten():
 	if ResourceLoader.exists(s):
 		current_lvl = load(s).instance()
 		add_child(current_lvl)
+		
 		cinematic()
 #		slime.position = current_lvl.get_node("PlayerStart").position
 		#transition in de current_lvl -> chaudron arc en ciel etc...
@@ -64,8 +64,13 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_page_up"):
 		_on_Slime_chaudron_eaten()
 	if !path:
-
 		return
+	
+	if Input.is_action_just_pressed("ui_select"):
+		cam.position = path[0]
+		path.resize(0) # clear no working....
+
+
 	if path.size() > 0:
 		var d: float = cam.position.distance_to(path[0])
 		if d > 10:
@@ -78,6 +83,9 @@ func _process(delta: float) -> void:
 
 
 func cinematic():
+	state = current_lvl.get_node("PlayerStart").Slime_type
+	slime.lvl_state(state)
+		
 	set_camera_limits(current_lvl.get_node("Tile/Navigation2D/TileMap_platform"))
 	slime.position = current_lvl.get_node("PlayerStart").position
 	start = slime.position -Vector2(0,80)
@@ -86,7 +94,7 @@ func cinematic():
 	path = nav.get_simple_path(start, goal, false)
 	cam.position=start
 	cam.current=true
-	
+
 
 
 func find_the_wayout(position_door:Vector2):
@@ -100,7 +108,7 @@ func find_the_wayout(position_door:Vector2):
 	path = nav.get_simple_path(start, goal, false)
 	cam.current=true
 	cam.smoothing_enabled = true
-	
+
 
 
 func _on_door_open():
@@ -111,15 +119,14 @@ func _on_cinematic_end():
 	
 	if cinematic_done == true : # Du coup si cinematique faite on est en mode Door
 		emit_signal("open_door")
-		
-		
+
 	else :
 		yield(get_tree().create_timer(1.0), "timeout")
 		$LvlLoader.change_lvl()
 		slime.do_activate(true)
 		cinematic_done = true
 
-	
+
 
 func set_camera_limits(lvl :TileMap ):
 	var map_limits = lvl.get_used_rect()

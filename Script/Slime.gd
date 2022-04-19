@@ -61,6 +61,22 @@ func _ready() -> void:
 	set_process(false)
 	set_physics_process(false)
 
+func lvl_state(new_state:int):
+	
+	if new_state != state :
+		not_transform = false
+		match new_state:
+			0:
+				anim_playback.travel("spitting")
+			1:
+				normal_to_leaf = true
+			2:
+				normal_to_rock = true
+			3:
+				normal_to_steam = true
+			4: 
+				normal_to_mud = true
+
 func do_activate(etat:bool):
 	visible=etat
 	set_process(etat)
@@ -169,5 +185,8 @@ func is_in_water():
 
 
 func set_camera_limits():
-	$Camera2D.limit_right = get_viewport().size.x
+#	$Camera2D.limit_right = get_viewport().size.x
 #	$Camera2D.limit_bottom = get_viewport().size.y
+	pass
+
+
