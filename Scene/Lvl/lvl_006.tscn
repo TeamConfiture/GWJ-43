@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scene/Integrable/Clover.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/water.tres" type="TileSet" id=2]
@@ -439,6 +439,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 [sub_resource type="RectangleShape2D" id=246]
 extents = Vector2( 0.9, 0.0627345 )
 
+[sub_resource type="RectangleShape2D" id=248]
+extents = Vector2( 11.04, 0.855684 )
+
 [sub_resource type="RectangleShape2D" id=247]
 extents = Vector2( 5.73348, 0.236364 )
 
@@ -581,6 +584,11 @@ monitorable = false
 position = Vector2( 80, 224 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
+
+[node name="ZoneForestAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
+position = Vector2( 744, 562.784 )
+scale = Vector2( 50, 50 )
+shape = SubResource( 248 )
 
 [node name="PlayerDetectorAMBCavern" type="Area2D" parent="Zone_Sound"]
 collision_layer = 4

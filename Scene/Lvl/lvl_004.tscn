@@ -560,6 +560,7 @@ position = Vector2( 768, 600 )
 position = Vector2( 1328, 24 )
 
 [node name="Coin62" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 1312, 760 )
 
 [node name="Coin63" parent="Coins" instance=ExtResource( 7 )]
@@ -569,6 +570,7 @@ position = Vector2( 544, 688 )
 position = Vector2( 512, 42 )
 
 [node name="Coin65" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 1248, 760 )
 
 [node name="Coin66" parent="Coins" instance=ExtResource( 7 )]

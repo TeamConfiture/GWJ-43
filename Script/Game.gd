@@ -12,7 +12,7 @@ var start : Vector2
 export var speed := 250
 
 
-var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_006.tscn")
+var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_005.tscn")
 
 
 onready var slime = $Slime
@@ -73,7 +73,8 @@ func _process(delta: float) -> void:
 
 	if path.size() > 0:
 		var d: float = cam.position.distance_to(path[0])
-		if d > 10:
+		if d > 100:
+			
 			cam.position = cam.position.linear_interpolate(path[0], (speed * delta)/d)
 		else:
 			path.remove(0)

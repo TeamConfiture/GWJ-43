@@ -346,7 +346,6 @@ visible = false
 current = true
 zoom = Vector2( 0.25, 0.25 )
 smoothing_enabled = true
-smoothing_speed = 3.0
 
 [node name="LvlLoader" parent="." instance=ExtResource( 13 )]
 
