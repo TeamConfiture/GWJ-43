@@ -11,7 +11,7 @@ onready var anim_playback = anim_tree.get("parameters/playback")
 onready var area = $Area2D
 onready var swim_level = $SwimLevel
 
-const Grav = 0.0981
+const Grav = 9.81
 
 var linear_vel:Vector2
 
@@ -24,6 +24,8 @@ enum State{normal = 0, leaf, rock, steam, mud}
 onready var state_dic = {State.normal:$Normal, State.leaf:$Leaf, State.rock:$Rock, State.steam:$Steam, State.mud:$Mud}
 
 var state = State.normal
+
+const Max_Speed = 100
 
 var move_speed:float
 
@@ -99,8 +101,13 @@ func _process(delta: float) -> void:
 	elif dir.x > 0:
 		sprite.flip_h = false
 	
-	if anim_playback.get_current_node() in ["walking", "jumping", "falling"]:
-		speed.x = get_speed(dir.x, speed.x)
+	if !(anim_playback.get_current_node() in ["eating", "landing"]):
+		speed.x = lerp(speed.x, sign(dir.x) * Max_Speed, move_speed)
+	
+	if dir.x != 0 or anim_playback.get_current_node() in ["eating", "landing"]:
+		speed.x = lerp(speed.x, 0, stop_speed)
+		
+	$Label.text = str(speed.x)
 	
 	state_dic[state].do_process(delta)
 	
