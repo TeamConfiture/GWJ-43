@@ -1,9 +1,10 @@
 extends State
 
-const MulSpeed = 100
+const Max_Speed = 100
 const Move_Speed = 0.5
 const Stop_Speed = 0.3
-const Jump_Acc = 3
+
+onready var jump_acc = parent.Grav * 30
 
 var want_jump := false
 
@@ -16,15 +17,15 @@ func do_physics_process(delta: float) -> void:
 	if parent.is_on_floor():
 		parent.speed.y = parent.Grav
 		if want_jump and parent.anim_playback.get_current_node() in ["idle", "walking"]:
-			parent.speed.y -= Jump_Acc
+			parent.speed.y -= jump_acc
 			want_jump = false
 	else:
 		if !parent.is_in_water():
 			parent.speed.y += parent.Grav
 		else:
-			parent.speed.y = -Jump_Acc
+			parent.speed.y = -jump_acc
 
-	parent.move_and_slide(parent.speed * MulSpeed, Vector2.UP)
+	parent.move_and_slide(parent.speed, Vector2.UP)
 
 func do_process(delta: float) -> void:
 	want_jump = Input.is_action_just_pressed("up")
@@ -52,5 +53,5 @@ func do_process(delta: float) -> void:
 	parent.anim_tree["parameters/conditions/is_jumping"] = want_jump
 	parent.anim_tree["parameters/conditions/is_on_floor"] = is_on_floor
 	parent.anim_tree["parameters/conditions/is_falling"] = !is_on_floor
-	parent.anim_tree["parameters/conditions/is_moving"] = is_on_floor and parent.speed.x != 0
-	parent.anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and parent.speed.x == 0
+	parent.anim_tree["parameters/conditions/is_moving"] = is_on_floor and !is_zero_approx(parent.speed.x)
+	parent.anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and is_zero_approx(parent.speed.x)

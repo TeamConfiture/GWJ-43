@@ -5,13 +5,14 @@ signal clover_eaten
 signal coin_caught
 signal chaudron_eaten
 
+const Grav = 9.81
+const Dont_Move_States = ["eating", "landing", "normal_to_leaf", "normal_to_rock", "normal_to_steam", "normal_to_mud", "spitting"]
+
 onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
 onready var anim_playback = anim_tree.get("parameters/playback")
 onready var area = $Area2D
 onready var swim_level = $SwimLevel
-
-const Grav = 0.0981
 
 var linear_vel:Vector2
 
@@ -25,8 +26,8 @@ onready var state_dic = {State.normal:$Normal, State.leaf:$Leaf, State.rock:$Roc
 
 var state = State.normal
 
+var max_speed:float
 var move_speed:float
-
 var stop_speed:float
 
 var is_falling := true
@@ -49,6 +50,7 @@ func _set_state(new_state:int):
 		
 		var node_state = state_dic[state]
 		
+		max_speed = node_state.Max_Speed
 		move_speed = node_state.Move_Speed
 		stop_speed = node_state.Stop_Speed
 		
@@ -84,22 +86,22 @@ func do_activate(etat:bool):
 	$Camera2D.current=true
 	
 func get_speed(_dir:float, _speed:float) -> float:
-	if _dir != 0:
-		return clamp(_speed+_dir*move_speed, -1, 1)
-	return sign(_speed)*clamp(abs(_speed)-stop_speed, 0, 1)
+	if _dir != 0 and !(anim_playback.get_current_node() in Dont_Move_States):
+		return lerp(_speed, sign(_dir) * max_speed, move_speed)
+	return lerp(_speed, 0, stop_speed)
 
 func _physics_process(delta: float) -> void:
 	state_dic[state].do_physics_process(delta)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if anim_playback.get_current_node() != "eating":
-		dir.x = Input.get_axis("left", "right")
-		if dir.x < 0:
-			sprite.flip_h = true
-		elif dir.x > 0:
-			sprite.flip_h = false
-		speed.x = get_speed(dir.x, speed.x)
+	dir.x = Input.get_axis("left", "right")
+	if dir.x < 0:
+		sprite.flip_h = true
+	elif dir.x > 0:
+		sprite.flip_h = false
+	
+	speed.x = get_speed(dir.x, speed.x)
 	
 	state_dic[state].do_process(delta)
 	
