@@ -1,6 +1,6 @@
 extends State
 
-const MulSpeed = 100
+const Max_Speed = 100
 const Move_Speed = 0.5
 const Stop_Speed = 0.3
 
@@ -35,7 +35,7 @@ func do_physics_process(delta: float) -> void:
 			else:
 				parent.speed.y += parent.Grav
 
-			parent.move_and_slide(parent.speed * MulSpeed, Vector2.UP)
+			parent.move_and_slide(parent.speed, Vector2.UP)
 			
 		State.hook:
 			shape_hook.shape.b = hook.sprite.position * 0.8

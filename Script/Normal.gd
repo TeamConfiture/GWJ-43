@@ -1,9 +1,10 @@
 extends State
 
+const Max_Speed = 100
 const Move_Speed = 0.5
 const Stop_Speed = 0.3
 
-onready var jump_acc = parent.Grav * 25
+onready var jump_acc = parent.Grav * 30
 
 var want_jump := false
 
