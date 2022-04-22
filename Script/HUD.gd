@@ -11,6 +11,7 @@ var textures = {
 	"Yellow": preload("res://Art/HUD/clovers/clover_yellow.png")
 }
 
+
 func update_coin(value: int) -> void:
 	coin_label.text = " x " + str(value)
 

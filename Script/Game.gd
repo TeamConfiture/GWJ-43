@@ -12,7 +12,7 @@ var start : Vector2
 export var speed := 250
 
 
-var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_005.tscn")
+var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_007.tscn")
 
 
 onready var slime = $Slime
