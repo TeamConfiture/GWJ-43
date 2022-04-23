@@ -514,16 +514,10 @@ clover_type = "Blue"
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin1" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 240, 465 )
-
-[node name="Coin2" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 207, 401 )
-
-[node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 160, 209 )
+position = Vector2( 240, 432 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 80, 209 )
+position = Vector2( 112, 240 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1072, 458 )
@@ -534,23 +528,14 @@ position = Vector2( 777, 472 )
 [node name="Coin60" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 976, 504 )
 
-[node name="Coin61" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1040, 528 )
-
 [node name="Coin62" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1152, 568 )
-
-[node name="Coin63" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 832, 728 )
 
 [node name="Coin64" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 639, 728 )
 
 [node name="Coin65" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 896, 728 )
-
-[node name="Coin66" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 575, 728 )
 
 [node name="Coin67" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 768, 728 )
