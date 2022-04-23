@@ -2,7 +2,7 @@ extends State
 
 const Max_Speed = 150
 const Move_Speed = 0.5
-const Stop_Speed = 0.02
+const Stop_Speed = 0.08 #0.02
 
 var val = 0
 var val_max = -15
