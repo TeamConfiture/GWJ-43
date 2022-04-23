@@ -22,6 +22,7 @@ var current_lvl
 var lvl_index: int = 0 
 
 var nb_coins
+var coins_per_levels : Dictionary
 
 var cinematic_done = false
 
@@ -45,6 +46,7 @@ func _on_Slime_coin_caught() -> void:
 
 
 func _on_Slime_chaudron_eaten():
+	coins_per_levels[lvl_index][1] = coins
 	cinematic_done = false
 	slime.do_activate(false)
 	#transition out de current_lvl 
@@ -62,12 +64,15 @@ func _on_Slime_chaudron_eaten():
 		#penser à yiel
 #		slime.do_activate(true)
 	else :
+		prints(coins_per_levels)
 		SceneLoader.change_scene("Fin")
 
 func update_coins(var current_lvl):
 	var node_coins = current_lvl.get_node("Coins")
 	nb_coins = node_coins.get_child_count()
-	hud.update_coin(0,nb_coins)
+	coins = 0
+	coins_per_levels[lvl_index] = [nb_coins, coins]
+	hud.update_coin(coins,nb_coins)
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_page_up"):
