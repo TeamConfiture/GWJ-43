@@ -6,7 +6,7 @@ signal coin_caught
 signal chaudron_eaten
 
 const Grav = 9.81
-const Dont_Move_States = ["eating", "landing", "normal_to_leaf", "normal_to_rock", "normal_to_steam", "normal_to_mud", "spitting"]
+const Dont_Move_States = ["eating", "normal_to_leaf", "normal_to_rock", "normal_to_steam", "normal_to_mud", "spitting"]
 
 onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
