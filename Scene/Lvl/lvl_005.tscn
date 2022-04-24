@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scene/Integrable/Clover.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/water.tres" type="TileSet" id=2]
@@ -440,8 +440,20 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 [sub_resource type="RectangleShape2D" id=246]
 extents = Vector2( 0.9, 0.0627345 )
 
+[sub_resource type="RectangleShape2D" id=248]
+extents = Vector2( 13.145, 0.247842 )
+
 [sub_resource type="RectangleShape2D" id=247]
-extents = Vector2( 1.33391, 0.363636 )
+extents = Vector2( 6.5739, 0.218182 )
+
+[sub_resource type="RectangleShape2D" id=249]
+extents = Vector2( 272.875, 48 )
+
+[sub_resource type="RectangleShape2D" id=250]
+extents = Vector2( 510.75, 75.1875 )
+
+[sub_resource type="RectangleShape2D" id=251]
+extents = Vector2( 215.375, 96 )
 
 [node name="Lvl_005" type="Node2D"]
 script = ExtResource( 9 )
@@ -512,30 +524,39 @@ clover_type = "Red"
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin1" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 272, 472 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 400, 472 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 528, 472 )
 
 [node name="Coin7" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 128, 760 )
 
 [node name="Coin8" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 320, 760 )
 
 [node name="Coin9" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 512, 760 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 656, 472 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 784, 472 )
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 912, 472 )
 
 [node name="Coin10" parent="Coins" instance=ExtResource( 7 )]
@@ -543,6 +564,12 @@ position = Vector2( 777, 312 )
 
 [node name="Coin11" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1056, 296 )
+
+[node name="Coin19" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 848, 144 )
+
+[node name="Coin20" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1145, 112 )
 
 [node name="Coin12" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1216, 384 )
@@ -581,16 +608,21 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneForestAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 328, 248 )
+position = Vector2( 272, 168 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
+
+[node name="ZoneForestAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
+position = Vector2( 673.25, 547.608 )
+scale = Vector2( 50, 50 )
+shape = SubResource( 248 )
 
 [node name="PlayerDetectorAMBCavern" type="Area2D" parent="Zone_Sound"]
 collision_layer = 4
 monitorable = false
 
 [node name="ZoneCavernAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBCavern"]
-position = Vector2( 1197.39, 620 )
+position = Vector2( 673.391, 588 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 
@@ -634,8 +666,26 @@ max_distance = 1500.0
 attenuation = 2.0
 bus = "Amb"
 
+[node name="UnderWater" type="Area2D" parent="Zone_Sound"]
+audio_bus_name = "Underwater"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
+position = Vector2( 279.125, 720 )
+shape = SubResource( 249 )
+
+[node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
+position = Vector2( 521.25, 404.813 )
+shape = SubResource( 250 )
+
+[node name="ZoneUnderwater3" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
+position = Vector2( 232.625, 576 )
+shape = SubResource( 251 )
+
 [node name="PlayerStart" parent="." instance=ExtResource( 12 )]
-position = Vector2( 265, 128 )
+position = Vector2( 265, 117 )
 Slime_type = 2
 
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_entered"]

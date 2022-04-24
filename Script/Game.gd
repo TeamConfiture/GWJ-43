@@ -21,12 +21,16 @@ var coins := 0
 var current_lvl
 var lvl_index: int = 0 
 
+var nb_coins
+var coins_per_levels : Dictionary
+
 var cinematic_done = false
 
 func _ready():
 	current_lvl = scene_lvl_000.instance()
 	add_child(current_lvl)
 	set_camera_limits(current_lvl.get_node("Tile/Navigation2D/TileMap_platform"))
+	update_coins(current_lvl)
 	cinematic()
 
 
@@ -38,10 +42,11 @@ func _on_Slime_clover_eaten(clovers: PoolStringArray) -> void:
 
 func _on_Slime_coin_caught() -> void:
 	coins += 1
-	hud.update_coin(coins)
+	hud.update_coin(coins,nb_coins)
 
 
 func _on_Slime_chaudron_eaten():
+	coins_per_levels[lvl_index][1] = coins
 	cinematic_done = false
 	slime.do_activate(false)
 	#transition out de current_lvl 
@@ -51,6 +56,7 @@ func _on_Slime_chaudron_eaten():
 	if ResourceLoader.exists(s):
 		current_lvl = load(s).instance()
 		add_child(current_lvl)
+		update_coins(current_lvl)
 		
 		cinematic()
 #		slime.position = current_lvl.get_node("PlayerStart").position
@@ -58,8 +64,16 @@ func _on_Slime_chaudron_eaten():
 		#penser à yiel
 #		slime.do_activate(true)
 	else :
+		prints(coins_per_levels)
 		SceneLoader.change_scene("Fin")
 
+func update_coins(var current_lvl):
+	var node_coins = current_lvl.get_node("Coins")
+	nb_coins = node_coins.get_child_count()
+	coins = 0
+	coins_per_levels[lvl_index] = [nb_coins, coins]
+	hud.update_coin(coins,nb_coins)
+	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_page_up"):
 		_on_Slime_chaudron_eaten()
@@ -73,7 +87,8 @@ func _process(delta: float) -> void:
 
 	if path.size() > 0:
 		var d: float = cam.position.distance_to(path[0])
-		if d > 10:
+		if d > 100:
+			
 			cam.position = cam.position.linear_interpolate(path[0], (speed * delta)/d)
 		else:
 			path.remove(0)

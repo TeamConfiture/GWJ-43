@@ -514,31 +514,49 @@ clover_type = "Red"
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0.47451 )
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 960, 760 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0.47451 )
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 1024, 760 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0.47451 )
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 1088, 760 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0.47451 )
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 1152, 760 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0.47451 )
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 1216, 760 )
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0.47451 )
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 1280, 760 )
 
 [node name="Coin7" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 192, 384 )
+
+[node name="Coin36" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 240, 560 )
+
+[node name="Coin31" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 64, 512 )
+
+[node name="Coin35" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 48, 672 )
+
+[node name="Coin34" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 48, 432 )
+
+[node name="Coin32" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 216, 720 )
+
+[node name="Coin33" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 216, 720 )
 
 [node name="Coin10" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 112, 144 )
@@ -559,15 +577,15 @@ position = Vector2( 544, 344 )
 position = Vector2( 704, 536 )
 
 [node name="Coin17" parent="Coins" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0.47451 )
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 544, 760 )
 
 [node name="Coin19" parent="Coins" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0.47451 )
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 792, 760 )
 
 [node name="Coin18" parent="Coins" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0.47451 )
+modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 328, 760 )
 
 [node name="Coin14" parent="Coins" instance=ExtResource( 7 )]
@@ -584,6 +602,18 @@ position = Vector2( 896, 320 )
 
 [node name="Coin22" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 896, 384 )
+
+[node name="Coin37" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 832, 128 )
+
+[node name="Coin38" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 832, 192 )
+
+[node name="Coin39" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 832, 256 )
+
+[node name="Coin40" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 832, 320 )
 
 [node name="Coin23" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1296, 144 )
@@ -634,7 +664,7 @@ collision_layer = 5
 audio_bus_name = "Underwater"
 
 [node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 879.5, 672 )
+position = Vector2( 879.5, 660 )
 shape = SubResource( 248 )
 
 [node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
@@ -660,7 +690,7 @@ scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 
 [node name="Water_Coast" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 628, 557 )
+position = Vector2( 664, 560 )
 stream = ExtResource( 1 )
 autoplay = true
 max_distance = 500.0
@@ -668,7 +698,7 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Coast7" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 1270, 555 )
+position = Vector2( 1288, 560 )
 stream = ExtResource( 1 )
 autoplay = true
 max_distance = 500.0
@@ -684,7 +714,15 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Stagn" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 491, 559 )
+position = Vector2( 512, 560 )
+stream = ExtResource( 2 )
+autoplay = true
+max_distance = 1500.0
+attenuation = 2.0
+bus = "Amb"
+
+[node name="Water_Stagn2" type="AudioStreamPlayer2D" parent="Zone_Sound"]
+position = Vector2( 1152, 568 )
 stream = ExtResource( 2 )
 autoplay = true
 max_distance = 1500.0

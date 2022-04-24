@@ -11,8 +11,9 @@ var textures = {
 	"Yellow": preload("res://Art/HUD/clovers/clover_yellow.png")
 }
 
-func update_coin(value: int) -> void:
-	coin_label.text = " x " + str(value)
+
+func update_coin(value: int,nb :int) -> void:
+	coin_label.text = str(value)+" / "+str(nb)
 
 func update_clovers(clovers : PoolStringArray) -> void:
 	if clovers != null:
