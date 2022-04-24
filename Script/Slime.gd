@@ -80,6 +80,7 @@ func lvl_state(new_state:int):
 				normal_to_mud = true
 
 func do_activate(etat:bool):
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"), !etat)
 	visible=etat
 	set_process(etat)
 	set_physics_process(etat)

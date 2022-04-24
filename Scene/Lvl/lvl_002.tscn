@@ -553,10 +553,10 @@ position = Vector2( 48, 672 )
 position = Vector2( 48, 432 )
 
 [node name="Coin32" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 216, 720 )
+position = Vector2( 240, 472 )
 
 [node name="Coin33" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 216, 720 )
+position = Vector2( 112, 720 )
 
 [node name="Coin10" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 112, 144 )
