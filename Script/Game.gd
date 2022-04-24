@@ -49,6 +49,13 @@ func _on_Slime_chaudron_eaten():
 	coins_per_levels[lvl_index][1] = coins
 	cinematic_done = false
 	slime.do_activate(false)
+	$HUD/Score.visible=true
+	for i in coins+1:
+		$HUD/Score/Label.text = str(i)+" / "+str(nb_coins)
+		$Slime/Collect.play(0.0)
+		yield(get_tree().create_timer(0.2), "timeout")
+		
+	yield(get_tree().create_timer(1.0), "timeout")
 	#transition out de current_lvl 
 	remove_child(current_lvl)
 	lvl_index+=1
@@ -56,6 +63,9 @@ func _on_Slime_chaudron_eaten():
 	if ResourceLoader.exists(s):
 		current_lvl = load(s).instance()
 		add_child(current_lvl)
+		
+		$HUD/Score.visible=false
+		
 		update_coins(current_lvl)
 		
 		cinematic()
@@ -65,6 +75,18 @@ func _on_Slime_chaudron_eaten():
 #		slime.do_activate(true)
 	else :
 		prints(coins_per_levels)
+		$HUD/Score.visible=true
+		nb_coins = 0
+		coins = 0
+		for i in coins_per_levels.size():
+			print(i)
+			nb_coins += coins_per_levels[i][0]
+			coins += coins_per_levels[i][1]
+			$HUD/Score/Label.text = str(coins)+" / "+str(nb_coins)
+			$Slime/Collect.play(0.0)
+			yield(get_tree().create_timer(0.1), "timeout")
+		yield(get_tree().create_timer(3.0), "timeout")
+		$HUD/Score.visible=false
 		SceneLoader.change_scene("Fin")
 
 func update_coins(var current_lvl):
