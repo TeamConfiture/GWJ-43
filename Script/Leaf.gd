@@ -4,9 +4,9 @@ const Max_Speed = 100
 const Move_Speed = 0.5
 const Stop_Speed = 0.3
 
-const Hook_Speed_X = 0.01
+const Hook_Speed_X = 0.05
 
-const Rot_Speed_Max = 0.05
+const Rot_Speed_Max = 0.1
 const Rot_Speed = 0.05
 
 enum State{normal = 0, hook}
@@ -14,6 +14,8 @@ enum State{normal = 0, hook}
 var state:int
 
 var rot_speed:float
+
+var acc := true
 
 onready var hook = parent.get_node("Hook")
 onready var shape = parent.get_node("CollisionShape2D")
@@ -40,17 +42,61 @@ func do_physics_process(delta: float) -> void:
 		State.hook:
 			shape_hook.shape.b = hook.sprite.position * 0.8
 			
-			var vert = hook.hook_origin - parent.global_position
+			var vert:Vector2 = parent.global_position - hook.hook_origin
 			
-			var vert_angle_to_down = (-vert).angle_to(Vector2.DOWN)
+			var vert_rot = (Vector2.DOWN * vert.length()).rotated(- 0.25)
 			
-			rot_speed = clamp(rot_speed + ((-parent.speed.x * Hook_Speed_X + vert_angle_to_down * Rot_Speed) * delta), -Rot_Speed_Max, Rot_Speed_Max)
+			var bleu:Vector2
 			
-			var vert_rot = vert.rotated(rot_speed)
+			if acc:
+				var vert_rot_sub = vert.rotated(- parent.Grav * Hook_Speed_X * delta)
+				
+				var vert_to_vert_rot = vert.angle_to(vert_rot)
+
+				var vert_to_vert_rot_sub = vert.angle_to(vert_rot_sub)
+#
+				if abs(vert_to_vert_rot_sub) > abs(vert_to_vert_rot):
+					bleu = vert_rot - vert
+					acc = false
+				else:
+					bleu = vert_rot_sub - vert
+					
+			else:
+				var vert_rot_sub = vert.rotated(parent.Grav * Hook_Speed_X * delta)
+				
+				var vert_rot_reflect = vert_rot.reflect(Vector2.DOWN)
+				
+				var vert_to_vert_rot_reflect = vert.angle_to(vert_rot_reflect)
+				
+				var vert_to_vert_rot_sub = vert.angle_to(vert_rot_sub)
+				
+				if abs(vert_to_vert_rot_sub) > abs(vert_to_vert_rot_reflect):
+					bleu = vert_rot - vert
+					acc = true
+				else:
+					bleu = vert_rot_sub - vert
 			
-			vert_rot += vert_rot.normalized() * parent.speed.y
+			parent.label.text = str(acc)
 			
-			var bleu = vert - vert_rot
+#			var vert_angle_to_down = vert.angle_to(Vector2.DOWN)
+#
+#			parent.label.text = str(vert_angle_to_down)
+#
+#			var vert_rot:Vector2
+#
+#			if is_zero_approx(vert_angle_to_down):
+#				rot_speed = clamp(rot_speed - parent.speed.x * Hook_Speed_X * delta, -Rot_Speed_Max, Rot_Speed_Max)
+#			else:
+#				rot_speed = clamp(rot_speed - sign(vert_angle_to_down) * parent.speed.x * Hook_Speed_X * delta, -Rot_Speed_Max, Rot_Speed_Max)
+#
+#			if parent.dir.x != 0:
+#				vert_rot = vert.rotated(rot_speed)
+#			else:
+#				vert_rot = vert.rotated(- sign(vert_angle_to_down) * rot_speed)
+#
+#			var bleu = vert_rot - vert
+			
+#			vert_rot += vert_rot.normalized() * parent.speed.y
 
 			parent.move_and_slide(bleu / delta, Vector2.UP)
 			pass
