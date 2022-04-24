@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Art/element.png" type="Texture" id=1]
 [ext_resource path="res://Script/Rain.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scene/LvlLoader.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scene/Score.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Art/Fonts/Kenney Pixel.ttf" type="DynamicFontData" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "element.png 0"
@@ -156,6 +157,10 @@
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 84.5, 22 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 15 )
 
 [node name="Game" type="Node"]
 script = ExtResource( 4 )
@@ -342,6 +347,17 @@ visible = false
 
 [node name="Score" parent="HUD" instance=ExtResource( 14 )]
 visible = false
+
+[node name="Space" type="Label" parent="HUD"]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -23.0
+custom_fonts/font = SubResource( 4 )
+text = "Press \"SPACE\" to Slime"
+align = 1
+valign = 1
 
 [node name="Slime" parent="." instance=ExtResource( 11 )]
 visible = false

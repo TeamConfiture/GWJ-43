@@ -10,12 +10,12 @@ func _ready():
 	
 
 	
-func change_lvl():
-#	fader.play("transition_out")
-#
-#	yield(fader,"animation_finished")
+func to_white():
+	fader.play("transition_in")
 
-	fader.play("transition_in")	
+
+func to_black():
+	fader.play("transition_out")
 
 
 
