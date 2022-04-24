@@ -2,22 +2,23 @@ extends Node2D
 
 var page = 1;
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if Input.is_action_just_pressed("ui_select"):
+		_on_NextBtn_pressed()
 
 
 func _on_NextBtn_pressed():
-	get_node('P'+ str(page)).visible = false
-	page += 1
-	BackgroundMusic.play_button_next()
-	if page >= 5:
-		$NextBtn.visible=false
-		SceneLoader.change_scene("Game")
-	else:
-		get_node('P'+ str(page)).visible = true
+
+	var node_var = get_node_or_null('P'+ str(page))
+	
+	if node_var:
+		node_var.visible = false
+		page += 1
+		BackgroundMusic.play_button_next()
+		if page >= 5:
+			$NextBtn.visible=false
+			SceneLoader.change_scene("Game")
+		else:
+			node_var.visible =true

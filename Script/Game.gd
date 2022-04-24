@@ -16,6 +16,8 @@ var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_000.tscn")
 
 
 onready var slime = $Slime
+var slime_position
+
 var state
 var coins := 0
 var current_lvl
@@ -27,10 +29,12 @@ var coins_per_levels : Dictionary
 var cinematic_done = false
 
 func _ready():
+	
 	current_lvl = scene_lvl_000.instance()
 	add_child(current_lvl)
 	set_camera_limits(current_lvl.get_node("Tile/Navigation2D/TileMap_platform"))
 	update_coins(current_lvl)
+	
 	cinematic()
 
 
@@ -58,23 +62,22 @@ func _on_Slime_chaudron_eaten():
 	yield(get_tree().create_timer(1.0), "timeout")
 	#transition out de current_lvl 
 	remove_child(current_lvl)
+
+	
 	lvl_index+=1
 	var s = "res://Scene/Lvl/lvl_%03d"%lvl_index+".tscn"
 	if ResourceLoader.exists(s):
 		current_lvl = load(s).instance()
 		add_child(current_lvl)
-		
+
 		$HUD/Score.visible=false
-		
+
 		update_coins(current_lvl)
-		
+
 		cinematic()
-#		slime.position = current_lvl.get_node("PlayerStart").position
-		#transition in de current_lvl -> chaudron arc en ciel etc...
-		#penser à yiel
-#		slime.do_activate(true)
+
 	else :
-		prints(coins_per_levels)
+		
 		$HUD/Score.visible=true
 		nb_coins = 0
 		coins = 0
@@ -89,8 +92,8 @@ func _on_Slime_chaudron_eaten():
 		$HUD/Score.visible=false
 		SceneLoader.change_scene("Fin")
 
-func update_coins(var current_lvl):
-	var node_coins = current_lvl.get_node("Coins")
+func update_coins(lvl):
+	var node_coins = lvl.get_node("Coins")
 	nb_coins = node_coins.get_child_count()
 	coins = 0
 	coins_per_levels[lvl_index] = [nb_coins, coins]
@@ -101,41 +104,44 @@ func _process(delta: float) -> void:
 		_on_Slime_chaudron_eaten()
 	if !path:
 		return
-	
+
 	if Input.is_action_just_pressed("ui_select"):
 		cam.position = path[0]
 		path.resize(0) # clear no working....
 
-
 	if path.size() > 0:
 		var d: float = cam.position.distance_to(path[0])
 		if d > 100:
-			
+
 			cam.position = cam.position.linear_interpolate(path[0], (speed * delta)/d)
 		else:
 			path.remove(0)
-	if path.size() < 1:
+	else:
+		$LvlLoader.to_black()
+		yield($LvlLoader/AnimationPlayer,"animation_finished")
 		_on_cinematic_end()
 
 
 
 func cinematic():
+	
+	$HUD/Space.visible=true
 	state = current_lvl.get_node("PlayerStart").Slime_type
 	slime.lvl_state(state)
-		
 	set_camera_limits(current_lvl.get_node("Tile/Navigation2D/TileMap_platform"))
-	slime.position = current_lvl.get_node("PlayerStart").position
-	start = slime.position -Vector2(0,80)
+	slime_position = current_lvl.get_node("PlayerStart").position
+	start = slime_position -Vector2(0,80)
 	goal = current_lvl.get_node("Chaudron").position
 	nav = current_lvl.get_node("Tile/Navigation2D")
 	path = nav.get_simple_path(start, goal, false)
-	cam.position=start
-	cam.current=true
+	cam.position = start
+	cam.current = true
+
 
 
 
 func find_the_wayout(position_door:Vector2):
-
+	$HUD/Space.visible=true
 	cam.smoothing_enabled = false
 	slime.do_activate(false)
 	start = slime.position
@@ -143,23 +149,23 @@ func find_the_wayout(position_door:Vector2):
 	goal = position_door
 	nav = current_lvl.get_node("Tile/Navigation2D")
 	path = nav.get_simple_path(start, goal, false)
-	cam.current=true
+	cam.current = true
 	cam.smoothing_enabled = true
 
 
 
+
 func _on_door_open():
-#	$LvlLoader.change_lvl()
 	slime.do_activate(true)
 
 func _on_cinematic_end():
-	
+	$HUD/Space.visible=false
 	if cinematic_done == true : # Du coup si cinematique faite on est en mode Door
 		emit_signal("open_door")
 
 	else :
-		yield(get_tree().create_timer(1.0), "timeout")
-		$LvlLoader.change_lvl()
+		$LvlLoader.to_white()
+		slime.position = slime_position
 		slime.do_activate(true)
 		cinematic_done = true
 

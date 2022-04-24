@@ -3,6 +3,12 @@ extends Node2D
 
 var index: = 1
 
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_select"):
+		_on_NextBtn_pressed()
+	
+	
 func _on_NextBtn_pressed():
 
 	var child = get_child(index)
