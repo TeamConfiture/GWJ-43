@@ -21,4 +21,6 @@ func _on_NextBtn_pressed():
 			$NextBtn.visible=false
 			SceneLoader.change_scene("Game")
 		else:
+			node_var = get_node_or_null('P'+ str(page))
 			node_var.visible =true
+		
