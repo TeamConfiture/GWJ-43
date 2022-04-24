@@ -40,9 +40,10 @@ func _ready():
 	slime = get_tree().get_root().get_node("Game/Slime") 
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_accept"):
 		parchemin.visible=false
 		slime.do_activate(true)
+	
 
 func _on_TriggerRules_body_entered(body):
 
