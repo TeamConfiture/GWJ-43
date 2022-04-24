@@ -10,11 +10,15 @@ func _process(delta):
 
 
 func _on_NextBtn_pressed():
-	get_node('P'+ str(page)).visible = false
-	page += 1
-	BackgroundMusic.play_button_next()
-	if page >= 5:
-		$NextBtn.visible=false
-		SceneLoader.change_scene("Game")
-	else:
-		get_node('P'+ str(page)).visible = true
+
+	var node_var = get_node_or_null('P'+ str(page))
+	
+	if node_var:
+		node_var.visible = false
+		page += 1
+		BackgroundMusic.play_button_next()
+		if page >= 5:
+			$NextBtn.visible=false
+			SceneLoader.change_scene("Game")
+		else:
+			node_var.visible =true
