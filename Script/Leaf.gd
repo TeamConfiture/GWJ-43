@@ -4,10 +4,8 @@ const Max_Speed = 100
 const Move_Speed = 0.5
 const Stop_Speed = 0.3
 
-const Hook_Speed_X = 0.05
-
-const Rot_Speed_Max = 0.1
-const Rot_Speed = 0.05
+const Rot_Speed_Min = 0.05
+const Rot_Speed_Max = 0.15
 
 enum State{normal = 0, hook}
 
@@ -18,6 +16,11 @@ var rot_speed:float
 var acc := true
 
 var vert_rot:Vector2
+
+var vert_min = Vector2.DOWN.rotated(-0.26)
+var vert_max = Vector2.RIGHT.rotated(0.26)
+var vert_min_angle_to_vert_max = abs(vert_min.angle_to(vert_max))
+var vert_max_angle_to_vert_max_reflect = vert_max.angle_to(vert_max.reflect(Vector2.DOWN))
 
 onready var hook = parent.get_node("Hook")
 onready var shape = parent.get_node("CollisionShape2D")
@@ -50,22 +53,26 @@ func do_physics_process(delta: float) -> void:
 			
 			vert_rot = vert_rot.rotated(-parent.speed.x * 0.01 * delta)
 			
-			var vert_rot_norm = vert_rot.normalized()
+			var vert_rot_angle_to_vert_min = abs(vert_rot.angle_to(vert_min))
 			
-			var dot_down = vert_rot_norm.dot(Vector2.DOWN)
+			if vert_rot_angle_to_vert_min > vert_min_angle_to_vert_max :
+				vert_rot = vert_max * vert_rot.length()
+
+			var vert_rot_angle_to_vert_max = abs(vert_rot.angle_to(vert_max))
 			
-			if dot_down < 0 :
-				vert_rot = Vector2.RIGHT * vert_rot.length()
+			if vert_rot_angle_to_vert_max > vert_min_angle_to_vert_max:
+				vert_rot = vert_min * vert_rot.length()
 			
-			var dot_right = vert_rot_norm.dot(Vector2.RIGHT)
+			var vert_rot_reflect = vert_rot.reflect(Vector2.DOWN)
 			
-			if dot_right < 0:
-				vert_rot = Vector2.DOWN * vert_rot.length()
+			var vert_rot_angle_to_vert_rot_reflect = vert_rot.angle_to(vert_rot_reflect)
+			
+			var speed = lerp(parent.Grav * Rot_Speed_Min, parent.Grav * Rot_Speed_Max, abs(vert_rot_angle_to_vert_rot_reflect/vert_max_angle_to_vert_max_reflect))
 			
 			if acc:
-				var vert_rot_sub = vert.rotated(- parent.Grav * Hook_Speed_X * delta)
-				
 				var vert_to_vert_rot = vert.angle_to(vert_rot)
+				
+				var vert_rot_sub = vert.rotated(- speed * delta)
 
 				var vert_to_vert_rot_sub = vert.angle_to(vert_rot_sub)
 #
@@ -76,11 +83,9 @@ func do_physics_process(delta: float) -> void:
 					bleu = vert_rot_sub - vert
 					
 			else:
-				var vert_rot_sub = vert.rotated(parent.Grav * Hook_Speed_X * delta)
-				
-				var vert_rot_reflect = vert_rot.reflect(Vector2.DOWN)
-				
 				var vert_to_vert_rot_reflect = vert.angle_to(vert_rot_reflect)
+				
+				var vert_rot_sub = vert.rotated(speed * delta)
 				
 				var vert_to_vert_rot_sub = vert.angle_to(vert_rot_sub)
 				
@@ -141,7 +146,7 @@ func do_process(delta: float) -> void:
 					
 					var vert:Vector2 = parent.global_position - hook.hook_origin
 					
-					vert_rot = (Vector2.DOWN * vert.length()).rotated(- 0.25)
+					vert_rot = vert_min * vert.length()
 					
 					state = State.hook
 			
