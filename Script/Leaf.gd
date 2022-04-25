@@ -25,6 +25,7 @@ var vert_max_angle_to_vert_max_reflect = vert_max.angle_to(vert_max.reflect(Vect
 onready var hook = parent.get_node("Hook")
 onready var shape = parent.get_node("CollisionShape2D")
 onready var shape_hook = parent.get_node("CollisionShapeHook")
+onready var jump_acc = parent.Grav * 30
 
 func state_enabled(b:bool):
 	.state_enabled(b)
@@ -67,12 +68,12 @@ func do_physics_process(delta: float) -> void:
 			
 			var vert_rot_angle_to_vert_rot_reflect = vert_rot.angle_to(vert_rot_reflect)
 			
-			var speed = lerp(parent.Grav * Rot_Speed_Min, parent.Grav * Rot_Speed_Max, abs(vert_rot_angle_to_vert_rot_reflect/vert_max_angle_to_vert_max_reflect))
+			rot_speed = lerp(parent.Grav * Rot_Speed_Min, parent.Grav * Rot_Speed_Max, abs(vert_rot_angle_to_vert_rot_reflect/vert_max_angle_to_vert_max_reflect))
 			
 			if acc:
 				var vert_to_vert_rot = vert.angle_to(vert_rot)
 				
-				var vert_rot_sub = vert.rotated(- speed * delta)
+				var vert_rot_sub = vert.rotated(- rot_speed * delta)
 
 				var vert_to_vert_rot_sub = vert.angle_to(vert_rot_sub)
 #
@@ -85,7 +86,7 @@ func do_physics_process(delta: float) -> void:
 			else:
 				var vert_to_vert_rot_reflect = vert.angle_to(vert_rot_reflect)
 				
-				var vert_rot_sub = vert.rotated(speed * delta)
+				var vert_rot_sub = vert.rotated(rot_speed * delta)
 				
 				var vert_to_vert_rot_sub = vert.angle_to(vert_rot_sub)
 				
@@ -119,7 +120,8 @@ func do_physics_process(delta: float) -> void:
 			pass
 
 func reset():
-	parent.speed.x = -rot_speed * 1/Rot_Speed_Max
+	prints(name, rot_speed)
+	parent.speed.x = - rot_speed * jump_acc
 	rot_speed = 0
 	shape.disabled = false
 	shape_hook.disabled = true
