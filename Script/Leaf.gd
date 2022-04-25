@@ -17,6 +17,8 @@ var rot_speed:float
 
 var acc := true
 
+var vert_rot:Vector2
+
 onready var hook = parent.get_node("Hook")
 onready var shape = parent.get_node("CollisionShape2D")
 onready var shape_hook = parent.get_node("CollisionShapeHook")
@@ -44,9 +46,21 @@ func do_physics_process(delta: float) -> void:
 			
 			var vert:Vector2 = parent.global_position - hook.hook_origin
 			
-			var vert_rot = (Vector2.DOWN * vert.length()).rotated(- 0.25)
-			
 			var bleu:Vector2
+			
+			vert_rot = vert_rot.rotated(-parent.speed.x * 0.01 * delta)
+			
+			var vert_rot_norm = vert_rot.normalized()
+			
+			var dot_down = vert_rot_norm.dot(Vector2.DOWN)
+			
+			if dot_down < 0 :
+				vert_rot = Vector2.RIGHT * vert_rot.length()
+			
+			var dot_right = vert_rot_norm.dot(Vector2.RIGHT)
+			
+			if dot_right < 0:
+				vert_rot = Vector2.DOWN * vert_rot.length()
 			
 			if acc:
 				var vert_rot_sub = vert.rotated(- parent.Grav * Hook_Speed_X * delta)
@@ -71,12 +85,10 @@ func do_physics_process(delta: float) -> void:
 				var vert_to_vert_rot_sub = vert.angle_to(vert_rot_sub)
 				
 				if abs(vert_to_vert_rot_sub) > abs(vert_to_vert_rot_reflect):
-					bleu = vert_rot - vert
+					bleu = vert_rot_reflect - vert
 					acc = true
 				else:
 					bleu = vert_rot_sub - vert
-			
-			parent.label.text = str(acc)
 			
 #			var vert_angle_to_down = vert.angle_to(Vector2.DOWN)
 #
@@ -123,8 +135,14 @@ func do_process(delta: float) -> void:
 			if Input.is_action_just_pressed("up"):
 				if hook.launch():
 					parent.speed.y = 0
+					
 					shape.disabled = true
 					shape_hook.disabled = false
+					
+					var vert:Vector2 = parent.global_position - hook.hook_origin
+					
+					vert_rot = (Vector2.DOWN * vert.length()).rotated(- 0.25)
+					
 					state = State.hook
 			
 		State.hook:
