@@ -11,8 +11,6 @@ enum State{normal = 0, hook}
 
 var state:int
 
-var rot_speed:float
-
 var acc := true
 
 var vert_rot:Vector2
@@ -22,10 +20,12 @@ var vert_max = Vector2.RIGHT.rotated(0.26)
 var vert_min_angle_to_vert_max = abs(vert_min.angle_to(vert_max))
 var vert_max_angle_to_vert_max_reflect = vert_max.angle_to(vert_max.reflect(Vector2.DOWN))
 
+var rot_speed:float
+
 onready var hook = parent.get_node("Hook")
 onready var shape = parent.get_node("CollisionShape2D")
 onready var shape_hook = parent.get_node("CollisionShapeHook")
-onready var jump_acc = parent.Grav * 30
+onready var jump_acc = parent.Grav * 20
 
 func state_enabled(b:bool):
 	.state_enabled(b)
@@ -50,8 +50,6 @@ func do_physics_process(delta: float) -> void:
 			
 			var vert:Vector2 = parent.global_position - hook.hook_origin
 			
-			var bleu:Vector2
-			
 			vert_rot = vert_rot.rotated(-parent.speed.x * 0.01 * delta)
 			
 			var vert_rot_angle_to_vert_min = abs(vert_rot.angle_to(vert_min))
@@ -70,6 +68,8 @@ func do_physics_process(delta: float) -> void:
 			
 			rot_speed = lerp(parent.Grav * Rot_Speed_Min, parent.Grav * Rot_Speed_Max, abs(vert_rot_angle_to_vert_rot_reflect/vert_max_angle_to_vert_max_reflect))
 			
+			var bleu:Vector2
+			
 			if acc:
 				var vert_to_vert_rot = vert.angle_to(vert_rot)
 				
@@ -82,7 +82,6 @@ func do_physics_process(delta: float) -> void:
 					acc = false
 				else:
 					bleu = vert_rot_sub - vert
-					
 			else:
 				var vert_to_vert_rot_reflect = vert.angle_to(vert_rot_reflect)
 				
@@ -95,34 +94,20 @@ func do_physics_process(delta: float) -> void:
 					acc = true
 				else:
 					bleu = vert_rot_sub - vert
-			
-#			var vert_angle_to_down = vert.angle_to(Vector2.DOWN)
-#
-#			parent.label.text = str(vert_angle_to_down)
-#
-#			var vert_rot:Vector2
-#
-#			if is_zero_approx(vert_angle_to_down):
-#				rot_speed = clamp(rot_speed - parent.speed.x * Hook_Speed_X * delta, -Rot_Speed_Max, Rot_Speed_Max)
-#			else:
-#				rot_speed = clamp(rot_speed - sign(vert_angle_to_down) * parent.speed.x * Hook_Speed_X * delta, -Rot_Speed_Max, Rot_Speed_Max)
-#
-#			if parent.dir.x != 0:
-#				vert_rot = vert.rotated(rot_speed)
-#			else:
-#				vert_rot = vert.rotated(- sign(vert_angle_to_down) * rot_speed)
-#
-#			var bleu = vert_rot - vert
-			
-#			vert_rot += vert_rot.normalized() * parent.speed.y
+					
+			parent.label.text = str(acc)
 
-			parent.move_and_slide(bleu / delta, Vector2.UP)
+			parent.move_and_collide(bleu)
 			pass
 
 func reset():
-	prints(name, rot_speed)
-	parent.speed.x = - rot_speed * jump_acc
-	rot_speed = 0
+	var mul = 1 if acc else -1
+	var speed = Vector2(mul * 1.25, -1) * jump_acc
+	prints(speed, rot_speed)
+	parent.speed = speed
+	
+	parent.move_and_slide(parent.speed, Vector2.UP)
+	
 	shape.disabled = false
 	shape_hook.disabled = true
 	state = State.normal
