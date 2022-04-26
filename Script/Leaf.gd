@@ -1,5 +1,7 @@
 extends State
 
+const Max_Grav = 500
+
 const Max_Speed = 100
 const Move_Speed = 0.5
 const Stop_Speed = 0.3
@@ -29,7 +31,7 @@ func do_physics_process(delta: float) -> void:
 	if parent.is_on_floor():
 		parent.speed.y = parent.Grav
 	else:
-		parent.speed.y = parent.get_grav()
+		parent.speed.y = clamp(parent.speed.y + parent.Grav, 0, Max_Grav)
 
 	if state == State.hook:
 		shape_hook.shape.b = hook.sprite.position * 0.8
