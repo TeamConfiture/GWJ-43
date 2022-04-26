@@ -4,16 +4,14 @@ const Max_Speed = 100
 const Move_Speed = 0.5
 const Stop_Speed = 0.3
 
-const Hook_Speed_X = 0.01
+const Rot_Speed_Min = 0.05
+const Rot_Speed_Max = 0.15
 
-const Rot_Speed_Max = 0.05
-const Rot_Speed = 0.05
+const Chain_Pull = 50
 
 enum State{normal = 0, hook}
 
 var state:int
-
-var rot_speed:float
 
 onready var hook = parent.get_node("Hook")
 onready var shape = parent.get_node("CollisionShape2D")
@@ -28,36 +26,33 @@ func state_enabled(b:bool):
 		hook.hook_enabled(true)
 
 func do_physics_process(delta: float) -> void:
-	match(state):
-		State.normal:
-			if parent.is_on_floor():
-				parent.speed.y = parent.Grav
-			else:
-				parent.speed.y += parent.Grav
+	if parent.is_on_floor():
+		parent.speed.y = parent.Grav
+	else:
+		parent.speed.y = parent.get_grav()
 
-			parent.move_and_slide(parent.speed, Vector2.UP)
-			
-		State.hook:
-			shape_hook.shape.b = hook.sprite.position * 0.8
-			
-			var vert = hook.hook_origin - parent.global_position
-			
-			var vert_angle_to_down = (-vert).angle_to(Vector2.DOWN)
-			
-			rot_speed = clamp(rot_speed + ((-parent.speed.x * Hook_Speed_X + vert_angle_to_down * Rot_Speed) * delta), -Rot_Speed_Max, Rot_Speed_Max)
-			
-			var vert_rot = vert.rotated(rot_speed)
-			
-			vert_rot += vert_rot.normalized() * parent.speed.y
-			
-			var bleu = vert - vert_rot
+	if state == State.hook:
+		shape_hook.shape.b = hook.sprite.position * 0.8
 
-			parent.move_and_slide(bleu / delta, Vector2.UP)
-			pass
+		var chain_velocity:Vector2 = (hook.hook_origin - parent.global_position).normalized() * Chain_Pull
+
+		if chain_velocity.y > 0:
+			# Pulling down isn't as strong
+			chain_velocity.y *= 0.55
+		else:
+			# Pulling up is stronger
+			chain_velocity.y *= 1.65
+		if sign(chain_velocity.x) != sign(parent.speed.x):
+			# if we are trying to walk in a different
+			# direction than the chain is pulling
+			# reduce its pull
+			chain_velocity.x *= 1
+			
+		parent.speed += chain_velocity
+
+	parent.move_and_slide(parent.speed, Vector2.UP)
 
 func reset():
-	parent.speed.x = -rot_speed * 1/Rot_Speed_Max
-	rot_speed = 0
 	shape.disabled = false
 	shape_hook.disabled = true
 	state = State.normal
@@ -76,15 +71,12 @@ func do_process(delta: float) -> void:
 			
 			if Input.is_action_just_pressed("up"):
 				if hook.launch():
-					parent.speed.y = 0
 					shape.disabled = true
 					shape_hook.disabled = false
+					
 					state = State.hook
 			
 		State.hook:
-			parent.dir.y = Input.get_axis("up", "down")
-			parent.speed.y = parent.get_speed(parent.dir.y, parent.speed.y)
-			
 			if Input.is_action_just_pressed("eat"):
 				hook.hook_reset()
 				reset()
