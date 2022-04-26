@@ -6,6 +6,8 @@ signal coin_caught
 signal chaudron_eaten
 
 const Grav = 9.81
+const Max_Grav = 500
+
 const Dont_Move_States = ["eating", "normal_to_leaf", "normal_to_rock", "normal_to_steam", "normal_to_mud", "spitting"]
 
 onready var sprite = $Sprite
@@ -89,6 +91,9 @@ func get_speed(_dir:float, _speed:float) -> float:
 	if _dir != 0 and !(anim_playback.get_current_node() in Dont_Move_States):
 		return lerp(_speed, sign(_dir) * max_speed, move_speed)
 	return lerp(_speed, 0, stop_speed)
+
+func get_grav() -> float:
+	return clamp(speed.y + Grav, 0, Max_Grav)
 
 func _physics_process(delta: float) -> void:
 	state_dic[state].do_physics_process(delta)
