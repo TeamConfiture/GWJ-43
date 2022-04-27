@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Art/GrappinLine.png" type="Texture" id=1]
+[ext_resource path="res://Script/Leaf_Platform.gd" type="Script" id=2]
+[ext_resource path="res://Art/Grappin.png" type="Texture" id=3]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -16, 0 )
+b = Vector2( 16, 0 )
+
+[node name="Leaf_Platform" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( -16, 0, 16, 0 )
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 1 )
+texture_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 17, 0 )
+rotation = 0.785398
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -16, 0 )
+rotation = -2.35619
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

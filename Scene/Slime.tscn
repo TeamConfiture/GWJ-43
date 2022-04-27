@@ -1,9 +1,8 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Art/Audio/Sound/Character/Jump_01.ogg" type="AudioStream" id=3]
-[ext_resource path="res://Art/Audio/Sound/Character/HookLaunch_01.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_3.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_1.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_2.ogg" type="AudioStream" id=7]
@@ -14,13 +13,9 @@
 [ext_resource path="res://Art/StateMachine/StateMachineMagma.tres" type="AnimationNodeStateMachine" id=12]
 [ext_resource path="res://Art/StateMachine/StateMachineMud.tres" type="AnimationNodeStateMachine" id=13]
 [ext_resource path="res://Art/StateMachine/StateMachineWater.tres" type="AnimationNodeStateMachine" id=14]
-[ext_resource path="res://Art/Grappin.png" type="Texture" id=15]
-[ext_resource path="res://Script/Grappin.gd" type="Script" id=16]
-[ext_resource path="res://Art/GrappinLine.png" type="Texture" id=17]
 [ext_resource path="res://Script/Normal.gd" type="Script" id=18]
 [ext_resource path="res://Script/Leaf.gd" type="Script" id=19]
 [ext_resource path="res://Script/Rock.gd" type="Script" id=20]
-[ext_resource path="res://Art/Audio/Sound/Character/ImpactHook_01.ogg" type="AudioStream" id=21]
 [ext_resource path="res://Art/Audio/Sound/Collectable/CoinsOnly_01.ogg" type="AudioStream" id=22]
 [ext_resource path="res://Art/Audio/Sound/Character/Spitting_01.ogg" type="AudioStream" id=23]
 [ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player.gd" type="Script" id=24]
@@ -1378,162 +1373,6 @@ tracks/1/keys = {
 radius = 6.0
 height = 2.0
 
-[sub_resource type="Animation" id=341]
-resource_name = "Hook_Left"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Raycast2D:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -225.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -90.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -16, -16 ) ]
-}
-
-[sub_resource type="Animation" id=344]
-resource_name = "Hook_Right"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Raycast2D:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -135.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 16, -16 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-
-[sub_resource type="Animation" id=342]
-resource_name = "Hook_Up"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Raycast2D:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -180.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, -22 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -45.0 ]
-}
-
-[sub_resource type="Animation" id=343]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Raycast2D:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -225.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -90.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -16, -16 ) ]
-}
-
 [node name="Slime" type="KinematicBody2D"]
 collision_mask = 5
 script = ExtResource( 1 )
@@ -1543,6 +1382,9 @@ script = ExtResource( 18 )
 
 [node name="Leaf" type="Node" parent="."]
 script = ExtResource( 19 )
+
+[node name="Timer" type="Timer" parent="Leaf"]
+one_shot = true
 
 [node name="Rock" type="Node" parent="."]
 script = ExtResource( 20 )
@@ -1566,6 +1408,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
@@ -1736,51 +1579,6 @@ bus = "SFX"
 script = ExtResource( 24 )
 samples = [ ExtResource( 22 ) ]
 random_pitch_range = 0.2
-
-[node name="Hook" type="Node2D" parent="."]
-z_index = -1
-script = ExtResource( 16 )
-
-[node name="Raycast2D" type="RayCast2D" parent="Hook"]
-rotation = -3.92699
-cast_to = Vector2( 0, 125 )
-
-[node name="Line2D" type="Line2D" parent="Hook"]
-visible = false
-points = PoolVector2Array( 0, 0, 12, -13 )
-width = 16.0
-default_color = Color( 1, 1, 1, 1 )
-texture = ExtResource( 17 )
-texture_mode = 1
-
-[node name="Sprite" type="Sprite" parent="Hook"]
-visible = false
-position = Vector2( -16, -16 )
-rotation = -1.5708
-texture = ExtResource( 15 )
-region_enabled = true
-region_rect = Rect2( 0, 16, 16, 16 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Hook"]
-anims/Hook_Left = SubResource( 341 )
-anims/Hook_Right = SubResource( 344 )
-anims/Hook_Up = SubResource( 342 )
-anims/RESET = SubResource( 343 )
-
-[node name="Hook_Launch" type="AudioStreamPlayer" parent="Hook"]
-stream = ExtResource( 4 )
-mix_target = 2
-bus = "SFX"
-script = ExtResource( 24 )
-samples = [ ExtResource( 4 ) ]
-random_pitch_range = 0.5
-
-[node name="Hook_Impact" type="AudioStreamPlayer" parent="Hook"]
-mix_target = 2
-bus = "SFX"
-script = ExtResource( 24 )
-samples = [ ExtResource( 21 ) ]
-random_pitch_range = 0.5
 
 [node name="SwimLevel" type="Position2D" parent="."]
 

@@ -1,5 +1,7 @@
 extends State
 
+var Leaf_Platform = preload("res://Scene/Leaf_Platform.tscn")
+
 const Max_Grav = 500
 
 const Max_Speed = 100
@@ -15,86 +17,47 @@ enum State{normal = 0, hook}
 
 var state:int
 
-onready var hook = parent.get_node("Hook")
-onready var shape = parent.get_node("CollisionShape2D")
-onready var shape_hook = parent.get_node("CollisionShapeHook")
+var want_jump := false
 
-func state_enabled(b:bool):
-	.state_enabled(b)
-	
-	state = State.normal
-	
-	if b:
-		hook.hook_enabled(true)
+onready var jump_acc = parent.Grav * 30
+onready var node_game = get_node("/root/Game")
+onready var timer = $Timer
 
 func do_physics_process(delta: float) -> void:
+	if parent.is_in_water():
+		parent.anim_playback.travel("spitting")
+	
 	if parent.is_on_floor():
 		parent.speed.y = parent.Grav
+		
+		if want_jump and parent.anim_playback.get_current_node() in ["idle", "walking"]:
+			parent.speed.y -= jump_acc
+			want_jump = false
 	else:
-		parent.speed.y = clamp(parent.speed.y + parent.Grav, 0, Max_Grav)
-
-	if state == State.hook:
-		shape_hook.shape.b = hook.sprite.position * 0.8
-
-		var chain_velocity:Vector2 = (hook.hook_origin - parent.global_position).normalized() * Chain_Pull
-
-		if chain_velocity.y > 0:
-			# Pulling down isn't as strong
-			chain_velocity.y *= 0.55
-		else:
-			# Pulling up is stronger
-			chain_velocity.y *= 1.65
-		if sign(chain_velocity.x) != sign(parent.speed.x):
-			# if we are trying to walk in a different
-			# direction than the chain is pulling
-			# reduce its pull
-			chain_velocity.x *= 1
-			
-		parent.speed += chain_velocity
+		parent.speed.y += parent.Grav
 
 	parent.move_and_slide(parent.speed, Vector2.UP)
 
-func reset():
-	shape.disabled = false
-	shape_hook.disabled = true
-	state = State.normal
-
 func do_process(delta: float) -> void:
-	match(state):
-		State.normal:
-			parent.want_eat = Input.is_action_just_pressed("eat")
-			
-			if parent.dir.x > 0:
-				hook.set_right()
-			elif parent.dir.x < 0:
-				hook.set_left()
-			else:
-				hook.set_up()
-			
-			if Input.is_action_just_pressed("up"):
-				if hook.launch():
-					shape.disabled = true
-					shape_hook.disabled = false
-					
-					state = State.hook
-			
-		State.hook:
-			if Input.is_action_just_pressed("eat"):
-				hook.hook_reset()
-				reset()
+	want_jump = Input.is_action_just_pressed("up")
+	
+	if !parent.is_on_floor() and timer.is_stopped() and Input.is_action_just_pressed("eat"):
+		var platform = Leaf_Platform.instance()
+		
+		platform.position = parent.position + Vector2(0, 10)
+		
+		node_game.add_child(platform)
+		
+		timer.start()
 
 	if Input.is_action_just_pressed("test_normal") \
 	or Input.is_action_just_pressed("spit") \
 	or parent.normal_to_mud or parent.normal_to_rock or parent.normal_to_steam:
-		hook.hook_enabled(false)
-		reset()
 		parent.anim_playback.travel("spitting")
 	
 	var is_on_floor = parent.is_on_floor()
-	var is_hooking = state == State.hook
 	
-	parent.anim_tree["parameters/conditions/is_hooking"] = is_hooking
-	parent.anim_tree["parameters/conditions/is_on_floor"] = is_on_floor and !is_hooking
-	parent.anim_tree["parameters/conditions/is_falling"] = !is_on_floor and !is_hooking
-	parent.anim_tree["parameters/conditions/is_moving"] = is_on_floor and parent.dir.x != 0 and !is_hooking
-	parent.anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and parent.dir.x == 0 and !is_hooking
+	parent.anim_tree["parameters/conditions/is_on_floor"] = is_on_floor
+	parent.anim_tree["parameters/conditions/is_falling"] = !is_on_floor
+	parent.anim_tree["parameters/conditions/is_moving"] = is_on_floor and parent.dir.x != 0
+	parent.anim_tree["parameters/conditions/is_not_moving"] = is_on_floor and parent.dir.x == 0
