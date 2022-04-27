@@ -20,6 +20,7 @@ func _on_UnderWater_body_entered(body):
 	var effect_idx = AudioServer.get_bus_effect(bus_idx, 0)
 	if body.name == "Slime" :
 		effect_idx.set_cutoff(1500)
+		BackgroundMusic.play_amb_underwater()
 
 
 func _on_UnderWater_body_exited(body):

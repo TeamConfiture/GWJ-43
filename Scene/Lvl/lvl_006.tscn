@@ -437,13 +437,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 27/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=246]
-extents = Vector2( 0.9, 0.0627345 )
+extents = Vector2( 0.9, 0.341367 )
 
 [sub_resource type="RectangleShape2D" id=248]
 extents = Vector2( 11.04, 0.855684 )
 
 [sub_resource type="RectangleShape2D" id=247]
-extents = Vector2( 5.73348, 0.236364 )
+extents = Vector2( 5.67848, 0.309091 )
 
 [node name="Lvl_006" type="Node2D"]
 script = ExtResource( 9 )
@@ -587,7 +587,7 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneForestAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 80, 224 )
+position = Vector2( 80, 237.932 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
 
@@ -601,7 +601,7 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneCavernAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBCavern"]
-position = Vector2( 786.652, 629 )
+position = Vector2( 781.152, 625 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 

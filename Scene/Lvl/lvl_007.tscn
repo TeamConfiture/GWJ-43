@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/Amb_WaterCoast_01.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/WaterStagn_01.ogg" type="AudioStream" id=2]
@@ -446,10 +446,16 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.490196 )
 
 [sub_resource type="RectangleShape2D" id=246]
-extents = Vector2( 0.64, 0.22 )
+extents = Vector2( 0.75, 0.43 )
+
+[sub_resource type="RectangleShape2D" id=249]
+extents = Vector2( 3.45, 0.43 )
 
 [sub_resource type="RectangleShape2D" id=247]
 extents = Vector2( 0.347812, 0.436364 )
+
+[sub_resource type="RectangleShape2D" id=250]
+extents = Vector2( 167.938, 103.5 )
 
 [node name="Lvl_007" type="Node2D"]
 script = ExtResource( 11 )
@@ -735,9 +741,14 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneForestAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 290, 95 )
+position = Vector2( 284.5, 105.5 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
+
+[node name="ZoneForestAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
+position = Vector2( 1705.5, 279 )
+scale = Vector2( 50, 50 )
+shape = SubResource( 249 )
 
 [node name="PlayerDetectorAMBCavern" type="Area2D" parent="Zone_Sound"]
 collision_layer = 4
@@ -757,7 +768,7 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Coast2" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 1727, 301 )
+position = Vector2( 1789, 305 )
 stream = ExtResource( 1 )
 autoplay = true
 max_distance = 500.0
@@ -765,12 +776,22 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Stagn" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 1689, 353 )
+position = Vector2( 1788, 342 )
 stream = ExtResource( 2 )
 autoplay = true
 max_distance = 1500.0
 attenuation = 2.0
 bus = "Amb"
+
+[node name="UnderWater" type="Area2D" parent="Zone_Sound"]
+audio_bus_name = "Underwater"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
+position = Vector2( 1661.06, 412.5 )
+shape = SubResource( 250 )
 
 [node name="PlayerStart" parent="." instance=ExtResource( 14 )]
 position = Vector2( 290, 50 )

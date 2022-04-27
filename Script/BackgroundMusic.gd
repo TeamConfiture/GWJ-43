@@ -4,6 +4,7 @@ onready var MenuTheme = load ("res://Art/Audio/Music/MenuTheme.ogg")
 onready var ThemePrincipal = load("res://Art/Audio/Music/Level_1.ogg")	
 onready var AmbForest = load("res://Art/Audio/Sound/Amb/Forest/ForestAmb_01.ogg")
 onready var AmbCavern = load("res://Art/Audio/Sound/Amb/Cavern/Cavern_drip_01.ogg")
+onready var AmbUnderwater = load("res://Art/Audio/Sound/Amb/Underwater/Amb_Underwater_1.ogg")
 
 onready var anim_player := $TransitionVolume
 
@@ -69,4 +70,12 @@ func play_amb_cavern():
 		$Amb_Cavern.stream = AmbCavern
 		$Amb_Cavern.play()
 #		print("Cavern")
+
+func play_amb_underwater():
+	var Underwater_play = $Amb_Underwater.is_playing()
+	if !Underwater_play:
+		anim_player.play("Fade_To_Underwater")
+		$Amb_Underwater.stream = AmbUnderwater
+		$Amb_Underwater.play()
+#		print("Foret")
 

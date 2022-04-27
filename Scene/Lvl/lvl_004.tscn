@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/Amb_WaterCoast_01.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Art/Audio/Sound/Amb/Water/WaterStagn_01.ogg" type="AudioStream" id=2]
@@ -439,16 +439,19 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 27/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=248]
-extents = Vector2( 89.75, 76.75 )
+extents = Vector2( 89.75, 70.875 )
 
 [sub_resource type="RectangleShape2D" id=249]
-extents = Vector2( 149.5, 78.375 )
+extents = Vector2( 149.5, 71.375 )
 
 [sub_resource type="RectangleShape2D" id=250]
 extents = Vector2( 0.9, 0.311367 )
 
 [sub_resource type="RectangleShape2D" id=246]
-extents = Vector2( 6.0925, 0.16 )
+extents = Vector2( 9.01, 0.38 )
+
+[sub_resource type="RectangleShape2D" id=251]
+extents = Vector2( 0.681563, 0.440001 )
 
 [sub_resource type="RectangleShape2D" id=247]
 extents = Vector2( 2.77, 0.136364 )
@@ -627,11 +630,11 @@ __meta__ = {
 }
 
 [node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 1262.25, 692 )
+position = Vector2( 1262.25, 697.875 )
 shape = SubResource( 248 )
 
 [node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 238.5, 628.375 )
+position = Vector2( 238.5, 635.375 )
 shape = SubResource( 249 )
 
 [node name="PlayerDetectorAMBForest" type="Area2D" parent="Zone_Sound"]
@@ -648,9 +651,14 @@ scale = Vector2( 50, 50 )
 shape = SubResource( 250 )
 
 [node name="ZoneForestAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 770.625, 619 )
+position = Vector2( 894.5, 608 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
+
+[node name="ZoneForestAMB3" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
+position = Vector2( 349.922, 543 )
+scale = Vector2( 50, 50 )
+shape = SubResource( 251 )
 
 [node name="PlayerDetectorAMBCavern" type="Area2D" parent="Zone_Sound"]
 collision_layer = 4
