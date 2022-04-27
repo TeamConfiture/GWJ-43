@@ -1,19 +1,36 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Script/HelpTriggerRules.gd" type="Script" id=1]
-[ext_resource path="res://Art/Rules/rules_final_5_A.png" type="Texture" id=2]
+[ext_resource path="res://Art/Rules/parchemin.png" type="Texture" id=2]
 [ext_resource path="res://Art/Rules/Button_Quit_Pushed.png" type="Texture" id=3]
 [ext_resource path="res://Art/Rules/Button_Quit.png" type="Texture" id=4]
+[ext_resource path="res://Art/Rules/spit.png" type="Texture" id=5]
+[ext_resource path="res://Art/Rules/clover.png" type="Texture" id=6]
+[ext_resource path="res://Art/Fonts/alagard.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Art/Rules/steam.png" type="Texture" id=8]
+[ext_resource path="res://Art/Rules/mud.png" type="Texture" id=9]
+[ext_resource path="res://Art/Rules/vine.png" type="Texture" id=10]
+[ext_resource path="res://Art/Rules/rock1.png" type="Texture" id=11]
+[ext_resource path="res://Art/Rules/rock2.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=111]
 extents = Vector2( 10, 52 )
 
+[sub_resource type="DynamicFont" id=112]
+size = 100
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=113]
+size = 50
+font_data = ExtResource( 7 )
+
 [node name="Help_trigger" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
-rules_index = "Clover"
+rules_index = "Moves"
 
 [node name="TriggerRules" type="Area2D" parent="."]
 
@@ -23,24 +40,106 @@ shape = SubResource( 111 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Parchemin" type="TextureRect" parent="CanvasLayer"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -384.0
-margin_top = -216.0
-margin_right = -192.0
-margin_bottom = -108.0
-rect_scale = Vector2( 4, 4 )
+[node name="Parchemin" type="Control" parent="CanvasLayer"]
+
+[node name="Parchemin_BG" type="TextureRect" parent="CanvasLayer/Parchemin"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 7, 7 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="spit" type="TextureRect" parent="CanvasLayer/Parchemin/Parchemin_BG"]
+visible = false
+margin_left = 85.7143
+margin_top = 77.7143
+margin_right = 132.714
+margin_bottom = 93.7143
+texture = ExtResource( 5 )
+
+[node name="eat" type="TextureRect" parent="CanvasLayer/Parchemin/Parchemin_BG"]
+visible = false
+margin_left = 129.143
+margin_top = 69.7143
+margin_right = 164.143
+margin_bottom = 97.7143
+texture = ExtResource( 6 )
+
+[node name="steam" type="TextureRect" parent="CanvasLayer/Parchemin/Parchemin_BG"]
+visible = false
+margin_left = 62.8571
+margin_top = 67.4286
+margin_right = 121.857
+margin_bottom = 95.4286
+texture = ExtResource( 8 )
+
+[node name="mud" type="TextureRect" parent="CanvasLayer/Parchemin/Parchemin_BG"]
+visible = false
+margin_left = 128.0
+margin_top = 41.1429
+margin_right = 187.0
+margin_bottom = 83.1429
+texture = ExtResource( 9 )
+
+[node name="vine" type="TextureRect" parent="CanvasLayer/Parchemin/Parchemin_BG"]
+visible = false
+margin_left = 50.2857
+margin_top = 60.5714
+margin_right = 109.286
+margin_bottom = 102.571
+texture = ExtResource( 10 )
+
+[node name="rock1" type="TextureRect" parent="CanvasLayer/Parchemin/Parchemin_BG"]
+visible = false
+margin_left = 36.5714
+margin_top = 70.8571
+margin_right = 95.5714
+margin_bottom = 112.857
+texture = ExtResource( 11 )
+
+[node name="rock2" type="TextureRect" parent="CanvasLayer/Parchemin/Parchemin_BG"]
+visible = false
+margin_left = 100.571
+margin_top = 64.0
+margin_right = 161.571
+margin_bottom = 106.0
+texture = ExtResource( 12 )
+
+[node name="Titre" type="Label" parent="CanvasLayer/Parchemin"]
+margin_left = 88.0
+margin_top = 120.0
+margin_right = 1224.0
+margin_bottom = 214.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_colors/font_color_shadow = Color( 0.670588, 0.376471, 0.266667, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 112 )
+text = "Titre"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="P1" type="RichTextLabel" parent="CanvasLayer/Parchemin"]
+margin_left = 168.0
+margin_top = 248.0
+margin_right = 1160.0
+margin_bottom = 688.0
+custom_colors/default_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/normal_font = SubResource( 113 )
+bbcode_enabled = true
+text = "Block Slime is very heavy, so the buttons activate under its weight.
+
+He can dive, but cannot get back to land in this form."
 
 [node name="Quit" type="TextureButton" parent="CanvasLayer/Parchemin"]
-margin_left = 148.0
-margin_right = 170.0
-margin_bottom = 22.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 1149.0
+margin_top = 80.0
+margin_right = 1171.0
+margin_bottom = 102.0
+rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
 

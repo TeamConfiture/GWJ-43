@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Stal.png-e93aa19f7c0a756a602cb5fb85d7dcc4.stex"
+path="res://.import/steam.png-1481ed4b4bc3a43923f4663151bcacec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Stal.png"
-dest_files=[ "res://.import/Stal.png-e93aa19f7c0a756a602cb5fb85d7dcc4.stex" ]
+source_file="res://Art/Rules/steam.png"
+dest_files=[ "res://.import/steam.png-1481ed4b4bc3a43923f4663151bcacec.stex" ]
 
 [params]
 

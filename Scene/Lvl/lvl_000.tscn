@@ -452,6 +452,7 @@ script = ExtResource( 11 )
 
 [node name="Help_trigger" parent="help" instance=ExtResource( 13 )]
 position = Vector2( 1033, 458 )
+rules_index = "Eat"
 
 [node name="Help_trigger2" parent="help" instance=ExtResource( 13 )]
 position = Vector2( 1176, 560 )
