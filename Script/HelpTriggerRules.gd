@@ -1,47 +1,82 @@
 extends Node
 
-export(String, "Moves","Clover", "Spit", "Steam","Mud","Vine","Block") var rules_index
+export(String, "Moves","Eat", "Spit", "Steam","Mud","Vine","Block") var rules_index
 
 onready var parchemin =  $CanvasLayer/Parchemin
 
+
 var slime
+var illustration
 
 var dejavu:bool = false
 
 var key_layout = OS.get_latin_keyboard_variant()
 
-var dic_rules_QWERTY = {
-	"Moves": preload("res://Art/Rules/rules_final_1.png"),
-	"Clover": preload("res://Art/Rules/rules_final_5_Q.png"), 
-	"Spit": preload("res://Art/Rules/rules_final_6.png"), 
-	"Steam": preload("res://Art/Rules/rules_final_7.png"), 
-	"Mud": preload("res://Art/Rules/rules_final_8.png"),
-	"Vine": preload("res://Art/Rules/rules_final_9_Q.png"), 
-	"Block": preload("res://Art/Rules/rules_final_10.png") 
-	}
 
-var dic_rules_AZERTY = {
-	"Moves": preload("res://Art/Rules/rules_final_1.png"),
-	"Clover": preload("res://Art/Rules/rules_final_5_A.png"), 
-	"Spit": preload("res://Art/Rules/rules_final_6.png"), 
-	"Steam": preload("res://Art/Rules/rules_final_7.png"), 
-	"Mud": preload("res://Art/Rules/rules_final_8.png"),
-	"Vine": preload("res://Art/Rules/rules_final_9_A.png"), 
-	"Block": preload("res://Art/Rules/rules_final_10.png") 
-	}
+var dic_titre = {
+	"Move": "Moves",
+	"Eat": "Eat Clovers", 
+	"Spit": "Spit clovers", 
+	"Steam": "Steam :  I fly, I can fly", 
+	"Mud": "Mud",
+	"Vine": "Vine", 
+	"Block": "I'm a Rock Star" 
+}
+
+var dic_P1 = {
+	"Move": "",
+	"Eat": "Clovers are edible.\nEating them can give you elemental powers.\n\nFire, water, plant and rock clovers can be combined to get those special forms !", 
+	"Spit": "If you don't need a transformation anymore, you can spit the clovers\n\nit can be useful if you get stuck somewhere unusual...", 
+	"Steam": "Steam slime can fly though the level, and through the grids too.\n\nBut be careful steam [u]cannot[/u] swim!", 
+	"Mud": "Mud slime is fast, loves grids, but cannot jump....\n\n [u]Be careful![/u]\nMud does not like water...",
+	"Vine": "Vine slime can go through the level by summoning cute ivy platforms.", 
+	"Block": "Block Slime is very heavy, so the buttons activate under its weight.\n He can dive, but cannot get back to land in this form." 
+}
+
 
 func _ready():
 
 	if key_layout == "QWERTY" :
-		parchemin.texture=dic_rules_QWERTY[rules_index]
+		pass
 	else :
-		parchemin.texture=dic_rules_AZERTY[rules_index]
+		pass
+	
 	parchemin.visible=false
+	$CanvasLayer/Parchemin/Titre.text=dic_titre[rules_index]
+	$CanvasLayer/Parchemin/P1.bbcode_text=dic_P1[rules_index]
+	
+	illustration(rules_index,true) 
+
 	slime = get_tree().get_root().get_node("Game/Slime") 
 
+
+func illustration(rule:String,etat:bool):
+	
+	prints(rule,etat)
+	
+	match rule:
+
+		"Eat":
+			$CanvasLayer/Parchemin/Parchemin_BG/eat.visible=etat
+		"Spit":
+			$CanvasLayer/Parchemin/Parchemin_BG/spit.visible=etat
+		"Steam":
+			$CanvasLayer/Parchemin/Parchemin_BG/steam.visible=etat
+		"Mud":
+			$CanvasLayer/Parchemin/Parchemin_BG/mud.visible=etat
+		"Vine":
+			$CanvasLayer/Parchemin/Parchemin_BG/vine.visible=etat
+		"Block":
+			$CanvasLayer/Parchemin/Parchemin_BG/rock1.visible=etat
+			$CanvasLayer/Parchemin/Parchemin_BG/rock2.visible=etat
+
 func _process(delta):
+	
+	
 	if Input.is_action_just_pressed("ui_accept"):
 		parchemin.visible=false
+		illustration(rules_index,false) 
+		print("terererete")
 		slime.do_activate(true)
 	
 
@@ -50,6 +85,7 @@ func _on_TriggerRules_body_entered(body):
 	if dejavu == false :
 		if body.name == "Slime" :
 			slime.do_activate(false)
+			illustration(rules_index,true) 
 			parchemin.visible=true
 			dejavu=true
 
@@ -57,4 +93,5 @@ func _on_TriggerRules_body_entered(body):
 
 func _on_Quit_pressed():
 	parchemin.visible=false
+	illustration(rules_index,false) 
 	slime.do_activate(true)

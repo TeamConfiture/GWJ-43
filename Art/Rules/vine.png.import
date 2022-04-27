@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rules_final_5_A.png-98249c2b3fae1680695ba3a45a34073e.stex"
+path="res://.import/vine.png-af166c8e1c29332cfa26e4a4c95e0c83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Rules/rules_final_5_A.png"
-dest_files=[ "res://.import/rules_final_5_A.png-98249c2b3fae1680695ba3a45a34073e.stex" ]
+source_file="res://Art/Rules/vine.png"
+dest_files=[ "res://.import/vine.png-af166c8e1c29332cfa26e4a4c95e0c83.stex" ]
 
 [params]
 

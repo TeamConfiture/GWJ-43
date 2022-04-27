@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rules_final_9_Q.png-7eb428110db1887f3089bd0fa51458d2.stex"
+path="res://.import/clover.png-1a1e43b278df5e6fd627e840983d6797.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Rules/rules_final_9_Q.png"
-dest_files=[ "res://.import/rules_final_9_Q.png-7eb428110db1887f3089bd0fa51458d2.stex" ]
+source_file="res://Art/Rules/clover.png"
+dest_files=[ "res://.import/clover.png-1a1e43b278df5e6fd627e840983d6797.stex" ]
 
 [params]
 
