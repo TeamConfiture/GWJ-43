@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scene/Integrable/Clover.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/water.tres" type="TileSet" id=2]
@@ -438,19 +438,25 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 27/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=246]
-extents = Vector2( 0.9, 0.0627345 )
+extents = Vector2( 0.91, 0.551367 )
+
+[sub_resource type="RectangleShape2D" id=252]
+extents = Vector2( 3.8775, 0.67 )
+
+[sub_resource type="RectangleShape2D" id=253]
+extents = Vector2( 0.989374, 0.715684 )
 
 [sub_resource type="RectangleShape2D" id=248]
-extents = Vector2( 13.145, 0.247842 )
+extents = Vector2( 2.315, 0.650001 )
 
 [sub_resource type="RectangleShape2D" id=247]
-extents = Vector2( 6.5739, 0.218182 )
+extents = Vector2( 1.20391, 0.754545 )
 
 [sub_resource type="RectangleShape2D" id=249]
 extents = Vector2( 272.875, 48 )
 
 [sub_resource type="RectangleShape2D" id=250]
-extents = Vector2( 510.75, 75.1875 )
+extents = Vector2( 510.75, 70.0002 )
 
 [sub_resource type="RectangleShape2D" id=251]
 extents = Vector2( 215.375, 96 )
@@ -608,12 +614,22 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneForestAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 272, 168 )
+position = Vector2( 272.5, 192.432 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
 
+[node name="ZoneForestAMB3" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
+position = Vector2( 224.125, 299.5 )
+scale = Vector2( 50, 50 )
+shape = SubResource( 252 )
+
+[node name="ZoneForestAMB4" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
+position = Vector2( 911, 304 )
+scale = Vector2( 50, 50 )
+shape = SubResource( 253 )
+
 [node name="ZoneForestAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 673.25, 547.608 )
+position = Vector2( 1214.75, 527.5 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 248 )
 
@@ -622,7 +638,7 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneCavernAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBCavern"]
-position = Vector2( 673.391, 588 )
+position = Vector2( 1210.39, 603.5 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 
@@ -677,7 +693,7 @@ position = Vector2( 279.125, 720 )
 shape = SubResource( 249 )
 
 [node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 521.25, 404.813 )
+position = Vector2( 521.25, 410 )
 shape = SubResource( 250 )
 
 [node name="ZoneUnderwater3" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
