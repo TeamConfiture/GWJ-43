@@ -100,8 +100,11 @@ func update_coins(lvl):
 	hud.update_coin(coins,nb_coins)
 	
 func _process(delta: float) -> void:
+
 	if Input.is_action_just_pressed("ui_page_up"):
 		_on_Slime_chaudron_eaten()
+	prints("path",path)
+	
 	if !path:
 		return
 
@@ -109,17 +112,20 @@ func _process(delta: float) -> void:
 		cam.position = path[0]
 		path.resize(0) # clear no working....
 
+
 	if path.size() > 0:
 		var d: float = cam.position.distance_to(path[0])
 		if d > 100:
-
 			cam.position = cam.position.linear_interpolate(path[0], (speed * delta)/d)
 		else:
 			path.remove(0)
-	else:
+	
+	if path.size() < 1:
 		$LvlLoader.to_black()
 		yield($LvlLoader/AnimationPlayer,"animation_finished")
 		_on_cinematic_end()
+
+	
 
 
 

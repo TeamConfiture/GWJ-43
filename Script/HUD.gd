@@ -13,7 +13,7 @@ var textures = {
 
 
 func update_coin(value: int,nb :int) -> void:
-	coin_label.text = str(value)+" / "+str(nb)
+	coin_label.text = str(value)+"/"+str(nb)
 
 func update_clovers(clovers : PoolStringArray) -> void:
 	if clovers != null:

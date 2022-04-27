@@ -41,6 +41,7 @@ shape = SubResource( 111 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Parchemin" type="Control" parent="CanvasLayer"]
+visible = false
 
 [node name="Parchemin_BG" type="TextureRect" parent="CanvasLayer/Parchemin"]
 anchor_right = 1.0
