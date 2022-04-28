@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeStateMachine" load_steps=16 format=2]
+[gd_resource type="AnimationNodeStateMachine" load_steps=18 format=2]
 
 [sub_resource type="AnimationNodeAnimation" id=297]
 animation = "rock_eating"
@@ -11,6 +11,9 @@ animation = "rock_idle"
 
 [sub_resource type="AnimationNodeAnimation" id=304]
 animation = "rock_spitting"
+
+[sub_resource type="AnimationNodeAnimation" id=307]
+animation = "rock_to_normal"
 
 [sub_resource type="AnimationNodeAnimation" id=286]
 animation = "rock_walking"
@@ -46,6 +49,8 @@ advance_condition = "is_falling"
 [sub_resource type="AnimationNodeStateMachineTransition" id=306]
 advance_condition = "is_on_floor"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=308]
+
 [resource]
 states/eating/node = SubResource( 297 )
 states/eating/position = Vector2( 705, 164 )
@@ -55,9 +60,11 @@ states/idle/node = SubResource( 285 )
 states/idle/position = Vector2( 470, 164 )
 states/spitting/node = SubResource( 304 )
 states/spitting/position = Vector2( 652, 81 )
+states/to_normal/node = SubResource( 307 )
+states/to_normal/position = Vector2( 355, 66 )
 states/walking/node = SubResource( 286 )
 states/walking/position = Vector2( 705, 293 )
-transitions = [ "walking", "idle", SubResource( 287 ), "idle", "walking", SubResource( 288 ), "idle", "eating", SubResource( 298 ), "walking", "eating", SubResource( 299 ), "eating", "idle", SubResource( 300 ), "idle", "falling", SubResource( 301 ), "walking", "falling", SubResource( 302 ), "eating", "falling", SubResource( 303 ), "idle", "spitting", SubResource( 305 ), "falling", "idle", SubResource( 306 ) ]
+transitions = [ "walking", "idle", SubResource( 287 ), "idle", "walking", SubResource( 288 ), "idle", "eating", SubResource( 298 ), "walking", "eating", SubResource( 299 ), "eating", "idle", SubResource( 300 ), "idle", "falling", SubResource( 301 ), "walking", "falling", SubResource( 302 ), "eating", "falling", SubResource( 303 ), "idle", "spitting", SubResource( 305 ), "falling", "idle", SubResource( 306 ), "idle", "to_normal", SubResource( 308 ) ]
 start_node = "idle"
 end_node = "spitting"
-graph_offset = Vector2( 22, 110 )
+graph_offset = Vector2( 12, -15 )

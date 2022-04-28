@@ -50,7 +50,9 @@ func do_physics_process(delta: float) -> void:
 func do_process(delta: float) -> void:
 	want_jump = Input.is_action_just_pressed("up")
 	
-	if !parent.is_on_floor() and timer.is_stopped() and Input.is_action_just_pressed("eat"):
+	if parent.is_on_floor():
+		parent.want_eat = Input.is_action_just_pressed("eat")
+	elif timer.is_stopped() and Input.is_action_just_pressed("eat"):
 		var platform = Leaf_Platform.instance()
 		
 		platform.position = parent.position + Vector2(0, 10)
@@ -59,10 +61,12 @@ func do_process(delta: float) -> void:
 		
 		timer.start()
 
-	if Input.is_action_just_pressed("test_normal") \
-	or Input.is_action_just_pressed("spit") \
-	or parent.normal_to_mud or parent.normal_to_rock or parent.normal_to_steam:
+	if Input.is_action_just_pressed("spit"):
 		parent.anim_playback.travel("spitting")
+		
+	if Input.is_action_just_pressed("test_normal") \
+		or parent.normal_to_mud or parent.normal_to_rock or parent.normal_to_steam:
+		parent.anim_playback.travel("to_normal")
 	
 	var is_on_floor = parent.is_on_floor()
 	

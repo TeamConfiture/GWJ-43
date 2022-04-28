@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeStateMachine" load_steps=11 format=2]
+[gd_resource type="AnimationNodeStateMachine" load_steps=13 format=2]
 
 [sub_resource type="AnimationNodeAnimation" id=297]
 animation = "steam_eating"
@@ -8,6 +8,9 @@ animation = "steam_idle"
 
 [sub_resource type="AnimationNodeAnimation" id=304]
 animation = "steam_spitting"
+
+[sub_resource type="AnimationNodeAnimation" id=306]
+animation = "steam_to_normal"
 
 [sub_resource type="AnimationNodeAnimation" id=286]
 animation = "steam_walking"
@@ -31,6 +34,8 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=305]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=307]
+
 [resource]
 states/eating/node = SubResource( 297 )
 states/eating/position = Vector2( 705, 164 )
@@ -38,9 +43,11 @@ states/idle/node = SubResource( 285 )
 states/idle/position = Vector2( 486, 164 )
 states/spitting/node = SubResource( 304 )
 states/spitting/position = Vector2( 599, 51 )
+states/to_normal/node = SubResource( 306 )
+states/to_normal/position = Vector2( 358, 57 )
 states/walking/node = SubResource( 286 )
 states/walking/position = Vector2( 705, 293 )
-transitions = [ "walking", "idle", SubResource( 287 ), "idle", "walking", SubResource( 288 ), "idle", "eating", SubResource( 298 ), "walking", "eating", SubResource( 299 ), "eating", "idle", SubResource( 300 ), "idle", "spitting", SubResource( 305 ) ]
+transitions = [ "walking", "idle", SubResource( 287 ), "idle", "walking", SubResource( 288 ), "idle", "eating", SubResource( 298 ), "walking", "eating", SubResource( 299 ), "eating", "idle", SubResource( 300 ), "idle", "spitting", SubResource( 305 ), "idle", "to_normal", SubResource( 307 ) ]
 start_node = "idle"
 end_node = "spitting"
-graph_offset = Vector2( 26, 14 )
+graph_offset = Vector2( -104, -51 )
