@@ -19,6 +19,8 @@ var state:int
 
 var want_jump := false
 
+var in_the_air := true
+
 onready var jump_acc = parent.Grav * 30
 onready var node_game = get_node("/root/Game")
 onready var timer = $Timer
@@ -28,12 +30,19 @@ func do_physics_process(delta: float) -> void:
 		parent.anim_playback.travel("spitting")
 	
 	if parent.is_on_floor():
+		if in_the_air:
+			parent._on_landing()
+			in_the_air = false
+			
 		parent.speed.y = parent.Grav
 		
 		if want_jump and parent.anim_playback.get_current_node() in ["idle", "walking"]:
 			parent.speed.y -= jump_acc
 			want_jump = false
 	else:
+		if !in_the_air:
+			in_the_air = true
+		
 		parent.speed.y += parent.Grav
 
 	parent.move_and_slide(parent.speed, Vector2.UP)

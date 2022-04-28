@@ -8,6 +8,8 @@ onready var jump_acc = parent.Grav * 30
 
 var want_jump := false
 
+var in_the_air := true
+
 func do_physics_process(delta: float) -> void:
 	if parent.is_in_water():
 		want_jump = true
@@ -15,11 +17,18 @@ func do_physics_process(delta: float) -> void:
 		parent.set_collision_mask_bit(2, 1)
 	
 	if parent.is_on_floor():
+		if in_the_air:
+			parent._on_landing()
+			in_the_air = false
+		
 		parent.speed.y = parent.Grav
 		if want_jump and parent.anim_playback.get_current_node() in ["idle", "walking"]:
 			parent.speed.y -= jump_acc
 			want_jump = false
 	else:
+		if !in_the_air:
+			in_the_air = true
+		
 		if !parent.is_in_water():
 			parent.speed.y += parent.Grav
 		else:

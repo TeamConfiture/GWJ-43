@@ -193,4 +193,8 @@ func set_camera_limits():
 #	$Camera2D.limit_bottom = get_viewport().size.y
 	pass
 
-
+#call once by states when landing
+func _on_landing():
+	$Character_Land.play()
+	
+	$Character_Fall.stop()
