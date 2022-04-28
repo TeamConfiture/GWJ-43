@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
@@ -259,6 +259,48 @@ tracks/0/keys = {
 "values": [ 286, 292 ]
 }
 
+[sub_resource type="Animation" id=346]
+resource_name = "leaf_to_normal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 418, 423 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_set_state"
+} ]
+}
+
 [sub_resource type="Animation" id=322]
 resource_name = "leaf_walking"
 loop = true
@@ -508,6 +550,48 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 319, 325 ]
+}
+
+[sub_resource type="Animation" id=347]
+resource_name = "mud_to_normal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 407, 412 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_set_state"
+} ]
 }
 
 [sub_resource type="Animation" id=326]
@@ -1175,6 +1259,48 @@ tracks/0/keys = {
 "values": [ 297, 303 ]
 }
 
+[sub_resource type="Animation" id=348]
+resource_name = "rock_to_normal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 440, 445 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_set_state"
+} ]
+}
+
 [sub_resource type="Animation" id=323]
 resource_name = "rock_walking"
 loop = true
@@ -1337,6 +1463,48 @@ tracks/0/keys = {
 "values": [ 308, 314 ]
 }
 
+[sub_resource type="Animation" id=349]
+resource_name = "steam_to_normal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 429, 434 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTree:tree_root")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_set_state"
+} ]
+}
+
 [sub_resource type="Animation" id=327]
 resource_name = "steam_walking"
 loop = true
@@ -1418,6 +1586,7 @@ anims/leaf_idle = SubResource( 312 )
 anims/leaf_landing = SubResource( 320 )
 anims/leaf_spitting = SubResource( 336 )
 anims/leaf_to_cauldron = SubResource( 332 )
+anims/leaf_to_normal = SubResource( 346 )
 anims/leaf_walking = SubResource( 322 )
 anims/mud_eating = SubResource( 307 )
 anims/mud_falling = SubResource( 310 )
@@ -1425,6 +1594,7 @@ anims/mud_idle = SubResource( 315 )
 anims/mud_landing = SubResource( 324 )
 anims/mud_spitting = SubResource( 338 )
 anims/mud_to_cauldron = SubResource( 334 )
+anims/mud_to_normal = SubResource( 347 )
 anims/mud_walking = SubResource( 326 )
 anims/normal_eating = SubResource( 276 )
 anims/normal_falling = SubResource( 277 )
@@ -1442,11 +1612,13 @@ anims/rock_idle = SubResource( 313 )
 anims/rock_landing = SubResource( 321 )
 anims/rock_spitting = SubResource( 337 )
 anims/rock_to_cauldron = SubResource( 333 )
+anims/rock_to_normal = SubResource( 348 )
 anims/rock_walking = SubResource( 323 )
 anims/steam_eating = SubResource( 306 )
 anims/steam_idle = SubResource( 314 )
 anims/steam_spitting = SubResource( 339 )
 anims/steam_to_cauldron = SubResource( 335 )
+anims/steam_to_normal = SubResource( 349 )
 anims/steam_walking = SubResource( 327 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
