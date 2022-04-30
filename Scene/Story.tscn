@@ -8,7 +8,7 @@
 [ext_resource path="res://Art/Rules/rules_final_3.png" type="Texture" id=6]
 [ext_resource path="res://Art/Rules/rules_final_4.png" type="Texture" id=7]
 [ext_resource path="res://Art/Rules/rules_final_2.png" type="Texture" id=8]
-[ext_resource path="res://Art/Fonts/Kenney Pixel.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Art/Fonts/alagard.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -47,9 +47,9 @@ texture = ExtResource( 7 )
 
 [node name="NextBtn" type="TextureButton" parent="."]
 margin_left = 395.91
-margin_top = 559.0
+margin_top = 543.0
 margin_right = 417.91
-margin_bottom = 581.0
+margin_bottom = 565.0
 rect_scale = Vector2( 6, 6 )
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
@@ -58,10 +58,11 @@ texture_pressed = ExtResource( 4 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 360.0
-margin_top = 680.615
-margin_right = 571.0
-margin_bottom = 703.615
+margin_left = 365.0
+margin_top = 673.0
+margin_right = 576.0
+margin_bottom = 702.0
+custom_colors/font_color = Color( 0.419608, 0.25098, 0.25098, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "\"SPACE\""
 align = 1
