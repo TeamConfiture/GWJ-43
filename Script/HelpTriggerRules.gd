@@ -52,7 +52,7 @@ func _ready():
 
 func illustration(rule:String,etat:bool):
 	
-	prints(rule,etat)
+
 	
 	match rule:
 
@@ -76,7 +76,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		parchemin.visible=false
 		illustration(rules_index,false) 
-		print("terererete")
 		slime.do_activate(true)
 	
 
