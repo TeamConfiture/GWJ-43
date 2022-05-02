@@ -1,6 +1,7 @@
 extends Node
 
 signal open_door
+
 onready var hud := $HUD
 
 onready var cam = $Camera2D
@@ -28,6 +29,7 @@ var coins_per_levels : Dictionary
 
 var cinematic_done = false
 var chaudron_eat = false
+var big_chaudron_eat = false
 
 func _ready():
 	
@@ -75,14 +77,21 @@ func _on_Slime_chaudron_eaten():
 	if chaudron_eat == false :
 		$HUD/Score/Perfect.visible=false
 		$HUD/Score/Do_better.visible=false
+		$HUD/Score/Perfect_end.visible=false
+		$HUD/Score/Do_better_end.visible=false
 		coins_per_levels[lvl_index][1] = coins
 		cinematic_done = false
 		slime.do_activate(false)
 		$HUD/Score.visible=true
 		
 		var ratio = 100 * float(coins) / float(nb_coins)
-
-		var tick = 0.5 / coins
+		
+		var tick
+		if coins > 0 :
+			tick = 0.25 / coins
+		else:
+			tick = 0.01
+		
 		
 		for i in coins+1:
 			$HUD/Score/Scoring.text = str(i)+" / "+str(nb_coins)
@@ -108,28 +117,38 @@ func _on_Slime_chaudron_eaten():
 			add_child(current_lvl)
 
 			$HUD/Score.visible=false
-			
+
 			update_coins(current_lvl)
 			chaudron_eat=false
-
 			cinematic()
 
 
 		else :
 			
-			$HUD/Score.visible=true
-			nb_coins = 0
-			coins = 0
-			for i in coins_per_levels.size():
-				nb_coins += coins_per_levels[i][0]
-				coins += coins_per_levels[i][1]
-				$HUD/Score/Scoring.text = str(coins)+" / "+str(nb_coins)
-				$Slime/Collect.play(0.0)
-				yield(get_tree().create_timer(0.1), "timeout")
-
-			yield(get_tree().create_timer(3.0), "timeout")
-			$HUD/Score.visible=false
-			SceneLoader.change_scene("Fin")
+			if big_chaudron_eat == false :
+				$HUD/Score/Perfect.visible=false
+				$HUD/Score/Do_better.visible=false
+				$HUD/Score/Perfect_end.visible=false
+				$HUD/Score/Do_better_end.visible=false
+				
+				$HUD/Score.visible=true
+				nb_coins = 0
+				coins = 0
+				for i in coins_per_levels.size():
+					nb_coins += coins_per_levels[i][0]
+					coins += coins_per_levels[i][1]
+					$HUD/Score/Scoring.text = str(coins)+" / "+str(nb_coins)
+				
+				var ratio = 100 * float(coins) / float(nb_coins)
+				
+				if ratio == 100 :
+					$HUD/Score/Perfect_end.visible=true
+				else:
+					$HUD/Score/Do_better_end.visible=true
+				big_chaudron_eat = true
+			else :
+				$HUD/Score.visible=false
+				SceneLoader.change_scene("Fin")
 
 func update_coins(lvl):
 	var node_coins = lvl.get_node("Coins")
@@ -137,7 +156,7 @@ func update_coins(lvl):
 	coins = 0
 	coins_per_levels[lvl_index] = [nb_coins, coins]
 	hud.update_coin(coins,nb_coins)
-	
+
 func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("ui_page_up"):
@@ -146,16 +165,15 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") && chaudron_eat == true :
 			_on_Slime_chaudron_eaten()
 
+	if Input.is_action_just_pressed("ui_accept") && big_chaudron_eat == true :
+			_on_Slime_chaudron_eaten()
+	
 	if !path:
 			return
 
 	if Input.is_action_just_pressed("ui_accept"):
-		
-
-		cam.position = path[0]  #a bloquer si pas en cinematique
+		cam.position = path[0]  
 		path.resize(0) # clear no working....
-		
-	
 
 
 	if path.size() > 0:
@@ -164,13 +182,12 @@ func _process(delta: float) -> void:
 			cam.position = cam.position.linear_interpolate(path[0], (speed * delta)/d)
 		else:
 			path.remove(0)
-	
+
 	if path.size() < 1:
-		$LvlLoader.to_black()
-		yield($LvlLoader/AnimationPlayer,"animation_finished")
+		
 		_on_cinematic_end()
 
-	
+
 
 
 
@@ -207,18 +224,26 @@ func find_the_wayout(position_door:Vector2):
 
 
 func _on_door_open():
+	$LvlLoader.to_black()
+	yield($LvlLoader/AnimationPlayer,"animation_finished")
 	slime.do_activate(true)
+	$LvlLoader.to_white()
 
 func _on_cinematic_end():
 	$HUD/Space.visible=false
+
 	if cinematic_done == true : # Du coup si cinematique faite on est en mode Door
 		emit_signal("open_door")
 
 	else :
-		$LvlLoader.to_white()
+		$LvlLoader.to_black()
+		yield($LvlLoader/AnimationPlayer,"animation_finished")
 		slime.position = slime_position
 		slime.do_activate(true)
+		$LvlLoader.to_white()
 		cinematic_done = true
+
+	
 
 
 
@@ -229,5 +254,11 @@ func set_camera_limits(lvl :TileMap ):
 	cam.limit_right = map_limits.end.x * map_cellsize.x
 	cam.limit_top = map_limits.position.y * map_cellsize.y
 	cam.limit_bottom = map_limits.end.y * map_cellsize.y
+	
+	$Slime/Camera2D.limit_left = cam.limit_left
+	$Slime/Camera2D.limit_right = cam.limit_right
+	$Slime/Camera2D.limit_top = cam.limit_top
+	$Slime/Camera2D.limit_bottom = cam.limit_bottom
+
 
 

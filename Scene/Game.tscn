@@ -369,8 +369,6 @@ smoothing_enabled = true
 
 [node name="LvlLoader" parent="." instance=ExtResource( 13 )]
 
-[node name="Tween" type="Tween" parent="."]
-
 [connection signal="input_event" from="ParallaxCloud/Cloud/Nuage_magique" to="ParallaxCloud/Cloud/Nuage_magique" method="_on_Area2D_input_event"]
 [connection signal="chaudron_eaten" from="Slime" to="." method="_on_Slime_chaudron_eaten"]
 [connection signal="clover_eaten" from="Slime" to="." method="_on_Slime_clover_eaten"]

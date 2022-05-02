@@ -457,6 +457,7 @@ extents = Vector2( 0.681563, 0.440001 )
 extents = Vector2( 2.77, 0.136364 )
 
 [node name="Lvl_004" type="Node2D"]
+position = Vector2( 0, -1 )
 script = ExtResource( 11 )
 
 [node name="help" type="Node" parent="."]
@@ -539,7 +540,7 @@ clover_type = "Blue"
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin1" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 384, 96 )
+position = Vector2( 389, 98 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 256, 96 )
@@ -548,7 +549,7 @@ position = Vector2( 256, 96 )
 position = Vector2( 192, 128 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 112, 240 )
+position = Vector2( 1125, 119 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 576, 42 )
@@ -605,7 +606,7 @@ position = Vector2( 560, 306 )
 [node name="Door_and_Button" type="Node" parent="."]
 
 [node name="Door" parent="Door_and_Button" instance=ExtResource( 10 )]
-position = Vector2( 976, 69 )
+position = Vector2( 976, 72 )
 
 [node name="HeavyButton" parent="Door_and_Button" instance=ExtResource( 8 )]
 position = Vector2( 688, 416 )
