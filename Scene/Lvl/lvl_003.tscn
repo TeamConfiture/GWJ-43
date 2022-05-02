@@ -494,10 +494,10 @@ crow_dir = "Droite"
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin1" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 240, 465 )
+position = Vector2( 454, 151 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 207, 401 )
+position = Vector2( 670, 247 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 872, 432 )
