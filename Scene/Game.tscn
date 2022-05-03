@@ -343,7 +343,6 @@ layer = 101
 
 [node name="Pause" parent="HUD" instance=ExtResource( 12 )]
 pause_mode = 2
-visible = false
 
 [node name="Score" parent="HUD" instance=ExtResource( 14 )]
 visible = false
