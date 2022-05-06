@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Art/Fonts/alagard.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scene/Integrable/Clover.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Script/Pause.gd" type="Script" id=6]
 [ext_resource path="res://Art/Rules/parchemin.png" type="Texture" id=7]
 
@@ -18,12 +20,182 @@ outline_size = 5
 outline_color = Color( 0.670588, 0.376471, 0.266667, 1 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 160, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 224, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 256, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 160, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 224, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 256, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 160, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 224, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 256, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 3 )
+region = Rect2( 160, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 3 )
+region = Rect2( 224, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 3 )
+region = Rect2( 256, 32, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=41]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "Vapor",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "Vine",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "Rock",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "Mud",
+"speed": 5.0
+} ]
+
 [node name="Pause" type="CanvasLayer"]
 layer = 128
 script = ExtResource( 6 )
 
 [node name="Parchemin" type="Control" parent="."]
-visible = false
 
 [node name="Parchemin_BG" type="TextureRect" parent="Parchemin"]
 anchor_right = 1.0
@@ -51,15 +223,23 @@ autowrap = true
 
 [node name="P1" type="RichTextLabel" parent="Parchemin"]
 margin_left = 168.0
-margin_top = 248.0
+margin_top = 216.0
 margin_right = 1160.0
-margin_bottom = 688.0
+margin_bottom = 272.0
 custom_colors/default_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-text = "Block Slime is very heavy, so the buttons activate under its weight.
+text = "Clover combinations:"
 
-He can dive, but cannot get back to land in this form."
+[node name="P2" type="RichTextLabel" parent="Parchemin"]
+margin_left = 168.0
+margin_top = 433.0
+margin_right = 1160.0
+margin_bottom = 489.0
+custom_colors/default_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+text = "Actions:"
 
 [node name="Menu" type="Button" parent="Parchemin"]
 margin_left = 128.0
@@ -82,6 +262,275 @@ custom_colors/font_color_hover = Color( 0.823529, 0.698039, 0.654902, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "Resume >"
 flat = true
+
+[node name="Mud" type="Control" parent="Parchemin"]
+margin_left = 100.0
+margin_right = 100.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedY2" type="AnimatedSprite" parent="Parchemin/Mud"]
+position = Vector2( 190, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Blue"
+frame = 3
+playing = true
+
+[node name="LabelPlus" type="Label" parent="Parchemin/Mud"]
+margin_left = 215.0
+margin_top = 280.0
+margin_right = 249.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "+"
+
+[node name="AnimatedY" type="AnimatedSprite" parent="Parchemin/Mud"]
+position = Vector2( 280, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Yellow"
+frame = 3
+playing = true
+
+[node name="Arrow" type="Label" parent="Parchemin/Mud"]
+margin_left = 310.0
+margin_top = 280.0
+margin_right = 448.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = ">"
+
+[node name="AnimatedMud" type="AnimatedSprite" parent="Parchemin/Mud"]
+modulate = Color( 0.890196, 0.803922, 0.803922, 1 )
+position = Vector2( 385, 278 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 41 )
+animation = "Mud"
+frame = 6
+playing = true
+
+[node name="Vine" type="Control" parent="Parchemin"]
+margin_left = 100.0
+margin_top = 80.0
+margin_right = 100.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedB" type="AnimatedSprite" parent="Parchemin/Vine"]
+position = Vector2( 190, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Blue"
+playing = true
+
+[node name="LabelPlus" type="Label" parent="Parchemin/Vine"]
+margin_left = 215.0
+margin_top = 280.0
+margin_right = 249.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "+"
+
+[node name="AnimatedG" type="AnimatedSprite" parent="Parchemin/Vine"]
+position = Vector2( 280, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Green"
+frame = 2
+playing = true
+
+[node name="Arrow" type="Label" parent="Parchemin/Vine"]
+margin_left = 310.0
+margin_top = 280.0
+margin_right = 448.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = ">"
+
+[node name="AnimatedVine" type="AnimatedSprite" parent="Parchemin/Vine"]
+modulate = Color( 0.890196, 0.803922, 0.803922, 1 )
+position = Vector2( 385, 278 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 41 )
+animation = "Vine"
+frame = 5
+playing = true
+
+[node name="Rock" type="Control" parent="Parchemin"]
+margin_left = 500.0
+margin_right = 500.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedY" type="AnimatedSprite" parent="Parchemin/Rock"]
+position = Vector2( 190, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Yellow"
+frame = 2
+playing = true
+
+[node name="LabelPlus" type="Label" parent="Parchemin/Rock"]
+margin_left = 215.0
+margin_top = 280.0
+margin_right = 249.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "+"
+
+[node name="AnimatedR" type="AnimatedSprite" parent="Parchemin/Rock"]
+position = Vector2( 280, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Red"
+frame = 3
+playing = true
+
+[node name="Slash" type="Label" parent="Parchemin/Rock"]
+margin_left = 300.0
+margin_top = 280.0
+margin_right = 438.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "/"
+
+[node name="AnimatedY2" type="AnimatedSprite" parent="Parchemin/Rock"]
+position = Vector2( 360, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Yellow"
+frame = 3
+playing = true
+
+[node name="LabelPlus2" type="Label" parent="Parchemin/Rock"]
+margin_left = 385.0
+margin_top = 280.0
+margin_right = 419.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "+"
+
+[node name="AnimatedG" type="AnimatedSprite" parent="Parchemin/Rock"]
+position = Vector2( 450, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Green"
+playing = true
+
+[node name="Arrow" type="Label" parent="Parchemin/Rock"]
+margin_left = 482.0
+margin_top = 280.0
+margin_right = 620.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = ">"
+
+[node name="AnimatedRock" type="AnimatedSprite" parent="Parchemin/Rock"]
+modulate = Color( 0.890196, 0.803922, 0.803922, 1 )
+position = Vector2( 554, 278 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 41 )
+animation = "Rock"
+frame = 7
+playing = true
+
+[node name="Vapor" type="Control" parent="Parchemin"]
+margin_left = 500.0
+margin_top = 80.0
+margin_right = 500.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedR" type="AnimatedSprite" parent="Parchemin/Vapor"]
+position = Vector2( 190, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Red"
+frame = 2
+playing = true
+
+[node name="LabelPlus" type="Label" parent="Parchemin/Vapor"]
+margin_left = 215.0
+margin_top = 280.0
+margin_right = 249.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "+"
+
+[node name="AnimatedG2" type="AnimatedSprite" parent="Parchemin/Vapor"]
+position = Vector2( 280, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Blue"
+frame = 1
+playing = true
+
+[node name="Slash" type="Label" parent="Parchemin/Vapor"]
+margin_left = 300.0
+margin_top = 280.0
+margin_right = 438.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "/"
+
+[node name="AnimatedY2" type="AnimatedSprite" parent="Parchemin/Vapor"]
+position = Vector2( 360, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Red"
+frame = 3
+playing = true
+
+[node name="LabelPlus2" type="Label" parent="Parchemin/Vapor"]
+margin_left = 385.0
+margin_top = 280.0
+margin_right = 419.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "+"
+
+[node name="AnimatedG" type="AnimatedSprite" parent="Parchemin/Vapor"]
+position = Vector2( 450, 272 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 2 )
+animation = "Green"
+playing = true
+
+[node name="Arrow" type="Label" parent="Parchemin/Vapor"]
+margin_left = 482.0
+margin_top = 280.0
+margin_right = 620.0
+margin_bottom = 328.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+text = ">"
+
+[node name="AnimatedVapor" type="AnimatedSprite" parent="Parchemin/Vapor"]
+modulate = Color( 0.890196, 0.803922, 0.803922, 1 )
+position = Vector2( 554, 278 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 41 )
+animation = "Vapor"
+frame = 6
+playing = true
 
 [connection signal="pressed" from="Parchemin/Menu" to="." method="_on_Menu_pressed"]
 [connection signal="pressed" from="Parchemin/Resume" to="." method="_on_Resume_pressed"]
