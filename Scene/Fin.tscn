@@ -4,7 +4,7 @@
 [ext_resource path="res://Art/End/Fin.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Art/End/rules_final_17.png" type="Texture" id=3]
 [ext_resource path="res://Art/End/rules_final_16.png" type="Texture" id=4]
-[ext_resource path="res://Art/Fonts/Kenney Pixel.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Art/Fonts/alagard.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Art/End/rules_final_14.png" type="Texture" id=7]
 [ext_resource path="res://Art/End/rules_final_15.png" type="Texture" id=8]
 [ext_resource path="res://Art/Menu/Menu_BG_1.png" type="Texture" id=9]
@@ -28,7 +28,6 @@ position = Vector2( 682, 383 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 2 )
 animation = "Fin"
-frame = 2
 playing = true
 
 [node name="RulesFinal14" type="Sprite" parent="."]
@@ -72,6 +71,7 @@ margin_left = 1064.0
 margin_top = 704.0
 margin_right = 1275.0
 margin_bottom = 727.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "\"SPACE\" "
 align = 1

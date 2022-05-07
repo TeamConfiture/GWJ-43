@@ -14,7 +14,7 @@
 [ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scene/LvlLoader.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scene/Score.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Art/Fonts/Kenney Pixel.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Art/Fonts/alagard.ttf" type="DynamicFontData" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "element.png 0"
@@ -353,6 +353,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -23.0
+custom_colors/font_color = Color( 0.270588, 0.180392, 0.207843, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Press \"SPACE\" to Slime"
 align = 1

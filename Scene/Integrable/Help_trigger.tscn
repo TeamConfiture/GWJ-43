@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Script/HelpTriggerRules.gd" type="Script" id=1]
 [ext_resource path="res://Art/Rules/parchemin.png" type="Texture" id=2]
@@ -14,9 +14,17 @@
 [ext_resource path="res://Art/Rules/rock2.png" type="Texture" id=12]
 [ext_resource path="res://Scene/Integrable/Clover.tres" type="SpriteFrames" id=13]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=14]
+[ext_resource path="res://Art/Rules/Button.png" type="Texture" id=15]
+[ext_resource path="res://Art/Rules/arrow.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=111]
 extents = Vector2( 10, 52 )
+
+[sub_resource type="DynamicFont" id=116]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=117]
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=112]
 size = 100
@@ -227,16 +235,17 @@ __meta__ = {
 
 [node name="spit" type="TextureRect" parent="CanvasLayer/Parchemin/Parchemin_BG"]
 visible = false
-margin_left = 85.7143
-margin_top = 77.7143
-margin_right = 132.714
-margin_bottom = 93.7143
+margin_left = 53.7143
+margin_top = 76.5714
+margin_right = 100.714
+margin_bottom = 92.5714
 texture = ExtResource( 5 )
 
 [node name="eat" type="TextureRect" parent="CanvasLayer/Parchemin/Parchemin_BG"]
-margin_left = 129.143
+visible = false
+margin_left = 51.4286
 margin_top = 69.7143
-margin_right = 164.143
+margin_right = 86.4286
 margin_bottom = 97.7143
 texture = ExtResource( 6 )
 
@@ -280,6 +289,45 @@ margin_right = 161.571
 margin_bottom = 106.0
 texture = ExtResource( 12 )
 
+[node name="Button" type="TextureRect" parent="CanvasLayer/Parchemin/Parchemin_BG"]
+visible = false
+margin_left = 140.0
+margin_top = 76.571
+margin_right = 156.0
+margin_bottom = 92.571
+texture = ExtResource( 15 )
+stretch_mode = 1
+
+[node name="Key" type="Label" parent="CanvasLayer/Parchemin/Parchemin_BG/Button"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 18.0
+margin_bottom = 18.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 116 )
+text = "Q"
+align = 1
+valign = 1
+
+[node name="Action" type="Label" parent="CanvasLayer/Parchemin/Parchemin_BG/Button"]
+margin_top = -12.0
+margin_right = 40.0
+margin_bottom = 3.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
+custom_fonts/font = SubResource( 117 )
+text = "Spit"
+
+[node name="Arrow" type="TextureRect" parent="CanvasLayer/Parchemin/Parchemin_BG/Button"]
+margin_left = 18.0
+margin_top = -12.0
+margin_right = 58.0
+margin_bottom = 28.0
+texture = ExtResource( 16 )
+stretch_mode = 3
+flip_h = true
+
 [node name="Titre" type="Label" parent="CanvasLayer/Parchemin"]
 margin_left = 88.0
 margin_top = 120.0
@@ -303,12 +351,9 @@ margin_bottom = 688.0
 custom_colors/default_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
 custom_fonts/normal_font = SubResource( 113 )
 bbcode_enabled = true
-text = "Clovers are edible, eating them can give you elemental powers.
+text = "If you don't need a transformation anymore, you can spit the clovers
 
-
-
-
-Fire, water, plant and rock clovers can be combined to get those special forms !"
+It can be useful if you get stuck somewhere unusual..."
 
 [node name="Quit" type="TextureButton" parent="CanvasLayer/Parchemin"]
 margin_left = 1149.0
@@ -334,7 +379,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
-frame = 2
+frame = 1
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Mud"]
@@ -351,7 +396,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Mud"]
@@ -369,7 +414,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Mud"
-frame = 4
+frame = 5
 playing = true
 
 [node name="Vine" type="Control" parent="CanvasLayer/Parchemin"]
@@ -387,7 +432,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
-frame = 3
+frame = 2
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Vine"]
@@ -404,7 +449,6 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Green"
-frame = 1
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Vine"]
@@ -422,7 +466,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vine"
-frame = 3
+frame = 4
 playing = true
 
 [node name="Rock" type="Control" parent="CanvasLayer/Parchemin"]
@@ -440,7 +484,6 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
-frame = 1
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -457,7 +500,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Slash" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -474,7 +517,7 @@ position = Vector2( 360, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
-frame = 2
+frame = 1
 playing = true
 
 [node name="LabelPlus2" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -491,7 +534,7 @@ position = Vector2( 450, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Green"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -509,7 +552,7 @@ position = Vector2( 554, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Rock"
-frame = 5
+frame = 6
 playing = true
 
 [node name="Vapor" type="Control" parent="CanvasLayer/Parchemin"]
@@ -527,7 +570,6 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
-frame = 1
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -544,6 +586,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
+frame = 3
 playing = true
 
 [node name="Slash" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -560,7 +603,7 @@ position = Vector2( 360, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
-frame = 2
+frame = 1
 playing = true
 
 [node name="LabelPlus2" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -577,7 +620,7 @@ position = Vector2( 450, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Green"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -595,7 +638,7 @@ position = Vector2( 554, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vapor"
-frame = 4
+frame = 5
 playing = true
 
 [connection signal="body_entered" from="TriggerRules" to="." method="_on_TriggerRules_body_entered"]
