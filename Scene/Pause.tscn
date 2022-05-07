@@ -96,42 +96,6 @@ region = Rect2( 224, 64, 32, 32 )
 atlas = ExtResource( 3 )
 region = Rect2( 256, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 3 )
-region = Rect2( 64, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 3 )
-region = Rect2( 96, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 3 )
-region = Rect2( 128, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 3 )
-region = Rect2( 160, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 3 )
-region = Rect2( 192, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 3 )
-region = Rect2( 224, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 3 )
-region = Rect2( 256, 128, 32, 32 )
-
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 32, 32, 32 )
@@ -168,6 +132,42 @@ region = Rect2( 224, 32, 32, 32 )
 atlas = ExtResource( 3 )
 region = Rect2( 256, 32, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 160, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 224, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 256, 128, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=41]
 animations = [ {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
@@ -180,14 +180,14 @@ animations = [ {
 "name": "Vine",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
-"loop": true,
-"name": "Rock",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
 "name": "Mud",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "Rock",
 "speed": 5.0
 } ]
 
@@ -196,6 +196,7 @@ layer = 128
 script = ExtResource( 6 )
 
 [node name="Parchemin" type="Control" parent="."]
+visible = false
 
 [node name="Parchemin_BG" type="TextureRect" parent="Parchemin"]
 anchor_right = 1.0
@@ -275,7 +276,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Blue"
-frame = 3
+frame = 2
 playing = true
 
 [node name="LabelPlus" type="Label" parent="Parchemin/Mud"]
@@ -292,7 +293,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Yellow"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Arrow" type="Label" parent="Parchemin/Mud"]
@@ -310,7 +311,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Mud"
-frame = 6
+frame = 5
 playing = true
 
 [node name="Vine" type="Control" parent="Parchemin"]
@@ -327,6 +328,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Blue"
+frame = 3
 playing = true
 
 [node name="LabelPlus" type="Label" parent="Parchemin/Vine"]
@@ -343,7 +345,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Green"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Arrow" type="Label" parent="Parchemin/Vine"]
@@ -361,7 +363,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Vine"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Rock" type="Control" parent="Parchemin"]
@@ -376,7 +378,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Yellow"
-frame = 2
+frame = 1
 playing = true
 
 [node name="LabelPlus" type="Label" parent="Parchemin/Rock"]
@@ -393,7 +395,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Red"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Slash" type="Label" parent="Parchemin/Rock"]
@@ -410,7 +412,7 @@ position = Vector2( 360, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Yellow"
-frame = 3
+frame = 2
 playing = true
 
 [node name="LabelPlus2" type="Label" parent="Parchemin/Rock"]
@@ -427,6 +429,7 @@ position = Vector2( 450, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Green"
+frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="Parchemin/Rock"]
@@ -444,7 +447,7 @@ position = Vector2( 554, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Rock"
-frame = 7
+frame = 6
 playing = true
 
 [node name="Vapor" type="Control" parent="Parchemin"]
@@ -461,7 +464,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Red"
-frame = 2
+frame = 1
 playing = true
 
 [node name="LabelPlus" type="Label" parent="Parchemin/Vapor"]
@@ -478,7 +481,6 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Blue"
-frame = 1
 playing = true
 
 [node name="Slash" type="Label" parent="Parchemin/Vapor"]
@@ -495,7 +497,7 @@ position = Vector2( 360, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Red"
-frame = 3
+frame = 2
 playing = true
 
 [node name="LabelPlus2" type="Label" parent="Parchemin/Vapor"]
@@ -512,6 +514,7 @@ position = Vector2( 450, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Green"
+frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="Parchemin/Vapor"]
@@ -529,7 +532,7 @@ position = Vector2( 554, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Vapor"
-frame = 6
+frame = 5
 playing = true
 
 [connection signal="pressed" from="Parchemin/Menu" to="." method="_on_Menu_pressed"]
