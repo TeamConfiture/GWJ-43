@@ -33,7 +33,6 @@ var big_chaudron_eat = false
 
 func _ready():
 	
-	gey_key("eat")
 
 	current_lvl = scene_lvl_000.instance()
 	add_child(current_lvl)
@@ -41,27 +40,6 @@ func _ready():
 	update_coins(current_lvl)
 	
 	cinematic()
-
-func gey_key(action:String):
-	var key_layout = OS.get_latin_keyboard_variant()
-	var list = InputMap.get_action_list(action)
-
-	for a in list:
-		if a is InputEventKey:
-			var key = OS.get_scancode_string(a.physical_scancode)
-			if key_layout == "AZERTY" :
-				match key:
-					"Q":
-						key="A"
-					"w":
-						key="Z"
-				
-			print (a,key)
-		if a is InputEventJoypadButton:
-			prints (a," -> ",Input.get_joy_button_string(a.button_index))
-		if a is InputEventJoypadMotion:
-			prints (a," -> ",Input.get_joy_axis_string(a.axis))
-
 
 
 func _on_Slime_clover_eaten(clovers: PoolStringArray) -> void:
