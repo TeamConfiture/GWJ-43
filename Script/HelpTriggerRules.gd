@@ -17,20 +17,20 @@ var dic_titre = {
 	"Move": "Moves",
 	"Eat": "Eat Clovers", 
 	"Spit": "Spit clovers", 
-	"Steam": "Steam :  I fly, I can fly", 
+	"Steam": "I Believe I Can Fly", 
 	"Mud": "Mud",
 	"Vine": "Vine", 
-	"Block": "I'm a Rock Star" 
+	"Block": "I'm a Rock Star"
 }
 
 var dic_P1 = {
 	"Move": "",
-	"Eat": "Clovers are edible.\nEating them can give you elemental powers.\n\nFire, water, plant and rock clovers can be combined to get those special forms !", 
+	"Eat": "Clovers are edible, eating them can give you elemental powers.\n\n\n\n\nFire, water, plant and rock clovers can be combined to get those special forms !", 
 	"Spit": "If you don't need a transformation anymore, you can spit the clovers\n\nit can be useful if you get stuck somewhere unusual...", 
 	"Steam": "Steam slime can fly though the level, and through the grids too.\n\nBut be careful steam [u]cannot[/u] swim!", 
 	"Mud": "Mud slime is fast, loves grids, but cannot jump....\n\n [u]Be careful![/u]\nMud does not like water...",
 	"Vine": "Vine slime can go through the level by summoning cute ivy platforms.", 
-	"Block": "Block Slime is very heavy, so the buttons activate under its weight.\n He can dive, but cannot get back to land in this form." 
+	"Block": "Block Slime is very heavy, so the buttons activate under its weight.\n He can dive, but cannot get back to land in this form."
 }
 
 
@@ -58,6 +58,10 @@ func illustration(rule:String,etat:bool):
 
 		"Eat":
 			$CanvasLayer/Parchemin/Parchemin_BG/eat.visible=etat
+			$CanvasLayer/Parchemin/Mud.visible=etat
+			$CanvasLayer/Parchemin/Rock.visible=etat
+			$CanvasLayer/Parchemin/Vapor.visible=etat
+			$CanvasLayer/Parchemin/Vine.visible=etat
 		"Spit":
 			$CanvasLayer/Parchemin/Parchemin_BG/spit.visible=etat
 		"Steam":
@@ -69,6 +73,8 @@ func illustration(rule:String,etat:bool):
 		"Block":
 			$CanvasLayer/Parchemin/Parchemin_BG/rock1.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/rock2.visible=etat
+
+
 
 func _process(delta):
 	
