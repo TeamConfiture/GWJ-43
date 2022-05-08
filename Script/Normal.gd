@@ -37,7 +37,7 @@ func do_physics_process(delta: float) -> void:
 	parent.move_and_slide(parent.speed, Vector2.UP)
 
 func do_process(delta: float) -> void:
-	want_jump = Input.is_action_just_pressed("up")
+	want_jump = Input.is_action_just_pressed("jump")
 	
 	parent.want_eat = Input.is_action_just_pressed("eat")
 	
