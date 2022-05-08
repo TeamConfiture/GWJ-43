@@ -458,6 +458,10 @@ rules_index = "Eat"
 position = Vector2( 1176, 560 )
 rules_index = "Mud"
 
+[node name="Help_trigger3" parent="help" instance=ExtResource( 13 )]
+position = Vector2( 205, 128 )
+rules_index = "Move"
+
 [node name="Tile" type="Node" parent="."]
 
 [node name="TileMap_element" type="TileMap" parent="Tile"]
@@ -609,10 +613,6 @@ attenuation = 2.0
 bus = "Amb"
 
 [node name="PlayerStart" parent="." instance=ExtResource( 14 )]
-
-[node name="Help_trigger" parent="." instance=ExtResource( 13 )]
-position = Vector2( 400, 144 )
-rules_index = "Combinaisons"
 
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_entered"]
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBCavern" to="." method="_on_PlayerDetectorAMBCavern_body_entered"]
