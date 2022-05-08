@@ -123,7 +123,7 @@ func gey_pad(action:String):
 func _process(delta):
 	
 	
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("spit"):
 		parchemin.visible=false
 		illustration(rules_index,false) 
 		slime.do_activate(true)

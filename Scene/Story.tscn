@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Art/Rules/rules_final_1.png" type="Texture" id=1]
 [ext_resource path="res://Art/Menu/Menu_BG_1.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Art/Rules/rules_final_4.png" type="Texture" id=7]
 [ext_resource path="res://Art/Rules/rules_final_2.png" type="Texture" id=8]
 [ext_resource path="res://Art/Fonts/alagard.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Art/Rules/arrow.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -58,14 +59,23 @@ texture_pressed = ExtResource( 4 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 365.0
-margin_top = 673.0
-margin_right = 576.0
-margin_bottom = 702.0
+margin_left = 386.0
+margin_top = 680.0
+margin_right = 597.0
+margin_bottom = 709.0
 custom_colors/font_color = Color( 0.419608, 0.25098, 0.25098, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "\"SPACE\""
+text = "\"E\""
 align = 1
 valign = 1
+
+[node name="Arrow" type="TextureRect" parent="."]
+margin_left = 520.0
+margin_top = 647.0
+margin_right = 560.0
+margin_bottom = 687.0
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
+flip_h = true
 
 [connection signal="pressed" from="NextBtn" to="." method="_on_NextBtn_pressed"]

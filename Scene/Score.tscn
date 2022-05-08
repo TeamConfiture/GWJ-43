@@ -153,6 +153,6 @@ margin_right = 1368.0
 margin_bottom = 693.0
 custom_colors/font_color = Color( 0.419608, 0.25098, 0.25098, 1 )
 custom_fonts/font = SubResource( 5 )
-text = "\"SPACE\""
+text = " Press \"E\"  to continue"
 align = 1
 valign = 1

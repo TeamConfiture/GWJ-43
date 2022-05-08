@@ -5,7 +5,7 @@ var index: = 1
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_just_pressed("spit"):
 		_on_NextBtn_pressed()
 	
 	
