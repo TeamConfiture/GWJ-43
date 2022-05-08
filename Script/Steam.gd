@@ -1,6 +1,6 @@
 extends State
 
-const Max_Speed = 150
+const Max_Speed = 120 #150
 const Move_Speed = 0.5
 const Stop_Speed = 0.08 #0.02
 

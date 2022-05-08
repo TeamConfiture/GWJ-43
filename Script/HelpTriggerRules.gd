@@ -1,6 +1,6 @@
 extends Node
 
-export(String, "Moves","Eat", "Spit", "Steam","Mud","Vine","Block","Combinaisons") var rules_index
+export(String, "Move","Eat", "Spit", "Steam","Mud","Vine","Block","Combinaisons") var rules_index
 
 onready var parchemin =  $CanvasLayer/Parchemin
 
@@ -30,7 +30,7 @@ var dic_P1 = {
 	"Spit": "If you don't need a transformation anymore, you can spit the clovers\n\nIt can be useful if you get stuck somewhere unusual...", 
 	"Steam": "Steam slime can fly though the level, and through the grids too.\n\nBut be careful steam [u]cannot[/u] swim!", 
 	"Mud": "Mud slime is fast, loves grids, but cannot jump....\n\n [u]Be careful![/u]\nMud does not like water...",
-	"Vine": "Vine slime can go through the level by summoning cute ivy platforms.", 
+	"Vine": "Vine slime can go through the level by summoning cute ivy platforms with limited duration.", 
 	"Block": "Block Slime is very heavy, so the buttons activate under its weight.\n He can dive, but cannot get back to land in this form.",
 	"Combinaisons":"Fire, water, plant and rock clovers can be combined to get those special forms !"
 }
@@ -78,6 +78,11 @@ func illustration(rule:String,etat:bool):
 
 		"Vine":
 			$CanvasLayer/Parchemin/Parchemin_BG/vine.visible=etat
+			$CanvasLayer/Parchemin/Parchemin_BG/yvy.visible=etat
+			$CanvasLayer/Parchemin/Parchemin_BG/Button/Action.text = "Yvy"
+			$CanvasLayer/Parchemin/Parchemin_BG/Button/Key.text = gey_key("eat")
+			$CanvasLayer/Parchemin/Parchemin_BG/Button.visible=etat
+			
 
 		"Block":
 			$CanvasLayer/Parchemin/Parchemin_BG/rock1.visible=etat
