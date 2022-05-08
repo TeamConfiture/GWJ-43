@@ -458,7 +458,7 @@ extents = Vector2( 0.681563, 0.440001 )
 extents = Vector2( 2.77, 0.136364 )
 
 [node name="Lvl_004" type="Node2D"]
-position = Vector2( 0, -1 )
+position = Vector2( 5, -1 )
 script = ExtResource( 11 )
 
 [node name="help" type="Node" parent="."]
@@ -628,7 +628,7 @@ position = Vector2( 880, 552 )
 position = Vector2( 1041, 128 )
 
 [node name="Chaudron" parent="." instance=ExtResource( 12 )]
-position = Vector2( 112, 696 )
+position = Vector2( 109, 695 )
 
 [node name="Zone_Sound" type="Node" parent="."]
 
@@ -655,7 +655,7 @@ __meta__ = {
 }
 
 [node name="ZoneForestAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 82, 184 )
+position = Vector2( 78, 172 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 250 )
 
@@ -730,7 +730,7 @@ attenuation = 2.0
 bus = "Amb"
 
 [node name="PlayerStart" parent="." instance=ExtResource( 14 )]
-position = Vector2( 83, 128 )
+position = Vector2( 75, 106 )
 
 [connection signal="activate_btn" from="Door_and_Button/HeavyButton" to="Door_and_Button/Door" method="open"]
 [connection signal="activate_btn" from="Door_and_Button/HeavyButton2" to="Door_and_Button/Door2" method="open"]

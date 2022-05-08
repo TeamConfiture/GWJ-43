@@ -353,9 +353,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -23.0
-custom_colors/font_color = Color( 0.270588, 0.180392, 0.207843, 1 )
+custom_colors/font_color = Color( 0.960784, 0.960784, 0.960784, 1 )
 custom_fonts/font = SubResource( 4 )
-text = "Press \"SPACE\" to Slime"
+text = "Press \"E\" to Slime"
 align = 1
 valign = 1
 

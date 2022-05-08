@@ -521,19 +521,19 @@ clover_type = "Red"
 
 [node name="Coin" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 960, 760 )
+position = Vector2( 736, 760 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 1024, 760 )
+position = Vector2( 768, 760 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 1088, 760 )
+position = Vector2( 792, 760 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 1152, 760 )
+position = Vector2( 1200, 760 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
@@ -541,7 +541,7 @@ position = Vector2( 1216, 760 )
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 1280, 760 )
+position = Vector2( 1232, 760 )
 
 [node name="Coin7" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 192, 384 )
@@ -553,7 +553,7 @@ position = Vector2( 240, 560 )
 position = Vector2( 64, 512 )
 
 [node name="Coin35" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 48, 672 )
+position = Vector2( 160, 112 )
 
 [node name="Coin34" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 48, 432 )
@@ -562,7 +562,7 @@ position = Vector2( 48, 432 )
 position = Vector2( 240, 472 )
 
 [node name="Coin33" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 112, 720 )
+position = Vector2( 392, 72 )
 
 [node name="Coin10" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 112, 144 )
@@ -580,15 +580,15 @@ position = Vector2( 464, -8 )
 position = Vector2( 544, 344 )
 
 [node name="Coin16" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 704, 536 )
+position = Vector2( 1232, 440 )
 
 [node name="Coin17" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 544, 760 )
+position = Vector2( 352, 760 )
 
 [node name="Coin19" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 792, 760 )
+position = Vector2( 376, 760 )
 
 [node name="Coin18" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
@@ -598,28 +598,28 @@ position = Vector2( 328, 760 )
 position = Vector2( 768, 64 )
 
 [node name="Coin15" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 896, 192 )
+position = Vector2( 440, 40 )
 
 [node name="Coin20" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 896, 256 )
 
 [node name="Coin21" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 896, 320 )
+position = Vector2( 496, 56 )
 
 [node name="Coin22" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 896, 384 )
+position = Vector2( 840, 376 )
 
 [node name="Coin37" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 832, 128 )
+position = Vector2( 832, 104 )
 
 [node name="Coin38" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 832, 192 )
+position = Vector2( 888, 152 )
 
 [node name="Coin39" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 832, 256 )
+position = Vector2( 920, 200 )
 
 [node name="Coin40" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 832, 320 )
+position = Vector2( 872, 312 )
 
 [node name="Coin23" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1296, 144 )
@@ -670,7 +670,7 @@ collision_layer = 5
 audio_bus_name = "Underwater"
 
 [node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 879.5, 665.5 )
+position = Vector2( 880, 664 )
 shape = SubResource( 248 )
 
 [node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]

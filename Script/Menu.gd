@@ -20,4 +20,8 @@ func _on_back_pressed():
 	BackgroundMusic.play_button_normal()
 	SceneLoader.change_scene("Menu")
 
+func _process(delta: float) -> void:
 
+	if Input.is_action_just_pressed("spit"):
+		BackgroundMusic.play_button_normal()
+		SceneLoader.change_scene("Menu")

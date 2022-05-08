@@ -13,7 +13,7 @@ var start : Vector2
 export var speed := 250
 
 
-var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_004.tscn")
+var scene_lvl_000 =  preload("res://Scene/Lvl/lvl_000.tscn")
 
 
 onready var slime = $Slime
@@ -123,7 +123,11 @@ func _on_Slime_chaudron_eaten():
 					$HUD/Score/Perfect_end.visible=true
 				else:
 					$HUD/Score/Do_better_end.visible=true
+				
+				yield(get_tree().create_timer(2), "timeout")
 				big_chaudron_eat = true
+				
+				
 			else :
 				$HUD/Score.visible=false
 				SceneLoader.change_scene("Fin")
@@ -140,16 +144,16 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_page_up"):
 		_on_Slime_chaudron_eaten()
 
-	if Input.is_action_just_pressed("ui_accept") && chaudron_eat == true :
+	if Input.is_action_just_pressed("spit") && chaudron_eat == true :
 			_on_Slime_chaudron_eaten()
 
-	if Input.is_action_just_pressed("ui_accept") && big_chaudron_eat == true :
+	if Input.is_action_just_pressed("spit") && big_chaudron_eat == true :
 			_on_Slime_chaudron_eaten()
 	
 	if !path:
 			return
 
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("spit"):
 		cam.position = path[0]  
 		path.resize(0) # clear no working....
 
@@ -221,7 +225,6 @@ func _on_cinematic_end():
 		$LvlLoader.to_white()
 		cinematic_done = true
 
-	
 
 
 

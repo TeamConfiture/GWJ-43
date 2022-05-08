@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Script/HelpTriggerRules.gd" type="Script" id=1]
 [ext_resource path="res://Art/Rules/parchemin.png" type="Texture" id=2]
-[ext_resource path="res://Art/Rules/Button_Quit_Pushed.png" type="Texture" id=3]
-[ext_resource path="res://Art/Rules/Button_Quit.png" type="Texture" id=4]
+[ext_resource path="res://Art/Rules/Button_Next.png" type="Texture" id=3]
+[ext_resource path="res://Art/Rules/Button_Next_Pushed.png" type="Texture" id=4]
 [ext_resource path="res://Art/Rules/spit.png" type="Texture" id=5]
 [ext_resource path="res://Art/Rules/clover.png" type="Texture" id=6]
 [ext_resource path="res://Art/Fonts/alagard.ttf" type="DynamicFontData" id=7]
@@ -38,42 +38,6 @@ font_data = ExtResource( 7 )
 [sub_resource type="DynamicFont" id=114]
 size = 48
 font_data = ExtResource( 7 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 14 )
-region = Rect2( 0, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 14 )
-region = Rect2( 32, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 14 )
-region = Rect2( 64, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 14 )
-region = Rect2( 96, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 14 )
-region = Rect2( 128, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 14 )
-region = Rect2( 160, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 14 )
-region = Rect2( 192, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 14 )
-region = Rect2( 224, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 14 )
-region = Rect2( 256, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 14 )
@@ -183,13 +147,44 @@ region = Rect2( 224, 128, 32, 32 )
 atlas = ExtResource( 14 )
 region = Rect2( 256, 128, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 14 )
+region = Rect2( 192, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 14 )
+region = Rect2( 224, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 14 )
+region = Rect2( 256, 32, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=115]
 animations = [ {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
-"loop": true,
-"name": "Mud",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "Vine",
@@ -203,6 +198,11 @@ animations = [ {
 "frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "Rock",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "Mud",
 "speed": 5.0
 } ]
 
@@ -365,13 +365,13 @@ bbcode_enabled = true
 text = "Vine slime can go through the level by summoning cute ivy platforms."
 
 [node name="Quit" type="TextureButton" parent="CanvasLayer/Parchemin"]
-margin_left = 1149.0
-margin_top = 80.0
-margin_right = 1171.0
-margin_bottom = 102.0
+margin_left = 1128.0
+margin_top = 648.0
+margin_right = 1150.0
+margin_bottom = 670.0
 rect_scale = Vector2( 2, 2 )
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 3 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
 
 [node name="Mud" type="Control" parent="CanvasLayer/Parchemin"]
 visible = false
@@ -388,6 +388,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
+frame = 1
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Mud"]
@@ -404,6 +405,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
+frame = 1
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Mud"]
@@ -421,7 +423,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Mud"
-frame = 1
+frame = 4
 playing = true
 
 [node name="Vine" type="Control" parent="CanvasLayer/Parchemin"]
@@ -439,7 +441,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
-frame = 1
+frame = 2
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Vine"]
@@ -456,7 +458,6 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Green"
-frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Vine"]
@@ -474,6 +475,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vine"
+frame = 3
 playing = true
 
 [node name="Rock" type="Control" parent="CanvasLayer/Parchemin"]
@@ -491,7 +493,6 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
-frame = 3
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -508,6 +509,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
+frame = 1
 playing = true
 
 [node name="Slash" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -524,6 +526,7 @@ position = Vector2( 360, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
+frame = 1
 playing = true
 
 [node name="LabelPlus2" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -540,7 +543,7 @@ position = Vector2( 450, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Green"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -558,7 +561,7 @@ position = Vector2( 554, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Rock"
-frame = 2
+frame = 5
 playing = true
 
 [node name="Vapor" type="Control" parent="CanvasLayer/Parchemin"]
@@ -576,7 +579,6 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
-frame = 3
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -593,7 +595,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
-frame = 2
+frame = 3
 playing = true
 
 [node name="Slash" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -610,6 +612,7 @@ position = Vector2( 360, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
+frame = 1
 playing = true
 
 [node name="LabelPlus2" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -626,7 +629,7 @@ position = Vector2( 450, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Green"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -644,7 +647,7 @@ position = Vector2( 554, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vapor"
-frame = 1
+frame = 4
 playing = true
 
 [connection signal="body_entered" from="TriggerRules" to="." method="_on_TriggerRules_body_entered"]
