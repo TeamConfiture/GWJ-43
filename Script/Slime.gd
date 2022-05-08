@@ -198,3 +198,8 @@ func _on_landing():
 	$Character_Land.play()
 	
 	$Character_Fall.stop()
+	if state == State.rock:
+		$Camera2D.shake(100,0.4,100)
+
+
+
