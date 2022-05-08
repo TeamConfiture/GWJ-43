@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeStateMachine" load_steps=24 format=2]
+[gd_resource type="AnimationNodeStateMachine" load_steps=22 format=2]
 
 [sub_resource type="AnimationNodeAnimation" id=297]
 animation = "leaf_eating"
@@ -6,11 +6,11 @@ animation = "leaf_eating"
 [sub_resource type="AnimationNodeAnimation" id=291]
 animation = "leaf_falling"
 
-[sub_resource type="AnimationNodeAnimation" id=289]
-animation = "leaf_hook"
-
 [sub_resource type="AnimationNodeAnimation" id=285]
 animation = "leaf_idle"
+
+[sub_resource type="AnimationNodeAnimation" id=312]
+animation = "leaf_jumping"
 
 [sub_resource type="AnimationNodeAnimation" id=304]
 animation = "leaf_spitting"
@@ -27,12 +27,6 @@ advance_condition = "is_not_moving"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=288]
 advance_condition = "is_moving"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=290]
-advance_condition = "is_hooking"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=295]
-advance_condition = "is_falling"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=298]
 advance_condition = "is_eating"
@@ -55,36 +49,37 @@ advance_condition = "is_falling"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=305]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=306]
-advance_condition = "is_hooking"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=307]
-advance_condition = "is_on_floor"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=308]
-advance_condition = "is_hooking"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=309]
 advance_condition = "is_on_floor"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=311]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=313]
+advance_condition = "is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=314]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=315]
+advance_condition = "is_jumping"
 
 [resource]
 states/eating/node = SubResource( 297 )
 states/eating/position = Vector2( 705, 164 )
 states/falling/node = SubResource( 291 )
 states/falling/position = Vector2( 258, 293 )
-states/hook/node = SubResource( 289 )
-states/hook/position = Vector2( 258, 164 )
 states/idle/node = SubResource( 285 )
 states/idle/position = Vector2( 470, 164 )
+states/leaf_jumping/node = SubResource( 312 )
+states/leaf_jumping/position = Vector2( 258, 164 )
 states/spitting/node = SubResource( 304 )
 states/spitting/position = Vector2( 705, 88 )
 states/to_normal/node = SubResource( 310 )
 states/to_normal/position = Vector2( 613, 20.632 )
 states/walking/node = SubResource( 286 )
 states/walking/position = Vector2( 705, 293 )
-transitions = [ "walking", "idle", SubResource( 287 ), "idle", "walking", SubResource( 288 ), "idle", "hook", SubResource( 290 ), "hook", "falling", SubResource( 295 ), "idle", "eating", SubResource( 298 ), "walking", "eating", SubResource( 299 ), "eating", "idle", SubResource( 300 ), "idle", "falling", SubResource( 301 ), "walking", "falling", SubResource( 302 ), "eating", "falling", SubResource( 303 ), "idle", "spitting", SubResource( 305 ), "walking", "hook", SubResource( 306 ), "hook", "idle", SubResource( 307 ), "falling", "hook", SubResource( 308 ), "falling", "idle", SubResource( 309 ), "idle", "to_normal", SubResource( 311 ) ]
+transitions = [ "walking", "idle", SubResource( 287 ), "idle", "walking", SubResource( 288 ), "idle", "eating", SubResource( 298 ), "walking", "eating", SubResource( 299 ), "eating", "idle", SubResource( 300 ), "idle", "falling", SubResource( 301 ), "walking", "falling", SubResource( 302 ), "eating", "falling", SubResource( 303 ), "idle", "spitting", SubResource( 305 ), "falling", "idle", SubResource( 309 ), "idle", "to_normal", SubResource( 311 ), "idle", "leaf_jumping", SubResource( 313 ), "leaf_jumping", "falling", SubResource( 314 ), "walking", "leaf_jumping", SubResource( 315 ) ]
 start_node = "idle"
 end_node = "spitting"
 graph_offset = Vector2( -101, -41.368 )
