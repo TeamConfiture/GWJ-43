@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
@@ -141,6 +141,36 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 22, 30 ]
+}
+
+[sub_resource type="Animation" id=350]
+resource_name = "leaf_jumping"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 143, 147 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Character_Jump")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=320]
@@ -1577,13 +1607,14 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
-frame = 1
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
 anims/leaf_falling = SubResource( 308 )
 anims/leaf_hook = SubResource( 316 )
 anims/leaf_idle = SubResource( 312 )
+anims/leaf_jumping = SubResource( 350 )
 anims/leaf_landing = SubResource( 320 )
 anims/leaf_spitting = SubResource( 336 )
 anims/leaf_to_cauldron = SubResource( 332 )
