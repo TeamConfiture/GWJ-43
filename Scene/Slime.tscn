@@ -1,8 +1,9 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Art/Audio/Sound/Character/Jump_01.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Script/Camera2D_Slime.gd" type="Script" id=4]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_3.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_1.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_2.ogg" type="AudioStream" id=7]
@@ -1576,6 +1577,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
@@ -1647,6 +1649,11 @@ drag_margin_right = 0.1
 drag_margin_bottom = 0.1
 editor_draw_limits = true
 editor_draw_drag_margin = true
+script = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="Camera2D"]
+
+[node name="Tween" type="Tween" parent="Camera2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -1752,4 +1759,5 @@ random_pitch_range = 0.2
 
 [node name="SwimLevel" type="Position2D" parent="."]
 
+[connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_Timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

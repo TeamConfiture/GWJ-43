@@ -5,6 +5,12 @@ const Move_Speed = 0.5
 const Stop_Speed = 0.3
 
 var in_the_air := true
+onready var world = get_node("/root/Game/WorldEnvironment")
+
+func state_enabled(b:bool):
+	.state_enabled(b)
+#	world.environment.dof_blur_near_enabled=b
+	
 
 func do_physics_process(delta: float) -> void:
 	parent.set_collision_mask_bit(2, 0)
