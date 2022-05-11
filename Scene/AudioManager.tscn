@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Art/Audio/Sound/UI/MainMenu/ButtonStart_01.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Script/AudioManager.gd" type="Script" id=2]
@@ -10,12 +10,15 @@
 [ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_2.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Art/Audio/Sound/UI/MainMenu/Pages_03.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_3.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Art/Audio/Sound/UI/PopUpEndLevel/Counting_3.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Art/Audio/Sound/UI/PopUpEndLevel/Counting_1.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Art/Audio/Sound/UI/PopUpEndLevel/Counting_2.ogg" type="AudioStream" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade_To_Cavern"
 length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Amb_Forest:volume_db")
+tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -27,7 +30,7 @@ tracks/0/keys = {
 "values": [ 6.0, -42.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Amb_Cavern:volume_db")
+tracks/1/path = NodePath("Ambiant/Amb_Cavern:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -39,7 +42,7 @@ tracks/1/keys = {
 "values": [ -42.0, -4.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Amb_Forest:playing")
+tracks/2/path = NodePath("Ambiant/Amb_Forest:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -51,7 +54,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Amb_Underwater:volume_db")
+tracks/3/path = NodePath("Ambiant/Amb_Underwater:volume_db")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -63,7 +66,7 @@ tracks/3/keys = {
 "values": [ 6.0, -42.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Amb_Underwater:playing")
+tracks/4/path = NodePath("Ambiant/Amb_Underwater:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -79,7 +82,7 @@ tracks/4/keys = {
 resource_name = "Fade_To_Forest"
 length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Amb_Forest:volume_db")
+tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -91,7 +94,7 @@ tracks/0/keys = {
 "values": [ -42.0, 6.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Amb_Cavern:volume_db")
+tracks/1/path = NodePath("Ambiant/Amb_Cavern:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -103,7 +106,7 @@ tracks/1/keys = {
 "values": [ -4.0, -42.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Amb_Cavern:playing")
+tracks/2/path = NodePath("Ambiant/Amb_Cavern:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -115,7 +118,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Amb_Underwater:volume_db")
+tracks/3/path = NodePath("Ambiant/Amb_Underwater:volume_db")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -127,7 +130,7 @@ tracks/3/keys = {
 "values": [ 6.0, -42.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Amb_Underwater:playing")
+tracks/4/path = NodePath("Ambiant/Amb_Underwater:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -143,7 +146,7 @@ tracks/4/keys = {
 resource_name = "Fade_To_IGMusic"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("MusicIG:volume_db")
+tracks/0/path = NodePath("Musics/MusicIG:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -155,7 +158,7 @@ tracks/0/keys = {
 "values": [ -50.0, -6.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("MusicMenu:volume_db")
+tracks/1/path = NodePath("Musics/MusicMenu:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -167,7 +170,7 @@ tracks/1/keys = {
 "values": [ 0.0, -50.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("MusicMenu:playing")
+tracks/2/path = NodePath("Musics/MusicMenu:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -183,7 +186,7 @@ tracks/2/keys = {
 resource_name = "Fade_To_MusicMenu"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("MusicIG:volume_db")
+tracks/0/path = NodePath("Musics/MusicIG:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -195,7 +198,7 @@ tracks/0/keys = {
 "values": [ -6.0, -50.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("MusicMenu:volume_db")
+tracks/1/path = NodePath("Musics/MusicMenu:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -207,7 +210,7 @@ tracks/1/keys = {
 "values": [ -50.0, 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("MusicIG:playing")
+tracks/2/path = NodePath("Musics/MusicIG:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -223,7 +226,7 @@ tracks/2/keys = {
 resource_name = "Fade_To_Underwater"
 length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Amb_Forest:volume_db")
+tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -235,7 +238,7 @@ tracks/0/keys = {
 "values": [ 6.0, -42.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Amb_Forest:playing")
+tracks/1/path = NodePath("Ambiant/Amb_Forest:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -247,7 +250,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Amb_Cavern:volume_db")
+tracks/2/path = NodePath("Ambiant/Amb_Cavern:volume_db")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -259,7 +262,7 @@ tracks/2/keys = {
 "values": [ -4.0, -42.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Amb_Cavern:playing")
+tracks/3/path = NodePath("Ambiant/Amb_Cavern:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -271,7 +274,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Amb_Underwater:volume_db")
+tracks/4/path = NodePath("Ambiant/Amb_Underwater:volume_db")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -286,7 +289,7 @@ tracks/4/keys = {
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Amb_Forest:volume_db")
+tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -298,7 +301,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Amb_Cavern:volume_db")
+tracks/1/path = NodePath("Ambiant/Amb_Cavern:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -310,7 +313,7 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Amb_Cavern:playing")
+tracks/2/path = NodePath("Ambiant/Amb_Cavern:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -322,7 +325,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Amb_Forest:playing")
+tracks/3/path = NodePath("Ambiant/Amb_Forest:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -334,7 +337,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("MusicIG:volume_db")
+tracks/4/path = NodePath("Musics/MusicIG:volume_db")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -346,7 +349,7 @@ tracks/4/keys = {
 "values": [ 0.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("MusicMenu:volume_db")
+tracks/5/path = NodePath("Musics/MusicMenu:volume_db")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -358,7 +361,7 @@ tracks/5/keys = {
 "values": [ 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("MusicMenu:playing")
+tracks/6/path = NodePath("Musics/MusicMenu:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -370,7 +373,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("MusicIG:playing")
+tracks/7/path = NodePath("Musics/MusicIG:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -388,23 +391,61 @@ resource_name = "Underwater"
 [node name="AudioManager" type="Node"]
 script = ExtResource( 2 )
 
-[node name="MusicIG" type="AudioStreamPlayer" parent="."]
+[node name="Musics" type="Node" parent="."]
+
+[node name="MusicIG" type="AudioStreamPlayer" parent="Musics"]
 bus = "Music"
 
-[node name="MusicMenu" type="AudioStreamPlayer" parent="."]
+[node name="MusicMenu" type="AudioStreamPlayer" parent="Musics"]
 bus = "Music"
 
-[node name="Amb_Forest" type="AudioStreamPlayer" parent="."]
+[node name="Ambiant" type="Node" parent="."]
+
+[node name="Amb_Forest" type="AudioStreamPlayer" parent="Ambiant"]
 bus = "Amb"
 
-[node name="Amb_Cavern" type="AudioStreamPlayer" parent="."]
+[node name="Amb_Cavern" type="AudioStreamPlayer" parent="Ambiant"]
 bus = "Amb"
 
-[node name="PressButtonStart" type="AudioStreamPlayer" parent="."]
+[node name="Amb_Underwater" type="AudioStreamPlayer" parent="Ambiant"]
+volume_db = 6.0
+bus = "Amb"
+
+[node name="Interface" type="Node" parent="."]
+
+[node name="PressButtonStart" type="AudioStreamPlayer" parent="Interface"]
 stream = ExtResource( 1 )
 volume_db = -6.0
 mix_target = 2
 bus = "UI"
+
+[node name="PressButtonNormal" type="AudioStreamPlayer" parent="Interface"]
+volume_db = -8.0
+mix_target = 2
+bus = "UI"
+script = ExtResource( 5 )
+samples = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ) ]
+random_strategy = 1
+random_pitch_range = 0.2
+
+[node name="Button_Next" type="AudioStreamPlayer" parent="Interface"]
+script = ExtResource( 5 )
+samples = [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 3 ) ]
+
+[node name="Count_Score" type="AudioStreamPlayer" parent="Interface"]
+volume_db = 2.0
+mix_target = 2
+bus = "UI"
+script = ExtResource( 5 )
+samples = [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ) ]
+random_pitch_range = 0.5
+
+[node name="Interacable" type="Node" parent="."]
+
+[node name="InteracableButton" type="AudioStreamPlayer" parent="Interacable"]
+script = ExtResource( 5 )
+samples = [ ExtResource( 4 ) ]
+random_pitch_range = 0.5
 
 [node name="TransitionVolume" type="AnimationPlayer" parent="."]
 anims/Fade_To_Cavern = SubResource( 1 )
@@ -414,25 +455,3 @@ anims/Fade_To_MusicMenu = SubResource( 5 )
 anims/Fade_To_Underwater = SubResource( 7 )
 anims/RESET = SubResource( 3 )
 anims/Underwater = SubResource( 6 )
-
-[node name="PressButtonNormal" type="AudioStreamPlayer" parent="."]
-volume_db = -8.0
-mix_target = 2
-bus = "UI"
-script = ExtResource( 5 )
-samples = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ) ]
-random_strategy = 1
-random_pitch_range = 0.2
-
-[node name="Button_Next" type="AudioStreamPlayer" parent="."]
-script = ExtResource( 5 )
-samples = [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 3 ) ]
-
-[node name="Amb_Underwater" type="AudioStreamPlayer" parent="."]
-volume_db = -12.0
-bus = "Amb"
-
-[node name="InteracableButton" type="AudioStreamPlayer" parent="."]
-script = ExtResource( 5 )
-samples = [ ExtResource( 4 ) ]
-random_pitch_range = 0.5

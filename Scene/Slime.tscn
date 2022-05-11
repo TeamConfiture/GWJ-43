@@ -14,7 +14,7 @@
 [ext_resource path="res://Art/StateMachine/StateMachineMagma.tres" type="AnimationNodeStateMachine" id=12]
 [ext_resource path="res://Art/StateMachine/StateMachineMud.tres" type="AnimationNodeStateMachine" id=13]
 [ext_resource path="res://Art/StateMachine/StateMachineWater.tres" type="AnimationNodeStateMachine" id=14]
-[ext_resource path="res://Art/Audio/Sound/Character/Abilities/ImpactStone.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/StoneLand_03.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Script/Normal.gd" type="Script" id=18]
 [ext_resource path="res://Script/Leaf.gd" type="Script" id=19]
 [ext_resource path="res://Script/Rock.gd" type="Script" id=20]
@@ -169,6 +169,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 22, 30 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Character_Fall:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=350]
 resource_name = "leaf_jumping"
@@ -268,6 +280,18 @@ tracks/2/keys = {
 "args": [  ],
 "method": "stop"
 } ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Character_Fall:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=336]
@@ -606,6 +630,18 @@ tracks/1/keys = {
 "method": "play"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Character_Fall:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=315]
 resource_name = "mud_idle"
@@ -621,6 +657,32 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 11, 19 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Character_Fall:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Character_Fall")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
 }
 
 [sub_resource type="Animation" id=324]
@@ -1043,6 +1105,32 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0, 5 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Character_Fall:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Character_Fall")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
 
 [sub_resource type="Animation" id=279]
 resource_name = "normal_jumping"
@@ -1073,6 +1161,32 @@ tracks/1/keys = {
 "method": "play"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Character_Fall:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_Fall")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
 
 [sub_resource type="Animation" id=280]
 resource_name = "normal_landing"
@@ -1096,7 +1210,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ 0.0 ],
@@ -1639,6 +1753,32 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 44, 52 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Character_Fall:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Character_Fall")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
 
 [sub_resource type="Animation" id=321]
 resource_name = "rock_landing"
@@ -1669,8 +1809,8 @@ tracks/1/keys = {
 "method": "stop"
 } ]
 }
-tracks/2/type = "method"
-tracks/2/path = NodePath("Character_LandStone")
+tracks/2/type = "value"
+tracks/2/path = NodePath("Character_Fall:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1678,13 +1818,11 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ 0.0 ],
-"method": "play"
-} ]
+"update": 1,
+"values": [ false ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("Character_Fall:playing")
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_LandStone")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1692,8 +1830,10 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=337]
@@ -2164,7 +2304,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
-frame = 2
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
@@ -2334,10 +2474,11 @@ mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
 samples = [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ]
+random_strategy = 1
 random_pitch_range = 0.2
 
 [node name="Character_LandStone" type="AudioStreamPlayer" parent="."]
-volume_db = 10.0
+volume_db = -6.0
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )

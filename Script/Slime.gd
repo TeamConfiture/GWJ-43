@@ -195,11 +195,12 @@ func set_camera_limits():
 
 #call once by states when landing
 func _on_landing():
-	$Character_Land.play()
 	
-	$Character_Fall.stop()
 	if state == State.rock:
+		$Character_LandStone.play(0.0)
 		$Camera2D.shake(100,0.4,100)
+	if state == State.normal and State.mud and State.leaf:
+		$Character_Land.play(0.0)
 
 
 

@@ -13,6 +13,7 @@ func _on_HeavyButton_body_entered(body):
 		$AnimationPlayer.play("HeavyBtn")
 		push = !push
 		emit_signal("activate_btn")
+		AudioManager.play_InteracableButton()
 		
 
 
