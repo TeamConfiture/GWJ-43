@@ -440,7 +440,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 27/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=248]
-extents = Vector2( 466.5, 102.5 )
+extents = Vector2( 466.5, 100.75 )
 
 [sub_resource type="RectangleShape2D" id=249]
 extents = Vector2( 48, 30.5 )
@@ -449,10 +449,10 @@ extents = Vector2( 48, 30.5 )
 extents = Vector2( 1.73, 0.16 )
 
 [sub_resource type="RectangleShape2D" id=250]
-extents = Vector2( 2.535, 0.4 )
+extents = Vector2( 2.62, 0.39 )
 
 [sub_resource type="RectangleShape2D" id=251]
-extents = Vector2( 5.1775, 0.4 )
+extents = Vector2( 5.1775, 0.38 )
 
 [sub_resource type="RectangleShape2D" id=247]
 extents = Vector2( 0.92, 0.218181 )
@@ -521,39 +521,39 @@ clover_type = "Red"
 
 [node name="Coin" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 736, 760 )
+position = Vector2( 656, 761 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 768, 760 )
+position = Vector2( 712, 761 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 792, 760 )
+position = Vector2( 775, 760 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 1200, 760 )
+position = Vector2( 1041, 760 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 1216, 760 )
+position = Vector2( 1249, 760 )
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 1232, 760 )
+position = Vector2( 1327, 760 )
 
 [node name="Coin7" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 192, 384 )
+position = Vector2( 110, 307 )
 
 [node name="Coin36" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 240, 560 )
 
 [node name="Coin31" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 64, 512 )
+position = Vector2( 65, 504 )
 
 [node name="Coin35" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 160, 112 )
+position = Vector2( 178, 105 )
 
 [node name="Coin34" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 48, 432 )
@@ -562,49 +562,49 @@ position = Vector2( 48, 432 )
 position = Vector2( 240, 472 )
 
 [node name="Coin33" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 392, 72 )
+position = Vector2( 402, 72 )
 
 [node name="Coin10" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 112, 144 )
+position = Vector2( 123, 106 )
 
 [node name="Coin9" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 232, 104 )
+position = Vector2( 232, 105 )
 
 [node name="Coin11" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 344, 72 )
+position = Vector2( 341, 72 )
 
 [node name="Coin12" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 464, -8 )
+position = Vector2( 464, -9 )
 
 [node name="Coin13" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 544, 344 )
 
 [node name="Coin16" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1232, 440 )
+position = Vector2( 1228, 441 )
 
 [node name="Coin17" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 352, 760 )
+position = Vector2( 368, 761 )
 
 [node name="Coin19" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 376, 760 )
+position = Vector2( 413, 760 )
 
 [node name="Coin18" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 328, 760 )
+position = Vector2( 336, 760 )
 
 [node name="Coin14" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 768, 64 )
+position = Vector2( 767, 89 )
 
 [node name="Coin15" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 440, 40 )
+position = Vector2( 469, 49 )
 
 [node name="Coin20" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 896, 256 )
 
 [node name="Coin21" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 496, 56 )
+position = Vector2( 531, 49 )
 
 [node name="Coin22" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 840, 376 )
@@ -622,31 +622,31 @@ position = Vector2( 920, 200 )
 position = Vector2( 872, 312 )
 
 [node name="Coin23" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1296, 144 )
+position = Vector2( 1298, 153 )
 
 [node name="Coin29" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1104, 176 )
+position = Vector2( 1104, 185 )
 
 [node name="Coin24" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1328, 112 )
+position = Vector2( 1330, 121 )
 
 [node name="Coin25" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1216, 48 )
+position = Vector2( 1194, 56 )
 
 [node name="Coin28" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1136, 336 )
 
 [node name="Coin30" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1328, 336 )
+position = Vector2( 1331, 345 )
 
 [node name="Coin27" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1088, 48 )
+position = Vector2( 1072, 56 )
 
 [node name="Coin26" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1152, 16 )
+position = Vector2( 1135, 25 )
 
 [node name="Coin8" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 16, 552 )
+position = Vector2( 29, 555 )
 
 [node name="Balloons" type="Node" parent="."]
 
@@ -670,7 +670,7 @@ collision_layer = 5
 audio_bus_name = "Underwater"
 
 [node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 880, 664 )
+position = Vector2( 880, 665.75 )
 shape = SubResource( 248 )
 
 [node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
@@ -687,12 +687,12 @@ scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
 
 [node name="ZoneForestAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 543.25, 541 )
+position = Vector2( 544, 540.5 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 250 )
 
 [node name="ZoneForestAMB3" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 1054.13, 542 )
+position = Vector2( 1054.13, 541 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 251 )
 

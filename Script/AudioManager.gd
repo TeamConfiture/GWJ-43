@@ -17,10 +17,12 @@ func play_button_normal():
 	$PressButtonNormal.play()
 func play_button_next():
 	$Button_Next.play()
+func play_InteracableButton():
+	$InteracableButton.play()
 	
 #--========================================--
 #--          Gestion : Music               --
-#--========================================--
+#--======================================	==--
 
 func play_menu_music():
 	

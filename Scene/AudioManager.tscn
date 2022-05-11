@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Art/Audio/Sound/UI/ButtonStart_01.ogg" type="AudioStream" id=1]
-[ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player.gd" type="Script" id=2]
-[ext_resource path="res://Script/BackgroundMusic.gd" type="Script" id=3]
-[ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_1.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_2.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_3.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Art/Audio/Sound/UI/Pages_02.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Art/Audio/Sound/UI/Pages_03.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Art/Audio/Sound/UI/Pages_01.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Art/Audio/Sound/UI/MainMenu/ButtonStart_01.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Script/AudioManager.gd" type="Script" id=2]
+[ext_resource path="res://Art/Audio/Sound/UI/MainMenu/Pages_01.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Art/Audio/Sound/Interactable/ButtonIG_1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player.gd" type="Script" id=5]
+[ext_resource path="res://Art/Audio/Sound/UI/MainMenu/Pages_02.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_1.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_2.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Art/Audio/Sound/UI/MainMenu/Pages_03.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_3.ogg" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade_To_Cavern"
@@ -384,8 +385,8 @@ tracks/7/keys = {
 [sub_resource type="Animation" id=6]
 resource_name = "Underwater"
 
-[node name="BackgroundMusic" type="Node"]
-script = ExtResource( 3 )
+[node name="AudioManager" type="Node"]
+script = ExtResource( 2 )
 
 [node name="MusicIG" type="AudioStreamPlayer" parent="."]
 bus = "Music"
@@ -418,15 +419,20 @@ anims/Underwater = SubResource( 6 )
 volume_db = -8.0
 mix_target = 2
 bus = "UI"
-script = ExtResource( 2 )
-samples = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
+script = ExtResource( 5 )
+samples = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ) ]
 random_strategy = 1
 random_pitch_range = 0.2
 
 [node name="Button_Next" type="AudioStreamPlayer" parent="."]
-script = ExtResource( 2 )
-samples = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]
+script = ExtResource( 5 )
+samples = [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 3 ) ]
 
 [node name="Amb_Underwater" type="AudioStreamPlayer" parent="."]
 volume_db = -12.0
 bus = "Amb"
+
+[node name="InteracableButton" type="AudioStreamPlayer" parent="."]
+script = ExtResource( 5 )
+samples = [ ExtResource( 4 ) ]
+random_pitch_range = 0.5

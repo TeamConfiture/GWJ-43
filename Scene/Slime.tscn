@@ -1,24 +1,25 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
-[ext_resource path="res://Art/Audio/Sound/Character/Jump_01.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Art/Audio/Sound/Character/Abilities/Jump_01.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Script/Camera2D_Slime.gd" type="Script" id=4]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_3.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_1.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_2.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Walking_start_01.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Art/Audio/Sound/Character/Eat_01.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Art/Audio/Sound/Character/Abilities/Eat_01.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Art/StateMachine/StateMachineNormal.tres" type="AnimationNodeStateMachine" id=10]
 [ext_resource path="res://Art/StateMachine/StateMachineLeaf.tres" type="AnimationNodeStateMachine" id=11]
 [ext_resource path="res://Art/StateMachine/StateMachineMagma.tres" type="AnimationNodeStateMachine" id=12]
 [ext_resource path="res://Art/StateMachine/StateMachineMud.tres" type="AnimationNodeStateMachine" id=13]
 [ext_resource path="res://Art/StateMachine/StateMachineWater.tres" type="AnimationNodeStateMachine" id=14]
+[ext_resource path="res://Art/Audio/Sound/Character/Abilities/ImpactStone.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Script/Normal.gd" type="Script" id=18]
 [ext_resource path="res://Script/Leaf.gd" type="Script" id=19]
 [ext_resource path="res://Script/Rock.gd" type="Script" id=20]
 [ext_resource path="res://Art/Audio/Sound/Collectable/CoinsOnly_01.ogg" type="AudioStream" id=22]
-[ext_resource path="res://Art/Audio/Sound/Character/Spitting_01.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Art/Audio/Sound/Character/Abilities/Spitting_01.ogg" type="AudioStream" id=23]
 [ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player.gd" type="Script" id=24]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Walking_Land_01.ogg" type="AudioStream" id=25]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Falling_01.ogg" type="AudioStream" id=26]
@@ -78,6 +79,32 @@ tracks/2/keys = {
 "args": [ 0.0 ],
 "method": "play"
 } ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_Fall")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Character_Fall:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=308]
@@ -171,6 +198,32 @@ tracks/1/keys = {
 "args": [ 0.0 ],
 "method": "play"
 } ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Character_Fall")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Character_Fall:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=320]
@@ -274,6 +327,32 @@ tracks/3/keys = {
 "method": "play"
 } ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("Character_Fall")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Character_Fall:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=332]
 resource_name = "leaf_to_cauldron"
@@ -331,6 +410,32 @@ tracks/2/keys = {
 "method": "_set_state"
 } ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_Fall")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Character_Fall:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=322]
 resource_name = "leaf_walking"
@@ -375,6 +480,32 @@ tracks/2/keys = {
 "method": "play"
 } ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_Fall")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Character_Fall:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=307]
 resource_name = "mud_eating"
@@ -417,6 +548,32 @@ tracks/2/keys = {
 "args": [ 0.0 ],
 "method": "play"
 } ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_Fall")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Character_Fall:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=310]
@@ -509,6 +666,18 @@ tracks/2/keys = {
 "method": "stop"
 } ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Character_Fall:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=338]
 resource_name = "mud_spitting"
@@ -567,6 +736,32 @@ tracks/3/keys = {
 "method": "play"
 } ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("Character_Fall")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Character_Fall:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=334]
 resource_name = "mud_to_cauldron"
@@ -581,6 +776,32 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 319, 325 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Character_Fall")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Character_Fall:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=347]
@@ -624,6 +845,32 @@ tracks/2/keys = {
 "method": "_set_state"
 } ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_Fall")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Character_Fall:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=326]
 resource_name = "mud_walking"
@@ -652,6 +899,32 @@ tracks/1/keys = {
 "values": [ {
 "args": [ 0.0 ],
 "method": "play"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Character_Fall:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_Fall")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
 } ]
 }
 
@@ -696,6 +969,32 @@ tracks/2/keys = {
 "args": [ 0.0 ],
 "method": "play"
 } ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_Fall")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Character_Fall:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=277]
@@ -818,6 +1117,18 @@ tracks/2/keys = {
 "method": "stop"
 } ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Character_Fall:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=328]
 resource_name = "normal_to_leaf"
@@ -872,6 +1183,32 @@ tracks/3/keys = {
 "args": [ 0.0 ],
 "method": "play"
 } ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Character_Fall")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Character_Fall:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=330]
@@ -928,6 +1265,32 @@ tracks/3/keys = {
 "method": "play"
 } ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("Character_Fall")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Character_Fall:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=329]
 resource_name = "normal_to_rock"
@@ -981,6 +1344,32 @@ tracks/3/keys = {
 "values": [ {
 "args": [ 0.0 ],
 "method": "play"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Character_Fall:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Character_Fall")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
 } ]
 }
 
@@ -1038,6 +1427,32 @@ tracks/3/keys = {
 "method": "play"
 } ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("Character_Fall")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Character_Fall:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=281]
 resource_name = "normal_walking"
@@ -1082,6 +1497,32 @@ tracks/2/keys = {
 "method": "play"
 } ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_Fall")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Character_Fall:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=305]
 resource_name = "rock_eating"
@@ -1123,6 +1564,32 @@ tracks/2/keys = {
 "values": [ {
 "args": [ 0.0 ],
 "method": "play"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Character_Fall:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Character_Fall")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
 } ]
 }
 
@@ -1189,7 +1656,7 @@ tracks/0/keys = {
 "values": [ 242, 243 ]
 }
 tracks/1/type = "method"
-tracks/1/path = NodePath("Character_Land")
+tracks/1/path = NodePath("Character_Fall")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1198,12 +1665,12 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ 0.0 ],
-"method": "play"
+"args": [  ],
+"method": "stop"
 } ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("Character_Fall")
+tracks/2/path = NodePath("Character_LandStone")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1212,9 +1679,21 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [  ],
-"method": "stop"
+"args": [ 0.0 ],
+"method": "play"
 } ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Character_Fall:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=337]
@@ -1274,6 +1753,32 @@ tracks/3/keys = {
 "method": "play"
 } ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("Character_Fall")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Character_Fall:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=333]
 resource_name = "rock_to_cauldron"
@@ -1331,6 +1836,32 @@ tracks/2/keys = {
 "method": "_set_state"
 } ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_Fall")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Character_Fall:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=323]
 resource_name = "rock_walking"
@@ -1359,6 +1890,32 @@ tracks/1/keys = {
 "values": [ {
 "args": [ 0.0 ],
 "method": "play"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Character_Fall:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Character_Fall")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
 } ]
 }
 
@@ -1607,7 +2164,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
-frame = 3
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
@@ -1777,6 +2334,14 @@ mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
 samples = [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ]
+random_pitch_range = 0.2
+
+[node name="Character_LandStone" type="AudioStreamPlayer" parent="."]
+volume_db = 10.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 15 ) ]
 random_pitch_range = 0.2
 
 [node name="Collect" type="AudioStreamPlayer" parent="."]

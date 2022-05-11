@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HookLaunch_01.ogg-a25ffbc3cefab9575cc0a98f5aff6fdd.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Character/Abilities/HookLaunch_01.ogg"
+dest_files=[ "res://.import/HookLaunch_01.ogg-a25ffbc3cefab9575cc0a98f5aff6fdd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

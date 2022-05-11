@@ -435,10 +435,10 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 27/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=246]
-extents = Vector2( 1.7, 0.2 )
+extents = Vector2( 1.7, 0.32 )
 
 [sub_resource type="RectangleShape2D" id=247]
-extents = Vector2( 0.347812, 0.154546 )
+extents = Vector2( 0.347812, 0.204546 )
 
 [node name="Lvl_003" type="Node2D"]
 script = ExtResource( 11 )
@@ -494,94 +494,88 @@ crow_dir = "Droite"
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin1" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 454, 151 )
+position = Vector2( 454, 153 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 670, 247 )
+position = Vector2( 649, 242 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 872, 432 )
+position = Vector2( 872, 441 )
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 752, 272 )
+position = Vector2( 749, 281 )
 
 [node name="Coin7" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 120, 104 )
-
-[node name="Coin11" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 120, 104 )
+position = Vector2( 117, 121 )
 
 [node name="Coin9" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 80, 304 )
-
-[node name="Coin10" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 80, 304 )
+position = Vector2( 83, 313 )
 
 [node name="Coin8" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 40, 503 )
+position = Vector2( 42, 505 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1088, 560 )
+position = Vector2( 1038, 569 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1328, 496 )
+position = Vector2( 1328, 505 )
 
 [node name="Coin26" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1216, 311 )
+position = Vector2( 1216, 312 )
 
 [node name="Coin60" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1264, 560 )
+position = Vector2( 1269, 569 )
 
 [node name="Coin61" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1088, 311 )
+position = Vector2( 1088, 312 )
 
 [node name="Coin62" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1168, 656 )
+position = Vector2( 1168, 665 )
 
 [node name="Coin63" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 960, 560 )
+position = Vector2( 960, 569 )
 
 [node name="Coin64" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 967, 240 )
+position = Vector2( 967, 249 )
 
 [node name="Coin65" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1152, 311 )
+position = Vector2( 1152, 312 )
 
 [node name="Coin66" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 832, 288 )
+position = Vector2( 836, 297 )
 
 [node name="Coin67" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 832, 528 )
+position = Vector2( 832, 537 )
 
 [node name="Coin68" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 496, 401 )
+position = Vector2( 494, 409 )
 
 [node name="Coin72" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 368, 688 )
+position = Vector2( 368, 697 )
 
 [node name="Coin73" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 642, 496 )
+position = Vector2( 653, 505 )
 
 [node name="Coin74" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 496, 567 )
+position = Vector2( 499, 569 )
 
 [node name="Coin75" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 200, 593 )
+position = Vector2( 205, 601 )
 
 [node name="Coin76" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 258, 318 )
+position = Vector2( 248, 345 )
 
 [node name="Coin77" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 447, 272 )
+position = Vector2( 446, 281 )
 
 [node name="Coin69" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 176, 401 )
+position = Vector2( 179, 408 )
 
 [node name="Coin70" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 183, 264 )
+position = Vector2( 183, 281 )
 
 [node name="Coin71" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 536, 240 )
+position = Vector2( 536, 249 )
 
 [node name="Balloons" type="Node" parent="."]
 
@@ -599,7 +593,7 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneForestAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 1215, 631 )
+position = Vector2( 1215, 625 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
 
@@ -608,7 +602,7 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneCavernAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBCavern"]
-position = Vector2( 762, 731 )
+position = Vector2( 762, 733.75 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 

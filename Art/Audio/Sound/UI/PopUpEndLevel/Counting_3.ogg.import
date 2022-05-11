@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Counting_3.ogg-5ae402a1e96b27f3b1e5757c2aec7053.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/UI/PopUpEndLevel/Counting_3.ogg"
+dest_files=[ "res://.import/Counting_3.ogg-5ae402a1e96b27f3b1e5757c2aec7053.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
