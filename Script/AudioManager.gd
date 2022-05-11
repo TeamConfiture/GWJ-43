@@ -10,7 +10,10 @@ onready var anim_player := $TransitionVolume
 
 func _ready():
 	pass
-	
+#--========================================--
+#--          Gestion : OneShotAudio        --
+#--========================================--
+
 func play_button_start():
 	$Interface/PressButtonStart.play()
 func play_button_normal():
@@ -24,7 +27,7 @@ func play_Score():
 	
 #--========================================--
 #--          Gestion : Music               --
-#--======================================	==--
+#--========================================--
 
 func play_menu_music():
 	
@@ -82,4 +85,7 @@ func play_amb_underwater():
 		$Ambiant/Amb_Underwater.stream = AmbUnderwater
 		$Ambiant/Amb_Underwater.play()
 #		print("Foret")
-
+		
+		
+		
+			
