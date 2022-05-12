@@ -8,6 +8,8 @@ onready var parchemin =  $CanvasLayer/Parchemin
 var slime
 var illustration
 
+var music_bus = AudioServer.get_bus_index("Music")
+var ambiant_bus = AudioServer.get_bus_index("Amb")
 var dejavu:bool = false
 
 var key_layout = OS.get_latin_keyboard_variant()
@@ -127,6 +129,8 @@ func _process(delta):
 		parchemin.visible=false
 		illustration(rules_index,false) 
 		slime.do_activate(true)
+		AudioServer.set_bus_volume_db(music_bus, 0)
+		AudioServer.set_bus_volume_db(ambiant_bus, 0)
 	
 
 func _on_TriggerRules_body_entered(body):
@@ -137,6 +141,8 @@ func _on_TriggerRules_body_entered(body):
 			illustration(rules_index,true) 
 			parchemin.visible=true
 			dejavu=true
+			AudioServer.set_bus_volume_db(music_bus, -6)
+			AudioServer.set_bus_volume_db(ambiant_bus, -6)
 
 
 
@@ -144,3 +150,5 @@ func _on_Quit_pressed():
 	parchemin.visible=false
 	illustration(rules_index,false) 
 	slime.do_activate(true)
+	AudioServer.set_bus_volume_db(music_bus, 0)
+	AudioServer.set_bus_volume_db(ambiant_bus, 0)
