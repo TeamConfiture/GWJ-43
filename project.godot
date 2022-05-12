@@ -54,7 +54,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/TwitchChat/plugin.cfg", "res://addons/randomAudioStreamPlayer/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/randomAudioStreamPlayer/plugin.cfg" )
 
 [global]
 
