@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Spitting_01.ogg-5e5f8d8b43f6ae13c47ee22ea9397008.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Character/Abilities/Spitting_01.ogg"
+dest_files=[ "res://.import/Spitting_01.ogg-5e5f8d8b43f6ae13c47ee22ea9397008.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

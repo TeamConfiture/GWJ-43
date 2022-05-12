@@ -440,19 +440,19 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 27/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=248]
-extents = Vector2( 89.75, 70.875 )
+extents = Vector2( 89.75, 69.875 )
 
 [sub_resource type="RectangleShape2D" id=249]
-extents = Vector2( 149.5, 71.375 )
+extents = Vector2( 149.5, 70.375 )
 
 [sub_resource type="RectangleShape2D" id=250]
-extents = Vector2( 0.9, 0.311367 )
+extents = Vector2( 1.31, 0.311367 )
 
 [sub_resource type="RectangleShape2D" id=246]
-extents = Vector2( 9.01, 0.38 )
+extents = Vector2( 9.01, 0.37 )
 
 [sub_resource type="RectangleShape2D" id=251]
-extents = Vector2( 0.681563, 0.440001 )
+extents = Vector2( 0.681563, 0.42 )
 
 [sub_resource type="RectangleShape2D" id=247]
 extents = Vector2( 2.77, 0.136364 )
@@ -548,63 +548,63 @@ clover_type = "Blue"
 position = Vector2( 389, 98 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 256, 96 )
+position = Vector2( 225, 96 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 192, 128 )
+position = Vector2( 185, 153 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1040, 153 )
+position = Vector2( 1039, 187 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 576, 42 )
+position = Vector2( 586, 57 )
 
 [node name="Coin26" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 320, 128 )
+position = Vector2( 317, 153 )
 
 [node name="Coin60" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 768, 600 )
+position = Vector2( 782, 601 )
 
 [node name="Coin61" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1328, 24 )
+position = Vector2( 1331, 25 )
 
 [node name="Coin62" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 1312, 760 )
 
 [node name="Coin63" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 544, 688 )
+position = Vector2( 542, 697 )
 
 [node name="Coin69" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 224, 372 )
+position = Vector2( 242, 377 )
 
 [node name="Coin70" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 304, 374 )
+position = Vector2( 298, 377 )
 
 [node name="Coin71" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 500, 437 )
+position = Vector2( 499, 441 )
 
 [node name="Coin72" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 459, 308 )
+position = Vector2( 454, 313 )
 
 [node name="Coin73" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 313, 245 )
+position = Vector2( 286, 249 )
 
 [node name="Coin64" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 512, 42 )
+position = Vector2( 502, 57 )
 
 [node name="Coin65" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 1248, 760 )
 
 [node name="Coin66" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1088, 256 )
+position = Vector2( 1117, 412 )
 
 [node name="Coin67" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 768, 753 )
+position = Vector2( 752, 761 )
 
 [node name="Coin68" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 560, 306 )
+position = Vector2( 562, 313 )
 
 [node name="Balloons" type="Node" parent="."]
 
@@ -639,11 +639,11 @@ __meta__ = {
 }
 
 [node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 1262.25, 697.875 )
+position = Vector2( 1262.25, 698.875 )
 shape = SubResource( 248 )
 
 [node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 238.5, 635.375 )
+position = Vector2( 238.5, 636.375 )
 shape = SubResource( 249 )
 
 [node name="PlayerDetectorAMBForest" type="Area2D" parent="Zone_Sound"]
@@ -655,17 +655,17 @@ __meta__ = {
 }
 
 [node name="ZoneForestAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 78, 172 )
+position = Vector2( 93.5, 172 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 250 )
 
 [node name="ZoneForestAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 894.5, 608 )
+position = Vector2( 894.5, 607.5 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
 
 [node name="ZoneForestAMB3" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 349.922, 543 )
+position = Vector2( 349.922, 542 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 251 )
 
@@ -681,24 +681,8 @@ position = Vector2( 752, 640 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 
-[node name="Water_Coast" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 96, 640 )
-stream = ExtResource( 1 )
-autoplay = true
-max_distance = 500.0
-attenuation = 3.4822
-bus = "Amb"
-
-[node name="Water_Coast2" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 384, 640 )
-stream = ExtResource( 1 )
-autoplay = true
-max_distance = 500.0
-attenuation = 3.4822
-bus = "Amb"
-
 [node name="Water_Stagn" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 232, 640 )
+position = Vector2( 351, 574 )
 stream = ExtResource( 2 )
 autoplay = true
 max_distance = 1500.0
@@ -706,15 +690,7 @@ attenuation = 2.0
 bus = "Amb"
 
 [node name="Water_Coast3" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 1183, 652 )
-stream = ExtResource( 1 )
-autoplay = true
-max_distance = 500.0
-attenuation = 3.4822
-bus = "Amb"
-
-[node name="Water_Coast4" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 1345, 656 )
+position = Vector2( 1189, 623 )
 stream = ExtResource( 1 )
 autoplay = true
 max_distance = 500.0
@@ -722,7 +698,7 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Stagn2" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 1271, 653 )
+position = Vector2( 1269, 623 )
 stream = ExtResource( 2 )
 autoplay = true
 max_distance = 1500.0

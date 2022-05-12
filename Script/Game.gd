@@ -73,9 +73,8 @@ func _on_Slime_chaudron_eaten():
 		
 		for i in coins+1:
 			$HUD/Score/Scoring.text = str(i)+" / "+str(nb_coins)
+			AudioManager.play_Score()
 			yield(get_tree().create_timer(tick), "timeout")
-		
-		$Slime/Collect.play(0.0)
 		
 		if ratio == 100 :
 			$HUD/Score/Perfect.visible=true

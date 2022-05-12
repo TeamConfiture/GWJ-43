@@ -16,7 +16,7 @@ func _on_NextBtn_pressed():
 	if node_var:
 		node_var.visible = false
 		page += 1
-		BackgroundMusic.play_button_next()
+		AudioManager.play_button_next()
 		if page >= 5:
 			$NextBtn.visible=false
 			SceneLoader.change_scene("Game")
