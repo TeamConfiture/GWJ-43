@@ -22,7 +22,7 @@
 [ext_resource path="res://Art/Audio/Sound/Character/Abilities/Spitting_01.ogg" type="AudioStream" id=23]
 [ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player.gd" type="Script" id=24]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Walking_Land_01.ogg" type="AudioStream" id=25]
-[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Falling_01.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Fall/Falling_01.ogg" type="AudioStream" id=26]
 [ext_resource path="res://Script/Mud.gd" type="Script" id=27]
 [ext_resource path="res://Script/Steam.gd" type="Script" id=28]
 [ext_resource path="res://Art/Audio/Sound/Character/Transform_01.ogg" type="AudioStream" id=29]
@@ -2304,7 +2304,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
-frame = 3
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = SubResource( 304 )
