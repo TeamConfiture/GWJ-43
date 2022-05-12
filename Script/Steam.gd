@@ -28,5 +28,7 @@ func do_process(delta: float) -> void:
 	or parent.normal_to_leaf or parent.normal_to_mud or parent.normal_to_rock:
 		parent.anim_playback.travel("to_normal")
 		
-	parent.anim_tree["parameters/conditions/is_moving"] = !is_zero_approx(parent.speed.x)
-	parent.anim_tree["parameters/conditions/is_not_moving"] = is_zero_approx(parent.speed.x)
+	var tmp_my_is_zero_approx = parent.my_is_zero_approx(parent.speed.x)
+	
+	parent.anim_tree["parameters/conditions/is_moving"] = !tmp_my_is_zero_approx
+	parent.anim_tree["parameters/conditions/is_not_moving"] = tmp_my_is_zero_approx
