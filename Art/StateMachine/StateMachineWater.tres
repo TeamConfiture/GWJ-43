@@ -16,7 +16,6 @@ animation = "steam_to_normal"
 animation = "steam_walking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=287]
-switch_mode = 2
 advance_condition = "is_not_moving"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=288]
