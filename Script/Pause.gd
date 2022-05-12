@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-
+var music_bus = AudioServer.get_bus_index("Music")
+var sounds_bus = AudioServer.get_bus_index("SFX")
 var pause := false
 onready var parchemin = $Parchemin
 
@@ -15,7 +16,7 @@ func _process(delta):
 		pause = !pause
 		get_tree().paused=pause
 		parchemin.visible = pause
-
+		AudioServer.set_bus_volume_db(music_bus, 0)
 
 
 func _on_Menu_pressed():
@@ -28,3 +29,4 @@ func _on_Resume_pressed():
 	pause = false
 	get_tree().paused=pause
 	parchemin.visible = pause
+	AudioServer.set_bus_volume_db(music_bus, 0)
