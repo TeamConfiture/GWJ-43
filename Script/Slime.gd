@@ -143,21 +143,9 @@ func _on_eat() -> void:
 				not_transform = false
 				normal_to_steam = true
 			
-			# Red + Green = Steam
-			if clovers[0] == "Red" and clovers[1] == "Green" \
-				or clovers[0] == "Green" and clovers[1] == "Red":
-				not_transform = false
-				normal_to_steam = true
-			
 			# Red + Yellow = Rock
 			if clovers[0] == "Red" and clovers[1] == "Yellow" \
 				or clovers[0] == "Yellow" and clovers[1] == "Red":
-				not_transform = false
-				normal_to_rock = true
-			
-			# Green + Yellow = Rock
-			if clovers[0] == "Green" and clovers[1] == "Yellow" \
-				or clovers[0] == "Yellow" and clovers[1] == "Green":
 				not_transform = false
 				normal_to_rock = true
 			
