@@ -9,6 +9,8 @@ const Grav = 9.81
 
 const Dont_Move_States = ["eating", "normal_to_leaf", "normal_to_rock", "normal_to_steam", "normal_to_mud", "spitting"]
 
+const approx_epsilon = 0.75
+
 onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
 onready var anim_playback = anim_tree.get("parameters/playback")
@@ -91,6 +93,9 @@ func get_speed(_dir:float, _speed:float) -> float:
 	if _dir != 0 and !(anim_playback.get_current_node() in Dont_Move_States):
 		return lerp(_speed, sign(_dir) * max_speed, move_speed)
 	return lerp(_speed, 0, stop_speed)
+
+func my_is_zero_approx(f:float):
+	return round(f) == 0
 
 func _physics_process(delta: float) -> void:
 	state_dic[state].do_physics_process(delta)
