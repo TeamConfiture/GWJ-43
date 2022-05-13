@@ -416,6 +416,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
+frame = 1
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Mud"]
@@ -432,6 +433,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
+frame = 1
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Mud"]
@@ -449,7 +451,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Mud"
-frame = 5
+frame = 6
 playing = true
 
 [node name="Vine" type="Control" parent="CanvasLayer/Parchemin"]
@@ -467,7 +469,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
-frame = 1
+frame = 2
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Vine"]
@@ -484,7 +486,6 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Green"
-frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Vine"]
@@ -502,7 +503,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vine"
-frame = 4
+frame = 5
 playing = true
 
 [node name="Rock" type="Control" parent="CanvasLayer/Parchemin"]
@@ -520,7 +521,6 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
-frame = 3
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -537,6 +537,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
+frame = 1
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -554,7 +555,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Rock"
-frame = 6
+frame = 7
 playing = true
 
 [node name="Vapor" type="Control" parent="CanvasLayer/Parchemin"]
@@ -572,7 +573,6 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
-frame = 3
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -589,7 +589,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
-frame = 2
+frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -607,7 +607,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vapor"
-frame = 5
+frame = 6
 playing = true
 
 [node name="Pad" type="Control" parent="CanvasLayer/Parchemin"]
