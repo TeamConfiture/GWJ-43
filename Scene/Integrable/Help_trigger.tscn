@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Script/HelpTriggerRules.gd" type="Script" id=1]
 [ext_resource path="res://Art/Rules/parchemin.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Art/Rules/arrow.png" type="Texture" id=16]
 [ext_resource path="res://Art/yvy.png" type="Texture" id=17]
 [ext_resource path="res://Art/Rules/Button_circle.png" type="Texture" id=18]
+[ext_resource path="res://Art/Rules/Button_joystick.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=111]
 extents = Vector2( 10, 52 )
@@ -39,6 +40,78 @@ font_data = ExtResource( 7 )
 [sub_resource type="DynamicFont" id=114]
 size = 48
 font_data = ExtResource( 7 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 14 )
+region = Rect2( 192, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 14 )
+region = Rect2( 224, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 14 )
+region = Rect2( 256, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 14 )
+region = Rect2( 192, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 14 )
+region = Rect2( 224, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 14 )
+region = Rect2( 256, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 14 )
@@ -112,80 +185,18 @@ region = Rect2( 224, 96, 32, 32 )
 atlas = ExtResource( 14 )
 region = Rect2( 256, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 14 )
-region = Rect2( 0, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 14 )
-region = Rect2( 32, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 14 )
-region = Rect2( 64, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 14 )
-region = Rect2( 96, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 14 )
-region = Rect2( 128, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 14 )
-region = Rect2( 160, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 14 )
-region = Rect2( 192, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 14 )
-region = Rect2( 224, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 14 )
-region = Rect2( 256, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 14 )
-region = Rect2( 0, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 14 )
-region = Rect2( 32, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 14 )
-region = Rect2( 64, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 14 )
-region = Rect2( 96, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 14 )
-region = Rect2( 128, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 14 )
-region = Rect2( 160, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 14 )
-region = Rect2( 192, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 14 )
-region = Rect2( 224, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 14 )
-region = Rect2( 256, 32, 32, 32 )
-
 [sub_resource type="SpriteFrames" id=115]
 animations = [ {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "Mud",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "Vine",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "Rock",
@@ -195,23 +206,37 @@ animations = [ {
 "loop": true,
 "name": "Vapor",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+} ]
+
+[sub_resource type="AtlasTexture" id=118]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=119]
+atlas = ExtResource( 19 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=120]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=121]
+atlas = ExtResource( 19 )
+region = Rect2( 64, 64, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=122]
+animations = [ {
+"frames": [ SubResource( 118 ), SubResource( 119 ), SubResource( 120 ), SubResource( 121 ) ],
 "loop": true,
-"name": "Vine",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
-"loop": true,
-"name": "Mud",
-"speed": 5.0
+"name": "New Anim",
+"speed": 2.0
 } ]
 
 [node name="Help_trigger" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
-"_edit_horizontal_guides_": [ 505.0 ],
+"_edit_horizontal_guides_": [ 536.0 ],
 "_edit_lock_": true,
 "_edit_vertical_guides_": [ 352.0 ]
 }
@@ -391,7 +416,6 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
-frame = 3
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Mud"]
@@ -408,7 +432,6 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
-frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Mud"]
@@ -426,7 +449,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Mud"
-frame = 6
+frame = 5
 playing = true
 
 [node name="Vine" type="Control" parent="CanvasLayer/Parchemin"]
@@ -444,6 +467,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
+frame = 1
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Vine"]
@@ -460,7 +484,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Green"
-frame = 2
+frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Vine"]
@@ -478,7 +502,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vine"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Rock" type="Control" parent="CanvasLayer/Parchemin"]
@@ -496,7 +520,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
-frame = 2
+frame = 3
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -513,7 +537,6 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
-frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -531,7 +554,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Rock"
-frame = 7
+frame = 6
 playing = true
 
 [node name="Vapor" type="Control" parent="CanvasLayer/Parchemin"]
@@ -549,7 +572,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
-frame = 2
+frame = 3
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -566,7 +589,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -584,7 +607,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vapor"
-frame = 6
+frame = 5
 playing = true
 
 [node name="Pad" type="Control" parent="CanvasLayer/Parchemin"]
@@ -687,6 +710,14 @@ rect_rotation = -180.0
 rect_scale = Vector2( 4, 4 )
 texture = ExtResource( 16 )
 stretch_mode = 3
+
+[node name="joystick" type="AnimatedSprite" parent="CanvasLayer/Parchemin/Pad"]
+position = Vector2( -22.4, 73.6 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 122 )
+animation = "New Anim"
+frame = 2
+playing = true
 
 [connection signal="body_entered" from="TriggerRules" to="." method="_on_TriggerRules_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Parchemin/Quit" to="." method="_on_Quit_pressed"]
