@@ -16,7 +16,7 @@ var key_layout = OS.get_latin_keyboard_variant()
 
 
 var dic_titre = {
-	"Move": "Moves",
+	"Move": "Moves & Actions",
 	"Eat": "Eat Clovers", 
 	"Spit": "Spit clovers", 
 	"Steam": "I Believe I Can Fly", 
@@ -58,7 +58,7 @@ func illustration(rule:String,etat:bool):
 	match rule:
 
 		"Move":
-			pass
+			$CanvasLayer/Parchemin/Pad.visible=etat
 		
 		"Eat":
 			$CanvasLayer/Parchemin/Parchemin_BG/eat.visible=etat
@@ -122,7 +122,7 @@ func gey_pad(action:String):
 			if a is InputEventJoypadMotion:
 				prints (a," -> ",Input.get_joy_axis_string(a.axis))
 
-func _process(delta):
+func _process(_delta):
 	
 	
 	if Input.is_action_just_pressed("spit"):

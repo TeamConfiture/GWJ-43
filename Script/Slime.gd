@@ -14,7 +14,7 @@ const approx_epsilon = 0.75
 onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
 onready var anim_playback = anim_tree.get("parameters/playback")
-onready var area = $Area2D
+onready var node_area = $Area2D
 onready var swim_level = $SwimLevel
 
 var linear_vel:Vector2
@@ -116,7 +116,7 @@ func _process(delta: float) -> void:
 
 #call from anim_player
 func _on_eat() -> void:
-	var areas = area.get_overlapping_areas()
+	var areas = node_area.get_overlapping_areas()
 	
 	for _area in areas:
 		if _area.is_in_group("Clover"):

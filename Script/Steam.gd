@@ -4,7 +4,7 @@ const Max_Speed = 120 #150
 const Move_Speed = 0.5
 const Stop_Speed = 0.08 #0.02
 
-func do_physics_process(delta: float) -> void:
+func do_physics_process(_delta: float) -> void:
 	parent.set_collision_mask_bit(2, 0)
 
 	if parent.is_in_water():
@@ -12,7 +12,7 @@ func do_physics_process(delta: float) -> void:
 
 	parent.move_and_slide(parent.speed, Vector2.UP)
 	
-func do_process(delta: float) -> void:
+func do_process(_delta: float) -> void:
 	parent.dir.y = Input.get_axis("up", "down")
 	
 	parent.dir = parent.dir.normalized()

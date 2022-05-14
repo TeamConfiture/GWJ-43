@@ -17,10 +17,10 @@ func _ready() -> void:
 	set_physics_process(false)
 	pass # Replace with function body.
 	
-func do_process(delta: float) -> void:
+func do_process(_delta: float) -> void:
 	pass
 	
-func do_physics_process(delta: float) -> void:
+func do_physics_process(_delta: float) -> void:
 	pass
 
 

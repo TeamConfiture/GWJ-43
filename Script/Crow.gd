@@ -18,7 +18,7 @@ func set_crow_dir(s:String):
 		$AnimatedSprite.flip_h =true
 
 
-func _on_Crow_input_event(viewport, event, shape_idx):
+func _on_Crow_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.is_doubleclick() :
 		$Rnd_Crow.play(0.0)
 		

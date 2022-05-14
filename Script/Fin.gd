@@ -4,7 +4,7 @@ extends Node2D
 var index: = 1
 
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("spit"):
 		_on_NextBtn_pressed()
 	
