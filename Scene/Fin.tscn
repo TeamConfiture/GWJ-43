@@ -23,33 +23,33 @@ position = Vector2( 548, 428 )
 scale = Vector2( 8.45833, 8.07407 )
 texture = ExtResource( 9 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="End_1" type="AnimatedSprite" parent="."]
 position = Vector2( 682, 383 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 2 )
 animation = "Fin"
-frame = 2
+frame = 1
 playing = true
 
-[node name="RulesFinal14" type="Sprite" parent="."]
+[node name="End_2" type="Sprite" parent="."]
 visible = false
 position = Vector2( 682, 383 )
 scale = Vector2( 7, 7 )
 texture = ExtResource( 7 )
 
-[node name="RulesFinal15" type="Sprite" parent="."]
+[node name="End_3" type="Sprite" parent="."]
 visible = false
 position = Vector2( 682, 383 )
 scale = Vector2( 7, 7 )
 texture = ExtResource( 8 )
 
-[node name="RulesFinal16" type="Sprite" parent="."]
+[node name="End_4" type="Sprite" parent="."]
 visible = false
 position = Vector2( 682, 383 )
 scale = Vector2( 7, 7 )
 texture = ExtResource( 4 )
 
-[node name="RulesFinal17" type="Sprite" parent="."]
+[node name="End_5" type="Sprite" parent="."]
 visible = false
 position = Vector2( 682, 383 )
 scale = Vector2( 7, 7 )
