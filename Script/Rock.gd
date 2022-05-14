@@ -10,7 +10,7 @@ func do_physics_process(_delta: float) -> void:
 	parent.set_collision_mask_bit(2, 0)
 	if parent.is_on_floor():
 		if in_the_air:
-			parent._on_landing()
+			parent._on_start_landing()
 			in_the_air = false
 		
 		parent.speed.y = parent.Grav

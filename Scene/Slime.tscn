@@ -103,7 +103,7 @@ tracks/0/keys = {
 "values": [ 319, 325 ]
 }
 tracks/1/type = "method"
-tracks/1/path = NodePath("Character_Fall")
+tracks/1/path = NodePath("Character_Falling")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -117,7 +117,7 @@ tracks/1/keys = {
 } ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Character_Fall:playing")
+tracks/2/path = NodePath("Character_Falling:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -166,11 +166,43 @@ one_shot = true
 [node name="Rock" type="Node" parent="."]
 script = ExtResource( 20 )
 
+[node name="Character_Walking" type="AudioStreamPlayer" parent="Rock"]
+volume_db = -6.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 30 ) ]
+random_pitch_range = 0.2
+
+[node name="Character_Landing" type="AudioStreamPlayer" parent="Rock"]
+volume_db = -6.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 15 ) ]
+random_pitch_range = 0.2
+
 [node name="Steam" type="Node" parent="."]
 script = ExtResource( 28 )
 
+[node name="Character_Walking" type="AudioStreamPlayer" parent="Steam"]
+volume_db = -6.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 31 ) ]
+random_pitch_range = 0.2
+
 [node name="Mud" type="Node" parent="."]
 script = ExtResource( 27 )
+
+[node name="Character_Walking" type="AudioStreamPlayer" parent="Mud"]
+volume_db = -4.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 32 ), ExtResource( 33 ) ]
+random_pitch_range = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, -2 )
@@ -185,6 +217,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = ExtResource( 44 )
@@ -271,31 +304,7 @@ collision_mask = 2
 position = Vector2( -1, -2 )
 shape = SubResource( 340 )
 
-[node name="Character_WalkingWind" type="AudioStreamPlayer" parent="."]
-volume_db = -6.0
-mix_target = 2
-bus = "SFX"
-script = ExtResource( 24 )
-samples = [ ExtResource( 31 ) ]
-random_pitch_range = 0.2
-
-[node name="Character_WalkingStone" type="AudioStreamPlayer" parent="."]
-volume_db = -6.0
-mix_target = 2
-bus = "SFX"
-script = ExtResource( 24 )
-samples = [ ExtResource( 30 ) ]
-random_pitch_range = 0.2
-
-[node name="Character_WlakingMud" type="AudioStreamPlayer" parent="."]
-volume_db = -4.0
-mix_target = 2
-bus = "SFX"
-script = ExtResource( 24 )
-samples = [ ExtResource( 32 ), ExtResource( 33 ) ]
-random_pitch_range = 0.2
-
-[node name="Character_Walking_S" type="AudioStreamPlayer" parent="."]
+[node name="Character_Walking" type="AudioStreamPlayer" parent="."]
 volume_db = 2.0
 mix_target = 2
 bus = "SFX"
@@ -310,14 +319,14 @@ script = ExtResource( 24 )
 samples = [ ExtResource( 25 ) ]
 random_pitch_range = 0.5
 
-[node name="Character_Transform" type="AudioStreamPlayer" parent="."]
+[node name="Character_Transforming" type="AudioStreamPlayer" parent="."]
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
 samples = [ ExtResource( 29 ) ]
 random_pitch_range = 0.2
 
-[node name="Character_Eat" type="AudioStreamPlayer" parent="."]
+[node name="Character_Eating" type="AudioStreamPlayer" parent="."]
 volume_db = -4.0
 mix_target = 2
 bus = "SFX"
@@ -325,14 +334,14 @@ script = ExtResource( 24 )
 samples = [ ExtResource( 9 ) ]
 random_pitch_range = 0.2
 
-[node name="Character_Spit" type="AudioStreamPlayer" parent="."]
+[node name="Character_Spitting" type="AudioStreamPlayer" parent="."]
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
 samples = [ ExtResource( 23 ) ]
 random_pitch_range = 0.2
 
-[node name="Character_Jump" type="AudioStreamPlayer" parent="."]
+[node name="Character_Jumping" type="AudioStreamPlayer" parent="."]
 volume_db = -6.0
 mix_target = 2
 bus = "SFX"
@@ -340,7 +349,7 @@ script = ExtResource( 24 )
 samples = [ ExtResource( 3 ) ]
 random_pitch_range = 0.5
 
-[node name="Character_Fall" type="AudioStreamPlayer" parent="."]
+[node name="Character_Falling" type="AudioStreamPlayer" parent="."]
 volume_db = -4.0
 mix_target = 2
 bus = "SFX"
@@ -348,21 +357,13 @@ script = ExtResource( 24 )
 samples = [ ExtResource( 26 ) ]
 random_pitch_range = 0.2
 
-[node name="Character_Land" type="AudioStreamPlayer" parent="."]
+[node name="Character_Landing" type="AudioStreamPlayer" parent="."]
 volume_db = -6.0
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
 samples = [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ]
 random_strategy = 1
-random_pitch_range = 0.2
-
-[node name="Character_LandStone" type="AudioStreamPlayer" parent="."]
-volume_db = -6.0
-mix_target = 2
-bus = "SFX"
-script = ExtResource( 24 )
-samples = [ ExtResource( 15 ) ]
 random_pitch_range = 0.2
 
 [node name="Collect" type="AudioStreamPlayer" parent="."]
