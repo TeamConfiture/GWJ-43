@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Script/HelpTriggerRules.gd" type="Script" id=1]
 [ext_resource path="res://Art/Rules/parchemin.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Art/yvy.png" type="Texture" id=17]
 [ext_resource path="res://Art/Rules/Button_circle.png" type="Texture" id=18]
 [ext_resource path="res://Art/Rules/Button_joystick.png" type="Texture" id=19]
+[ext_resource path="res://Art/Rules/pixel-16x16.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=111]
 extents = Vector2( 10, 52 )
@@ -77,41 +78,41 @@ region = Rect2( 224, 32, 32, 32 )
 atlas = ExtResource( 14 )
 region = Rect2( 256, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 14 )
-region = Rect2( 0, 96, 32, 32 )
+region = Rect2( 0, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 14 )
-region = Rect2( 32, 96, 32, 32 )
+region = Rect2( 32, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 14 )
-region = Rect2( 64, 96, 32, 32 )
+region = Rect2( 64, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 14 )
-region = Rect2( 96, 96, 32, 32 )
+region = Rect2( 96, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 14 )
-region = Rect2( 128, 96, 32, 32 )
+region = Rect2( 128, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 14 )
-region = Rect2( 160, 96, 32, 32 )
+region = Rect2( 160, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 14 )
-region = Rect2( 192, 96, 32, 32 )
+region = Rect2( 192, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 14 )
-region = Rect2( 224, 96, 32, 32 )
+region = Rect2( 224, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 14 )
-region = Rect2( 256, 96, 32, 32 )
+region = Rect2( 256, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 14 )
@@ -149,41 +150,41 @@ region = Rect2( 224, 64, 32, 32 )
 atlas = ExtResource( 14 )
 region = Rect2( 256, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 14 )
-region = Rect2( 0, 128, 32, 32 )
+region = Rect2( 0, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 14 )
-region = Rect2( 32, 128, 32, 32 )
+region = Rect2( 32, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 14 )
-region = Rect2( 64, 128, 32, 32 )
+region = Rect2( 64, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 14 )
-region = Rect2( 96, 128, 32, 32 )
+region = Rect2( 96, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 14 )
-region = Rect2( 128, 128, 32, 32 )
+region = Rect2( 128, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 14 )
-region = Rect2( 160, 128, 32, 32 )
+region = Rect2( 160, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 14 )
-region = Rect2( 192, 128, 32, 32 )
+region = Rect2( 192, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 14 )
-region = Rect2( 224, 128, 32, 32 )
+region = Rect2( 224, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 14 )
-region = Rect2( 256, 128, 32, 32 )
+region = Rect2( 256, 96, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=115]
 animations = [ {
@@ -192,9 +193,9 @@ animations = [ {
 "name": "Mud",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
-"name": "Vapor",
+"name": "Rock",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
@@ -202,9 +203,9 @@ animations = [ {
 "name": "Vine",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
-"name": "Rock",
+"name": "Vapor",
 "speed": 5.0
 } ]
 
@@ -252,7 +253,6 @@ shape = SubResource( 111 )
 layer = 100
 
 [node name="Parchemin" type="Control" parent="CanvasLayer"]
-visible = false
 
 [node name="Parchemin_BG" type="TextureRect" parent="CanvasLayer/Parchemin"]
 anchor_right = 1.0
@@ -492,13 +492,13 @@ autowrap = true
 
 [node name="P1" type="RichTextLabel" parent="CanvasLayer/Parchemin"]
 margin_left = 168.0
-margin_top = 248.0
+margin_top = 230.0
 margin_right = 1160.0
-margin_bottom = 688.0
+margin_bottom = 670.0
 custom_colors/default_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
 custom_fonts/normal_font = SubResource( 113 )
 bbcode_enabled = true
-text = "Vine slime can go through the level by summoning cute ivy platforms."
+text = "Slime slime slime"
 
 [node name="Quit" type="TextureButton" parent="CanvasLayer/Parchemin"]
 margin_left = 1128.0
@@ -524,6 +524,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
+frame = 1
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Mud"]
@@ -540,6 +541,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
+frame = 1
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Mud"]
@@ -557,7 +559,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Mud"
-frame = 2
+frame = 6
 playing = true
 
 [node name="Vine" type="Control" parent="CanvasLayer/Parchemin"]
@@ -575,7 +577,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
-frame = 1
+frame = 2
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Vine"]
@@ -592,7 +594,6 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Green"
-frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Vine"]
@@ -610,7 +611,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vine"
-frame = 1
+frame = 5
 playing = true
 
 [node name="Rock" type="Control" parent="CanvasLayer/Parchemin"]
@@ -628,7 +629,6 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Yellow"
-frame = 3
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -645,6 +645,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
+frame = 1
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Rock"]
@@ -662,7 +663,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Rock"
-frame = 3
+frame = 7
 playing = true
 
 [node name="Vapor" type="Control" parent="CanvasLayer/Parchemin"]
@@ -680,7 +681,6 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Red"
-frame = 3
 playing = true
 
 [node name="LabelPlus" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -697,7 +697,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 13 )
 animation = "Blue"
-frame = 2
+frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="CanvasLayer/Parchemin/Vapor"]
@@ -715,11 +715,10 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vapor"
-frame = 2
+frame = 6
 playing = true
 
 [node name="Pad" type="Control" parent="CanvasLayer/Parchemin"]
-visible = false
 margin_left = 616.0
 margin_top = 200.0
 margin_right = 656.0
@@ -825,7 +824,7 @@ position = Vector2( -38.4, 73.6 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 122 )
 animation = "New Anim"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Left" type="Label" parent="CanvasLayer/Parchemin/Pad/joystick"]
@@ -849,11 +848,10 @@ custom_fonts/font = SubResource( 117 )
 text = "Right"
 
 [node name="Keyb" type="Control" parent="CanvasLayer/Parchemin"]
-visible = false
-margin_left = 71.9999
-margin_top = 71.9999
-margin_right = 112.0
-margin_bottom = 112.0
+margin_left = 125.0
+margin_top = 45.0
+margin_right = 165.0
+margin_bottom = 85.0001
 
 [node name="Spit" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb"]
 margin_left = 832.0
@@ -872,7 +870,7 @@ margin_bottom = 18.0
 rect_scale = Vector2( 0.8, 0.8 )
 custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
 custom_fonts/font = SubResource( 116 )
-text = "E"
+text = "?"
 align = 1
 valign = 1
 
@@ -912,7 +910,7 @@ margin_bottom = 18.0
 rect_scale = Vector2( 0.8, 0.8 )
 custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
 custom_fonts/font = SubResource( 116 )
-text = "Q"
+text = "?"
 align = 1
 valign = 1
 
@@ -936,50 +934,10 @@ stretch_mode = 3
 flip_h = true
 flip_v = true
 
-[node name="Left" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb"]
+[node name="Right" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb"]
 margin_left = 328.0
 margin_top = 280.0
 margin_right = 344.0
-margin_bottom = 296.0
-rect_scale = Vector2( 4, 4 )
-texture = ExtResource( 15 )
-stretch_mode = 1
-
-[node name="Key" type="Label" parent="CanvasLayer/Parchemin/Keyb/Left"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 18.0
-margin_bottom = 18.0
-rect_scale = Vector2( 0.8, 0.8 )
-custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
-custom_fonts/font = SubResource( 116 )
-text = "Q"
-align = 1
-valign = 1
-
-[node name="Action" type="Label" parent="CanvasLayer/Parchemin/Keyb/Left"]
-margin_top = -12.0
-margin_right = 29.0
-margin_bottom = 3.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
-custom_fonts/font = SubResource( 117 )
-text = "Left"
-
-[node name="Arrow" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb/Left"]
-margin_left = 16.5714
-margin_top = -7.28568
-margin_right = 56.5714
-margin_bottom = 32.7143
-texture = ExtResource( 16 )
-stretch_mode = 3
-flip_h = true
-flip_v = true
-
-[node name="Right" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb"]
-margin_left = 192.0
-margin_top = 280.0
-margin_right = 208.0
 margin_bottom = 296.0
 rect_scale = Vector2( 4, 4 )
 texture = ExtResource( 15 )
@@ -993,20 +951,61 @@ margin_bottom = 18.0
 rect_scale = Vector2( 0.8, 0.8 )
 custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
 custom_fonts/font = SubResource( 116 )
-text = "D"
+text = "?"
 align = 1
 valign = 1
 
 [node name="Action" type="Label" parent="CanvasLayer/Parchemin/Keyb/Right"]
+margin_left = -5.25
+margin_top = -12.0
+margin_right = 34.75
+margin_bottom = 3.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
+custom_fonts/font = SubResource( 117 )
+text = "Rigth"
+
+[node name="Arrow" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb/Right"]
+margin_left = 16.5714
+margin_top = -7.28568
+margin_right = 56.5714
+margin_bottom = 32.7143
+texture = ExtResource( 16 )
+stretch_mode = 3
+flip_h = true
+flip_v = true
+
+[node name="Left" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb"]
+margin_left = 192.0
+margin_top = 280.0
+margin_right = 208.0
+margin_bottom = 296.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+stretch_mode = 1
+
+[node name="Key" type="Label" parent="CanvasLayer/Parchemin/Keyb/Left"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 18.0
+margin_bottom = 18.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 116 )
+text = "?"
+align = 1
+valign = 1
+
+[node name="Action" type="Label" parent="CanvasLayer/Parchemin/Keyb/Left"]
 margin_top = -12.0
 margin_right = 29.0
 margin_bottom = 3.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
 custom_fonts/font = SubResource( 117 )
-text = "Right"
+text = "Left"
 
-[node name="Arrow" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb/Right"]
+[node name="Arrow" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb/Left"]
 margin_left = -6.0
 margin_top = -7.0
 margin_right = 34.0
@@ -1014,6 +1013,41 @@ margin_bottom = 33.0
 texture = ExtResource( 16 )
 stretch_mode = 3
 flip_v = true
+
+[node name="Left_Arrow" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb"]
+margin_left = 329.0
+margin_top = 360.0
+margin_right = 345.0
+margin_bottom = 376.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+stretch_mode = 1
+
+[node name="<2" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb/Left_Arrow"]
+margin_left = 1.74998
+margin_top = 0.749985
+margin_right = 41.75
+margin_bottom = 40.75
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 20 )
+flip_h = true
+
+[node name="Right_Arrow" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb"]
+margin_left = 192.0
+margin_top = 360.0
+margin_right = 208.0
+margin_bottom = 376.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+stretch_mode = 1
+
+[node name="<" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb/Right_Arrow"]
+margin_left = 0.75
+margin_top = 0.75
+margin_right = 40.75
+margin_bottom = 40.75
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 20 )
 
 [node name="Jump" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb"]
 margin_left = 448.0

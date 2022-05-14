@@ -60,6 +60,11 @@ func illustration(rule:String,etat:bool):
 		"Move":
 			$CanvasLayer/Parchemin/Pad.visible=etat
 			$CanvasLayer/Parchemin/Keyb.visible=etat
+			$CanvasLayer/Parchemin/Keyb/Eat/Key.text = gey_key("eat")
+			$CanvasLayer/Parchemin/Keyb/Spit/Key.text = gey_key("spit")
+			$CanvasLayer/Parchemin/Keyb/Left/Key.text = gey_key("left")
+			$CanvasLayer/Parchemin/Keyb/Right/Key.text = gey_key("right")
+			
 		
 		"Eat":
 			$CanvasLayer/Parchemin/Parchemin_BG/Pad2.visible=etat
@@ -117,27 +122,29 @@ func illustration(rule:String,etat:bool):
 func gey_key(action:String):
 
 	var list = InputMap.get_action_list(action)
-
+	
 	for a in list:
 		if a is InputEventKey:
+			print (a)
 			var key = OS.get_scancode_string(a.physical_scancode)
+			
+			if key == "Left":
+				continue
+			if key =="Right" :
+				continue
+			
 			if key_layout == "AZERTY" :
 				match key:
 					"Q":
 						key="A"
 					"w":
 						key="Z"
+					"A":
+						key="Q"
+					"Z":
+						key="W"	
 			return key
-
-func gey_pad(action:String):
-	var list = InputMap.get_action_list(action)
-
-	for a in list:
-		if a is InputEventKey:
-			if a is InputEventJoypadButton:
-				prints (a," -> ",Input.get_joy_button_string(a.button_index))
-			if a is InputEventJoypadMotion:
-				prints (a," -> ",Input.get_joy_axis_string(a.axis))
+			
 
 func _process(_delta):
 	
