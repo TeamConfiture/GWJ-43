@@ -122,7 +122,7 @@ func gey_pad(action:String):
 			if a is InputEventJoypadMotion:
 				prints (a," -> ",Input.get_joy_axis_string(a.axis))
 
-func _process(delta):
+func _process(_delta):
 	
 	
 	if Input.is_action_just_pressed("spit"):

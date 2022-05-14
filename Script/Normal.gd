@@ -10,7 +10,7 @@ var want_jump := false
 
 var in_the_air := true
 
-func do_physics_process(delta: float) -> void:
+func do_physics_process(_delta: float) -> void:
 	if parent.is_in_water():
 		want_jump = true
 	else:
@@ -36,7 +36,7 @@ func do_physics_process(delta: float) -> void:
 
 	parent.move_and_slide(parent.speed, Vector2.UP)
 
-func do_process(delta: float) -> void:
+func do_process(_delta: float) -> void:
 	want_jump = Input.is_action_just_pressed("jump")
 	
 	parent.want_eat = Input.is_action_just_pressed("eat")

@@ -25,6 +25,6 @@ func change_scene(scene_id:String):
 
 	yield(fader,"animation_finished")
 
-	get_tree().change_scene_to(scenes[scene_id])
+	var __ = get_tree().change_scene_to(scenes[scene_id])
 
 	fader.play("transition_in")

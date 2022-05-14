@@ -12,7 +12,7 @@ func state_enabled(b:bool):
 #	world.environment.dof_blur_near_enabled=b
 	
 
-func do_physics_process(delta: float) -> void:
+func do_physics_process(_delta: float) -> void:
 	parent.set_collision_mask_bit(2, 0)
 	
 	if parent.is_in_water():
@@ -32,7 +32,7 @@ func do_physics_process(delta: float) -> void:
 
 	parent.move_and_slide(parent.speed, Vector2.UP)
 
-func do_process(delta: float) -> void:
+func do_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("spit"):
 		parent.anim_playback.travel("spitting")
 		
