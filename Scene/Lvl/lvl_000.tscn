@@ -456,11 +456,15 @@ rules_index = "Eat"
 
 [node name="Help_trigger2" parent="help" instance=ExtResource( 13 )]
 position = Vector2( 1176, 560 )
-rules_index = "Mud"
+rules_index = "Combinaisons"
 
 [node name="Help_trigger3" parent="help" instance=ExtResource( 13 )]
 position = Vector2( 205, 128 )
 rules_index = "Move"
+
+[node name="Help_trigger4" parent="help" instance=ExtResource( 13 )]
+position = Vector2( 1264, 535 )
+rules_index = "Mud"
 
 [node name="Tile" type="Node" parent="."]
 
