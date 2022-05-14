@@ -25,7 +25,7 @@ onready var jump_acc = parent.Grav * 30
 onready var node_game = get_node("/root/Game")
 onready var timer = $Timer
 
-func do_physics_process(delta: float) -> void:
+func do_physics_process(_delta: float) -> void:
 	if parent.is_in_water():
 		parent.anim_playback.travel("spitting")
 	
@@ -47,7 +47,7 @@ func do_physics_process(delta: float) -> void:
 
 	parent.move_and_slide(parent.speed, Vector2.UP)
 
-func do_process(delta: float) -> void:
+func do_process(_delta: float) -> void:
 	want_jump = Input.is_action_just_pressed("jump")
 	
 	if parent.is_on_floor():
