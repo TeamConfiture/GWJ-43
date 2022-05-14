@@ -186,9 +186,16 @@ func set_camera_limits():
 #	$Camera2D.limit_bottom = get_viewport().size.y
 	pass
 
+#call from animationPlayer
+func _on_walking():
+	pass
+
+#call once by states when landing
+func _on_falling():
+	pass
+
 #call once by states when landing
 func _on_landing():
-	
 	if state == State.rock:
 		$Character_LandStone.play(0.0)
 		$Camera2D.shake(100,0.4,100)
