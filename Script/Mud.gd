@@ -5,7 +5,7 @@ const Move_Speed = 0.5
 const Stop_Speed = 0.3
 
 var in_the_air := true
-onready var world = get_node("/root/Game/WorldEnvironment")
+
 
 func state_enabled(b:bool):
 	.state_enabled(b)
