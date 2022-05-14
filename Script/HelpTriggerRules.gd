@@ -59,6 +59,7 @@ func illustration(rule:String,etat:bool):
 
 		"Move":
 			$CanvasLayer/Parchemin/Pad.visible=etat
+			$CanvasLayer/Parchemin/Keyb.visible=etat
 		
 		"Eat":
 			$CanvasLayer/Parchemin/Parchemin_BG/Pad2.visible=etat
