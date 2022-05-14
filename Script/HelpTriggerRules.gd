@@ -4,9 +4,7 @@ export(String, "Move","Eat", "Spit", "Steam","Mud","Vine","Block","Combinaisons"
 
 onready var parchemin =  $CanvasLayer/Parchemin
 
-
 var slime
-
 
 var music_bus = AudioServer.get_bus_index("Music")
 var ambiant_bus = AudioServer.get_bus_index("Amb")
@@ -40,21 +38,18 @@ var dic_P1 = {
 
 func _ready():
 
-	
-	
+
 	parchemin.visible=false
 	$CanvasLayer/Parchemin/Titre.text=dic_titre[rules_index]
 	$CanvasLayer/Parchemin/P1.bbcode_text=dic_P1[rules_index]
-	
+
 	illustration(rules_index,true) 
 
 	slime = get_tree().get_root().get_node("Game/Slime") 
 
 
 func illustration(rule:String,etat:bool):
-	
 
-	
 	match rule:
 
 		"Move":
@@ -64,8 +59,7 @@ func illustration(rule:String,etat:bool):
 			$CanvasLayer/Parchemin/Keyb/Spit/Key.text = gey_key("spit")
 			$CanvasLayer/Parchemin/Keyb/Left/Key.text = gey_key("left")
 			$CanvasLayer/Parchemin/Keyb/Right/Key.text = gey_key("right")
-			
-		
+
 		"Eat":
 			$CanvasLayer/Parchemin/Parchemin_BG/Pad2.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BB.modulate=Color(1,1,1,0.39)
@@ -76,7 +70,7 @@ func illustration(rule:String,etat:bool):
 			$CanvasLayer/Parchemin/Parchemin_BG/Button/Action.text = "Eat"
 			$CanvasLayer/Parchemin/Parchemin_BG/Button/Key.text = gey_key("eat")
 			$CanvasLayer/Parchemin/Parchemin_BG/Button.visible=etat
-			
+
 		"Spit":
 			$CanvasLayer/Parchemin/Parchemin_BG/Pad2.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BB.modulate=Color(1,1,1,0.39)
@@ -106,7 +100,7 @@ func illustration(rule:String,etat:bool):
 			$CanvasLayer/Parchemin/Parchemin_BG/Button/Action.text = "Yvy"
 			$CanvasLayer/Parchemin/Parchemin_BG/Button/Key.text = gey_key("eat")
 			$CanvasLayer/Parchemin/Parchemin_BG/Button.visible=etat
-			
+
 
 		"Block":
 			$CanvasLayer/Parchemin/Parchemin_BG/rock1.visible=etat
@@ -122,17 +116,17 @@ func illustration(rule:String,etat:bool):
 func gey_key(action:String):
 
 	var list = InputMap.get_action_list(action)
-	
+
 	for a in list:
 		if a is InputEventKey:
-			print (a)
+
 			var key = OS.get_scancode_string(a.physical_scancode)
-			
+
 			if key == "Left":
 				continue
 			if key =="Right" :
 				continue
-			
+
 			if key_layout == "AZERTY" :
 				match key:
 					"Q":
@@ -142,20 +136,18 @@ func gey_key(action:String):
 					"A":
 						key="Q"
 					"Z":
-						key="W"	
+						key="W"
 			return key
-			
+
 
 func _process(_delta):
-	
-	
+
 	if Input.is_action_just_pressed("spit"):
 		parchemin.visible=false
 		illustration(rules_index,false) 
 		slime.do_activate(true)
 		AudioServer.set_bus_volume_db(music_bus, 0)
 		AudioServer.set_bus_volume_db(ambiant_bus, 0)
-	
 
 func _on_TriggerRules_body_entered(body):
 
@@ -167,8 +159,6 @@ func _on_TriggerRules_body_entered(body):
 			dejavu=true
 			AudioServer.set_bus_volume_db(music_bus, -6)
 			AudioServer.set_bus_volume_db(ambiant_bus, -6)
-
-
 
 func _on_Quit_pressed():
 	parchemin.visible=false
