@@ -28,7 +28,6 @@ position = Vector2( 682, 383 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 2 )
 animation = "Fin"
-frame = 1
 playing = true
 
 [node name="End_2" type="Sprite" parent="."]

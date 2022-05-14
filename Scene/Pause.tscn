@@ -317,7 +317,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Blue"
-frame = 1
+frame = 3
 playing = true
 
 [node name="LabelPlus" type="Label" parent="Parchemin/Mud"]
@@ -334,7 +334,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Yellow"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="Parchemin/Mud"]
@@ -352,7 +352,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Mud"
-frame = 4
+frame = 6
 playing = true
 
 [node name="Vine" type="Control" parent="Parchemin"]
@@ -369,7 +369,6 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Blue"
-frame = 2
 playing = true
 
 [node name="LabelPlus" type="Label" parent="Parchemin/Vine"]
@@ -386,6 +385,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Green"
+frame = 2
 playing = true
 
 [node name="Arrow" type="Label" parent="Parchemin/Vine"]
@@ -403,7 +403,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Vine"
-frame = 3
+frame = 5
 playing = true
 
 [node name="Rock" type="Control" parent="Parchemin"]
@@ -418,6 +418,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Yellow"
+frame = 2
 playing = true
 
 [node name="LabelPlus" type="Label" parent="Parchemin/Rock"]
@@ -434,7 +435,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Red"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Arrow" type="Label" parent="Parchemin/Rock"]
@@ -452,7 +453,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Rock"
-frame = 5
+frame = 7
 playing = true
 
 [node name="Vapor" type="Control" parent="Parchemin"]
@@ -469,6 +470,7 @@ position = Vector2( 190, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Red"
+frame = 2
 playing = true
 
 [node name="LabelPlus" type="Label" parent="Parchemin/Vapor"]
@@ -485,7 +487,7 @@ position = Vector2( 280, 272 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Blue"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Arrow" type="Label" parent="Parchemin/Vapor"]
@@ -503,7 +505,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Vapor"
-frame = 4
+frame = 6
 playing = true
 
 [node name="Pad" type="Control" parent="Parchemin"]
