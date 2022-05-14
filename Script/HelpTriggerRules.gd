@@ -6,7 +6,7 @@ onready var parchemin =  $CanvasLayer/Parchemin
 
 
 var slime
-var illustration
+
 
 var music_bus = AudioServer.get_bus_index("Music")
 var ambiant_bus = AudioServer.get_bus_index("Amb")
@@ -29,10 +29,10 @@ var dic_titre = {
 var dic_P1 = {
 	"Move": "How do I get there?",
 	"Eat": "Clovers are edible, eating them can give you elemental powers.", 
-	"Spit": "If you don't need a transformation anymore, you can spit the clovers\n\nIt can be useful if you get stuck somewhere unusual...", 
+	"Spit": "If you don't need a transformation anymore, you can spit the clovers\nIt can be useful if you get stuck somewhere unusual...", 
 	"Steam": "Steam slime can fly though the level, and through the grids too.\n\nBut be careful steam [u]cannot[/u] swim!", 
 	"Mud": "Mud slime is fast, loves grids, but cannot jump....\n\n [u]Be careful![/u]\nMud does not like water...",
-	"Vine": "Vine slime can go through the level by summoning cute ivy platforms with limited duration.", 
+	"Vine": "Vine slime can go through the level by summoning cute ivy platforms with limited duration when is jumping.", 
 	"Block": "Block Slime is very heavy, so the buttons activate under its weight.\n He can dive, but cannot get back to land in this form.",
 	"Combinaisons":"Fire, water, plant and rock clovers can be combined to get those special forms !"
 }
@@ -61,12 +61,22 @@ func illustration(rule:String,etat:bool):
 			$CanvasLayer/Parchemin/Pad.visible=etat
 		
 		"Eat":
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2.visible=etat
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BB.modulate=Color(1,1,1,0.39)
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BD.modulate=Color(1,1,1,0.39)
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BG/Action2.visible=etat
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BG/Arrow2.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/eat.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/Button/Action.text = "Eat"
 			$CanvasLayer/Parchemin/Parchemin_BG/Button/Key.text = gey_key("eat")
 			$CanvasLayer/Parchemin/Parchemin_BG/Button.visible=etat
 			
 		"Spit":
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2.visible=etat
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BB.modulate=Color(1,1,1,0.39)
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BG.modulate=Color(1,1,1,0.39)
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BD/Action4.visible=etat
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BD/Arrow4.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/spit.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/Button/Action.text = "Spit"
 			$CanvasLayer/Parchemin/Parchemin_BG/Button/Key.text = gey_key("spit")
@@ -79,6 +89,12 @@ func illustration(rule:String,etat:bool):
 			$CanvasLayer/Parchemin/Parchemin_BG/mud.visible=etat
 
 		"Vine":
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2.visible=etat
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BB.modulate=Color(1,1,1,0.39)
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BD.modulate=Color(1,1,1,0.39)
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BG/Action2.text = "Yvy"
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BG/Action2.visible=etat
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BG/Arrow2.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/vine.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/yvy.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/Button/Action.text = "Yvy"
@@ -98,7 +114,7 @@ func illustration(rule:String,etat:bool):
 
 
 func gey_key(action:String):
-	var key_layout = OS.get_latin_keyboard_variant()
+
 	var list = InputMap.get_action_list(action)
 
 	for a in list:
