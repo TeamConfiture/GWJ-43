@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Script/HelpTriggerRules.gd" type="Script" id=1]
 [ext_resource path="res://Art/Rules/parchemin.png" type="Texture" id=2]
@@ -233,6 +233,10 @@ animations = [ {
 "speed": 2.0
 } ]
 
+[sub_resource type="DynamicFont" id=123]
+size = 30
+font_data = ExtResource( 7 )
+
 [node name="Help_trigger" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
@@ -253,7 +257,6 @@ shape = SubResource( 111 )
 layer = 100
 
 [node name="Parchemin" type="Control" parent="CanvasLayer"]
-visible = false
 
 [node name="Parchemin_BG" type="TextureRect" parent="CanvasLayer/Parchemin"]
 anchor_right = 1.0
@@ -560,7 +563,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Mud"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Vine" type="Control" parent="CanvasLayer/Parchemin"]
@@ -612,7 +615,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vine"
-frame = 4
+frame = 3
 playing = true
 
 [node name="Rock" type="Control" parent="CanvasLayer/Parchemin"]
@@ -665,7 +668,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Rock"
-frame = 6
+frame = 5
 playing = true
 
 [node name="Vapor" type="Control" parent="CanvasLayer/Parchemin"]
@@ -718,7 +721,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vapor"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Pad" type="Control" parent="CanvasLayer/Parchemin"]
@@ -1094,6 +1097,21 @@ texture = ExtResource( 16 )
 stretch_mode = 3
 flip_h = true
 flip_v = true
+
+[node name="Space" type="Label" parent="CanvasLayer/Parchemin"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 968.0
+margin_top = 720.0
+margin_right = 1234.0
+margin_bottom = 749.0
+rect_scale = Vector2( 0.725217, 1.55926 )
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 123 )
+text = "Press \"E\" to pass... "
+align = 1
+valign = 1
 
 [connection signal="body_entered" from="TriggerRules" to="." method="_on_TriggerRules_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Parchemin/Quit" to="." method="_on_Quit_pressed"]
