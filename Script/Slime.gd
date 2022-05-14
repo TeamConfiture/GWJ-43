@@ -162,11 +162,6 @@ func _on_eat() -> void:
 			pass
 			
 
-
-func _spit() -> void:
-	clovers = ["", ""]
-	emit_signal("clover_eaten", clovers)
-
 func _on_Area2D_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Coin"):
 		$Collect.play(0.0)
@@ -186,14 +181,55 @@ func set_camera_limits():
 #	$Camera2D.limit_bottom = get_viewport().size.y
 	pass
 
-#call once by states when landing
-func _on_landing():
+func get_audio_node_from_state(node_name:String):
+	var node_audio = state_dic[state].get_node_or_null(node_name)
+	
+	if !node_audio:
+		node_audio = get_node_or_null(node_name)
+		
+	return node_audio
+
+func play_audio_node_from_state(node_name:String):
+	var node_audio = get_audio_node_from_state(node_name)
+
+	if node_audio:
+		node_audio.play()
+		
+func stop_audio_node_from_state(node_name:String):
+	var node_audio = get_audio_node_from_state(node_name)
+
+	if node_audio:
+		node_audio.stop()
+
+## called from states
+func _on_start_landing():
+	play_audio_node_from_state("Character_Landing")
 	
 	if state == State.rock:
-		$Character_LandStone.play(0.0)
 		$Camera2D.shake(100,0.4,100)
-	if state == State.normal and State.mud and State.leaf:
-		$Character_Land.play(0.0)
 
+## called by animations
+func _on_start_idle():
+	stop_audio_node_from_state("Character_Falling")
 
+func _on_start_walking():
+	play_audio_node_from_state("Character_Walking")
 
+func _on_start_jumping():
+	play_audio_node_from_state("Character_Jumping")
+
+func _on_start_falling():
+	play_audio_node_from_state("Character_Falling")
+
+func _on_start_eating():
+	play_audio_node_from_state("Character_Eating")
+
+func _on_start_transforming():
+	play_audio_node_from_state("Character_Transforming")
+
+func _on_start_spitting():
+	play_audio_node_from_state("Character_Spitting")
+	
+	clovers = ["", ""]
+	
+	emit_signal("clover_eaten", clovers)
