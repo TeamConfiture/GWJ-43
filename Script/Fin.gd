@@ -11,10 +11,16 @@ func _process(_delta):
 	
 func _on_NextBtn_pressed():
 
-	var child = get_child(index)
-	child.visible=false
-	get_child(index+1).visible=true
-	AudioManager.play_button_next()
-	index+=1
-	if index >=6 :
-		SceneLoader.change_scene("Credits")
+	var node_var = get_node_or_null('End_'+ str(index))
+	
+	if node_var:
+		node_var.visible = false
+		index += 1
+		AudioManager.play_button_next()
+		if index >= 5:
+			$NextBtn.visible=false
+			$Space.visible=false
+			SceneLoader.change_scene("Credits")
+		else:
+			node_var = get_node_or_null('End_'+ str(index))
+			node_var.visible =true
