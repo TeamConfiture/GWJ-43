@@ -17,7 +17,7 @@ func _on_NextBtn_pressed():
 		node_var.visible = false
 		index += 1
 		AudioManager.play_button_next()
-		if index >= 5:
+		if index >= 6:
 			$NextBtn.visible=false
 			$Space.visible=false
 			SceneLoader.change_scene("Credits")
