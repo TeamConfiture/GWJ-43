@@ -263,6 +263,7 @@ motion_scale = Vector2( 0.2, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="TileMap" type="TileMap" parent="ParallaxBackground/FrontCave"]
+modulate = Color( 1, 1, 1, 0.952941 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
