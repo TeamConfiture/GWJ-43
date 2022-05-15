@@ -85,7 +85,7 @@ func lvl_state(new_state:int):
 
 func do_activate(etat:bool):
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"), !etat)
-	visible=etat
+	visible=true #etat
 	set_process(etat)
 	set_physics_process(etat)
 	$Camera2D.current=true
