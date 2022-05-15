@@ -613,7 +613,7 @@ position = Vector2( -38.4, 73.6 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 122 )
 animation = "New Anim"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Left" type="Label" parent="Parchemin/Pad/joystick"]

@@ -23,13 +23,14 @@ func _process(_delta):
 		parchemin.visible = pause
 		AudioServer.set_bus_volume_db(music_bus, 0)
 		
-	if Input.is_action_just_pressed("spit"):
-		AudioManager.play_button_normal()
-		_on_Resume_pressed()
+	if pause:
+		if Input.is_action_just_pressed("spit"):
+			AudioManager.play_button_normal()
+			_on_Resume_pressed()
 		
-	if Input.is_action_just_pressed("eat"):
-		AudioManager.play_button_normal()
-		_on_Menu_pressed()
+		if Input.is_action_just_pressed("eat"):
+			AudioManager.play_button_normal()
+			_on_Menu_pressed()
 
 
 func _on_Menu_pressed():
