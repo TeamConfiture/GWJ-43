@@ -83,9 +83,11 @@ func _on_Slime_chaudron_eaten():
 
 		chaudron_eat=true
 	else:
-		
-		#transition out de current_lvl 
-		remove_child(current_lvl)
+
+		if big_chaudron_eat == false:
+			#transition out de current_lvl 
+			#remove_child(current_lvl) 
+			current_lvl.queue_free()
 
 		lvl_index+=1
 		var s = "res://Scene/Lvl/lvl_%03d"%lvl_index+".tscn"
@@ -140,8 +142,8 @@ func update_coins(lvl):
 
 func _process(delta: float) -> void:
 
-#	if Input.is_action_just_pressed("ui_page_up"):
-#		_on_Slime_chaudron_eaten()
+	if Input.is_action_just_pressed("ui_page_up"):
+		_on_Slime_chaudron_eaten()
 
 	if Input.is_action_just_pressed("spit") && chaudron_eat == true :
 			_on_Slime_chaudron_eaten()
