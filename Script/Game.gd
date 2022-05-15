@@ -53,40 +53,13 @@ func _on_Slime_coin_caught() -> void:
 func _on_Slime_chaudron_eaten():
 	
 	if chaudron_eat == false :
-		$HUD/Score/Perfect.visible=false
-		$HUD/Score/Do_better.visible=false
-		$HUD/Score/Perfect_end.visible=false
-		$HUD/Score/Do_better_end.visible=false
-		coins_per_levels[lvl_index][1] = coins
-		cinematic_done = false
-		slime.do_activate(false)
-		$HUD/Score.visible=true
-		
-		var ratio = 100 * float(coins) / float(nb_coins)
-		
-		var tick
-		if coins > 0 :
-			tick = 0.25 / coins
-		else:
-			tick = 0.01
-		
-		
-		for i in coins+1:
-			$HUD/Score/Scoring.text = str(i)+" / "+str(nb_coins)
-			AudioManager.play_Score()
-			yield(get_tree().create_timer(tick), "timeout")
-		
-		if ratio == 100 :
-			$HUD/Score/Perfect.visible=true
-		else:
-			$HUD/Score/Do_better.visible=true
-
+		score_lvl()
 		chaudron_eat=true
 	else:
 
 		if big_chaudron_eat == false:
 			#transition out de current_lvl 
-			#remove_child(current_lvl) 
+		
 			current_lvl.queue_free()
 
 		lvl_index+=1
@@ -94,44 +67,70 @@ func _on_Slime_chaudron_eaten():
 		if ResourceLoader.exists(s):
 			current_lvl = load(s).instance()
 			add_child(current_lvl)
-
 			$HUD/Score.visible=false
-
 			update_coins(current_lvl)
 			chaudron_eat=false
 			cinematic()
 
-
 		else :
 			
 			if big_chaudron_eat == false :
-				$HUD/Score/Perfect.visible=false
-				$HUD/Score/Do_better.visible=false
-				$HUD/Score/Perfect_end.visible=false
-				$HUD/Score/Do_better_end.visible=false
-				
-				$HUD/Score.visible=true
-				nb_coins = 0
-				coins = 0
-				for i in coins_per_levels.size():
-					nb_coins += coins_per_levels[i][0]
-					coins += coins_per_levels[i][1]
-					$HUD/Score/Scoring.text = str(coins)+" / "+str(nb_coins)
-				
-				var ratio = 100 * float(coins) / float(nb_coins)
-				
-				if ratio == 100 :
-					$HUD/Score/Perfect_end.visible=true
-				else:
-					$HUD/Score/Do_better_end.visible=true
-				
-				yield(get_tree().create_timer(2), "timeout")
+				score_global()
 				big_chaudron_eat = true
-				
-				
 			else :
 				$HUD/Score.visible=false
 				SceneLoader.change_scene("Fin")
+
+func score_lvl():
+	$HUD/Score/Perfect.visible=false
+	$HUD/Score/Do_better.visible=false
+	$HUD/Score/Perfect_end.visible=false
+	$HUD/Score/Do_better_end.visible=false
+	coins_per_levels[lvl_index][1] = coins
+	cinematic_done = false
+	slime.do_activate(false)
+	$HUD/Score.visible=true
+	
+	var ratio = 100 * float(coins) / float(nb_coins)
+	
+	var tick
+	if coins > 0 :
+		tick = 0.25 / coins
+	else:
+		tick = 0.01
+
+	for i in coins+1:
+		$HUD/Score/Scoring.text = str(i)+" / "+str(nb_coins)
+		AudioManager.play_Score()
+		yield(get_tree().create_timer(tick), "timeout")
+
+	if ratio == 100 :
+		$HUD/Score/Perfect.visible=true
+	else:
+		$HUD/Score/Do_better.visible=true
+
+func score_global():
+	$HUD/Score/Perfect.visible=false
+	$HUD/Score/Do_better.visible=false
+	$HUD/Score/Perfect_end.visible=false
+	$HUD/Score/Do_better_end.visible=false
+
+	$HUD/Score.visible=true
+	nb_coins = 0
+	coins = 0
+	for i in coins_per_levels.size():
+		nb_coins += coins_per_levels[i][0]
+		coins += coins_per_levels[i][1]
+		$HUD/Score/Scoring.text = str(coins)+" / "+str(nb_coins)
+
+	var ratio = 100 * float(coins) / float(nb_coins)
+	
+	if ratio == 100 :
+		$HUD/Score/Perfect_end.visible=true
+	else:
+		$HUD/Score/Do_better_end.visible=true
+	
+	yield(get_tree().create_timer(2), "timeout")
 
 func update_coins(lvl):
 	var node_coins = lvl.get_node("Coins")
