@@ -47,31 +47,34 @@ texture = ExtResource( 14 )
 
 [node name="play" type="TextureButton" parent="."]
 margin_left = 536.0
-margin_top = 305.0
+margin_top = 376.0
 margin_right = 872.0
-margin_bottom = 475.0
+margin_bottom = 546.0
 rect_min_size = Vector2( 0, 170 )
 focus_neighbour_top = NodePath("../quit")
 focus_neighbour_bottom = NodePath("../credits")
 texture_normal = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
 expand = true
 stretch_mode = 5
 
 [node name="credits" type="TextureButton" parent="."]
-margin_left = 536.0
-margin_top = 510.0
-margin_right = 872.0
-margin_bottom = 595.0
+margin_left = 1048.0
+margin_top = 672.0
+margin_right = 1384.0
+margin_bottom = 757.0
 rect_min_size = Vector2( 0, 85 )
 focus_neighbour_top = NodePath("../play")
 focus_neighbour_bottom = NodePath("../quit")
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 expand = true
 stretch_mode = 5
 
 [node name="quit" type="TextureButton" parent="."]
+visible = false
 margin_left = 536.0
 margin_top = 639.0
 margin_right = 872.0
@@ -81,6 +84,7 @@ focus_neighbour_top = NodePath("../credits")
 focus_neighbour_bottom = NodePath("../play")
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 5 )
+texture_focused = ExtResource( 5 )
 expand = true
 stretch_mode = 5
 
