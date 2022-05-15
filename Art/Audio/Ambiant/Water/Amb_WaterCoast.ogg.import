@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Amb_WaterCoast.ogg-0048f8e7932f2d17624eed0909c33fad.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Ambiant/Water/Amb_WaterCoast.ogg"
+dest_files=[ "res://.import/Amb_WaterCoast.ogg-0048f8e7932f2d17624eed0909c33fad.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -217,7 +217,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 41
-frame = 1
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/leaf_eating = ExtResource( 44 )
@@ -370,7 +370,7 @@ random_pitch_range = 0.2
 pause_mode = 2
 volume_db = -6.0
 mix_target = 2
-bus = "SFX"
+bus = "UI"
 script = ExtResource( 24 )
 samples = [ ExtResource( 22 ) ]
 random_pitch_range = 0.2

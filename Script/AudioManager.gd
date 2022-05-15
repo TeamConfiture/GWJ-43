@@ -1,28 +1,36 @@
 extends Node
 
-onready var MenuTheme = load ("res://Art/Audio/Music/MenuTheme.ogg")
-onready var ThemePrincipal = load("res://Art/Audio/Music/Level_1.ogg")	
-onready var AmbForest = load("res://Art/Audio/Sound/Amb/Forest/ForestAmb_01.ogg")
-onready var AmbCavern = load("res://Art/Audio/Sound/Amb/Cavern/Cavern_drip_01.ogg")
-onready var AmbUnderwater = load("res://Art/Audio/Sound/Amb/Underwater/Amb_Underwater_1.ogg")
+#Déclaration des musiques du jeu
+onready var M_Menu = load ("res://Art/Audio/Music/M_Menu.ogg")
+onready var M_Main = load("res://Art/Audio/Music/M_Main.ogg")	
+onready var M_Cave = load("res://Art/Audio/Music/M_Cave.ogg")
 
-onready var anim_player := $TransitionVolume
+#Déclaration des ambiances du jeu
+onready var Amb_Forest = load("res://Art/Audio/Ambiant/Forest/Amb_Forest.ogg")
+onready var Amb_Cavern = load("res://Art/Audio/Ambiant/Cavern/Amb_Cavern.ogg")
+onready var Amb_Underwater = load("res://Art/Audio/Ambiant/Underwater/Amb_Underwater.ogg")
+
+#Déclaration des chemin d'animation pour des Fade In / Out propre et controlé
+onready var Fade_Music := $Transition/Fade_Music
+onready var Fade_Ambiant := $Transition/Fade_Ambiant
+onready var Fade_Effect := $Transition/Fade_Effect
 
 func _ready():
 	pass
+
 #--========================================--
-#--          Gestion : OneShotAudio        --
+#--        Gestion : OneShotAudio          --
 #--========================================--
 
-func play_button_start():
+func play_button_start():				#Bouton Start du menu principal quand on lance le jeu
 	$Interface/PressButtonStart.play()
-func play_button_normal():
+func play_button_normal():				#Bouton "Next" et "Back" dans les menus
 	$Interface/PressButtonNormal.play()
-func play_button_next():
+func play_button_next():				#Bouton "Next" dans le parchemin histoire début et fin de jeu
 	$Interface/Button_Next.play()
-func play_InteracableButton():
+func play_InteracableButton():			#Bouton intéraction avec le slime pour ouvrir les portes
 	$Interacable/InteracableButton.play()
-func play_Score():
+func play_Score():						#Défilement du nombre de pièce en fin de niveau
 	$Interface/Count_Score.play()
 	
 #--========================================--
@@ -31,60 +39,59 @@ func play_Score():
 
 func play_menu_music():
 	
-#	$Music.stream = MainTheme
-#	$Music.volume_db = -12
-#	$Music.play()
-	var MainMenuTheme = $Musics/MusicMenu.is_playing()
-	if !MainMenuTheme:
-		anim_player.play("Fade_To_MusicMenu")
-		$Musics/MusicMenu.stream = MenuTheme
-		$Musics/MusicMenu.volume_db = -6
-		$Musics/MusicMenu.play()
-#		print("MainMenuTheme")
+	var Menu_Play = $Musics/M_Menu.is_playing()
+	if !Menu_Play:
+		Fade_Music.play("Fade_To_M_Menu")
+		$Musics/M_Menu.stream = M_Menu
+		$Musics/M_Menu.volume_db = -8
+		$Musics/M_Menu.play()
 	
 	
 func play_main_music():
 	
-#	$MusicIG.stream = ThemePrincipal
-#	$MusicIG.volume_db = -16
-#	$MusicIG.play()
-	var PrincipalPlay = $Musics/MusicIG.is_playing()
-	if !PrincipalPlay:
-		anim_player.play("Fade_To_IGMusic")
-		$Musics/MusicIG.stream = ThemePrincipal
-		$Musics/MusicIG.volume_db = 0
-		$Musics/MusicIG.play()
-#		print("ThemePrincipal")
+	var Main_Play = $Musics/M_Main.is_playing()
+	if !Main_Play:
+		Fade_Music.play("Fade_To_M_Main")
+		$Musics/M_Main.stream = M_Main
+		$Musics/M_Main.volume_db = -4
+		$Musics/M_Main.play()
+
+
+func play_cave_music():
 	
+	var Cave_Play = $Musics/M_Cave.is_playing()
+	if !Cave_Play:
+		Fade_Music.play("Fade_To_M_Cave")
+		$Musics/M_Cave.stream = M_Cave
+		$Musics/M_Cave.volume_db = -8
+		$Musics/M_Cave.play()
 	
 #--========================================--
 #--          Gestion : Zone Amb            --
 #--========================================--
 
 func play_amb_forest():
-	var Forest_play = $Ambiant/Amb_Forest.is_playing()
-	if !Forest_play:
-		anim_player.play("Fade_To_Forest")
-		$Ambiant/Amb_Forest.stream = AmbForest
+	var Ambiant_Forest = $Ambiant/Amb_Forest.is_playing()
+	if !Ambiant_Forest:
+		Fade_Ambiant.play("Fade_To_Forest")
+		$Ambiant/Amb_Forest.stream = Amb_Forest
 		$Ambiant/Amb_Forest.play()
-#		print("Foret")
 	
 	
 func play_amb_cavern():
-	var Cavern_play = $Ambiant/Amb_Cavern.is_playing()
-	if !Cavern_play:
-		anim_player.play("Fade_To_Cavern")
-		$Ambiant/Amb_Cavern.stream = AmbCavern
+	var Ambiant_Cavern = $Ambiant/Amb_Cavern.is_playing()
+	if !Ambiant_Cavern:
+		Fade_Ambiant.play("Fade_To_Cavern")
+		$Ambiant/Amb_Cavern.stream = Amb_Cavern
 		$Ambiant/Amb_Cavern.play()
-#		print("Cavern")
+
 
 func play_amb_underwater():
-	var Underwater_play = $Ambiant/Amb_Underwater.is_playing()
-	if !Underwater_play:
-		anim_player.play("Fade_To_Underwater")
-		$Ambiant/Amb_Underwater.stream = AmbUnderwater
+	var Ambiant_Underwater = $Ambiant/Amb_Underwater.is_playing()
+	if !Ambiant_Underwater:
+		Fade_Effect.play("Fade_To_Underwater")
+		$Ambiant/Amb_Underwater.stream = Amb_Underwater
 		$Ambiant/Amb_Underwater.play()
-#		print("Foret")
 		
 		
 		

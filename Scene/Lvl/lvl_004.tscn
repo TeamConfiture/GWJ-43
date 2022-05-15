@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://Art/Audio/Sound/Amb/Water/Amb_WaterCoast_01.ogg" type="AudioStream" id=1]
-[ext_resource path="res://Art/Audio/Sound/Amb/Water/WaterStagn_01.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Art/Audio/Ambiant/Water/Amb_WaterCoast.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Art/Audio/Ambiant/Water/Amb_WaterStagn.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Art/33.png" type="Texture" id=3]
 [ext_resource path="res://Art/element.png" type="Texture" id=4]
 [ext_resource path="res://Art/water.tres" type="TileSet" id=5]
@@ -439,23 +439,23 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 } ]
 27/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=248]
-extents = Vector2( 89.75, 69.875 )
-
-[sub_resource type="RectangleShape2D" id=249]
-extents = Vector2( 149.5, 70.375 )
-
 [sub_resource type="RectangleShape2D" id=250]
 extents = Vector2( 1.31, 0.311367 )
 
 [sub_resource type="RectangleShape2D" id=246]
-extents = Vector2( 9.01, 0.37 )
+extents = Vector2( 4.55, 0.37 )
 
 [sub_resource type="RectangleShape2D" id=251]
-extents = Vector2( 0.681563, 0.42 )
+extents = Vector2( 0.681563, 0.4 )
 
 [sub_resource type="RectangleShape2D" id=247]
-extents = Vector2( 2.77, 0.136364 )
+extents = Vector2( 0.255, 0.782954 )
+
+[sub_resource type="RectangleShape2D" id=252]
+extents = Vector2( 151.5, 73.5 )
+
+[sub_resource type="RectangleShape2D" id=253]
+extents = Vector2( 82.5, 69.75 )
 
 [node name="Lvl_004" type="Node2D"]
 position = Vector2( 5, -1 )
@@ -632,20 +632,6 @@ position = Vector2( 109, 695 )
 
 [node name="Zone_Sound" type="Node" parent="."]
 
-[node name="UnderWater" type="Area2D" parent="Zone_Sound"]
-audio_bus_name = "Underwater"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 1262.25, 698.875 )
-shape = SubResource( 248 )
-
-[node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 238.5, 636.375 )
-shape = SubResource( 249 )
-
 [node name="PlayerDetectorAMBForest" type="Area2D" parent="Zone_Sound"]
 position = Vector2( 2, -3 )
 collision_layer = 4
@@ -660,12 +646,12 @@ scale = Vector2( 50, 50 )
 shape = SubResource( 250 )
 
 [node name="ZoneForestAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 894.5, 607.5 )
+position = Vector2( 1117.5, 607.5 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
 
 [node name="ZoneForestAMB3" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 349.922, 542 )
+position = Vector2( 349.922, 541 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 251 )
 
@@ -677,7 +663,7 @@ __meta__ = {
 }
 
 [node name="ZoneCavernAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBCavern"]
-position = Vector2( 752, 640 )
+position = Vector2( 857.5, 726.938 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 
@@ -705,6 +691,18 @@ max_distance = 1500.0
 attenuation = 2.0
 bus = "Amb"
 
+[node name="UnderWater" type="Area2D" parent="Zone_Sound"]
+collision_layer = 5
+audio_bus_name = "Underwater"
+
+[node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
+position = Vector2( 233.5, 639.5 )
+shape = SubResource( 252 )
+
+[node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
+position = Vector2( 1264.5, 699.25 )
+shape = SubResource( 253 )
+
 [node name="PlayerStart" parent="." instance=ExtResource( 14 )]
 position = Vector2( 75, 106 )
 
@@ -712,3 +710,5 @@ position = Vector2( 75, 106 )
 [connection signal="activate_btn" from="Door_and_Button/HeavyButton2" to="Door_and_Button/Door2" method="open"]
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_entered"]
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBCavern" to="." method="_on_PlayerDetectorAMBCavern_body_entered"]
+[connection signal="body_entered" from="Zone_Sound/UnderWater" to="." method="_on_UnderWater_body_entered"]
+[connection signal="body_exited" from="Zone_Sound/UnderWater" to="." method="_on_UnderWater_body_exited"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Art/Audio/Sound/Amb/Water/Amb_WaterCoast_01.ogg" type="AudioStream" id=1]
-[ext_resource path="res://Art/Audio/Sound/Amb/Water/WaterStagn_01.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Art/Audio/Ambiant/Water/Amb_WaterCoast.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Art/Audio/Ambiant/Water/Amb_WaterStagn.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Art/33.png" type="Texture" id=3]
 [ext_resource path="res://Art/element.png" type="Texture" id=4]
 [ext_resource path="res://Art/water.tres" type="TileSet" id=5]
@@ -440,10 +440,10 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 27/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=246]
-extents = Vector2( 0.9, 0.0627345 )
+extents = Vector2( 0.9, 0.27 )
 
 [sub_resource type="RectangleShape2D" id=247]
-extents = Vector2( 0.347812, 0.436364 )
+extents = Vector2( 0.347812, 0.940909 )
 
 [node name="Lvl_000" type="Node2D"]
 script = ExtResource( 11 )
@@ -571,7 +571,7 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneForestAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 205, 91.1367 )
+position = Vector2( 205, 84.5 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
 
@@ -580,7 +580,7 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneCavernAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBCavern"]
-position = Vector2( 1296, 624 )
+position = Vector2( 1296, 646.25 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 
