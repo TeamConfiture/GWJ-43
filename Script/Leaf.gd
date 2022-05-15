@@ -25,6 +25,9 @@ onready var jump_acc = parent.Grav * 30
 onready var node_game = get_node("/root/Game")
 onready var timer = $Timer
 
+func do_transform():
+	parent.anim_playback.travel("to_normal")
+
 func do_physics_process(_delta: float) -> void:
 	if parent.is_in_water():
 		parent.anim_playback.travel("spitting")
@@ -63,10 +66,6 @@ func do_process(_delta: float) -> void:
 
 	if Input.is_action_just_pressed("spit"):
 		parent.anim_playback.travel("spitting")
-		
-	if Input.is_action_just_pressed("test_normal") \
-		or parent.normal_to_mud or parent.normal_to_rock or parent.normal_to_steam:
-		parent.anim_playback.travel("to_normal")
 	
 	var is_on_floor = parent.is_on_floor()
 	

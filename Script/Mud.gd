@@ -6,6 +6,8 @@ const Stop_Speed = 0.3
 
 var in_the_air := true
 
+func do_transform():
+	parent.anim_playback.travel("to_normal")
 
 func state_enabled(b:bool):
 	.state_enabled(b)
@@ -35,10 +37,6 @@ func do_physics_process(_delta: float) -> void:
 func do_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("spit"):
 		parent.anim_playback.travel("spitting")
-		
-	if Input.is_action_just_pressed("test_normal") \
-	or parent.normal_to_leaf or parent.normal_to_rock or parent.normal_to_steam:
-		parent.anim_playback.travel("to_normal")
 
 	parent.want_eat = Input.is_action_just_pressed("eat")
 
