@@ -7,7 +7,7 @@ signal chaudron_eaten
 
 const Grav = 9.81
 
-const Dont_Move_States = ["eating", "normal_to_leaf", "normal_to_rock", "normal_to_steam", "normal_to_mud", "spitting"]
+const Dont_Move_States = ["eating", "normal_to_leaf", "normal_to_rock", "normal_to_steam", "normal_to_mud", "to_normal", "spitting"]
 
 const approx_epsilon = 0.75
 
@@ -67,7 +67,6 @@ func _ready() -> void:
 	set_physics_process(false)
 
 func lvl_state(new_state:int):
-	
 	if new_state != state :
 		not_transform = false
 		match new_state:
@@ -81,6 +80,8 @@ func lvl_state(new_state:int):
 				normal_to_steam = true
 			4: 
 				normal_to_mud = true
+				
+		state_dic[state].do_transform()
 
 func do_activate(etat:bool):
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"), !etat)
@@ -114,6 +115,12 @@ func _process(delta: float) -> void:
 	
 	anim_tree["parameters/conditions/is_eating"] = want_eat
 
+func check_clover(cloverA:String, cloverB:String) -> bool:
+	if (clovers[0] == cloverA and clovers[1] == cloverB) or \
+		(clovers[0] == cloverB and clovers[1] == cloverA):
+		return true
+	return false
+
 #call from anim_player
 func _on_eat() -> void:
 	var areas = node_area.get_overlapping_areas()
@@ -132,30 +139,29 @@ func _on_eat() -> void:
 			normal_to_steam = false
 			
 			# Green + Blue = Leaf
-			if clovers[0] == "Green" and clovers[1] == "Blue" \
-				or clovers[0] == "Blue" and clovers[1] == "Green":
+			if state != State.leaf and check_clover("Green", "Blue"):
 				not_transform = false
 				normal_to_leaf = true
 			
 			# Red + Blue = Steam
-			if clovers[0] == "Red" and clovers[1] == "Blue" \
-				or clovers[0] == "Blue" and clovers[1] == "Red":
+			if state != State.steam and check_clover("Red", "Blue"):
 				not_transform = false
 				normal_to_steam = true
 			
 			# Red + Yellow = Rock
-			if clovers[0] == "Red" and clovers[1] == "Yellow" \
-				or clovers[0] == "Yellow" and clovers[1] == "Red":
+			if state != State.rock and check_clover("Red", "Yellow"):
 				not_transform = false
 				normal_to_rock = true
 			
 			# Yellow + Blue = Mud
-			if clovers[0] == "Yellow" and clovers[1] == "Blue" \
-				or clovers[0] == "Blue" and clovers[1] == "Yellow":
+			if state != State.mud and check_clover("Yellow", "Blue"):
 				not_transform = false
 				normal_to_mud = true
 			
 			_area.be_eaten()
+			
+			if !not_transform:
+				state_dic[state].do_transform()
 		
 		if _area.is_in_group("Chaudron"):
 			emit_signal("chaudron_eaten")
@@ -222,12 +228,18 @@ func _on_start_falling():
 	play_audio_node_from_state("Character_Falling")
 
 func _on_start_eating():
+	speed = Vector2.ZERO
+	
 	play_audio_node_from_state("Character_Eating")
 
 func _on_start_transforming():
+	speed = Vector2.ZERO
+	
 	play_audio_node_from_state("Character_Transforming")
 
 func _on_start_spitting():
+	speed = Vector2.ZERO
+	
 	play_audio_node_from_state("Character_Spitting")
 	
 	clovers = ["", ""]

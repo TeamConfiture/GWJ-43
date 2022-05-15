@@ -4,6 +4,9 @@ const Max_Speed = 120 #150
 const Move_Speed = 0.5
 const Stop_Speed = 0.08 #0.02
 
+func do_transform():
+	parent.anim_playback.travel("to_normal")
+
 func do_physics_process(_delta: float) -> void:
 	parent.set_collision_mask_bit(2, 0)
 
@@ -23,10 +26,6 @@ func do_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("spit"):
 		parent.anim_playback.travel("spitting")
-		
-	if Input.is_action_just_pressed("test_normal") \
-	or parent.normal_to_leaf or parent.normal_to_mud or parent.normal_to_rock:
-		parent.anim_playback.travel("to_normal")
 		
 	var tmp_my_is_zero_approx = parent.my_is_zero_approx(parent.speed.x)
 	

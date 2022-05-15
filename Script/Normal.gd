@@ -10,6 +10,28 @@ var want_jump := false
 
 var in_the_air := true
 
+func do_transform():
+	if parent.normal_to_leaf:
+		parent.normal_to_leaf = false
+		parent.anim_playback.travel("normal_to_leaf")
+
+	if parent.normal_to_rock:
+		parent.normal_to_rock = false
+		parent.anim_playback.travel("normal_to_rock")
+
+	if parent.normal_to_steam:
+		parent.normal_to_steam = false
+		parent.anim_playback.travel("normal_to_steam")
+
+	if parent.normal_to_mud:
+		parent.normal_to_mud = false
+		parent.anim_playback.travel("normal_to_mud")
+
+func state_enabled(b:bool):
+	.state_enabled(b)
+	
+	do_transform()
+
 func do_physics_process(_delta: float) -> void:
 	if parent.is_in_water():
 		want_jump = true
@@ -40,22 +62,6 @@ func do_process(_delta: float) -> void:
 	want_jump = Input.is_action_just_pressed("jump")
 	
 	parent.want_eat = Input.is_action_just_pressed("eat")
-	
-	if parent.normal_to_leaf:
-		parent.normal_to_leaf = false
-		parent.anim_playback.travel("normal_to_leaf")
-
-	if parent.normal_to_rock:
-		parent.normal_to_rock = false
-		parent.anim_playback.travel("normal_to_rock")
-
-	if parent.normal_to_steam:
-		parent.normal_to_steam = false
-		parent.anim_playback.travel("normal_to_steam")
-
-	if parent.normal_to_mud:
-		parent.normal_to_mud = false
-		parent.anim_playback.travel("normal_to_mud")
 	
 	var is_on_floor = parent.is_on_floor()
 	
