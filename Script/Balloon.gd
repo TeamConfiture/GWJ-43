@@ -11,7 +11,7 @@ func _ready():
 
 
 
-func _on_Balloon_input_event(viewport, event, shape_idx):
+func _on_Balloon_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.is_doubleclick() :
 		$Rnd_Plop.play(0.0)
 		$AnimatedSprite.speed_scale =2
