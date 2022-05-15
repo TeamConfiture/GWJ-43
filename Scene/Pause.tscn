@@ -29,77 +29,41 @@ font_data = ExtResource( 1 )
 size = 48
 font_data = ExtResource( 1 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 128, 32, 32 )
+region = Rect2( 0, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 3 )
-region = Rect2( 32, 128, 32, 32 )
+region = Rect2( 32, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 3 )
-region = Rect2( 64, 128, 32, 32 )
+region = Rect2( 64, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 3 )
-region = Rect2( 96, 128, 32, 32 )
+region = Rect2( 96, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 3 )
-region = Rect2( 128, 128, 32, 32 )
+region = Rect2( 128, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 3 )
-region = Rect2( 160, 128, 32, 32 )
+region = Rect2( 160, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 3 )
-region = Rect2( 192, 128, 32, 32 )
+region = Rect2( 192, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 3 )
-region = Rect2( 224, 128, 32, 32 )
+region = Rect2( 224, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 3 )
-region = Rect2( 256, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 3 )
-region = Rect2( 64, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 3 )
-region = Rect2( 96, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 3 )
-region = Rect2( 128, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 3 )
-region = Rect2( 160, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 3 )
-region = Rect2( 192, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 3 )
-region = Rect2( 224, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 3 )
-region = Rect2( 256, 96, 32, 32 )
+region = Rect2( 256, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
@@ -137,52 +101,83 @@ region = Rect2( 224, 64, 32, 32 )
 atlas = ExtResource( 3 )
 region = Rect2( 256, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 32, 32, 32 )
+region = Rect2( 0, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
-region = Rect2( 32, 32, 32, 32 )
+region = Rect2( 32, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
-region = Rect2( 64, 32, 32, 32 )
+region = Rect2( 64, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
-region = Rect2( 96, 32, 32, 32 )
+region = Rect2( 96, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
-region = Rect2( 128, 32, 32, 32 )
+region = Rect2( 128, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
-region = Rect2( 160, 32, 32, 32 )
+region = Rect2( 160, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
-region = Rect2( 192, 32, 32, 32 )
+region = Rect2( 192, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=39]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
-region = Rect2( 224, 32, 32, 32 )
+region = Rect2( 224, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
-region = Rect2( 256, 32, 32, 32 )
+region = Rect2( 256, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 160, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 224, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 256, 128, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=41]
 animations = [ {
-"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
-"name": "Rock",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
-"loop": true,
-"name": "Vapor",
+"name": "Mud",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
@@ -190,9 +185,14 @@ animations = [ {
 "name": "Vine",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
-"name": "Mud",
+"name": "Vapor",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "Rock",
 "speed": 5.0
 } ]
 
@@ -352,7 +352,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Mud"
-frame = 5
+frame = 6
 playing = true
 
 [node name="Vine" type="Control" parent="Parchemin"]
@@ -403,7 +403,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Vine"
-frame = 4
+frame = 5
 playing = true
 
 [node name="Rock" type="Control" parent="Parchemin"]
@@ -453,7 +453,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Rock"
-frame = 6
+frame = 7
 playing = true
 
 [node name="Vapor" type="Control" parent="Parchemin"]
@@ -505,7 +505,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Vapor"
-frame = 5
+frame = 6
 playing = true
 
 [node name="Pad" type="Control" parent="Parchemin"]
@@ -613,7 +613,6 @@ position = Vector2( -38.4, 73.6 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 122 )
 animation = "New Anim"
-frame = 3
 playing = true
 
 [node name="Left" type="Label" parent="Parchemin/Pad/joystick"]

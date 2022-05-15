@@ -22,6 +22,7 @@ func _process(_delta):
 		get_tree().paused=pause
 		parchemin.visible = pause
 		AudioServer.set_bus_volume_db(music_bus, 0)
+	
 		
 	if pause:
 		if Input.is_action_just_pressed("spit"):

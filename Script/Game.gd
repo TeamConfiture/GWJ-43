@@ -192,6 +192,7 @@ func cinematic():
 
 
 func find_the_wayout(position_door:Vector2):
+	yield(get_tree().create_timer(1), "timeout")
 	$HUD/Space.visible=true
 	cam.smoothing_enabled = false
 	slime.do_activate(false)
