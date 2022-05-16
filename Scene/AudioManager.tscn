@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Art/Audio/Sound/UI/MainMenu/ButtonStart_01.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Script/AudioManager.gd" type="Script" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Art/Audio/Sound/Interactable/ButtonIG_1.ogg" type="AudioStream" id=4]
 [ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player.gd" type="Script" id=5]
 [ext_resource path="res://Art/Audio/Sound/UI/MainMenu/Pages_02.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_1.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_2.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Art/Audio/Sound/UI/MainMenu/Pages_03.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Art/Audio/Sound/UI/ButtonPushUI_3.ogg" type="AudioStream" id=10]
@@ -14,276 +13,193 @@
 [ext_resource path="res://Art/Audio/Sound/UI/PopUpEndLevel/Counting_1.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Art/Audio/Sound/UI/PopUpEndLevel/Counting_2.ogg" type="AudioStream" id=13]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Fade_To_Cavern"
-length = 3.0
+[sub_resource type="Animation" id=8]
+resource_name = "Fade_To_M_Cave"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
+tracks/0/path = NodePath("Musics/M_Main:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1.07177, 1 ),
 "update": 0,
-"values": [ 6.0, -42.0 ]
+"values": [ -8.0, -42.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Ambiant/Amb_Cavern:volume_db")
+tracks/1/path = NodePath("Musics/M_Menu:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 3.73213, 1.56917 ),
-"update": 0,
-"values": [ -42.0, -4.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Ambiant/Amb_Forest:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 3 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Ambiant/Amb_Underwater:volume_db")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 6.0, -42.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Ambiant/Amb_Underwater:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 3 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "Fade_To_Forest"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 3.605, 1 ),
-"update": 0,
-"values": [ -42.0, 6.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Ambiant/Amb_Cavern:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ -4.0, -42.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Ambiant/Amb_Cavern:playing")
+tracks/2/path = NodePath("Musics/M_Menu:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 3 ),
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Ambiant/Amb_Underwater:volume_db")
+tracks/3/path = NodePath("Musics/M_Cave:volume_db")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 3 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 6.0, -42.0 ]
+"values": [ -42.0, -8.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Ambiant/Amb_Underwater:playing")
+tracks/4/path = NodePath("Musics/M_Main:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 3 ),
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "Fade_To_IGMusic"
-length = 2.0
+resource_name = "Fade_To_M_Main"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Musics/MusicIG:volume_db")
+tracks/0/path = NodePath("Musics/M_Main:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1.07177, 1 ),
 "update": 0,
-"values": [ -50.0, -6.0 ]
+"values": [ -42.0, -8.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Musics/MusicMenu:volume_db")
+tracks/1/path = NodePath("Musics/M_Menu:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -50.0 ]
+"values": [ 0.0, -42.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Musics/MusicMenu:playing")
+tracks/2/path = NodePath("Musics/M_Menu:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 2 ),
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Musics/M_Cave:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -8.0, -42.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Musics/M_Cave:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "Fade_To_MusicMenu"
-length = 2.0
+resource_name = "Fade_To_M_Menu"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Musics/MusicIG:volume_db")
+tracks/0/path = NodePath("Musics/M_Main:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1.10957, 1 ),
 "update": 0,
-"values": [ -6.0, -50.0 ]
+"values": [ -8.0, -42.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Musics/MusicMenu:volume_db")
+tracks/1/path = NodePath("Musics/M_Menu:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1.18921, 1 ),
 "update": 0,
-"values": [ -50.0, 0.0 ]
+"values": [ -42.0, -4.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Musics/MusicIG:playing")
+tracks/2/path = NodePath("Musics/M_Main:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 2 ),
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "Fade_To_Underwater"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 6.0, -42.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Ambiant/Amb_Forest:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 3 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Ambiant/Amb_Cavern:volume_db")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -4.0, -42.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Ambiant/Amb_Cavern:playing")
+tracks/3/path = NodePath("Musics/M_Cave:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 3 ),
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Ambiant/Amb_Underwater:volume_db")
+tracks/4/path = NodePath("Musics/M_Cave:volume_db")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 3.75, 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -42.0, 6.0 ]
+"values": [ -8.0, -42.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -337,7 +253,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Musics/MusicIG:volume_db")
+tracks/4/path = NodePath("Musics/M_Main:volume_db")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -349,7 +265,7 @@ tracks/4/keys = {
 "values": [ 0.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Musics/MusicMenu:volume_db")
+tracks/5/path = NodePath("Musics/M_Menu:volume_db")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -361,7 +277,7 @@ tracks/5/keys = {
 "values": [ 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Musics/MusicMenu:playing")
+tracks/6/path = NodePath("Musics/M_Menu:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -373,7 +289,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Musics/MusicIG:playing")
+tracks/7/path = NodePath("Musics/M_Main:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -385,18 +301,406 @@ tracks/7/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Underwater"
+[sub_resource type="Animation" id=9]
+resource_name = "Fade_To_Cavern"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 6.0, -42.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ambiant/Amb_Cavern:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 3.73213, 1.56917 ),
+"update": 0,
+"values": [ -42.0, -6.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ambiant/Amb_Forest:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Ambiant/Amb_Underwater:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -42.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Ambiant/Amb_Underwater:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Fade_To_Forest"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 3.605, 1 ),
+"update": 0,
+"values": [ -42.0, 6.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ambiant/Amb_Cavern:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -6.0, -42.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ambiant/Amb_Cavern:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Ambiant/Amb_Underwater:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -42.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Ambiant/Amb_Underwater:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ambiant/Amb_Cavern:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ambiant/Amb_Cavern:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Ambiant/Amb_Forest:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Musics/M_Main:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Musics/M_Menu:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Musics/M_Menu:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Musics/M_Main:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Fade_To_Underwater"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 6.0, -42.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ambiant/Amb_Forest:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ambiant/Amb_Cavern:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -6.0, -42.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Ambiant/Amb_Cavern:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Ambiant/Amb_Underwater:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 3.75, 1 ),
+"update": 0,
+"values": [ -42.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ambiant/Amb_Forest:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ambiant/Amb_Cavern:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ambiant/Amb_Cavern:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Ambiant/Amb_Forest:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Musics/M_Main:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Musics/M_Menu:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Musics/M_Menu:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Musics/M_Main:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [node name="AudioManager" type="Node"]
 script = ExtResource( 2 )
 
 [node name="Musics" type="Node" parent="."]
 
-[node name="MusicIG" type="AudioStreamPlayer" parent="Musics"]
+[node name="M_Main" type="AudioStreamPlayer" parent="Musics"]
 bus = "Music"
 
-[node name="MusicMenu" type="AudioStreamPlayer" parent="Musics"]
+[node name="M_Menu" type="AudioStreamPlayer" parent="Musics"]
+bus = "Music"
+
+[node name="M_Cave" type="AudioStreamPlayer" parent="Musics"]
+volume_db = -42.0
 bus = "Music"
 
 [node name="Ambiant" type="Node" parent="."]
@@ -408,7 +712,6 @@ bus = "Amb"
 bus = "Amb"
 
 [node name="Amb_Underwater" type="AudioStreamPlayer" parent="Ambiant"]
-volume_db = 6.0
 bus = "Amb"
 
 [node name="Interface" type="Node" parent="."]
@@ -424,7 +727,7 @@ volume_db = -8.0
 mix_target = 2
 bus = "UI"
 script = ExtResource( 5 )
-samples = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ) ]
+samples = [ ExtResource( 8 ), ExtResource( 10 ) ]
 random_strategy = 1
 random_pitch_range = 0.2
 
@@ -447,11 +750,25 @@ script = ExtResource( 5 )
 samples = [ ExtResource( 4 ) ]
 random_pitch_range = 0.5
 
-[node name="TransitionVolume" type="AnimationPlayer" parent="."]
-anims/Fade_To_Cavern = SubResource( 1 )
-anims/Fade_To_Forest = SubResource( 2 )
-anims/Fade_To_IGMusic = SubResource( 4 )
-anims/Fade_To_MusicMenu = SubResource( 5 )
-anims/Fade_To_Underwater = SubResource( 7 )
+[node name="Transition" type="Node" parent="."]
+
+[node name="Fade_Music" type="AnimationPlayer" parent="Transition"]
+root_node = NodePath("../..")
+method_call_mode = 1
+anims/Fade_To_M_Cave = SubResource( 8 )
+anims/Fade_To_M_Main = SubResource( 4 )
+anims/Fade_To_M_Menu = SubResource( 5 )
 anims/RESET = SubResource( 3 )
-anims/Underwater = SubResource( 6 )
+
+[node name="Fade_Ambiant" type="AnimationPlayer" parent="Transition"]
+root_node = NodePath("../..")
+method_call_mode = 1
+anims/Fade_To_Cavern = SubResource( 9 )
+anims/Fade_To_Forest = SubResource( 10 )
+anims/RESET = SubResource( 11 )
+
+[node name="Fade_Effect" type="AnimationPlayer" parent="Transition"]
+root_node = NodePath("../..")
+method_call_mode = 1
+anims/Fade_To_Underwater = SubResource( 12 )
+anims/RESET = SubResource( 13 )

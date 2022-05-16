@@ -19,6 +19,7 @@ func _on_quit_pressed():
 func _on_back_pressed():
 	AudioManager.play_button_normal()
 	SceneLoader.change_scene("Menu")
+	AudioManager.play_menu_music()
 
 func _process(_delta: float) -> void:
 

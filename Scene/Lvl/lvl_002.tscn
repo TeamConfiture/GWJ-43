@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://Art/Audio/Sound/Amb/Water/Amb_WaterCoast_01.ogg" type="AudioStream" id=1]
-[ext_resource path="res://Art/Audio/Sound/Amb/Water/WaterStagn_01.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Art/Audio/Ambiant/Water/Amb_WaterCoast.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Art/Audio/Ambiant/Water/Amb_WaterStagn.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Art/33.png" type="Texture" id=3]
 [ext_resource path="res://Art/element.png" type="Texture" id=4]
 [ext_resource path="res://Art/water.tres" type="TileSet" id=5]

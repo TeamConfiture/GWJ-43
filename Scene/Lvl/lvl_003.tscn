@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scene/Integrable/PlayerStart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/33.png" type="Texture" id=3]
@@ -440,6 +440,9 @@ extents = Vector2( 1.7, 0.32 )
 [sub_resource type="RectangleShape2D" id=247]
 extents = Vector2( 0.347812, 0.204546 )
 
+[sub_resource type="RectangleShape2D" id=248]
+extents = Vector2( 0.408906, 0.529544 )
+
 [node name="Lvl_003" type="Node2D"]
 script = ExtResource( 11 )
 
@@ -605,6 +608,11 @@ monitorable = false
 position = Vector2( 762, 733.75 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
+
+[node name="ZoneCavernAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBCavern"]
+position = Vector2( 1102.89, 677.875 )
+scale = Vector2( 100, 55 )
+shape = SubResource( 248 )
 
 [node name="PlayerStart" parent="." instance=ExtResource( 1 )]
 position = Vector2( 762, 695 )

@@ -4,8 +4,8 @@
 [ext_resource path="res://Art/water.tres" type="TileSet" id=2]
 [ext_resource path="res://Art/element.png" type="Texture" id=3]
 [ext_resource path="res://Art/33.png" type="Texture" id=4]
-[ext_resource path="res://Art/Audio/Sound/Amb/Water/WaterStagn_01.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Art/Audio/Sound/Amb/Water/Amb_WaterCoast_01.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Art/Audio/Ambiant/Water/Amb_WaterStagn.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Art/Audio/Ambiant/Water/Amb_WaterCoast.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Scene/Integrable/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scene/Integrable/Chaudron.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Script/Audio_Amb.gd" type="Script" id=9]
@@ -437,6 +437,15 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 } ]
 27/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=254]
+extents = Vector2( 258.938, 61 )
+
+[sub_resource type="RectangleShape2D" id=255]
+extents = Vector2( 482.75, 78.625 )
+
+[sub_resource type="RectangleShape2D" id=256]
+extents = Vector2( 168, 78.625 )
+
 [sub_resource type="RectangleShape2D" id=246]
 extents = Vector2( 0.91, 0.551367 )
 
@@ -447,19 +456,10 @@ extents = Vector2( 3.8775, 0.67 )
 extents = Vector2( 1.00469, 0.55 )
 
 [sub_resource type="RectangleShape2D" id=248]
-extents = Vector2( 2.315, 0.700001 )
+extents = Vector2( 2.315, 0.84 )
 
 [sub_resource type="RectangleShape2D" id=247]
-extents = Vector2( 1.5489, 0.781818 )
-
-[sub_resource type="RectangleShape2D" id=249]
-extents = Vector2( 272.875, 48 )
-
-[sub_resource type="RectangleShape2D" id=250]
-extents = Vector2( 510.75, 70.0002 )
-
-[sub_resource type="RectangleShape2D" id=251]
-extents = Vector2( 215.375, 96 )
+extents = Vector2( 0.27, 1.44545 )
 
 [node name="Lvl_005" type="Node2D"]
 script = ExtResource( 9 )
@@ -606,6 +606,22 @@ position = Vector2( 541, 632 )
 
 [node name="Zone_Sound" type="Node" parent="."]
 
+[node name="UnderWater" type="Area2D" parent="Zone_Sound"]
+collision_layer = 5
+audio_bus_name = "Underwater"
+
+[node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
+position = Vector2( 289.063, 711 )
+shape = SubResource( 254 )
+
+[node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
+position = Vector2( 509.75, 420.625 )
+shape = SubResource( 255 )
+
+[node name="ZoneUnderwater3" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
+position = Vector2( 190, 575 )
+shape = SubResource( 256 )
+
 [node name="PlayerDetectorAMBForest" type="Area2D" parent="Zone_Sound"]
 collision_layer = 4
 monitorable = false
@@ -626,7 +642,7 @@ scale = Vector2( 50, 50 )
 shape = SubResource( 253 )
 
 [node name="ZoneForestAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 1214.75, 525 )
+position = Vector2( 1214.75, 532 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 248 )
 
@@ -635,7 +651,7 @@ collision_layer = 4
 monitorable = false
 
 [node name="ZoneCavernAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBCavern"]
-position = Vector2( 1175.89, 604 )
+position = Vector2( 1048, 660.5 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 
@@ -679,27 +695,11 @@ max_distance = 1500.0
 attenuation = 2.0
 bus = "Amb"
 
-[node name="UnderWater" type="Area2D" parent="Zone_Sound"]
-audio_bus_name = "Underwater"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 279.125, 720 )
-shape = SubResource( 249 )
-
-[node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 521.25, 410 )
-shape = SubResource( 250 )
-
-[node name="ZoneUnderwater3" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 232.625, 576 )
-shape = SubResource( 251 )
-
 [node name="PlayerStart" parent="." instance=ExtResource( 12 )]
 position = Vector2( 265, 117 )
 Slime_type = 2
 
+[connection signal="body_entered" from="Zone_Sound/UnderWater" to="." method="_on_UnderWater_body_entered"]
+[connection signal="body_exited" from="Zone_Sound/UnderWater" to="." method="_on_UnderWater_body_exited"]
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBForest" to="." method="_on_PlayerDetectorAMBForest_body_entered"]
 [connection signal="body_entered" from="Zone_Sound/PlayerDetectorAMBCavern" to="." method="_on_PlayerDetectorAMBCavern_body_entered"]

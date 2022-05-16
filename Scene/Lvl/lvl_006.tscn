@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scene/Integrable/Clover.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/water.tres" type="TileSet" id=2]
@@ -441,10 +441,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 extents = Vector2( 0.9, 0.341367 )
 
 [sub_resource type="RectangleShape2D" id=248]
-extents = Vector2( 11.04, 0.855684 )
+extents = Vector2( 0.605, 0.867843 )
 
 [sub_resource type="RectangleShape2D" id=247]
-extents = Vector2( 5.67848, 0.309091 )
+extents = Vector2( 0.46, 0.536365 )
+
+[sub_resource type="RectangleShape2D" id=249]
+extents = Vector2( 0.46, 0.536365 )
 
 [node name="Lvl_006" type="Node2D"]
 script = ExtResource( 9 )
@@ -589,7 +592,6 @@ position = Vector2( 48, 599 )
 [node name="Zone_Sound" type="Node" parent="."]
 
 [node name="PlayerDetectorAMBForest" type="Area2D" parent="Zone_Sound"]
-visible = false
 collision_layer = 4
 monitorable = false
 
@@ -598,20 +600,24 @@ position = Vector2( 80, 237.932 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 246 )
 
-[node name="ZoneForestAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
-position = Vector2( 744, 562.784 )
+[node name="ZoneForestAMB3" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBForest"]
+position = Vector2( 1088.25, 626 )
 scale = Vector2( 50, 50 )
 shape = SubResource( 248 )
 
 [node name="PlayerDetectorAMBCavern" type="Area2D" parent="Zone_Sound"]
-visible = false
 collision_layer = 4
 monitorable = false
 
 [node name="ZoneCavernAMB" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBCavern"]
-position = Vector2( 781.152, 625 )
+position = Vector2( 1109, 740.5 )
 scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
+
+[node name="ZoneCavernAMB2" type="CollisionShape2D" parent="Zone_Sound/PlayerDetectorAMBCavern"]
+position = Vector2( 1174, 587 )
+scale = Vector2( 100, 55 )
+shape = SubResource( 249 )
 
 [node name="PlayerStart" parent="." instance=ExtResource( 12 )]
 position = Vector2( 80, 168 )

@@ -6,10 +6,14 @@ extends Node2D
 func _on_PlayerDetectorAMBForest_body_entered(body):
 	if body.name == "Slime" :
 		AudioManager.play_amb_forest()
+		AudioManager.play_main_music()
+		
 
 func _on_PlayerDetectorAMBCavern_body_entered(body):
 	if body.name == "Slime" :
 		AudioManager.play_amb_cavern()
+		AudioManager.play_cave_music()
+		
 		
 #--========================================--
 #--Gestion Filtre, sur Bus Audio "Underwater"--

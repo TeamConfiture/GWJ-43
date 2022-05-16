@@ -7,9 +7,10 @@
 [ext_resource path="res://Art/water.tres" type="TileSet" id=5]
 [ext_resource path="res://Scene/Integrable/Grille_droite.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scene/Integrable/Balloon.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Art/Audio/Sound/Amb/Water/Amb_WaterCoast_01.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Art/Audio/Sound/Amb/Water/WaterStagn_01.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Art/Audio/Ambiant/Water/Amb_WaterCoast.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Art/Audio/Ambiant/Water/Amb_WaterStagn.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Scene/Integrable/Coin.tscn" type="PackedScene" id=10]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=166]
 points = PoolVector2Array( 32, 32, 8, 24, 0, 0, 32, 0 )

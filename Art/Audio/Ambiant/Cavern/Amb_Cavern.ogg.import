@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Amb_Cavern.ogg-4dd846d63895c6560f047e20c4f1b97f.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Ambiant/Cavern/Amb_Cavern.ogg"
+dest_files=[ "res://.import/Amb_Cavern.ogg-4dd846d63895c6560f047e20c4f1b97f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
