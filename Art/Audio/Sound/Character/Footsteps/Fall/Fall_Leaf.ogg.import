@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Fall_Leaf.ogg-8d586e63b3905ffadae115f8bbee0430.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Character/Footsteps/Fall/Fall_Leaf.ogg"
+dest_files=[ "res://.import/Fall_Leaf.ogg-8d586e63b3905ffadae115f8bbee0430.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

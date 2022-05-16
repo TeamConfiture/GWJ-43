@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Transform.ogg-71119b8423f21f339ac69935b2900ceb.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Character/Abilities/Transform.ogg"
+dest_files=[ "res://.import/Transform.ogg-71119b8423f21f339ac69935b2900ceb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

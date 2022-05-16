@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Jump_Leaf.ogg-12a614b099adb5fa456345102ff47527.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Character/Abilities/Jump_Leaf.ogg"
+dest_files=[ "res://.import/Jump_Leaf.ogg-12a614b099adb5fa456345102ff47527.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
