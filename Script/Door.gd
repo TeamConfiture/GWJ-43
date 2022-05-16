@@ -10,6 +10,7 @@ func open():
 
 	yield(game,"open_door")
 	anim_player.play("porte")
+	AudioManager.play_Doors()
 	yield(anim_player,"animation_finished")
 	game._on_door_open()
 

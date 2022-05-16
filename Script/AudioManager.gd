@@ -22,6 +22,8 @@ func play_button_next():
 	$Interface/Button_Next.play()
 func play_InteracableButton():
 	$Interacable/InteracableButton.play()
+func play_Doors():
+	$Interacable/Doors.play()
 func play_Score():
 	$Interface/Count_Score.play()
 	
