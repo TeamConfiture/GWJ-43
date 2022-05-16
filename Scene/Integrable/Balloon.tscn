@@ -9,6 +9,22 @@
 [ext_resource path="res://Art/Audio/Sound/Interactable/Plop_04.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Art/Audio/Sound/Interactable/Plop_01.ogg" type="AudioStream" id=10]
 
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 4 )
+region = Rect2( 32, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 32, 64 )
+
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 32, 64 )
@@ -53,32 +69,16 @@ region = Rect2( 288, 0, 32, 64 )
 atlas = ExtResource( 2 )
 region = Rect2( 320, 0, 32, 64 )
 
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 32, 64 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 4 )
-region = Rect2( 32, 0, 32, 64 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 4 )
-region = Rect2( 64, 0, 32, 64 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 4 )
-region = Rect2( 96, 0, 32, 64 )
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
-"loop": false,
-"name": "Balloon",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": false,
+"name": "Balloon",
 "speed": 5.0
 } ]
 
@@ -94,7 +94,9 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 2
 speed_scale = 0.5
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -22 )
