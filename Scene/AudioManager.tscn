@@ -12,6 +12,8 @@
 [ext_resource path="res://Art/Audio/Sound/UI/PopUpEndLevel/Counting_3.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Art/Audio/Sound/UI/PopUpEndLevel/Counting_1.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Art/Audio/Sound/UI/PopUpEndLevel/Counting_2.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Art/Audio/Sound/Interactable/Door_01.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Art/Audio/Sound/Interactable/Door_02.ogg" type="AudioStream" id=15]
 
 [sub_resource type="Animation" id=8]
 resource_name = "Fade_To_M_Cave"

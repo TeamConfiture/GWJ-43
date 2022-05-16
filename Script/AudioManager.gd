@@ -2,7 +2,7 @@ extends Node
 
 #Déclaration des musiques du jeu
 onready var M_Menu = load ("res://Art/Audio/Music/M_Menu.ogg")
-onready var M_Main = load("res://Art/Audio/Music/M_Main.ogg")	
+onready var M_Main = load("res://Art/Audio/Music/M_Main.ogg")
 onready var M_Cave = load("res://Art/Audio/Music/M_Cave.ogg")
 
 #Déclaration des ambiances du jeu
@@ -30,6 +30,8 @@ func play_button_next():				#Bouton "Next" dans le parchemin histoire début et 
 	$Interface/Button_Next.play()
 func play_InteracableButton():			#Bouton intéraction avec le slime pour ouvrir les portes
 	$Interacable/InteracableButton.play()
+func play_Doors():
+	$Interacable/Doors.play()
 func play_Score():						#Défilement du nombre de pièce en fin de niveau
 	$Interface/Count_Score.play()
 	
@@ -65,7 +67,7 @@ func play_cave_music():
 		$Musics/M_Cave.stream = M_Cave
 		$Musics/M_Cave.volume_db = -8
 		$Musics/M_Cave.play()
-	
+
 #--========================================--
 #--          Gestion : Zone Amb            --
 #--========================================--
