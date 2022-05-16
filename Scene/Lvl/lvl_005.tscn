@@ -607,6 +607,7 @@ position = Vector2( 541, 632 )
 [node name="Zone_Sound" type="Node" parent="."]
 
 [node name="PlayerDetectorAMBForest" type="Area2D" parent="Zone_Sound"]
+visible = false
 collision_layer = 4
 monitorable = false
 
@@ -631,6 +632,7 @@ scale = Vector2( 50, 50 )
 shape = SubResource( 248 )
 
 [node name="PlayerDetectorAMBCavern" type="Area2D" parent="Zone_Sound"]
+visible = false
 collision_layer = 4
 monitorable = false
 
@@ -640,15 +642,7 @@ scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 
 [node name="Water_Coast" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 32, 337 )
-stream = ExtResource( 6 )
-autoplay = true
-max_distance = 500.0
-attenuation = 3.4822
-bus = "Amb"
-
-[node name="Water_Coast7" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 960, 344 )
+position = Vector2( 62, 336 )
 stream = ExtResource( 6 )
 autoplay = true
 max_distance = 500.0
@@ -656,7 +650,7 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Coast8" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 864, 344 )
+position = Vector2( 910, 338 )
 stream = ExtResource( 6 )
 autoplay = true
 max_distance = 500.0
@@ -664,7 +658,7 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Coast2" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 416, 339 )
+position = Vector2( 387, 335 )
 stream = ExtResource( 6 )
 autoplay = true
 max_distance = 500.0
@@ -672,14 +666,15 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Stagn" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 240, 400 )
+position = Vector2( 222, 337 )
 stream = ExtResource( 5 )
 autoplay = true
-max_distance = 1500.0
+max_distance = 700.0
 attenuation = 2.0
 bus = "Amb"
 
 [node name="UnderWater" type="Area2D" parent="Zone_Sound"]
+visible = false
 audio_bus_name = "Underwater"
 __meta__ = {
 "_edit_lock_": true

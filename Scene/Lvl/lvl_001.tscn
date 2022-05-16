@@ -698,7 +698,7 @@ bus = "Amb"
 position = Vector2( 144, 1424 )
 stream = ExtResource( 2 )
 autoplay = true
-max_distance = 1500.0
+max_distance = 500.0
 attenuation = 2.0
 bus = "Amb"
 

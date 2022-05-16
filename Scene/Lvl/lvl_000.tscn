@@ -593,7 +593,7 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Coast7" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 915, 534 )
+position = Vector2( 913, 531 )
 stream = ExtResource( 1 )
 autoplay = true
 max_distance = 500.0
@@ -609,10 +609,10 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Stagn" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 499, 544 )
+position = Vector2( 518, 534 )
 stream = ExtResource( 2 )
 autoplay = true
-max_distance = 1500.0
+max_distance = 1000.0
 attenuation = 2.0
 bus = "Amb"
 
