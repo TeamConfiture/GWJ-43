@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Art/Audio/Sound/UI/MainMenu/ButtonStart_01.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Script/AudioManager.gd" type="Script" id=2]
@@ -714,6 +714,7 @@ bus = "Amb"
 bus = "Amb"
 
 [node name="Amb_Underwater" type="AudioStreamPlayer" parent="Ambiant"]
+volume_db = -42.0
 bus = "Amb"
 
 [node name="Interface" type="Node" parent="."]
@@ -734,8 +735,12 @@ random_strategy = 1
 random_pitch_range = 0.2
 
 [node name="Button_Next" type="AudioStreamPlayer" parent="Interface"]
+mix_target = 2
+bus = "UI"
 script = ExtResource( 5 )
 samples = [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 3 ) ]
+random_strategy = 1
+random_pitch_range = 0.2
 
 [node name="Count_Score" type="AudioStreamPlayer" parent="Interface"]
 volume_db = 2.0
@@ -743,14 +748,25 @@ mix_target = 2
 bus = "UI"
 script = ExtResource( 5 )
 samples = [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ) ]
+random_strategy = 1
 random_pitch_range = 0.5
 
 [node name="Interacable" type="Node" parent="."]
 
 [node name="InteracableButton" type="AudioStreamPlayer" parent="Interacable"]
+mix_target = 2
+bus = "UI"
 script = ExtResource( 5 )
 samples = [ ExtResource( 4 ) ]
 random_pitch_range = 0.5
+
+[node name="Doors" type="AudioStreamPlayer" parent="Interacable"]
+mix_target = 2
+bus = "UI"
+script = ExtResource( 5 )
+samples = [ ExtResource( 14 ), ExtResource( 15 ) ]
+random_strategy = 1
+random_pitch_range = 0.2
 
 [node name="Transition" type="Node" parent="."]
 
