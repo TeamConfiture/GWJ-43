@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Land_Leaf_03.ogg-917f8bc1fdd69f6863f482b2a7607f76.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Character/Footsteps/Landing/Land_Leaf_03.ogg"
+dest_files=[ "res://.import/Land_Leaf_03.ogg-917f8bc1fdd69f6863f482b2a7607f76.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

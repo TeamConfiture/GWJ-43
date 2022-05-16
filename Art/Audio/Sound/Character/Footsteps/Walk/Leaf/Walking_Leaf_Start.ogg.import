@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Walking_Leaf_Start.ogg-f1aee3fd30ca9dc8c311bd0fc2badcf6.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Character/Footsteps/Walk/Leaf/Walking_Leaf_Start.ogg"
+dest_files=[ "res://.import/Walking_Leaf_Start.ogg-f1aee3fd30ca9dc8c311bd0fc2badcf6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

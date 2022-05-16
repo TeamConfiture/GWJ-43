@@ -217,6 +217,7 @@ func _on_start_landing():
 ## called by animations
 func _on_start_idle():
 	stop_audio_node_from_state("Character_Falling")
+	stop_audio_node_from_state("Character_Walking")
 
 func _on_start_walking():
 	play_audio_node_from_state("Character_Walking")
@@ -235,7 +236,7 @@ func _on_start_eating():
 func _on_start_transforming():
 	speed = Vector2.ZERO
 	
-	play_audio_node_from_state("Character_Transforming")
+	play_audio_node_from_state("Character_Transform")
 
 func _on_start_spitting():
 	speed = Vector2.ZERO

@@ -61,7 +61,7 @@ func do_process(_delta: float) -> void:
 		platform.position = parent.position + Vector2(0, 10)
 		
 		node_game.add_child(platform)
-		
+		$Plateform.play(0.0)
 		timer.start()
 
 	if Input.is_action_just_pressed("spit"):

@@ -1,38 +1,38 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://Script/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=2]
-[ext_resource path="res://Art/Audio/Sound/Character/Abilities/Jump_01.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Art/Audio/Sound/Character/Abilities/Jump.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Script/Camera2D_Slime.gd" type="Script" id=4]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_3.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_1.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Grass_2.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Walking_start_01.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Art/Audio/Sound/Character/Abilities/Eat_01.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Normal/Walking_start_01.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Art/Audio/Sound/Character/Abilities/Eat.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Art/StateMachine/StateMachineNormal.tres" type="AnimationNodeStateMachine" id=10]
 [ext_resource path="res://Art/Animations/mud_walking.anim" type="Animation" id=11]
 [ext_resource path="res://Art/Animations/mud_to_normal.anim" type="Animation" id=12]
 [ext_resource path="res://Art/Animations/normal_falling.anim" type="Animation" id=13]
 [ext_resource path="res://Art/Animations/normal_eating.anim" type="Animation" id=14]
-[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/StoneLand_03.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Stone_01.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Art/Animations/leaf_landing.anim" type="Animation" id=16]
 [ext_resource path="res://Art/Animations/leaf_spitting.anim" type="Animation" id=17]
 [ext_resource path="res://Script/Normal.gd" type="Script" id=18]
 [ext_resource path="res://Script/Leaf.gd" type="Script" id=19]
 [ext_resource path="res://Script/Rock.gd" type="Script" id=20]
 [ext_resource path="res://Art/Animations/mud_falling.anim" type="Animation" id=21]
-[ext_resource path="res://Art/Audio/Sound/Collectable/CoinsOnly_01.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Art/Audio/Sound/Collectable/Coins.ogg" type="AudioStream" id=22]
 [ext_resource path="res://Art/Audio/Sound/Character/Abilities/Spitting_01.ogg" type="AudioStream" id=23]
 [ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player.gd" type="Script" id=24]
-[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Walking_Land_01.ogg" type="AudioStream" id=25]
-[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Fall/Falling_01.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Normal/Walking_Land_01.ogg" type="AudioStream" id=25]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Fall/Falling_02.ogg" type="AudioStream" id=26]
 [ext_resource path="res://Script/Mud.gd" type="Script" id=27]
 [ext_resource path="res://Script/Steam.gd" type="Script" id=28]
-[ext_resource path="res://Art/Audio/Sound/Character/Transform_01.ogg" type="AudioStream" id=29]
-[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/StoneWalking_02.ogg" type="AudioStream" id=30]
-[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/WindWalk_02.ogg" type="AudioStream" id=31]
-[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/WalkMud_01.ogg" type="AudioStream" id=32]
-[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/WalkMud_02.ogg" type="AudioStream" id=33]
+[ext_resource path="res://Art/Audio/Sound/Character/Abilities/Transform.ogg" type="AudioStream" id=29]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Stone/StoneWalk_1.ogg" type="AudioStream" id=30]
+[ext_resource path="res://Art/Audio/Sound/Character/Abilities/Spitting_02.ogg" type="AudioStream" id=31]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Mud/WalkMud_01.ogg" type="AudioStream" id=32]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Mud/WalkMud_02.ogg" type="AudioStream" id=33]
 [ext_resource path="res://Art/Animations/mud_eating.anim" type="Animation" id=34]
 [ext_resource path="res://Art/Animations/leaf_hook.anim" type="Animation" id=35]
 [ext_resource path="res://Art/Animations/leaf_walking.anim" type="Animation" id=36]
@@ -65,6 +65,18 @@
 [ext_resource path="res://Art/Animations/steam_walking.anim" type="Animation" id=63]
 [ext_resource path="res://Art/Animations/steam_spitting.anim" type="Animation" id=64]
 [ext_resource path="res://Art/Animations/steam_to_normal.anim" type="Animation" id=65]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Stone/StoneWalk_2.ogg" type="AudioStream" id=66]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Stone/StoneWalk_3.ogg" type="AudioStream" id=67]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Fall/Falling_Stone_01.ogg" type="AudioStream" id=68]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Leaf/Walking_Leaf_Start.ogg" type="AudioStream" id=69]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Leaf/Walking_Leaf_Land.ogg" type="AudioStream" id=70]
+[ext_resource path="res://Art/Audio/Sound/Character/Abilities/Jump_Leaf.ogg" type="AudioStream" id=71]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Fall/Fall_Leaf.ogg" type="AudioStream" id=72]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Land_Leaf_03.ogg" type="AudioStream" id=73]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Land_Leaf_02.ogg" type="AudioStream" id=74]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Landing/Land_Leaf_01.ogg" type="AudioStream" id=75]
+[ext_resource path="res://Art/Audio/Sound/Character/Abilities/Plateform.ogg" type="AudioStream" id=76]
+[ext_resource path="res://Art/Audio/Sound/Character/Footsteps/Walk/Steam/Steam_Walking.ogg" type="AudioStream" id=77]
 
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 6.0
@@ -157,11 +169,84 @@ script = ExtResource( 1 )
 [node name="Normal" type="Node" parent="."]
 script = ExtResource( 18 )
 
+[node name="Character_Walking" type="AudioStreamPlayer" parent="Normal"]
+volume_db = 2.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 8 ) ]
+random_pitch_range = 0.2
+
+[node name="Character_Walking_L" type="AudioStreamPlayer" parent="Normal"]
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 25 ) ]
+random_pitch_range = 0.5
+
+[node name="Character_Jumping" type="AudioStreamPlayer" parent="Normal"]
+volume_db = -6.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 3 ) ]
+random_pitch_range = 0.5
+
 [node name="Leaf" type="Node" parent="."]
 script = ExtResource( 19 )
 
 [node name="Timer" type="Timer" parent="Leaf"]
 one_shot = true
+
+[node name="Character_Walking" type="AudioStreamPlayer" parent="Leaf"]
+volume_db = 2.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 69 ) ]
+random_pitch_range = 0.2
+
+[node name="Character_Walking_L" type="AudioStreamPlayer" parent="Leaf"]
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 70 ) ]
+random_strategy = 1
+random_pitch_range = 0.2
+
+[node name="Character_Jumping" type="AudioStreamPlayer" parent="Leaf"]
+volume_db = -6.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 71 ) ]
+random_pitch_range = 0.5
+
+[node name="Character_Falling" type="AudioStreamPlayer" parent="Leaf"]
+volume_db = -4.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 72 ) ]
+random_pitch_range = 0.2
+
+[node name="Character_Landing" type="AudioStreamPlayer" parent="Leaf"]
+volume_db = -6.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 75 ), ExtResource( 74 ), ExtResource( 73 ) ]
+random_strategy = 1
+random_pitch_range = 0.2
+
+[node name="Plateform" type="AudioStreamPlayer" parent="Leaf"]
+volume_db = -4.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 76 ) ]
+random_strategy = 1
+random_pitch_range = 0.2
 
 [node name="Rock" type="Node" parent="."]
 script = ExtResource( 20 )
@@ -171,7 +256,8 @@ volume_db = -6.0
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
-samples = [ ExtResource( 30 ) ]
+samples = [ ExtResource( 30 ), ExtResource( 66 ), ExtResource( 67 ) ]
+random_strategy = 1
 random_pitch_range = 0.2
 
 [node name="Character_Landing" type="AudioStreamPlayer" parent="Rock"]
@@ -182,26 +268,36 @@ script = ExtResource( 24 )
 samples = [ ExtResource( 15 ) ]
 random_pitch_range = 0.2
 
+[node name="Character_Falling" type="AudioStreamPlayer" parent="Rock"]
+volume_db = -4.0
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 24 )
+samples = [ ExtResource( 68 ) ]
+random_pitch_range = 0.2
+
 [node name="Steam" type="Node" parent="."]
 script = ExtResource( 28 )
 
 [node name="Character_Walking" type="AudioStreamPlayer" parent="Steam"]
-volume_db = -6.0
+volume_db = 6.0
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
-samples = [ ExtResource( 31 ) ]
-random_pitch_range = 0.2
+samples = [ ExtResource( 77 ) ]
+random_strategy = 1
+random_pitch_range = 0.1
 
 [node name="Mud" type="Node" parent="."]
 script = ExtResource( 27 )
 
 [node name="Character_Walking" type="AudioStreamPlayer" parent="Mud"]
-volume_db = -4.0
+volume_db = -2.0
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
 samples = [ ExtResource( 32 ), ExtResource( 33 ) ]
+random_strategy = 1
 random_pitch_range = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -304,22 +400,8 @@ collision_mask = 2
 position = Vector2( -1, -2 )
 shape = SubResource( 340 )
 
-[node name="Character_Walking" type="AudioStreamPlayer" parent="."]
-volume_db = 2.0
-mix_target = 2
-bus = "SFX"
-script = ExtResource( 24 )
-samples = [ ExtResource( 8 ) ]
-random_pitch_range = 0.2
-
-[node name="Character_Walking_L" type="AudioStreamPlayer" parent="."]
-mix_target = 2
-bus = "SFX"
-script = ExtResource( 24 )
-samples = [ ExtResource( 25 ) ]
-random_pitch_range = 0.5
-
-[node name="Character_Transforming" type="AudioStreamPlayer" parent="."]
+[node name="Character_Transform" type="AudioStreamPlayer" parent="."]
+volume_db = 4.0
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
@@ -327,7 +409,7 @@ samples = [ ExtResource( 29 ) ]
 random_pitch_range = 0.2
 
 [node name="Character_Eating" type="AudioStreamPlayer" parent="."]
-volume_db = -4.0
+volume_db = -2.0
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
@@ -335,19 +417,12 @@ samples = [ ExtResource( 9 ) ]
 random_pitch_range = 0.2
 
 [node name="Character_Spitting" type="AudioStreamPlayer" parent="."]
+volume_db = 2.0
 mix_target = 2
 bus = "SFX"
 script = ExtResource( 24 )
-samples = [ ExtResource( 23 ) ]
+samples = [ ExtResource( 23 ), ExtResource( 31 ) ]
 random_pitch_range = 0.2
-
-[node name="Character_Jumping" type="AudioStreamPlayer" parent="."]
-volume_db = -6.0
-mix_target = 2
-bus = "SFX"
-script = ExtResource( 24 )
-samples = [ ExtResource( 3 ) ]
-random_pitch_range = 0.5
 
 [node name="Character_Falling" type="AudioStreamPlayer" parent="."]
 volume_db = -4.0

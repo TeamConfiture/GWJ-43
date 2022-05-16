@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Landing_Stone_01.ogg-7913af7a8d612a45027b81d8d1855d25.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Character/Footsteps/Landing/Landing_Stone_01.ogg"
+dest_files=[ "res://.import/Landing_Stone_01.ogg-7913af7a8d612a45027b81d8d1855d25.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

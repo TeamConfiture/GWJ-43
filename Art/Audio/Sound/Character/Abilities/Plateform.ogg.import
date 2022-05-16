@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Plateform.ogg-cf23e938a8a5b77c1c8a63e1d1f3592e.oggstr"
+
+[deps]
+
+source_file="res://Art/Audio/Sound/Character/Abilities/Plateform.ogg"
+dest_files=[ "res://.import/Plateform.ogg-cf23e938a8a5b77c1c8a63e1d1f3592e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
