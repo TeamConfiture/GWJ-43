@@ -623,6 +623,7 @@ position = Vector2( 190, 575 )
 shape = SubResource( 256 )
 
 [node name="PlayerDetectorAMBForest" type="Area2D" parent="Zone_Sound"]
+visible = false
 collision_layer = 4
 monitorable = false
 
@@ -647,6 +648,7 @@ scale = Vector2( 50, 50 )
 shape = SubResource( 248 )
 
 [node name="PlayerDetectorAMBCavern" type="Area2D" parent="Zone_Sound"]
+visible = false
 collision_layer = 4
 monitorable = false
 
@@ -656,7 +658,7 @@ scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 
 [node name="Water_Coast" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 32, 337 )
+position = Vector2( 62, 336 )
 stream = ExtResource( 6 )
 autoplay = true
 max_distance = 500.0

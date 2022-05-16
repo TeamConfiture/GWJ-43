@@ -706,7 +706,7 @@ scale = Vector2( 100, 55 )
 shape = SubResource( 247 )
 
 [node name="Water_Coast" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 664, 560 )
+position = Vector2( 641, 558 )
 stream = ExtResource( 1 )
 autoplay = true
 max_distance = 500.0
@@ -714,7 +714,7 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Coast7" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 1288, 560 )
+position = Vector2( 963, 560 )
 stream = ExtResource( 1 )
 autoplay = true
 max_distance = 500.0
@@ -722,7 +722,7 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Coast2" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 816, 557 )
+position = Vector2( 828, 559 )
 stream = ExtResource( 1 )
 autoplay = true
 max_distance = 500.0
@@ -730,18 +730,18 @@ attenuation = 3.4822
 bus = "Amb"
 
 [node name="Water_Stagn" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 512, 560 )
+position = Vector2( 483, 560 )
 stream = ExtResource( 2 )
 autoplay = true
-max_distance = 1500.0
+max_distance = 700.0
 attenuation = 2.0
 bus = "Amb"
 
 [node name="Water_Stagn2" type="AudioStreamPlayer2D" parent="Zone_Sound"]
-position = Vector2( 1152, 568 )
+position = Vector2( 1198, 564 )
 stream = ExtResource( 2 )
 autoplay = true
-max_distance = 1500.0
+max_distance = 800.0
 attenuation = 2.0
 bus = "Amb"
 
