@@ -114,42 +114,6 @@ region = Rect2( 224, 64, 32, 32 )
 atlas = ExtResource( 14 )
 region = Rect2( 256, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 14 )
-region = Rect2( 0, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 14 )
-region = Rect2( 32, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 14 )
-region = Rect2( 64, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 14 )
-region = Rect2( 96, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 14 )
-region = Rect2( 128, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 14 )
-region = Rect2( 160, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 14 )
-region = Rect2( 192, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 14 )
-region = Rect2( 224, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 14 )
-region = Rect2( 256, 96, 32, 32 )
-
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 14 )
 region = Rect2( 0, 128, 32, 32 )
@@ -186,6 +150,42 @@ region = Rect2( 224, 128, 32, 32 )
 atlas = ExtResource( 14 )
 region = Rect2( 256, 128, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 14 )
+region = Rect2( 32, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 14 )
+region = Rect2( 160, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 14 )
+region = Rect2( 192, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 14 )
+region = Rect2( 224, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 14 )
+region = Rect2( 256, 96, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=115]
 animations = [ {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
@@ -198,14 +198,14 @@ animations = [ {
 "name": "Vine",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
-"loop": true,
-"name": "Vapor",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "Rock",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "Vapor",
 "speed": 5.0
 } ]
 
@@ -564,7 +564,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Mud"
-frame = 6
+frame = 7
 playing = true
 
 [node name="Vine" type="Control" parent="CanvasLayer/Parchemin"]
@@ -617,7 +617,7 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vine"
-frame = 5
+frame = 6
 playing = true
 
 [node name="Rock" type="Control" parent="CanvasLayer/Parchemin"]
@@ -670,7 +670,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Rock"
-frame = 7
+frame = 8
 playing = true
 
 [node name="Vapor" type="Control" parent="CanvasLayer/Parchemin"]
@@ -722,7 +722,7 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 115 )
 animation = "Vapor"
-frame = 6
+frame = 7
 playing = true
 
 [node name="Pad" type="Control" parent="CanvasLayer/Parchemin"]
@@ -787,7 +787,7 @@ rect_scale = Vector2( 2, 2 )
 custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
 custom_fonts/font = SubResource( 117 )
 text = "Eat or
-Yvy"
+Ivy"
 
 [node name="Arrow2" type="TextureRect" parent="CanvasLayer/Parchemin/Pad/BG"]
 margin_left = 9.71429
@@ -931,7 +931,7 @@ rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
 custom_fonts/font = SubResource( 117 )
 text = "Eat or
-Yvy"
+Ivy"
 
 [node name="Arrow" type="TextureRect" parent="CanvasLayer/Parchemin/Keyb/Eat"]
 margin_left = 16.5714
