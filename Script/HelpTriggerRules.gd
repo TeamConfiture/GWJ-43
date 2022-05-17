@@ -92,12 +92,12 @@ func illustration(rule:String,etat:bool):
 			$CanvasLayer/Parchemin/Parchemin_BG/Pad2.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BB.modulate=Color(1,1,1,0.39)
 			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BD.modulate=Color(1,1,1,0.39)
-			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BG/Action2.text = "Yvy"
+			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BG/Action2.text = "Ivy"
 			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BG/Action2.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/Pad2/BG/Arrow2.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/vine.visible=etat
 			$CanvasLayer/Parchemin/Parchemin_BG/yvy.visible=etat
-			$CanvasLayer/Parchemin/Parchemin_BG/Button/Action.text = "Yvy"
+			$CanvasLayer/Parchemin/Parchemin_BG/Button/Action.text = "Ivy"
 			$CanvasLayer/Parchemin/Parchemin_BG/Button/Key.text = gey_key("eat")
 			$CanvasLayer/Parchemin/Parchemin_BG/Button.visible=etat
 

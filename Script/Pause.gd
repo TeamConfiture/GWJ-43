@@ -2,7 +2,10 @@ extends CanvasLayer
 
 var music_bus = AudioServer.get_bus_index("Music")
 var sounds_bus = AudioServer.get_bus_index("SFX")
+var master_bus = AudioServer.get_bus_index("Master")
 var pause := false
+
+
 onready var parchemin = $Parchemin
 
 var key_layout = OS.get_latin_keyboard_variant()
@@ -13,6 +16,7 @@ func _ready():
 	$Parchemin/Keyb/Spit/Key.text = gey_key("spit")
 	$Parchemin/Keyb/Left/Key.text = gey_key("left")
 	$Parchemin/Keyb/Right/Key.text = gey_key("right")
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,6 +37,20 @@ func _process(_delta):
 			AudioManager.play_button_normal()
 			_on_Menu_pressed()
 
+func mastervol(value: float) -> void:
+	AudioServer.set_bus_volume_db(master_bus,value)
+	printt('Master',value) 
+	$Parchemin/Sound/tick.play()
+	
+func sfxvol(value: float) -> void:
+	AudioServer.set_bus_volume_db(sounds_bus,value)
+	$Parchemin/Sound/tick.play()
+	printt('Sfx',value) 
+	
+func musicvol(value: float) -> void:
+	AudioServer.set_bus_volume_db(music_bus,value)
+	$Parchemin/Sound/tick.play()
+	printt('Music',value) 
 
 func _on_Menu_pressed():
 	get_tree().paused=false
@@ -72,3 +90,5 @@ func gey_key(action:String):
 					"Z":
 						key="W"
 			return key
+
+

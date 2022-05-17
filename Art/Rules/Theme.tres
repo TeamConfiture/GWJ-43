@@ -1,0 +1,33 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://Art/Rules/grabber.png" type="Texture" id=2]
+
+[sub_resource type="MeshTexture" id=5]
+
+[sub_resource type="MeshTexture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.670588, 0.376471, 0.266667, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.670588, 0.376471, 0.266667, 0.490196 )
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[resource]
+CheckBox/icons/unchecked = SubResource( 5 )
+HSlider/icons/grabber = ExtResource( 2 )
+HSlider/icons/grabber_highlight = ExtResource( 2 )
+HSlider/icons/tick = SubResource( 6 )
+HSlider/styles/grabber_area = SubResource( 7 )
+HSlider/styles/grabber_area_highlight = SubResource( 7 )
+HSlider/styles/slider = SubResource( 8 )
