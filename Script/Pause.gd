@@ -1,9 +1,7 @@
 extends CanvasLayer
 
 var music_bus = AudioServer.get_bus_index("Music")
-var sounds_bus = AudioServer.get_bus_index("SFX")
-var master_bus = AudioServer.get_bus_index("Master")
-var ambiance_bus = AudioServer.get_bus_index("Amb")
+
 var pause := false
 
 
@@ -38,21 +36,7 @@ func _process(_delta):
 			AudioManager.play_button_normal()
 			_on_Menu_pressed()
 
-func mastervol(value: float) -> void:
-	AudioServer.set_bus_volume_db(master_bus,value)
-	printt('Master',value) 
-	$Parchemin/Sound/tickmaster.play()
-	
-func sfxvol(value: float) -> void:
-	AudioServer.set_bus_volume_db(sounds_bus,value) 
-	AudioServer.set_bus_volume_db(ambiance_bus,value)
-	$Parchemin/Sound/ticksfx.play()
-	printt('Sfx',value) 
-	
-func musicvol(value: float) -> void:
-	AudioServer.set_bus_volume_db(music_bus,value)
-	$Parchemin/Sound/tickmusic.play()
-	printt('Music',value) 
+
 
 func _on_Menu_pressed():
 	get_tree().paused=false
@@ -92,5 +76,8 @@ func gey_key(action:String):
 					"Z":
 						key="W"
 			return key
+
+
+
 
 

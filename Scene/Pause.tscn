@@ -1,9 +1,8 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Art/Fonts/alagard.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scene/Integrable/Clover.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Art/Slime_Sheet.png" type="Texture" id=3]
-[ext_resource path="res://Art/Rules/arrow.png" type="Texture" id=4]
 [ext_resource path="res://Art/Rules/Button_circle.png" type="Texture" id=5]
 [ext_resource path="res://Script/Pause.gd" type="Script" id=6]
 [ext_resource path="res://Art/Rules/parchemin.png" type="Texture" id=7]
@@ -13,6 +12,7 @@
 [ext_resource path="res://Art/Rules/Sound.png" type="Texture" id=11]
 [ext_resource path="res://Art/Audio/Sound/UI/PopUpEndLevel/Counting_1.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Art/Rules/Theme.tres" type="Theme" id=13]
+[ext_resource path="res://Script/VolumeManager.gd" type="Script" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -31,6 +31,42 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=4]
 size = 48
 font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 3 )
+region = Rect2( 160, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 3 )
+region = Rect2( 224, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 3 )
+region = Rect2( 256, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
@@ -104,42 +140,6 @@ region = Rect2( 224, 128, 32, 32 )
 atlas = ExtResource( 3 )
 region = Rect2( 256, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 3 )
-region = Rect2( 64, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 3 )
-region = Rect2( 96, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 3 )
-region = Rect2( 128, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 3 )
-region = Rect2( 160, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 3 )
-region = Rect2( 192, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 3 )
-region = Rect2( 224, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 3 )
-region = Rect2( 256, 32, 32, 32 )
-
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 64, 32, 32 )
@@ -178,6 +178,11 @@ region = Rect2( 256, 64, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=41]
 animations = [ {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "Mud",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "Vapor",
@@ -188,19 +193,11 @@ animations = [ {
 "name": "Rock",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
-"loop": true,
-"name": "Mud",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "Vine",
 "speed": 5.0
 } ]
-
-[sub_resource type="DynamicFont" id=42]
-font_data = ExtResource( 1 )
 
 [sub_resource type="AtlasTexture" id=118]
 atlas = ExtResource( 8 )
@@ -226,9 +223,6 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="DynamicFont" id=123]
-font_data = ExtResource( 1 )
-
 [sub_resource type="DynamicFont" id=124]
 font_data = ExtResource( 1 )
 
@@ -243,7 +237,8 @@ font_data = ExtResource( 1 )
 layer = 128
 script = ExtResource( 6 )
 __meta__ = {
-"_edit_vertical_guides_": [ 664.0 ]
+"_edit_horizontal_guides_": [ 504.0 ],
+"_edit_vertical_guides_": [ 800.0, 352.0, 408.0, 464.0, 512.0, 568.0, 704.0, 616.0, 656.0, 760.0, 904.0, 944.0 ]
 }
 
 [node name="Parchemin" type="Control" parent="."]
@@ -274,9 +269,9 @@ valign = 1
 autowrap = true
 
 [node name="P1" type="RichTextLabel" parent="Parchemin"]
-margin_left = 168.0
+margin_left = 160.0
 margin_top = 216.0
-margin_right = 1160.0
+margin_right = 1152.0
 margin_bottom = 272.0
 custom_colors/default_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
 custom_fonts/normal_font = SubResource( 2 )
@@ -284,14 +279,24 @@ bbcode_enabled = true
 text = "Clover combinations:"
 
 [node name="P2" type="RichTextLabel" parent="Parchemin"]
-margin_left = 168.0
+margin_left = 160.0
 margin_top = 433.0
-margin_right = 1160.0
+margin_right = 1152.0
 margin_bottom = 489.0
 custom_colors/default_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 text = "Actions:"
+
+[node name="P3" type="RichTextLabel" parent="Parchemin"]
+margin_left = 776.0
+margin_top = 216.0
+margin_right = 1768.0
+margin_bottom = 272.0
+custom_colors/default_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+text = "Options:"
 
 [node name="Menu" type="Button" parent="Parchemin"]
 margin_left = 128.0
@@ -316,8 +321,8 @@ text = "Resume >"
 flat = true
 
 [node name="Mud" type="Control" parent="Parchemin"]
-margin_left = 100.0
-margin_right = 100.0
+margin_left = 8.0
+margin_right = 8.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -362,13 +367,13 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Mud"
-frame = 6
+frame = 8
 playing = true
 
 [node name="Vine" type="Control" parent="Parchemin"]
-margin_left = 100.0
+margin_left = 8.0
 margin_top = 80.0
-margin_right = 100.0
+margin_right = 8.0
 margin_bottom = 80.0
 __meta__ = {
 "_edit_group_": true
@@ -413,12 +418,12 @@ position = Vector2( 385, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Vine"
-frame = 5
+frame = 7
 playing = true
 
 [node name="Rock" type="Control" parent="Parchemin"]
-margin_left = 550.0
-margin_right = 550.0
+margin_left = 312.0
+margin_right = 312.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -463,13 +468,12 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Rock"
-frame = 7
 playing = true
 
 [node name="Vapor" type="Control" parent="Parchemin"]
-margin_left = 550.0
+margin_left = 312.0
 margin_top = 80.0
-margin_right = 550.0
+margin_right = 312.0
 margin_bottom = 80.0
 __meta__ = {
 "_edit_group_": true
@@ -515,17 +519,69 @@ position = Vector2( 370, 278 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 41 )
 animation = "Vapor"
-frame = 6
+frame = 8
 playing = true
 
-[node name="Pad" type="Control" parent="Parchemin"]
-margin_left = 640.0
+[node name="Pad_jump" type="Control" parent="Parchemin"]
+margin_left = 592.0
 margin_top = 352.0
-margin_right = 680.0
+margin_right = 632.0
 margin_bottom = 392.0
 rect_scale = Vector2( 4, 4 )
 
-[node name="BH" type="TextureRect" parent="Parchemin/Pad"]
+[node name="BH" type="TextureRect" parent="Parchemin/Pad_jump"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 3.14288
+margin_top = 48.0
+margin_right = 67.1429
+margin_bottom = 112.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="BB" type="TextureRect" parent="Parchemin/Pad_jump"]
+modulate = Color( 0.976471, 0.768627, 0.768627, 1 )
+margin_left = 3.14288
+margin_top = 68.1429
+margin_right = 67.1429
+margin_bottom = 132.143
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="BG" type="TextureRect" parent="Parchemin/Pad_jump"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = -8.0
+margin_top = 58.2858
+margin_right = 56.0
+margin_bottom = 122.286
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="BD" type="TextureRect" parent="Parchemin/Pad_jump"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 13.7143
+margin_top = 57.7143
+margin_right = 77.7143
+margin_bottom = 121.714
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="joystick" type="AnimatedSprite" parent="Parchemin/Pad_jump"]
+modulate = Color( 0.976471, 0.768627, 0.768627, 1 )
+position = Vector2( -38.4, 73.6 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 122 )
+animation = "New Anim"
+frame = 1
+playing = true
+
+[node name="Pad_Eat" type="Control" parent="Parchemin"]
+margin_left = 616.0
+margin_top = 352.0
+margin_right = 656.0
+margin_bottom = 392.0
+rect_scale = Vector2( 4, 4 )
+
+[node name="BH" type="TextureRect" parent="Parchemin/Pad_Eat"]
 modulate = Color( 1, 1, 1, 0.392157 )
 margin_left = 33.1429
 margin_top = 48.0
@@ -534,7 +590,8 @@ margin_bottom = 112.0
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 5 )
 
-[node name="BB" type="TextureRect" parent="Parchemin/Pad"]
+[node name="BB" type="TextureRect" parent="Parchemin/Pad_Eat"]
+modulate = Color( 1, 1, 1, 0.392157 )
 margin_left = 33.1429
 margin_top = 68.1429
 margin_right = 97.1429
@@ -542,27 +599,8 @@ margin_bottom = 132.143
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 5 )
 
-[node name="Action3" type="Label" parent="Parchemin/Pad/BB"]
-margin_left = 70.2857
-margin_top = 29.1429
-margin_right = 110.286
-margin_bottom = 44.1429
-rect_scale = Vector2( 2, 2 )
-custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
-custom_fonts/font = SubResource( 42 )
-text = "Jump"
-
-[node name="Arrow3" type="TextureRect" parent="Parchemin/Pad/BB"]
-margin_left = 24.5714
-margin_top = 79.4286
-margin_right = 29.5714
-margin_bottom = 90.4286
-rect_rotation = -90.0
-rect_scale = Vector2( 4, 4 )
-texture = ExtResource( 4 )
-stretch_mode = 3
-
-[node name="BG" type="TextureRect" parent="Parchemin/Pad"]
+[node name="BG" type="TextureRect" parent="Parchemin/Pad_Eat"]
+modulate = Color( 0.976471, 0.768627, 0.768627, 1 )
 margin_left = 22.0
 margin_top = 58.2858
 margin_right = 86.0
@@ -570,27 +608,8 @@ margin_bottom = 122.286
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 5 )
 
-[node name="Action2" type="Label" parent="Parchemin/Pad/BG"]
-margin_left = -68.0
-margin_top = 40.0
-margin_right = -28.0
-margin_bottom = 55.0
-rect_scale = Vector2( 2, 2 )
-custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
-custom_fonts/font = SubResource( 42 )
-text = "Eat"
-
-[node name="Arrow2" type="TextureRect" parent="Parchemin/Pad/BG"]
-margin_left = 9.71429
-margin_top = 13.7143
-margin_right = 14.7143
-margin_bottom = 24.7143
-rect_rotation = 90.0
-rect_scale = Vector2( 4, 4 )
-texture = ExtResource( 4 )
-stretch_mode = 3
-
-[node name="BD" type="TextureRect" parent="Parchemin/Pad"]
+[node name="BD" type="TextureRect" parent="Parchemin/Pad_Eat"]
+modulate = Color( 1, 1, 1, 0.392157 )
 margin_left = 43.7143
 margin_top = 57.7143
 margin_right = 107.714
@@ -598,65 +617,187 @@ margin_bottom = 121.714
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 5 )
 
-[node name="Action4" type="Label" parent="Parchemin/Pad/BD"]
-margin_left = 29.7143
-margin_top = -34.2857
-margin_right = 69.7143
-margin_bottom = -19.2857
-rect_scale = Vector2( 2, 2 )
-custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
-custom_fonts/font = SubResource( 42 )
-text = "Spit"
-
-[node name="Arrow4" type="TextureRect" parent="Parchemin/Pad/BD"]
-margin_left = 80.0
-margin_top = 38.8571
-margin_right = 85.0
-margin_bottom = 49.8571
-rect_rotation = -180.0
+[node name="Pad_Spit" type="Control" parent="Parchemin"]
+margin_left = 760.0
+margin_top = 352.0
+margin_right = 800.0
+margin_bottom = 392.0
 rect_scale = Vector2( 4, 4 )
-texture = ExtResource( 4 )
-stretch_mode = 3
 
-[node name="joystick" type="AnimatedSprite" parent="Parchemin/Pad"]
-position = Vector2( -38.4, 73.6 )
-scale = Vector2( 0.25, 0.25 )
-frames = SubResource( 122 )
-animation = "New Anim"
-frame = 3
-playing = true
+[node name="BH" type="TextureRect" parent="Parchemin/Pad_Spit"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 33.1429
+margin_top = 48.0
+margin_right = 97.1429
+margin_bottom = 112.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
 
-[node name="Left" type="Label" parent="Parchemin/Pad/joystick"]
-margin_left = -106.4
-margin_top = -12.8
-margin_right = -66.4
-margin_bottom = 2.19998
-rect_scale = Vector2( 2, 2 )
-custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
-custom_fonts/font = SubResource( 123 )
-text = "Left"
+[node name="BB" type="TextureRect" parent="Parchemin/Pad_Spit"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 33.1429
+margin_top = 68.1429
+margin_right = 97.1429
+margin_bottom = 132.143
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
 
-[node name="Rigth" type="Label" parent="Parchemin/Pad/joystick"]
-margin_left = 46.4
-margin_top = -12.8
-margin_right = 86.4
-margin_bottom = 2.19998
-rect_scale = Vector2( 2, 2 )
-custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
-custom_fonts/font = SubResource( 123 )
-text = "Right"
+[node name="BG" type="TextureRect" parent="Parchemin/Pad_Spit"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 22.0
+margin_top = 58.0
+margin_right = 86.0
+margin_bottom = 122.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="BD" type="TextureRect" parent="Parchemin/Pad_Spit"]
+modulate = Color( 0.976471, 0.768627, 0.768627, 1 )
+margin_left = 43.7143
+margin_top = 57.7143
+margin_right = 107.714
+margin_bottom = 121.714
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
 
 [node name="Keyb" type="Control" parent="Parchemin"]
-margin_left = 248.0
+margin_left = 352.0
 margin_top = 256.0
-margin_right = 288.0
+margin_right = 392.0
 margin_bottom = 296.0
 rect_scale = Vector2( 0.8, 0.8 )
 
-[node name="Spit" type="TextureRect" parent="Parchemin/Keyb"]
-margin_left = 832.0
+[node name="Left" type="TextureRect" parent="Parchemin/Keyb"]
 margin_top = 280.0
-margin_right = 848.0
+margin_right = 16.0
+margin_bottom = 296.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+stretch_mode = 1
+
+[node name="Key" type="Label" parent="Parchemin/Keyb/Left"]
+margin_top = 2.0
+margin_right = 21.0
+margin_bottom = 18.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 124 )
+text = "?"
+align = 1
+valign = 1
+
+[node name="Action" type="Label" parent="Parchemin/Keyb/Left"]
+margin_left = -1.0
+margin_top = -11.5625
+margin_right = 34.0
+margin_bottom = 3.4375
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
+custom_fonts/font = SubResource( 125 )
+text = "Left"
+align = 1
+
+[node name="Right" type="TextureRect" parent="Parchemin/Keyb"]
+margin_left = 140.0
+margin_top = 280.0
+margin_right = 156.0
+margin_bottom = 296.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+stretch_mode = 1
+
+[node name="Key" type="Label" parent="Parchemin/Keyb/Right"]
+margin_left = -4.0
+margin_top = 2.0
+margin_right = 27.0
+margin_bottom = 18.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 124 )
+text = "?"
+align = 1
+valign = 1
+
+[node name="Action" type="Label" parent="Parchemin/Keyb/Right"]
+margin_left = -4.0
+margin_top = -11.5625
+margin_right = 45.0
+margin_bottom = 3.4375
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
+custom_fonts/font = SubResource( 125 )
+text = "Rigth"
+align = 1
+
+[node name="Jump" type="TextureRect" parent="Parchemin/Keyb"]
+margin_left = 270.0
+margin_top = 280.0
+margin_right = 312.0
+margin_bottom = 296.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+stretch_mode = 1
+
+[node name="Key" type="Label" parent="Parchemin/Keyb/Jump"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 53.0
+margin_bottom = 18.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 124 )
+text = "Space"
+align = 1
+valign = 1
+
+[node name="Action" type="Label" parent="Parchemin/Keyb/Jump"]
+margin_left = 1.52588e-05
+margin_top = -11.5625
+margin_right = 86.0
+margin_bottom = 3.43752
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
+custom_fonts/font = SubResource( 125 )
+text = "Jump"
+align = 1
+
+[node name="Eat" type="TextureRect" parent="Parchemin/Keyb"]
+margin_left = 502.5
+margin_top = 280.0
+margin_right = 518.5
+margin_bottom = 296.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+stretch_mode = 1
+
+[node name="Key" type="Label" parent="Parchemin/Keyb/Eat"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 18.0
+margin_bottom = 18.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 124 )
+text = "?"
+align = 1
+valign = 1
+
+[node name="Action" type="Label" parent="Parchemin/Keyb/Eat"]
+margin_left = -2.50003
+margin_top = -16.5625
+margin_right = 42.5
+margin_bottom = 16.4375
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
+custom_fonts/font = SubResource( 125 )
+text = "Eat or
+Ivy"
+align = 1
+
+[node name="Spit" type="TextureRect" parent="Parchemin/Keyb"]
+margin_left = 682.5
+margin_top = 280.0
+margin_right = 698.5
 margin_bottom = 296.0
 rect_scale = Vector2( 4, 4 )
 texture = ExtResource( 9 )
@@ -683,147 +824,32 @@ custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
 custom_fonts/font = SubResource( 125 )
 text = "Spit"
 
-[node name="Arrow" type="TextureRect" parent="Parchemin/Keyb/Spit"]
-margin_left = 16.5714
-margin_top = -7.28568
-margin_right = 56.5714
-margin_bottom = 32.7143
-texture = ExtResource( 4 )
-stretch_mode = 3
-flip_h = true
-flip_v = true
-
-[node name="Eat" type="TextureRect" parent="Parchemin/Keyb"]
-margin_left = 664.0
-margin_top = 280.0
-margin_right = 680.0
-margin_bottom = 296.0
-rect_scale = Vector2( 4, 4 )
-texture = ExtResource( 9 )
-stretch_mode = 1
-
-[node name="Key" type="Label" parent="Parchemin/Keyb/Eat"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 18.0
-margin_bottom = 18.0
-rect_scale = Vector2( 0.8, 0.8 )
-custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
-custom_fonts/font = SubResource( 124 )
-text = "?"
-align = 1
-valign = 1
-
-[node name="Action" type="Label" parent="Parchemin/Keyb/Eat"]
-margin_top = -18.0
-margin_right = 45.0
-margin_bottom = 15.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
-custom_fonts/font = SubResource( 125 )
-text = "Eat or
-Ivy"
-
-[node name="Arrow" type="TextureRect" parent="Parchemin/Keyb/Eat"]
-margin_left = 16.5714
-margin_top = -7.28568
-margin_right = 56.5714
-margin_bottom = 32.7143
-texture = ExtResource( 4 )
-stretch_mode = 3
-flip_h = true
-flip_v = true
-
-[node name="Right" type="TextureRect" parent="Parchemin/Keyb"]
-margin_left = 328.0
-margin_top = 280.0
-margin_right = 344.0
-margin_bottom = 296.0
-rect_scale = Vector2( 4, 4 )
-texture = ExtResource( 9 )
-stretch_mode = 1
-
-[node name="Key" type="Label" parent="Parchemin/Keyb/Right"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 18.0
-margin_bottom = 18.0
-rect_scale = Vector2( 0.8, 0.8 )
-custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
-custom_fonts/font = SubResource( 124 )
-text = "?"
-align = 1
-valign = 1
-
-[node name="Action" type="Label" parent="Parchemin/Keyb/Right"]
-margin_left = -5.25
-margin_top = -12.0
-margin_right = 34.75
-margin_bottom = 3.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
-custom_fonts/font = SubResource( 125 )
-text = "Rigth"
-
-[node name="Arrow" type="TextureRect" parent="Parchemin/Keyb/Right"]
-margin_left = 16.5714
-margin_top = -7.28568
-margin_right = 56.5714
-margin_bottom = 32.7143
-texture = ExtResource( 4 )
-stretch_mode = 3
-flip_h = true
-flip_v = true
-
-[node name="Left" type="TextureRect" parent="Parchemin/Keyb"]
-margin_left = 192.0
-margin_top = 280.0
-margin_right = 208.0
-margin_bottom = 296.0
-rect_scale = Vector2( 4, 4 )
-texture = ExtResource( 9 )
-stretch_mode = 1
-
-[node name="Key" type="Label" parent="Parchemin/Keyb/Left"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 18.0
-margin_bottom = 18.0
-rect_scale = Vector2( 0.8, 0.8 )
-custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
-custom_fonts/font = SubResource( 124 )
-text = "?"
-align = 1
-valign = 1
-
-[node name="Action" type="Label" parent="Parchemin/Keyb/Left"]
-margin_top = -12.0
-margin_right = 29.0
-margin_bottom = 3.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
-custom_fonts/font = SubResource( 125 )
-text = "Left"
-
-[node name="Arrow" type="TextureRect" parent="Parchemin/Keyb/Left"]
-margin_left = -6.0
-margin_top = -7.0
-margin_right = 34.0
-margin_bottom = 33.0
-texture = ExtResource( 4 )
-stretch_mode = 3
-flip_v = true
-
 [node name="Left_Arrow" type="TextureRect" parent="Parchemin/Keyb"]
-margin_left = 329.0
 margin_top = 360.0
-margin_right = 345.0
+margin_right = 16.0
 margin_bottom = 376.0
 rect_scale = Vector2( 4, 4 )
 texture = ExtResource( 9 )
 stretch_mode = 1
 
-[node name="<2" type="TextureRect" parent="Parchemin/Keyb/Left_Arrow"]
+[node name="<" type="TextureRect" parent="Parchemin/Keyb/Left_Arrow"]
+margin_left = 0.75
+margin_top = 0.75
+margin_right = 40.75
+margin_bottom = 40.75
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 10 )
+
+[node name="Right_Arrow" type="TextureRect" parent="Parchemin/Keyb"]
+margin_left = 140.0
+margin_top = 360.0
+margin_right = 156.0
+margin_bottom = 376.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+stretch_mode = 1
+
+[node name="<2" type="TextureRect" parent="Parchemin/Keyb/Right_Arrow"]
 margin_left = 1.74998
 margin_top = 0.749985
 margin_right = 41.75
@@ -832,102 +858,35 @@ rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 10 )
 flip_h = true
 
-[node name="Right_Arrow" type="TextureRect" parent="Parchemin/Keyb"]
-margin_left = 192.0
-margin_top = 360.0
-margin_right = 208.0
-margin_bottom = 376.0
-rect_scale = Vector2( 4, 4 )
-texture = ExtResource( 9 )
-stretch_mode = 1
-
-[node name="<" type="TextureRect" parent="Parchemin/Keyb/Right_Arrow"]
-margin_left = 0.75
-margin_top = 0.75
-margin_right = 40.75
-margin_bottom = 40.75
-rect_scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 10 )
-
-[node name="Jump" type="TextureRect" parent="Parchemin/Keyb"]
-margin_left = 448.0
-margin_top = 280.0
-margin_right = 490.0
-margin_bottom = 296.0
-rect_scale = Vector2( 4, 4 )
-texture = ExtResource( 9 )
-stretch_mode = 1
-
-[node name="Key" type="Label" parent="Parchemin/Keyb/Jump"]
-margin_left = 4.0
-margin_top = 2.0
-margin_right = 46.0
-margin_bottom = 18.0
-rect_scale = Vector2( 0.8, 0.8 )
-custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
-custom_fonts/font = SubResource( 124 )
-text = "Space"
-align = 1
-valign = 1
-
-[node name="Action" type="Label" parent="Parchemin/Keyb/Jump"]
-margin_left = 22.0
-margin_top = -12.0
-margin_right = 58.0
-margin_bottom = 2.99999
-rect_scale = Vector2( 0.5, 0.5 )
-custom_colors/font_color = Color( 0.501961, 0.219608, 0.219608, 1 )
-custom_fonts/font = SubResource( 125 )
-text = "Jump"
-
-[node name="Arrow" type="TextureRect" parent="Parchemin/Keyb/Jump"]
-margin_left = 43.0
-margin_top = -8.0
-margin_right = 83.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-stretch_mode = 3
-flip_h = true
-flip_v = true
-
 [node name="Sound" type="Control" parent="Parchemin"]
-margin_left = 272.0
-margin_top = 64.0
-margin_right = 312.0
-margin_bottom = 104.0
-rect_scale = Vector2( 0.6, 0.6 )
+margin_left = -256.0
+margin_top = 168.0
+margin_right = -216.0
+margin_bottom = 208.0
+rect_scale = Vector2( 0.95, 0.95 )
+script = ExtResource( 14 )
 
 [node name="Sound" type="TextureRect" parent="Parchemin/Sound"]
-margin_left = 1040.0
-margin_top = 146.667
-margin_right = 1088.0
-margin_bottom = 194.667
+margin_left = 1313.68
+margin_top = 50.5263
+margin_right = 1361.68
+margin_bottom = 98.5263
 texture = ExtResource( 11 )
 expand = true
+
+[node name="Volume_General" type="HSlider" parent="Parchemin/Sound"]
+margin_left = 1100.0
+margin_top = 128.0
+margin_right = 1380.0
+margin_bottom = 153.0
+theme = ExtResource( 13 )
+min_value = -30.0
+max_value = 0.0
+ticks_on_borders = true
 
 [node name="tickmaster" type="AudioStreamPlayer" parent="Parchemin/Sound"]
 stream = ExtResource( 12 )
 mix_target = 2
-
-[node name="tickmusic" type="AudioStreamPlayer" parent="Parchemin/Sound"]
-stream = ExtResource( 12 )
-mix_target = 2
-bus = "Music"
-
-[node name="ticksfx" type="AudioStreamPlayer" parent="Parchemin/Sound"]
-stream = ExtResource( 12 )
-mix_target = 2
-bus = "SFX"
-
-[node name="mastervol" type="HSlider" parent="Parchemin/Sound"]
-margin_left = 1104.0
-margin_top = 128.0
-margin_right = 1384.0
-margin_bottom = 153.0
-theme = ExtResource( 13 )
-min_value = -72.0
-max_value = 6.0
-ticks_on_borders = true
 
 [node name="LabelMaster" type="Label" parent="Parchemin/Sound"]
 margin_left = 1400.0
@@ -939,15 +898,20 @@ custom_fonts/font = SubResource( 126 )
 text = "Master"
 align = 2
 
-[node name="musicvol" type="HSlider" parent="Parchemin/Sound"]
-margin_left = 1104.0
+[node name="Volume_Music" type="HSlider" parent="Parchemin/Sound"]
+margin_left = 1100.0
 margin_top = 160.0
-margin_right = 1384.0
+margin_right = 1380.0
 margin_bottom = 185.0
 theme = ExtResource( 13 )
-min_value = -72.0
-max_value = 6.0
+min_value = -30.0
+max_value = 0.0
 ticks_on_borders = true
+
+[node name="tickmusic" type="AudioStreamPlayer" parent="Parchemin/Sound"]
+stream = ExtResource( 12 )
+mix_target = 2
+bus = "Music"
 
 [node name="LabelMusic" type="Label" parent="Parchemin/Sound"]
 margin_left = 1400.0
@@ -958,15 +922,20 @@ custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
 custom_fonts/font = SubResource( 126 )
 text = "Music"
 
-[node name="sfxvol" type="HSlider" parent="Parchemin/Sound"]
-margin_left = 1104.0
+[node name="Volume_Sound" type="HSlider" parent="Parchemin/Sound"]
+margin_left = 1100.0
 margin_top = 192.0
-margin_right = 1384.0
+margin_right = 1380.0
 margin_bottom = 217.0
 theme = ExtResource( 13 )
-min_value = -72.0
-max_value = 6.0
+min_value = -30.0
+max_value = 0.0
 ticks_on_borders = true
+
+[node name="ticksfx" type="AudioStreamPlayer" parent="Parchemin/Sound"]
+stream = ExtResource( 12 )
+mix_target = 2
+bus = "SFX"
 
 [node name="LabelSfx" type="Label" parent="Parchemin/Sound"]
 margin_left = 1400.0
@@ -977,8 +946,33 @@ custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
 custom_fonts/font = SubResource( 126 )
 text = "SFX"
 
+[node name="Volume_Ambiant" type="HSlider" parent="Parchemin/Sound"]
+margin_left = 1100.0
+margin_top = 224.0
+margin_right = 1380.0
+margin_bottom = 249.0
+theme = ExtResource( 13 )
+min_value = -72.0
+max_value = 0.0
+ticks_on_borders = true
+
+[node name="tickamb" type="AudioStreamPlayer" parent="Parchemin/Sound"]
+stream = ExtResource( 12 )
+mix_target = 2
+bus = "SFX"
+
+[node name="LabelAmb" type="Label" parent="Parchemin/Sound"]
+margin_left = 1400.0
+margin_top = 224.0
+margin_right = 1520.0
+margin_bottom = 254.0
+custom_colors/font_color = Color( 0.219608, 0.0588235, 0.109804, 1 )
+custom_fonts/font = SubResource( 126 )
+text = "Ambiant"
+
 [connection signal="pressed" from="Parchemin/Menu" to="." method="_on_Menu_pressed"]
 [connection signal="pressed" from="Parchemin/Resume" to="." method="_on_Resume_pressed"]
-[connection signal="value_changed" from="Parchemin/Sound/mastervol" to="." method="mastervol"]
-[connection signal="value_changed" from="Parchemin/Sound/musicvol" to="." method="musicvol"]
-[connection signal="value_changed" from="Parchemin/Sound/sfxvol" to="." method="sfxvol"]
+[connection signal="value_changed" from="Parchemin/Sound/Volume_General" to="Parchemin/Sound" method="_on_Volume_General_value_changed"]
+[connection signal="value_changed" from="Parchemin/Sound/Volume_Music" to="Parchemin/Sound" method="_on_Volume_Music_value_changed"]
+[connection signal="value_changed" from="Parchemin/Sound/Volume_Sound" to="Parchemin/Sound" method="_on_Volume_Sound_value_changed"]
+[connection signal="value_changed" from="Parchemin/Sound/Volume_Ambiant" to="Parchemin/Sound" method="_on_Volume_Ambiant_value_changed"]
