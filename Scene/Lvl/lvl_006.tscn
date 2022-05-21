@@ -466,7 +466,7 @@ z_as_relative = false
 tile_set = SubResource( 88 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 1703937, 536870914, 0, 1703945, 2, 0, 1703946, 2, 0, 1703947, 536870914, 0, 1703973, 1073741839, 0, 1703985, 1073741839, 0, 1703990, 1073741839, 0, 1769504, 1073741839, 0, 1769506, 1610612751, 0, 1769512, 1610612751, 0, 1835026, 2, 0, 1835027, 1, 0, 1835028, 1, 0, 1835034, 1, 0, 1835035, 1, 0, 1835040, 16, 0, 1835042, 2, 0, 1835043, 1, 0, 1835045, 1, 0, 1835046, 2, 0, 1835047, 536870927, 0, 1835048, 15, 0, 1835062, 15, 0 )
+tile_data = PoolIntArray( 393235, 536870931, 0, 524298, 536870935, 0, 917506, 536870924, 0, 1179730, 536870924, 0, 1310783, 536870936, 0, 1572941, 536870936, 0, 1703937, 536870914, 0, 1703938, 536870924, 0, 1703945, 2, 0, 1703946, 2, 0, 1703947, 536870914, 0, 1703949, 536870936, 0, 1703973, 1073741839, 0, 1703985, 1073741839, 0, 1703990, 1073741839, 0, 1769504, 1073741839, 0, 1769506, 1610612751, 0, 1769512, 1610612751, 0, 1835026, 2, 0, 1835027, 1, 0, 1835028, 1, 0, 1835029, 536870928, 0, 1835030, 536870928, 0, 1835034, 1, 0, 1835035, 1, 0, 1835040, 16, 0, 1835042, 2, 0, 1835043, 1, 0, 1835045, 1, 0, 1835046, 2, 0, 1835047, 536870927, 0, 1835048, 15, 0, 1835050, 536870936, 0, 1835054, 536870929, 0, 1835062, 15, 0, 1966158, 536870936, 0, 2097221, 15, 0, 2359301, 536870927, 0, 2359303, 536870928, 0, 2359306, 536870914, 0, 2359349, 16, 0, 2424864, 1610612751, 0, 2424872, 1073741839, 0, 2490381, 536870936, 0, 2490436, 16, 0, 2621455, 536870924, 0, 2752557, 536870936, 0, 2752561, 1, 0, 2752562, 536870914, 0, 2883627, 536870924, 0, 3014674, 1, 0, 3014675, 2, 0, 3014676, 1, 0, 3014677, 536870914, 0, 3014678, 1, 0, 3014679, 1, 0, 3014681, 536870914, 0, 3014683, 1, 0, 3014685, 2, 0, 3014686, 2, 0, 3014688, 536870927, 0, 3014690, 536870929, 0, 3014691, 536870929, 0, 3014692, 536870929, 0, 3014693, 2, 0, 3014695, 2, 0, 3014697, 1, 0, 3014720, 536870927, 0, 3014726, 536870927, 0, 3014727, 15, 0, 3014732, 16, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -533,19 +533,19 @@ position = Vector2( 1200, 435 )
 position = Vector2( 1133, 377 )
 
 [node name="Coin9" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1267, 377 )
+position = Vector2( 1303, 696 )
 
 [node name="Coin19" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 535, 473 )
+position = Vector2( 808, 472 )
 
 [node name="Coin20" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 760, 473 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 230, 441 )
+position = Vector2( 905, 601 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 81, 441 )
+position = Vector2( 105, 440 )
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1056, 313 )
@@ -554,16 +554,16 @@ position = Vector2( 1056, 313 )
 position = Vector2( 1160, 601 )
 
 [node name="Coin11" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 652, 760 )
+position = Vector2( 656, 568 )
 
 [node name="Coin12" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1232, 665 )
 
 [node name="Coin13" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 399, 761 )
+position = Vector2( 399, 568 )
 
 [node name="Coin14" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 530, 760 )
+position = Vector2( 528, 568 )
 
 [node name="Coin16" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1095, 537 )
@@ -572,10 +572,10 @@ position = Vector2( 1095, 537 )
 position = Vector2( 1328, 537 )
 
 [node name="Coin18" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 765, 697 )
+position = Vector2( 768, 696 )
 
 [node name="Coin15" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1315, 697 )
+position = Vector2( 1335, 696 )
 
 [node name="Balloons" type="Node" parent="."]
 
