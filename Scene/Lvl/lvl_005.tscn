@@ -438,7 +438,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 24, 24, 8, 24 )
 27/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=254]
-extents = Vector2( 258.938, 61 )
+extents = Vector2( 267.969, 61 )
 
 [sub_resource type="RectangleShape2D" id=255]
 extents = Vector2( 482.75, 78.625 )
@@ -543,11 +543,19 @@ position = Vector2( 537, 473 )
 
 [node name="Coin7" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 131, 761 )
+position = Vector2( 360, 760 )
 
 [node name="Coin8" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
-position = Vector2( 330, 761 )
+position = Vector2( 330, 760 )
+
+[node name="Coin21" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
+position = Vector2( 456, 760 )
+
+[node name="Coin17" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.498039 )
+position = Vector2( 488, 760 )
 
 [node name="Coin9" parent="Coins" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.498039 )
@@ -565,14 +573,11 @@ position = Vector2( 789, 473 )
 modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 913, 473 )
 
-[node name="Coin10" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 785, 313 )
-
 [node name="Coin11" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1047, 313 )
 
 [node name="Coin19" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 848, 153 )
+position = Vector2( 1080, 183 )
 
 [node name="Coin20" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1145, 121 )
@@ -611,7 +616,7 @@ collision_layer = 5
 audio_bus_name = "Underwater"
 
 [node name="ZoneUnderwater" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
-position = Vector2( 289.063, 711 )
+position = Vector2( 283.969, 712 )
 shape = SubResource( 254 )
 
 [node name="ZoneUnderwater2" type="CollisionShape2D" parent="Zone_Sound/UnderWater"]
