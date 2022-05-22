@@ -142,8 +142,8 @@ func update_coins(lvl):
 
 func _process(delta: float) -> void:
 
-#	if Input.is_action_just_pressed("spit") && chaudron_eat == true :
-#			_on_Slime_chaudron_eaten()
+	if Input.is_action_just_pressed("spit") && chaudron_eat == true :
+			_on_Slime_chaudron_eaten()
 
 	if Input.is_action_just_pressed("spit") && big_chaudron_eat == true :
 			_on_Slime_chaudron_eaten()
