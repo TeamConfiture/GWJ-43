@@ -60,9 +60,9 @@ expand = true
 stretch_mode = 5
 
 [node name="credits" type="TextureButton" parent="."]
-margin_left = 1048.0
+margin_left = 1032.0
 margin_top = 672.0
-margin_right = 1384.0
+margin_right = 1368.0
 margin_bottom = 757.0
 rect_min_size = Vector2( 0, 85 )
 focus_neighbour_top = NodePath("../play")
@@ -74,11 +74,9 @@ expand = true
 stretch_mode = 5
 
 [node name="quit" type="TextureButton" parent="."]
-visible = false
-margin_left = 536.0
-margin_top = 639.0
-margin_right = 872.0
-margin_bottom = 724.0
+margin_top = 672.0
+margin_right = 336.0
+margin_bottom = 757.0
 rect_min_size = Vector2( 0, 85 )
 focus_neighbour_top = NodePath("../credits")
 focus_neighbour_bottom = NodePath("../play")
